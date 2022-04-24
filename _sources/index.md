@@ -12,7 +12,7 @@ oxa: oxa:O0YermHzrulp1zuqgpIi/4Q8kTD7wacDrvyRuR6nV
 
 +++ {"oxa":"oxa:O0YermHzrulp1zuqgpIi/fiaLC4pk56jKIzBVgwyr.10"}
 
-## An Introduction to [opticsinspace.com](opticsinspace.com) 🛰️ 🔭
+## An Introduction to `opticsinspace.com` 🛰️ 🔭
 
 Recently I decided to make my own landing page on GitHub Pages. Once I did, I realized that I could buy this domain for \~$0/year so I went for it. It was a good time to have a consolidated web presence I could call my own, and while I don’t have any other long-term plans for this site I’m open to suggestions or collaborations.
 
@@ -81,7 +81,7 @@ The truth is that most startups working on hardware - from entire satellite cons
 :name: jY0De7dWHk
 ```
 
-The most visible asymmetries between new space and “{strike}`old` traditional space” are factory floors, computer-controlled machines, high bays, and cleanrooms. However, there is another asymmetric advantage that hides in plain sight: the inertia of government procurement and established contracting channels at all levels of traditional aerospace. Space startups often bolster their ability to win government contracts, which most need to survive, by filling their boards or federal business units with anyone from former agency heads to procurement specialists. These credentials in turn draw investors, required in the typical case that the C-suite is not already filled with tech billionaires. Closing the loop on relatively steady-state public funding and more agile risk-savvy private capital may be one of the biggest leverage points given the current state of the new space economy.
+The most visible asymmetries between new space and “<strike>old</strike>traditional space” are factory floors, computer-controlled machines, high bays, and cleanrooms. However, there is another asymmetric advantage that hides in plain sight: the inertia of government procurement and established contracting channels at all levels of traditional aerospace. Space startups often bolster their ability to win government contracts, which most need to survive, by filling their boards or federal business units with anyone from former agency heads to procurement specialists. These credentials in turn draw investors, required in the typical case that the C-suite is not already filled with tech billionaires. Closing the loop on relatively steady-state public funding and more agile risk-savvy private capital may be one of the biggest leverage points given the current state of the new space economy.
 
 Space startups often bolster their ability to win government contracts, which most need to survive, by filling their boards or federal business units with anyone from former agency heads to procurement specialists. These credentials in turn draw investors - required in the typical case that the C-suite is not already filled with tech billionaires. Closing the loop on relatively steady-state public funding and more agile risk-savvy private capital may be one of the biggest leverage points given the current state of the new space economy. Continued improvements to procurement process within government is also up there.
 

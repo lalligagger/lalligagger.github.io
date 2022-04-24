@@ -22,7 +22,9 @@ Recently I decided to make my own landing page on GitHub Pages. Once I did, I re
 
 While, as the domain indicates, my primary focus is building optics for use in space I’ve been lucky to engage with all aspects of remote sensing applications. I sincerely believe that this field has the potential to satisfy important personal requirement of mine: leaving the planet a little bit better than my generation found it.
 
-I’m also fortunate to be enjoying a brief sabbatical at Hydrosat and have time for side projects, and will be thinking about our global/(Unless otherwise noted, I will stick to what I know and discuss things from my Seattle-area bubble of the increasingly globalized space industry.) team as we all celebrate Earth Day. Here are couple of videos I’ve found helpful recently in connecting the dots between the technology and the impact it generates:
+I’m also fortunate to be enjoying a brief sabbatical at Hydrosat and have time for side projects, and will be thinking about our global[^1] team as we all celebrate Earth Day. Here are couple of videos I’ve found helpful recently in connecting the dots between the technology and the impact it generates:
+
+[^1]:Unless otherwise noted, I will stick to what I know and discuss things from my Seattle-area bubble of the increasingly globalized space industry.
 
 * Dr. Josh Fisher: [The Fate of the Terrestrial Biosphere](https://www.youtube.com/watch?v=YUKJZN-fZ6k)
 * Dr. Chris Boshuizen: [SmallSat Symposium Keynote](https://news.satnews.com/2022/02/05/dr-chris-boshuizen-keynote-smallsat-symposium-2022/)

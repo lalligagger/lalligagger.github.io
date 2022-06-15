@@ -1,0 +1,40 @@
+version: 1
+site:
+  title: opticsinspace
+  projects:
+    - path: .
+      slug: opticsinspace
+  nav:
+    - title: opticsinspace
+      url: /opticsinspace
+  actions:
+    - title: Learn More
+      url: https://docs.curvenote.com/web
+  domains:
+    - lalli.curve.space
+  logo: public/logo.svg
+  logoText: opticsinspace
+project:
+  title: optics in space
+  description: >-
+    Keeping an eye on Earth observation, the space industry, and downstream
+    applications.
+  remote: O0YermHzrulp1zuqgpIi
+  authors:
+    - userId: FjkLvtx6eBYvTcOBjHqK9VqNESh1
+      name: Kevin Lalli
+      orcid: 0000-0003-1929-5016
+      corresponding: true
+      email: kevin@opticsinspace.com
+      roles: []
+      affiliations: []
+    - userId: yBHjw6oGBLZezaGvcZ62hAGlRDf1
+      name: Casey Backes
+      corresponding: false
+      roles: []
+      affiliations: []
+  name: opticsinspace
+  license:
+    content: CC-BY-4.0
+    code: MIT
+  github: https://github.com/lalligagger

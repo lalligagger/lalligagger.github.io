@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello, Earth! &#8212; optics in space</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Hyping Hyperspectral" href="hyping-hsi.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">optics in space</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Hello, Earth!
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hyping-hsi.html">
+   Hyping Hyperspectral
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bio.html">
+   bio
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  I 💚 <a href="https://jupyterbook.org">Jupyter Books</a> & <a href="https://www.curvenote.com">Curvenote</a> <br> <a href="https://www.getrevue.co/profile/opticsinspace">Subscribe!</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/index.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lalligagger/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-introduction-to-opticsinspace-com">
+   An Introduction to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     opticsinspace.com
+    </span>
+   </code>
+   🛰️ 🔭
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#happy-earth-week">
+   Happy Earth Week! 🌍
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#team-earth-team-space">
+   Team Earth 👉⚡👈 Team Space?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reflecting-on-a-year-at-hydrosat">
+   Reflecting on a Year at Hydrosat 🚰 👨🔬
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Hello, Earth!</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-introduction-to-opticsinspace-com">
+   An Introduction to
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     opticsinspace.com
+    </span>
+   </code>
+   🛰️ 🔭
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#happy-earth-week">
+   Happy Earth Week! 🌍
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#team-earth-team-space">
+   Team Earth 👉⚡👈 Team Space?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reflecting-on-a-year-at-hydrosat">
+   Reflecting on a Year at Hydrosat 🚰 👨🔬
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="hello-earth">
+<h1>Hello, Earth!<a class="headerlink" href="#hello-earth" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="an-introduction-to-opticsinspace-com">
+<h2>An Introduction to <code class="docutils literal notranslate"><span class="pre">opticsinspace.com</span></code> 🛰️ 🔭<a class="headerlink" href="#an-introduction-to-opticsinspace-com" title="Permalink to this headline">¶</a></h2>
+<p>Recently I decided to make my own landing page on GitHub Pages. Once I did, I realized that I could buy this domain for ~$0/year so I went for it. It was a good time to have a consolidated web presence I could call my own, and while I don’t have any other long-term plans for this site I’m open to suggestions or collaborations.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="happy-earth-week">
+<h2>Happy Earth Week! 🌍<a class="headerlink" href="#happy-earth-week" title="Permalink to this headline">¶</a></h2>
+<p>While, as the domain indicates, my primary focus is building optics for use in space I’ve been lucky to engage with all aspects of remote sensing applications. I sincerely believe that this field has the potential to satisfy an important personal requirement of mine: leaving the planet a little bit better than my generation found it.</p>
+<p>I’m also fortunate to be enjoying a brief sabbatical at Hydrosat and have time for side projects, and will be thinking about our global<a class="footnote-reference brackets" href="#id2" id="id1">1</a> team as we all celebrate Earth Day. Here are couple of videos I’ve found helpful recently in connecting the dots between the technology and the impact it generates:</p>
+<ul class="simple">
+<li><p>Dr. Josh Fisher: <a class="reference external" href="https://www.youtube.com/watch?v=YUKJZN-fZ6k">The Fate of the Terrestrial Biosphere</a></p></li>
+<li><p>Dr. Chris Boshuizen: <a class="reference external" href="https://news.satnews.com/2022/02/05/dr-chris-boshuizen-keynote-smallsat-symposium-2022/">SmallSat Symposium Keynote</a></p></li>
+</ul>
+<p>Some key quotes:</p>
+<blockquote>
+<div><p>We’re in a golden age of terrestrial remote sensing. We can now see remotely every component of the water cycle, we have great measurements on the carbon cycle, and even nutrient cycle. - Dr. Fisher</p>
+</div></blockquote>
+<blockquote>
+<div><p>Of the key 15 indicators for tracking the volatility of our weather systems and the climate, over half of those can only be collected from space. - Dr. Boshuizen</p>
+</div></blockquote>
+<p>And a meme to summarize my thinking so far:</p>
+<div class="figure align-default" id="w5egi4rtkk">
+<img alt="_images/O0YermHzrulp1zuqgpIi-p1RFT38hIV6wLy9xHuvp-v1.png" src="_images/O0YermHzrulp1zuqgpIi-p1RFT38hIV6wLy9xHuvp-v1.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">You knew there would be memes…</span><a class="headerlink" href="#w5egi4rtkk" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="team-earth-team-space">
+<h2>Team Earth 👉⚡👈 Team Space?<a class="headerlink" href="#team-earth-team-space" title="Permalink to this headline">¶</a></h2>
+<p>As Dr. Fisher knows the ins and outs of our biosphere, Dr. “Chrispy” understands what’s possible from satellites of all shapes and sizes. One of the most interesting points from his talk is the migration over the last few years from CubeSats to SmallSats, which offer increased payload mass and a much more flexible form factor. Anyone trying to put big capabilities into small packages understands this shift, but it’s probably worth its own follow-up in the future. (We’ll probably have satellites that move like Luke’s training droid before I get around to that, though…)</p>
+<p>There are plenty of technical challenges in merging commercial space capability, especially the “new space” variety, with scientific capability that meets the requirements of a NASA Earth Science mission. More to unpack in the future - for now I’ll drop these worthwhile references:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nap.nationalacademies.org/catalog/26380/leveraging-commercial-space-for-earth-and-ocean-remote-sensing">Leveraging Commercial Space for Earth and Ocean Remote Sensing</a>, from the National Academies of Science, Engineering, and Medicine (NAESM)</p></li>
+<li><p><a class="reference external" href="https://www.ogc.org/ogcevents/new-space">“Space from Scratch” Workshop</a> by Open Geospatial Consortium</p></li>
+<li><p><a class="reference external" href="https://www.terrawatch.space/">TerraWatch</a> podcast by Aravind:</p>
+<ul>
+<li><p><a class="reference external" href="https://anchor.fm/terrawatch-space/episodes/30---Can-Space-Infrastructure-Be-Outsourced--Alex-Greenberg--Loft-Orbital-e1gdoav">Can Space Infrastructure Be Outsourced</a>, with Alex Greenberg of Loft Orbital</p></li>
+<li><p><a class="reference external" href="https://anchor.fm/terrawatch-space/episodes/25-From-Concept-to-Operations-How-to-Build-a-Satellite-Constellation-with-John-Springmann--Tomorrow-io-e1b91gh">From Concept to Operations How to Build a Satellite Constellation,</a> with John Springmann of <a class="reference external" href="http://Tomorrow.io">Tomorrow.io</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://libraryofalexandria.substack.com/p/teamearth-vs-teamspace">#TeamEarth vs. #TeamSpace</a>, by Alexandria Zeus (requires subscription)</p></li>
+</ul>
+<p>There are a couple of interesting themes that emerge across all of these discussions, posing them as questions:</p>
+<ul class="simple">
+<li><p><strong>What does a space company need to do to differentiate its product enough to be interesting?</strong></p></li>
+<li><p><strong>What can a space company not do, and reasonably expect others to fill in, to build and deploy the mission/ system it requires?</strong></p></li>
+</ul>
+<p>Space startups will surely continue to come and go. Answering these questions early might be a good choice for those that want to stick around, even if the answers are refined over time. When developing new missions there is only so much gas in the tank at any point (or “delta-V” as we call it in the space biz), so it is important to think tactically as well as strategically while getting from one gate to the next.</p>
+<p>Note that while we often think of NASA missions as having infinitely flexible budgets, the reality is that even they must proceed through stage-gated development cycles. There already exists a proven template to transition research-level hardware, which may or may not use commercial components, to operational science missions. It’s just not one that any given startup has time to follow in its entirety! Putting the pieces together across multi-organizational efforts is becoming increasingly important towards constellation-capable (smaller, cheaper) remote sensing systems.</p>
+<p>There is another interesting set of questions that applies at the mission level, rather than defining a company’s entire vision. Mainly, what level of detailed design is required for the spacecraft and how unique are the accommodation requirements of the payload? These questions will ultimately drive the decision between a standalone mission, with any number of purpose-built components or operational needs, and a hosted payload which is meant to integrate with an existing bus and mission design. The current state of affairs is elegantly mapped out in the above NAESM report for both standalone and hosted missions; their high-level flow for standalone missions is shown below.</p>
+<div class="figure align-default" id="yp91gmy2yr">
+<img alt="_images/O0YermHzrulp1zuqgpIi-J7oKm06g7CwVMAgF2zYC-v1.png" src="_images/O0YermHzrulp1zuqgpIi-J7oKm06g7CwVMAgF2zYC-v1.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Standalone mission model &amp; commercial space readiness. (Fig 2.4 in NAESM report.) For the hosted payload version (NAESM Fig 2.5) cuts out custom spacecraft development, and launch is bundled with integration, ground station (RGS), and operations.</span><a class="headerlink" href="#yp91gmy2yr" title="Permalink to this image">¶</a></p>
+</div>
+<p>I’m the last person to ask about public relations, but the challenges the industry must overcome in this arena aren’t difficult to spot. While there are endless sources of good info that tackle the subtleties of building companies, systems, missions, and even economies to get the job done, this is obviously not what the public is exposed to. At best, the stories of the new space industry are percolated through multi-layered media houses and secondary or tertiary sources used. At worst, every single space startup large or small gets lumped into “billionaires joyriding to space” or assumed to be making vaporware.</p>
+<p>The truth is that most startups working on hardware - from entire satellite constellations to spacecraft subsystems - face a huge uphill battle in terms of capital expense and customer traction to hit even meager revenue streams or requisite funding checkpoints. Most of us don’t expect to be cheer-led, but when obtuse characterizations make their way into the public sphere there are real threats of policy change that hinders progress. My hunch is that the next decade of success stories in this industry are already forming the critical partnerships, even if the company doesn’t exist yet, and are willing to weather some storms if they haven’t already. Space and hardware will always be hard, but a wider appreciate for the idea that space tech can help us on Earth could certainly lighten the mood a little.</p>
+<div class="figure align-default" id="jy0de7dwhk">
+<img alt="_images/O0YermHzrulp1zuqgpIi-UiO6rCaJRtx9J4UyhYWf-v1.png" src="_images/O0YermHzrulp1zuqgpIi-UiO6rCaJRtx9J4UyhYWf-v1.png" />
+</div>
+<p>The most visible asymmetries between new space and “<strike>old</strike>traditional space” are factory floors, computer-controlled machines, high bays, and cleanrooms. However, there is another asymmetric advantage that hides in plain sight: the inertia of government procurement and established contracting channels at all levels of traditional aerospace. Space startups often bolster their ability to win government contracts, which most need to survive, by filling their boards or federal business units with anyone from former agency heads to procurement specialists. These credentials in turn draw investors, required in the typical case that the C-suite is not already filled with tech billionaires. Closing the loop on relatively steady-state public funding and more agile risk-savvy private capital may be one of the biggest leverage points given the current state of the new space economy. Continued improvements to procurement process within government is also up there.</p>
+<p>Raising capital and developing customer channels are expected with any new venture, none of this is meant to imply that space is special. It is the simultaneous speed, scale, and complexity demanded by the next wave of space missions that drives the need to ramp funding and build partnerships early. The spend needed for a minimum viable product is inevitably larger than a CRM/SaaS company, regardless of risk posture, which makes hitting marks from round to round more difficult.</p>
+<p>The risk of space projects can limit investor appetite, just as the tried-and-true mission runners (read: NASA, USGS, USDA for Earth science; various DoD agencies for other stuff) are not known to readily welcome newcomers. Neither funding avenue (private or public) is better than the other, they just operate using different metrics and on their own schedules that must be appreciated for successful integration in a multi-year development roadmap. There have been several notable exceptions, and now is a good time to examine how we replicate the conditions that have led to sustaining contracts to up-and-coming space companies.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="reflecting-on-a-year-at-hydrosat">
+<h2>Reflecting on a Year at Hydrosat 🚰 👨🔬<a class="headerlink" href="#reflecting-on-a-year-at-hydrosat" title="Permalink to this headline">¶</a></h2>
+<p>Hydrosat’s differentiated product is <a class="reference external" href="https://towardsdatascience.com/the-world-needs-a-lot-more-thermal-infrared-data-from-space-dbbba389be8a">thermal band remote sensing data</a>, at a low enough cost point that it can be scaled to a constellation of over a dozen satellites and provide daily global coverage. I’ve had the pleasure to absorb all of the info I can about crop yield forecasts, evapotranspiration models, and irrigation optimization from our data team in Luxembourg and Dr. Fisher, our <a class="reference external" href="https://blogs.chapman.edu/gci/2021/09/24/new-grand-challenges-initiative-presidential-fellow-dr-joshua-fisher/">scientist in charge</a>. We are leaning on a number of partners to support our VanZyl-1 demonstration mission - a hosted payload with Loft Orbital - and eventual constellation, each one filling in critical needs to support an overall measurement system.</p>
+<p>Since joining last year, it feels like we have been moving at warp speed as we develop specifications, complete design reviews, and order hardware. As a lean seed-stage startup, the development velocity we’ve been able to achieve brings new surprises every day. We are leveraging a broad network of engineering talent and manufacturing capability across the US and Canada to achieve our goals. There are also lessons being learned from VanZyl-1 that we will surely carry forward to future missions. For example, the more partners we add to our extended team the more important it has become to monitor our communication overhead! Also, SmallSats can still be a heavy lift.</p>
+<p>We will be sharing more in August, at the SPIE conference on <a class="reference external" href="https://spie.org/OPO/conferencedetails/cubesats-smallsats-remote-sensing?SSO=1">CubeSats and SmallSats for Remote Sensing</a> in San Diego. Ad Astra! 🚀</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Unless otherwise noted, I will stick to what I know and discuss things from my Seattle-area bubble of the increasingly globalized space industry.</p>
+</dd>
+</dl>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="hyping-hsi.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Hyping Hyperspectral</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kevin Lalli<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

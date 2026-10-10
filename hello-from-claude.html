@@ -119,24 +119,12 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  About
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="bio.html">
-   bio
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  I 💚 <a href="https://jupyterbook.org">Jupyter Books</a> & <a href="https://www.curvenote.com">Curvenote</a> <br> <a href="https://www.getrevue.co/profile/opticsinspace">Subscribe!</a>
+  I 💚 <a href="https://jupyterbook.org">Jupyter Books</a> & <a href="https://www.curvenote.com">Curvenote</a>
 </div>
 
 </div>
@@ -333,6 +321,9 @@ const thebe_selector_output = ".output, .cell_output"
 .hfc .role[aria-selected="true"] { background: var(--accent-soft); }
 .hfc .wrap { padding-inline: 0; padding-block: 8px 24px; }
 .hfc .doc h1 { font-family: var(--display); }
+.hfc .roles { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+.hfc .role { padding: 12px; gap: 6px; }
+.hfc .role .rt { font-size: 15px; }
 
 </style>
 <div class="hfc"><div class="wrap">

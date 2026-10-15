@@ -10,7 +10,7 @@ Hi, I'm Kevin. I live in the boonies of Redmond, WA - about halfway between Seat
 
 I moved out here from Montana (go Bobcats!) and continue to be a powder snob while occasionally working on my trail-building chops.
 
-These days I am helping Hydrosat launch their constellation of thermal imaging satellites, so that we can all enjoy the benefits of daily land-surface temperature measurements. I look for projects that allow me to blend my technical cababilities with missions that matter, so it's a good fit.
+After Hydrosat I took a couple of years off to mountain bike, ski and rest. These days I am back at it, building web apps with Claude (`racinglines <https://racinglines.bet>`_) and looking for my next role: a project that blends my technical capabilities with a mission that matters, ideally at Anthropic.
 
 projects
 ==================
@@ -40,4 +40,4 @@ formative years:
 contact
 ==================
 
-If you'd like to connect I can be found on LinkedIn (`/in/opticsinspace/ <https://www.linkedin.com/in/opticsinspace/>`_) or `@opticsinspace <https://twitter.com/opticsinspace>`_ on Twitter.
+If you'd like to connect, email `kevinlalli@pm.me <mailto:kevinlalli@pm.me>`_, find me on `GitHub <https://github.com/lalligagger>`_, or on LinkedIn (`/in/opticsinspace/ <https://www.linkedin.com/in/opticsinspace/>`_).

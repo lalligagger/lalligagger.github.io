@@ -18,7 +18,7 @@ projects
 
 professional:
 
-- `Hydrosat-Loft <https://www.seradata.com/loft-orbital-announces-customer-for-yam-6-mission-hydrosat/>`_ thermal infrared demonstration mission
+- `Hydrosat-Loft <https://spacenews.com/hydrosat-signs-with-loft-orbital/>`_ thermal infrared demonstration mission
 - Amazon `Project Kuiper <https://www.aboutamazon.com/news/innovation-at-amazon/project-kuiper-announces-plans-and-launch-provider-for-prototype-satellites>`_ optical system design, I&T, and lab bring-up
 - `Bluefield <https://spacenews.com/bluefield-adds-customers/>`_ field tests of methane sensing payload
 - `Arkyd-6 <https://eoportal.org/web/eoportal/satellite-missions/a/arkyd-6>`_ payload I&T, launch, and operations

@@ -58,7 +58,19 @@ const thebe_selector_output = ".output, .cell_output"
 
     <!-- Google Analytics -->
     
-  </head>
+  <style id="rl-zoom-css">
+.rl-zoom{position:relative;display:block;max-height:420px;overflow:hidden;border-radius:6px;cursor:zoom-in;border:1px solid var(--pst-color-border,#ddd)}
+.rl-zoom img{display:block;width:100%;height:auto;margin:0}
+.rl-zoom::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,rgba(13,14,18,.85))}
+.rl-zoom-hint{position:absolute;right:12px;bottom:10px;z-index:1;color:#fff;font-size:.85rem;font-weight:600;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:999px}
+.rl-lb{position:fixed;inset:0;z-index:2000;background:rgba(10,10,12,.97);display:none;overflow:auto;cursor:zoom-out;padding:16px}
+.rl-lb.open{display:block}
+.rl-lb img{display:block;margin:0 auto;max-width:100%;height:auto}
+.rl-lb.full img{max-width:none}
+.rl-lb-bar{position:fixed;top:10px;right:14px;z-index:2001;display:flex;gap:8px}
+.rl-lb-bar button{background:#222;color:#fff;border:1px solid #555;border-radius:6px;padding:4px 10px;font-size:.9rem;cursor:pointer}
+</style>
+</head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
@@ -176,16 +188,7 @@ const thebe_selector_output = ".output, .cell_output"
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/lalligagger/"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        
-        
-    </div>
+    <a class="btn btn-secondary topbarbtn" href="https://github.com/lalligagger" aria-label="GitHub: lalligagger" title="GitHub: lalligagger"><i class="fab fa-github"></i></a>
 </div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
@@ -263,94 +266,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Contact: kevinlalli@pm.me · <a class="reference external" href="https://github.com/lalligagger">github.com/lalligagger</a></p>
 <!--fx-start--><div class="section" id="how-this-page-got-made">
 <h2>How this page got made<a class="headerlink" href="#how-this-page-got-made" title="Permalink to this headline">¶</a></h2>
-<div class="hfc-fx" id="hfc-fx">
-<div class="fx-top">
-<div class="fx-kicker">one thread · 06:12–06:59 UTC · 10 Oct 2026</div>
-<div class="fx-big"><span data-count="46">46</span><small>minutes from the first job posting to a rebuilt website</small></div>
-<div class="fx-strip" aria-label="46 minute timeline: shaded spans are Claude working"><span class="fx-seg" style="left:0.00%;width:7.82%" title="1"><em>1</em></span><span class="fx-seg" style="left:9.22%;width:1.76%" title="2"><em>2</em></span><span class="fx-seg" style="left:11.59%;width:3.23%" title="3"><em>3</em></span><span class="fx-seg" style="left:18.05%;width:1.72%" title="4"><em>4</em></span><span class="fx-seg" style="left:20.20%;width:4.52%" title="5"><em>5</em></span><span class="fx-seg" style="left:35.41%;width:18.80%" title="6"><em>6</em></span><span class="fx-seg" style="left:55.08%;width:18.12%" title="7"><em>7</em></span><span class="fx-seg" style="left:88.27%;width:11.73%" title="8"><em>8</em></span></div>
-<div class="fx-axis"><span>06:12</span><span>06:59</span></div>
-<div class="fx-split"><span><i class="fx-sw-c"></i>Claude working 31:27</span><span><i class="fx-sw-k"></i>Kevin reading, deciding, typing 15:00</span></div>
-<dl class="fx-stats"><div><dt>8</dt><dd>asks</dd></div><div><dt>7</dt><dd>tailored resumes</dd></div><div><dt>4</dt><dd>cover letters</dd></div><div><dt>645</dt><dd>openings read</dd></div></dl>
-</div>
-<ol class="fx-steps"><li class="fx-step">
-<div class="fx-time"><b>06:12</b><span>3:38</span></div>
-<div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>save the pre-edit (this round only) as v1, and a _web-mgr version.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>Base resume v1, plus a resume and cover letter for the first posting</p></div>
-</li><li class="fx-step">
-<div class="fx-time"><b>06:17</b><span>0:49</span></div>
-<div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>staff sw eng, growth</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>Growth resume and cover letter</p></div>
-</li><li class="fx-step">
-<div class="fx-time"><b>06:18</b><span>1:30</span></div>
-<div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>HW sys arch, might as well try for this one and pick best SW oriented as well. 2 apps total.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>Product and Hardware Systems Architect sets, and Growth picked as the software pair</p></div>
-</li><li class="fx-step">
-<div class="fx-time"><b>06:21</b><span>0:48</span></div>
-<div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>ok are you able to skim other groups/ roles at a very high level to help me target one or two more?</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>All 645 openings read and shortlisted</p></div>
-</li><li class="fx-step">
-<div class="fx-time"><b>06:22</b><span>2:06</span></div>
-<div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>pick top 5, including the 2 we plan to send. all 5 go in an interactive html</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>The five-role picker you see below</p></div>
-</li><li class="fx-step">
-<div class="fx-time"><b>06:29</b><span>8:44</span></div>
-<div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>push it as an article to my lalligagger.github.io as article number 3.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>This post, built into the existing Jupyter Book site</p></div>
-</li><li class="fx-step">
-<div class="fx-time"><b>06:38</b><span>8:25</span></div>
-<div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>new idea: landing page + old blog and &quot;the latest&quot;</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>New home page, old posts moved, one sidebar on every page</p></div>
-</li><li class="fx-step">
-<div class="fx-time"><b>06:53</b><span>5:27</span></div>
-<div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>there is a max width on main content, find it and match</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>Tighter tiles, cleaner nav, a dead link removed, stacked layout</p></div>
-</li></ol>
-<blockquote class="fx-brief"><p>"just make it something that someone at anthropic will think is super duper cool, please."</p><cite>Kevin's brief for this diagram, verbatim</cite></blockquote>
-</div>
-<style>
-.hfc-fx{--bg:#0e141b;--panel:#151d27;--ln:#26313e;--ink:#e8edf2;--mut:#93a1b0;--c:#f08a5d;--cs:rgba(240,138,93,.16);--k:#6fb3e0;
-font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);border-radius:14px;padding:clamp(16px,3vw,28px);margin:10px 0 30px;overflow:hidden;position:relative}
-.hfc-fx::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 220px at 85% -10%,rgba(240,138,93,.18),transparent 70%),radial-gradient(500px 200px at 0% 110%,rgba(111,179,224,.12),transparent 70%);pointer-events:none}
-.hfc-fx>*{position:relative}
-.hfc-fx .fx-kicker{font:500 11px/1.4 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
-.hfc-fx .fx-big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:6px 0 14px}
-.hfc-fx .fx-big span{font:600 clamp(48px,9vw,76px)/1 "Newsreader",Georgia,serif;color:var(--c);letter-spacing:-.02em}
-.hfc-fx .fx-big small{font-size:15px;color:var(--mut);max-width:24ch;line-height:1.35}
-.hfc-fx .fx-strip{position:relative;height:30px;border-radius:7px;background:repeating-linear-gradient(90deg,#1b2531 0 6px,#18212c 6px 12px);border:1px solid var(--ln)}
-.hfc-fx .fx-seg{position:absolute;top:3px;bottom:3px;min-width:6px;border-radius:4px;background:linear-gradient(180deg,#f6a07a,var(--c));box-shadow:0 0 14px rgba(240,138,93,.45);transform-origin:left;transform:scaleX(0);transition:transform .7s cubic-bezier(.2,.7,.2,1)}
-.hfc-fx.on .fx-seg{transform:scaleX(1)}
-.hfc-fx .fx-seg em{position:absolute;top:-19px;left:0;font:600 10px "IBM Plex Mono",monospace;font-style:normal;color:var(--mut)}
-.hfc-fx .fx-axis{display:flex;justify-content:space-between;font:11px "IBM Plex Mono",monospace;color:var(--mut);margin-top:5px}
-.hfc-fx .fx-split{display:flex;flex-wrap:wrap;gap:6px 18px;font:12px "IBM Plex Mono",monospace;color:var(--mut);margin:10px 0 16px}
-.hfc-fx .fx-split span{display:inline-flex;align-items:center;gap:7px}
-.hfc-fx .fx-sw-c,.hfc-fx .fx-sw-k{width:16px;height:8px;border-radius:2px;display:inline-block;background:var(--c)}
-.hfc-fx .fx-sw-k{background:#1b2531;border:1px solid var(--ln)}
-.hfc-fx .fx-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0 0 20px}
-.hfc-fx .fx-stats div{background:var(--panel);border:1px solid var(--ln);border-radius:10px;padding:10px 12px}
-.hfc-fx .fx-stats dt{font:600 24px/1.1 "Newsreader",Georgia,serif;color:var(--ink)}
-.hfc-fx .fx-stats dd{margin:2px 0 0;font-size:12px;color:var(--mut)}
-.hfc-fx .fx-steps{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:fx}
-.hfc-fx .fx-step{display:grid;grid-template-columns:62px minmax(0,1fr);gap:12px;opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s}
-.hfc-fx.on .fx-step{opacity:1;transform:none}
-.hfc-fx .fx-time{display:grid;align-content:start;gap:2px;font-family:"IBM Plex Mono",monospace;counter-increment:fx}
-.hfc-fx .fx-time b{font-size:13px;font-weight:500}
-.hfc-fx .fx-time b::before{content:counter(fx) " ";color:var(--c)}
-.hfc-fx .fx-time span{font-size:11px;color:var(--c)}
-.hfc-fx .fx-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
-.hfc-fx .fx-pair p{margin:0;padding:9px 12px;border-radius:10px;font-size:13.5px;line-height:1.45}
-.hfc-fx .fx-ask{background:#121a23;border:1px solid var(--ln);font-family:"IBM Plex Mono",monospace;font-size:12.5px!important;color:#cfe3f1}
-.hfc-fx .fx-pair p.fx-ship{color:var(--ink)!important;background:var(--cs);border:1px solid rgba(240,138,93,.35)}
-.hfc-fx .fx-who{display:block;font:500 10px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-bottom:3px}
-.hfc-fx .fx-ask .fx-who{color:var(--k)}
-.hfc-fx .fx-ship .fx-who{color:var(--c)}
-.hfc-fx .fx-brief{margin:20px 0 0;padding:14px 16px;border-left:3px solid var(--c);background:var(--panel);border-radius:0 10px 10px 0}
-.hfc-fx .fx-brief p{margin:0;font:italic 500 18px/1.4 "Newsreader",Georgia,serif;color:var(--ink)}
-.hfc-fx .fx-brief cite{display:block;margin-top:6px;font:normal 11px "IBM Plex Mono",monospace;color:var(--mut)}
-@media (max-width:640px){.hfc-fx .fx-pair{grid-template-columns:minmax(0,1fr)}.hfc-fx .fx-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.hfc-fx .fx-step{grid-template-columns:minmax(0,1fr);gap:6px}.hfc-fx .fx-time{display:flex;gap:10px}}
-@media (prefers-reduced-motion:reduce){.hfc-fx .fx-seg,.hfc-fx .fx-step{transition:none}}
-</style>
-<script>
-(function(){var el=document.getElementById('hfc-fx');if(!el)return;
-var steps=el.querySelectorAll('.fx-step'),segs=el.querySelectorAll('.fx-seg');
-steps.forEach(function(s,i){s.style.transitionDelay=(0.25+i*0.08)+'s'});segs.forEach(function(s,i){s.style.transitionDelay=(i*0.09)+'s'});
-function go(){el.classList.add('on')}
-if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){go();return}
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go();io.disconnect()}})},{threshold:.15});io.observe(el);
-setTimeout(go,4000);
-})();
-</script>
+<p><strong>Cliff notes</strong></p>
+<ul class="simple">
+<li><p>One project thread, eight short asks from Kevin, and 46 minutes from the first job posting to a rebuilt website (06:12&#8211;06:59 UTC, 10 Oct 2026).</p></li>
+<li><p>Claude was working for 31:27 of that; Kevin spent the other 15:00 reading, deciding and typing.</p></li>
+<li><p>What shipped: 7 tailored resumes and 4 cover letters, all 645 openings read and shortlisted, the five-role picker below, this post, and a new landing page with one sidebar on every page.</p></li>
+<li><p>Kevin's brief for the timeline: &#8220;just make it something that someone at anthropic will think is super duper cool, please.&#8221;</p></li>
+</ul>
+<p><a class="rl-zoom" href="_images/hello-from-claude-how-made.png"><img alt="Timeline of the 46-minute thread: eight asks from Kevin, each with what Claude shipped" src="_images/hello-from-claude-how-made.png" /><span class="rl-zoom-hint">Click to expand</span></a></p>
 </div><!--fx-end-->
 <div class="section" id="five-roles">
 <h2>Five roles<a class="headerlink" href="#five-roles" title="Permalink to this headline">¶</a></h2>
@@ -607,5 +530,13 @@ select(ROLES.some(r => r.id === start) ? start : ROLES[0].id, false);
   
   <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  </body>
+  <div class="rl-lb" id="rl-lb" role="dialog" aria-modal="true" aria-label="Expanded screenshot"><div class="rl-lb-bar"><button type="button" id="rl-lb-size">Actual size</button><button type="button" id="rl-lb-close">Close &times;</button></div><img alt=""></div>
+<script>(function(){var lb=document.getElementById('rl-lb'),im=lb.querySelector('img'),sz=document.getElementById('rl-lb-size');
+function close(){lb.classList.remove('open','full');document.body.style.overflow='';}
+document.querySelectorAll('a.rl-zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');im.alt=a.querySelector('img').alt;lb.classList.add('open');document.body.style.overflow='hidden';sz.textContent='Actual size';});});
+sz.addEventListener('click',function(e){e.stopPropagation();lb.classList.toggle('full');sz.textContent=lb.classList.contains('full')?'Fit to screen':'Actual size';});
+document.getElementById('rl-lb-close').addEventListener('click',function(e){e.stopPropagation();close();});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target===im)close();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();</script>
+</body>
 </html>

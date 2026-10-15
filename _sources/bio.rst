@@ -10,7 +10,7 @@ Hi, I'm Kevin. I live in the boonies of Redmond, WA - about halfway between Seat
 
 I moved out here from Montana (go Bobcats!) and continue to be a powder snob while occasionally working on my trail-building chops.
 
-After Hydrosat I took a couple of years off to mountain bike, ski and rest. These days I am back at it, building web apps with Claude (`racinglines <https://racinglines.bet>`_) and looking for my next role: a project that blends my technical capabilities with a mission that matters, ideally at Anthropic.
+After Hydrosat I took a couple of years off to mountain bike, ski and rest. These days I am back at it, building web apps with Claude (`racinglines <https://racinglines.bet>`_) and looking for my next move: big AI companies, sports trading desks, a seat as someone's quant, or any other +EV collaboration.
 
 projects
 ==================

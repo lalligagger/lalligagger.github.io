@@ -16,4 +16,4 @@ This is Kevin Lalli's corner of the web: a decade of building optics and systems
 
 ## About
 
-**[About Kevin](bio.rst)** (Updated 15 Oct 2026): Redmond, WA. A decade in space optics and systems, a couple of years off after Hydrosat to mountain bike, ski and rest, and now building with Claude and looking for the next role. Background, projects and contact: kevinlalli@pm.me · github.com/lalligagger.
+**[About Kevin](bio.rst)** (Updated 15 Oct 2026): Redmond, WA. A decade in space optics and systems, a couple of years off after Hydrosat to mountain bike, ski and rest, and now building with Claude and open to any +EV collaboration. Background, projects and contact: kevinlalli@pm.me · github.com/lalligagger.

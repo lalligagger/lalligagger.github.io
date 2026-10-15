@@ -10,8 +10,9 @@ This is Kevin Lalli's corner of the web: a decade of building optics and systems
 
 ## Old blog
 
-- [Hello, Earth!](hello-earth.md): an introduction to opticsinspace.com. That domain and its email are down; everything that was there is now here.
-- [Hyping Hyperspectral](hyping-hsi.md): a guest post by Casey Backes on hyperspectral remote sensing.
+**[Hello, Earth!](hello-earth.md)** (22 Apr 2022): An introduction to opticsinspace.com. That domain and its email are down; everything that was there is now here.
+
+**[Hyping Hyperspectral](hyping-hsi.md)** (19 May 2022): A guest post by Casey Backes on hyperspectral remote sensing.
 
 ## About
 

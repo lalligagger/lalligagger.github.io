@@ -23,11 +23,7 @@ professional:
 - `Bluefield <https://spacenews.com/bluefield-adds-customers/>`_ field tests of methane sensing payload
 - `Arkyd-6 <https://eoportal.org/web/eoportal/satellite-missions/a/arkyd-6>`_ payload I&T, launch, and operations
 - `Hololens-2 <https://www.wired.com/story/microsoft-hololens-2-headset/>`_ optical metrology, system integration, and test
-
-extracurriculars:
-
-* `The Spacebar <https://spacebar.blog>`_ collaborative Python blog project, articles coming soon 
-* `SPIE profile <https://spie.org/profile/Kevin.Lalli-1853?SSO=1>`_ including proceedings
+- `SPIE profile <https://spie.org/profile/Kevin.Lalli-1853?SSO=1>`_ including proceedings
 
 formative years:
 

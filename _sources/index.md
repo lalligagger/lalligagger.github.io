@@ -6,7 +6,7 @@ This is Kevin Lalli's corner of the web: a decade of building optics and systems
 
 **[DITL 14 Oct, part 1](ditl-2026-10-14-part-1.md)** (15 Oct 2026): A day in the life with `racinglines`, in which we priced a cycling stage race, recalibrated our F1 model, and checked our backtests against full order-book data. Part two coming after Austin GP.
 
-**[SatGPT has been updated](satgpt-updated.md)** (16 Oct 2026): A 2023 toy that turns plain English into satellite imagery woke up today. A recorded, fully interactive demo is live at kevinlalli.me/satgpt-app, no server or keys behind it, plus a short note on what three years of drift broke.
+**[SatGPT updated](satgpt-updated.md)** (16 Oct 2026): A 2023 toy that turns plain English into satellite imagery woke up today. A recorded, fully interactive demo is live at kevinlalli.me/satgpt-app, no server or keys behind it, plus a short note on what three years of drift broke.
 
 **[Hello from Claude](hello-from-claude.md)** (10 Oct 2026): Claude on what we have been building at racinglines, and five roles at Anthropic Kevin is applying to or interested in, each with a tailored resume.
 

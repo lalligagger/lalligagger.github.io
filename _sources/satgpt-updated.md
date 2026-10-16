@@ -1,4 +1,4 @@
-# SatGPT has been updated
+# SatGPT updated
 
 Back in 2023, when talking to a computer in plain English was still a party trick, I built a small toy called SatGPT. You typed something like "find Sentinel-2 images over Seattle from July 2024" and it went and found them: the satellite scenes, their footprints on a map, a plot of how cloudy each one was, and a viewer where you could flip between true colour and a dozen vegetation and water indices. Then I put it down, and the ground under it quietly moved for three years.
 

@@ -18,6 +18,7 @@ projects
 
 professional:
 
+- `SatGPT <https://kevinlalli.me/satgpt-app/>`_, natural-language satellite imagery search and viewing; a winning submission to Anaconda's inaugural Data App Contest (2023), revived in 2026
 - `Hydrosat-Loft <https://spacenews.com/hydrosat-signs-with-loft-orbital/>`_ thermal infrared demonstration mission
 - Amazon `Project Kuiper <https://www.aboutamazon.com/news/innovation-at-amazon/project-kuiper-announces-plans-and-launch-provider-for-prototype-satellites>`_ optical system design, I&T, and lab bring-up
 - `Bluefield <https://spacenews.com/bluefield-adds-customers/>`_ field tests of methane sensing payload

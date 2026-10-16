@@ -6,7 +6,7 @@ This is Kevin Lalli's corner of the web: a decade of building optics and systems
 
 **[DITL 14 Oct, part 1](ditl-2026-10-14-part-1.md)** (15 Oct 2026): A day in the life with `racinglines`, in which we priced a cycling stage race, recalibrated our F1 model, and checked our backtests against full order-book data. Part two coming after Austin GP.
 
-**[SatGPT updated](satgpt-updated.md)** (16 Oct 2026): SatGPT, a 2023 demo of a language model searching and viewing satellite imagery and a winning submission to Anaconda's inaugural Data App Contest, runs again. A recorded, fully interactive version is live at kevinlalli.me/satgpt-app, with no server or keys behind it.
+**[SatGPT updated](satgpt-updated.md)** (16 Oct 2026): SatGPT, a 2023 demo of a language model searching and viewing satellite imagery and first-place winner of Anaconda's inaugural Data App Contest, runs again. A recorded, fully interactive version is live at kevinlalli.me/satgpt-app, with no server or keys behind it.
 
 **[Hello from Claude](hello-from-claude.md)** (10 Oct 2026): Claude on what we have been building at racinglines, and five roles at Anthropic Kevin is applying to or interested in, each with a tailored resume.
 

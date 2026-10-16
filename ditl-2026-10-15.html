@@ -1,0 +1,735 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="prev" title="Home" href="index.html" />
+    <link rel="next" title="DITL 14 Oct, part 1" href="ditl-2026-10-14-part-1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DITL, 15 Oct 2026: SatGPT has been updated &#8212; kevinlalli.me</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  <style id="rl-zoom-css">
+.rl-zoom{position:relative;display:block;max-height:420px;overflow:hidden;border-radius:6px;cursor:zoom-in;border:1px solid var(--pst-color-border,#ddd)}
+.rl-zoom img{display:block;width:100%;height:auto;margin:0}
+.rl-zoom::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,rgba(13,14,18,.85))}
+.rl-zoom-hint{position:absolute;right:12px;bottom:10px;z-index:1;color:#fff;font-size:.85rem;font-weight:600;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:999px}
+.rl-lb{position:fixed;inset:0;z-index:2000;background:rgba(10,10,12,.97);display:none;overflow:auto;cursor:zoom-out;padding:16px}
+.rl-lb.open{display:block}
+.rl-lb img{display:block;margin:0 auto;max-width:100%;height:auto}
+.rl-lb.full img{max-width:none}
+.rl-lb-bar{position:fixed;top:10px;right:14px;z-index:2001;display:flex;gap:8px}
+.rl-lb-bar button{background:#222;color:#fff;border:1px solid #555;border-radius:6px;padding:4px 10px;font-size:.9rem;cursor:pointer}
+</style>
+</head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">kevinlalli.me</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The latest
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   DITL 15 Oct: SatGPT updated
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ditl-2026-10-14-part-1.html">
+   DITL 14 Oct, part 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-from-claude.html">
+   Hello from Claude
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Old blog
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-earth.html">
+   Hello, Earth!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hyping-hsi.html">
+   Hyping Hyperspectral
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  I 💚 <a href="https://jupyterbook.org">Jupyter Books</a> & <a href="https://www.curvenote.com">Curvenote</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ditl-2026-10-14-part-1.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <a class="btn btn-secondary topbarbtn" href="https://github.com/lalligagger" aria-label="GitHub: lalligagger" title="GitHub: lalligagger"><i class="fab fa-github"></i></a>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-we-started-entry-conditions-at-1914">
+   Where we started: entry conditions at 19:14
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-ran">
+   What ran
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stats">
+   Stats
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives-and-results">
+   Objectives and results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ops-timeline">
+   Ops timeline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-a-reviving-the-app">
+   Part A: Reviving the app
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-b-the-first-ten-minutes-with-a-real-key">
+   Part B: The first ten minutes with a real key
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-c-from-a-vm-to-pyodide-to-a-replayer">
+   Part C: From a VM to Pyodide to a replayer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-d-repo-updates">
+   Part D: Repo updates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anomalies">
+   Anomalies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lessons">
+   Lessons
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-were-heading">
+   Where we&#x27;re heading
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-this-does-and-doesnt-show">
+   What this does and doesn&#x27;t show
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>DITL, 15 Oct 2026: SatGPT has been updated</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-we-started-entry-conditions-at-1914">
+   Where we started: entry conditions at 19:14
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-ran">
+   What ran
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stats">
+   Stats
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives-and-results">
+   Objectives and results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ops-timeline">
+   Ops timeline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-a-reviving-the-app">
+   Part A: Reviving the app
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-b-the-first-ten-minutes-with-a-real-key">
+   Part B: The first ten minutes with a real key
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-c-from-a-vm-to-pyodide-to-a-replayer">
+   Part C: From a VM to Pyodide to a replayer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-d-repo-updates">
+   Part D: Repo updates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anomalies">
+   Anomalies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lessons">
+   Lessons
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-were-heading">
+   Where we&#x27;re heading
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-this-does-and-doesnt-show">
+   What this does and doesn&#x27;t show
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="ditl-2026-10-15">
+<h1>DITL, 15 Oct 2026: SatGPT has been updated<a class="headerlink" href="#ditl-2026-10-15" title="Permalink to this headline">¶</a></h1>
+<style>
+.rl-article table{font-size:14px;margin:12px 0 18px;display:block;overflow-x:auto}
+.rl-article table th{white-space:nowrap}
+.rl-article img{max-width:100%;height:auto;border:1px solid #e3e6ea;border-radius:8px;margin:8px 0}
+.rl-article blockquote{border-left:3px solid #1d5a86;padding:4px 14px;color:#4a5562}
+</style>
+<div class="rl-article">
+<p><strong>Short summary.</strong> In one afternoon session we revived <a href="https://github.com/lalligagger/satgpt-app">SatGPT</a>, a 2023 experiment that turns a sentence like "find Sentinel-2 images over Seattle from July 2024" into a satellite image search, a footprint map, a cloud-cover plot and an interactive image viewer. The app runs again on a Mac with its 2023 libraries pinned, four bugs that modern models and libraries exposed are fixed, the old shell-gpt CLI is ported to shell-gpt 1.x, and a recorded, fully interactive demo is live at <a href="https://kevinlalli.me/satgpt-app/">kevinlalli.me/satgpt-app</a> with no server, no model and no keys behind it. Two hosting plans were tried and dropped on the way: a Google Cloud VM, and running the whole app in the browser with Pyodide.</p>
+<p><em>All times are UTC (Pacific time is 7 hours behind). One Claude Code session, 19:14 to about 00:15, with three helper sessions and one subagent. Nothing here cost more than a few cents of OpenAI usage.</em></p>
+<div class="section" id="where-we-started-entry-conditions-at-1914">
+<h2>Where we started: entry conditions at 19:14<a class="headerlink" href="#where-we-started-entry-conditions-at-1914" title="Permalink to this headline">¶</a></h2>
+<p>SatGPT began in April 2023 as a <a href="https://github.com/lalligagger/satgpt">custom role for shell-gpt</a>: type a request, get a <code>stac-client</code> command. In June 2023 it became a LangChain + Panel web app with four tools behind an OpenAI function-calling agent. Neither had been touched since August 2023. Coming into the session:</p>
+<ul>
+<li><strong>No checkout of the CLI repo</strong> on this machine; the app repo was checked out at its last commit.</li>
+<li><strong>The app's <code>requirements.txt</code> was unpinned</strong> and no longer resolves on current PyPI. The original lockfile was never committed.</li>
+<li><strong>The model it named, <code>gpt-3.5-turbo-0613</code>, has been retired</strong> by OpenAI.</li>
+<li><strong>The Mac is Apple silicon, but the only Python 3.11 on it is an Intel build</strong> under Rosetta, and several packages have since dropped Intel macOS wheels.</li>
+<li><strong>No OpenAI key in the environment,</strong> and a standing rule from the owner: nothing a visitor does may persist between sessions.</li>
+<li><strong>The goal, as first stated:</strong> "see if we can get running again". It was restated three times during the session, each time narrower and more useful.</li>
+</ul>
+</div>
+<div class="section" id="what-ran">
+<h2>What ran<a class="headerlink" href="#what-ran" title="Permalink to this headline">¶</a></h2>
+<p>Four tracks, in sequence rather than in parallel, because each one changed the next:</p>
+<ul>
+<li><strong>Revive (19:14 to 19:36).</strong> Clone, read, build a venv on reconstructed 2023 pins, prove the non-LLM half with a smoke test, serve the app, and expose it with a cloudflared quick tunnel.</li>
+<li><strong>Hosting (21:07 to 21:32).</strong> A plan to run the app in the browser with Pyodide at kevinlalli.me/satgpt, with CORS and package checks against the real services, plus instructions for a one-time OpenAI key. A spike ran for 22 minutes before the plan was dropped.</li>
+<li><strong>Live chat and its bugs (21:14 to 21:42).</strong> The owner supplied a key; four failures surfaced in the first ten minutes of real use and were fixed in place.</li>
+<li><strong>Replayer and deploy (21:34 to 22:52).</strong> A helper session recorded one conversation and built a static page that replays it with every viewer control live. Deployed to GitHub Pages at 22:46.</li>
+<li><strong>Repo updates (23:15 to 23:25).</strong> READMEs, metadata, the CLI port, and moving the demo off the app's <code>main</code> branch at the owner's request.</li>
+</ul>
+<p>The owner ran the key prompt and the Cloudflare dashboard by hand; Claude Code did the rest.</p>
+</div>
+<div class="section" id="stats">
+<h2>Stats<a class="headerlink" href="#stats" title="Permalink to this headline">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Revive</th>
+<th>Hosting plan</th>
+<th>Live chat fixes</th>
+<th>Replayer and deploy</th>
+<th>Repo updates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Install attempts</td>
+<td>4 (3 failed on Intel wheels and source-only packages)</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Pins reconstructed</td>
+<td>33 packages</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>External services checked</td>
+<td>Earth Search v1</td>
+<td>Earth Search, api.openai.com, titiler.xyz, Sentinel-2 COG bucket (CORS and range reads)</td>
+<td>usgs-landsat bucket (requester-pays)</td>
+<td>GitHub Pages, Cloudflare</td>
+<td>GitHub API</td>
+</tr>
+<tr>
+<td>Bugs fixed</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>1 (free-text matcher)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Commits</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2 to <code>main</code></td>
+<td>3 across 2 repos, plus an orphan branch</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>App at localhost:5006 and a trycloudflare URL</td>
+<td>6-phase plan, key instructions, 1 spike (stopped)</td>
+<td>Chat that reports its own errors</td>
+<td>9.0 MB static site, live</td>
+<td>2 READMEs, repo metadata, CLI port</td>
+</tr>
+</tbody>
+</table>
+<p>Messages from the owner: 26. Helper sessions: 3 (per-session state, the Pyodide spike, the replayer). Subagents: 1 (the CLI port, on a cheaper model). Real-money cost: a few cents of gpt-4o-mini.</p>
+</div>
+<div class="section" id="objectives-and-results">
+<h2>Objectives and results<a class="headerlink" href="#objectives-and-results" title="Permalink to this headline">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Objective</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get satgpt-app running again</td>
+<td><strong>Done.</strong> Python 3.11 venv on 2023 pins; the STAC search, footprint map and cloud-cover plot verified without an LLM; the full chat verified with the owner's key.</td>
+</tr>
+<tr>
+<td>Running "somewhere", even a tunnel</td>
+<td><strong>Done at 19:36,</strong> after finding that the Mac's cloudflared config for racinglines.bet was silently hijacking quick tunnels.</td>
+</tr>
+<tr>
+<td>A GCP project and VM</td>
+<td><strong>Dropped</strong> by the owner before anything was created, pending a free option.</td>
+</tr>
+<tr>
+<td>In-browser Pyodide version at kevinlalli.me/satgpt</td>
+<td><strong>Assessed and dropped.</strong> Search, maps and chat would port; the imagery pipeline (dask, odc-stac, rasterio reading cloud-optimized GeoTIFFs) cannot run in WebAssembly. The spike was stopped after 22 minutes.</td>
+</tr>
+<tr>
+<td>A demo-style peek with interactive imagery</td>
+<td><strong>Done.</strong> Recorded replay with date, index, colormap, stretch and cloud mask live in the browser; canned replies for off-script chat. Live at 22:46.</td>
+</tr>
+<tr>
+<td>Core updates to both repos</td>
+<td><strong>Done.</strong> App <code>main</code> is the relaunchable full app with a current README; the demo lives on <code>gh-pages</code>; the CLI is ported to shell-gpt 1.x.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ops-timeline">
+<h2>Ops timeline<a class="headerlink" href="#ops-timeline" title="Permalink to this headline">¶</a></h2>
+<p>The element below is the same one "Hello from Claude" used for how that page got made: each of the owner's asks, in their words, next to what Claude shipped for it.</p>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<div class="hfc-fx" id="hfc-fx">
+<div class="fx-top">
+<div class="fx-kicker">one session · 19:14–00:15 UTC · 15 Oct 2026</div>
+<div class="fx-big"><span data-count="212">212</span><small>minutes from "can we get it running again" to a live demo</small></div>
+<div class="fx-strip" aria-label="301 minute timeline: shaded spans are Claude working"><span class="fx-seg" style="left:0.00%;width:7.31%" title="revive + tunnel"><em>1</em></span><span class="fx-seg" style="left:37.54%;width:12.96%" title="plan, key, bug fixes"><em>2</em></span><span class="fx-seg" style="left:50.50%;width:6.31%" title="replayer session"><em>3</em></span><span class="fx-seg" style="left:64.45%;width:7.97%" title="verify + deploy"><em>4</em></span><span class="fx-seg" style="left:80.07%;width:3.32%" title="repo updates"><em>5</em></span><span class="fx-seg" style="left:94.02%;width:5.98%" title="this post"><em>6</em></span></div>
+<div class="fx-axis"><span>19:14</span><span>00:15</span></div>
+<div class="fx-split"><span><i class="fx-sw-c"></i>Claude working about 2:12</span><span><i class="fx-sw-k"></i>Kevin reading, deciding, finding the key, Cloudflare dashboard: about 2:49</span></div>
+<dl class="fx-stats"><div><dt>26</dt><dd>messages from Kevin</dd></div><div><dt>5</dt><dd>bugs fixed in live use</dd></div><div><dt>5</dt><dd>commits, 2 repos</dd></div><div><dt>9.0 MB</dt><dd>static demo, live</dd></div></dl>
+</div>
+<details class="fx-more"><summary>Show the 17 asks and what Claude shipped</summary>
+<ol class="fx-steps"><li class="fx-step"><div class="fx-time"><b>19:14</b><span>0:07</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>we are going to look at github.com/lalligagger/satgpt as well as the -app repo and see if we can get running again.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>Both repos cloned and read; a Python 3.11 venv on 33 reconstructed 2023 pins after three failed installs; the STAC half proven without an LLM.</p></div></li><li class="fx-step"><div class="fx-time"><b>~19:21</b><span>0:04</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>us my gcp (authorized locally, or move in from racinglines if needed) to set up a brand new project and vm for this. ensure that no data is downloaded or if it is that it does not persist between user sessions.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>gcloud checked (billing, org, three projects); no project created, pending a free option.</p></div></li><li class="fx-step"><div class="fx-time"><b>~19:25</b><span>0:02</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>unless we can find a good free hosting option for this app as it is... i don&#x27;t think so bc it is so out of date.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>Cloud Run and Hugging Face Spaces fit; the free e2-micro does not (1 GB RAM). Out-of-date is a container problem, not a hosting one.</p></div></li><li class="fx-step"><div class="fx-time"><b>~19:27</b><span>1:40</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>exit criteria: satgpt-app running *somewhere* even if locally using cloudflared temp tunnel.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>Served on the Mac and reachable at a trycloudflare URL by 19:36, once the racinglines named-tunnel config stopped hijacking quick tunnels.</p></div></li><li class="fx-step"><div class="fx-time"><b>21:07</b><span>0:07</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>give us a plan to get this on kevinlalli.me/satgpt which i just set up in cloudflare and is served from github.io. we want a prompt for a user&#x27;s openai key when they land, and it should all run as pyodide in-browser. can we do this?</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>CORS preflights on Earth Search, OpenAI and TiTiler; the Pyodide package audit; a six-phase plan; one-time-key instructions; the spike started.</p></div></li><li class="fx-step"><div class="fx-time"><b>~21:14</b><span>0:03</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>have key</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>A hidden read -rs prompt in the terminal; the chat went live; Landsat &#x27;Access Denied&#x27; diagnosed as requester-pays and the error surfaced in the chat.</p></div></li><li class="fx-step"><div class="fx-time"><b>21:17</b><span>0:06</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>nice can you see the logs there?</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>Yes: the terminal pane read from the session; the Landsat guard and the chat error reporting written and compiled.</p></div></li><li class="fx-step"><div class="fx-time"><b>21:23</b><span>0:01</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>(screenshot: could not convert string to float: &#x27;&#x27;)</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>The model had sent bbox=&#x27;-122.485,&#x27; twice; the search tool now takes four numeric bounds, and the server autoreloads.</p></div></li><li class="fx-step"><div class="fx-time"><b>21:24</b><span>0:05</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>i think this is good use case for jev, no?</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>A neutral read: good for routing and closed-set arguments, no for coordinates, and it needs a key proxy in the browser. Parked.</p></div></li><li class="fx-step"><div class="fx-time"><b>21:29</b><span>0:01</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>ok getting an image now. not able to apply an index e.g. NBRSWIR - is it missing band or something else?</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>Not a band: xarray&#x27;s quantile on a chunked dask array. The index loads into memory first; every index works.</p></div></li><li class="fx-step"><div class="fx-time"><b>21:30</b><span>0:02</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>is this really going to work in pyodide with dask and everything going on?</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>No. The imagery pipeline cannot run in WebAssembly; the search and chat half can. Said plainly.</p></div></li><li class="fx-step"><div class="fx-time"><b>21:32</b><span>0:02</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>Ok. Take a step back and assess our goal(s): A demo-style peek into what SatGPT is and what it can do. Can we start with a simple replayer that has interactive elements to change indices for example?</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>The replayer plan: record once on the Mac, replay as static files with the viewer controls live; no keys, no server.</p></div></li><li class="fx-step"><div class="fx-time"><b>21:34</b><span>1:09</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>yes. exit criteria now: working demo on kevinlalli.me/satgpt running using github.io backend. uses replayer but maintains all interactivity of actual app. can have a canned response to new chat requests.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>Spike stopped; a helper session built the recorder and page in 31 minutes; verified in the browser; one matcher bug fixed.</p></div></li><li class="fx-step"><div class="fx-time"><b>22:43</b><span>0:32</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>Deploy now: commit and push, enable Pages, verify kevinlalli.me/satgpt-app.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>Two commits, Pages enabled, workflow green, live at kevinlalli.me/satgpt-app nine minutes later.</p></div></li><li class="fx-step"><div class="fx-time"><b>23:15</b><span>0:04</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>I would like you to make any core updates to satgpt/ satgpt-app on gh based on what we found today.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>README rewrite, repo description and topics; the CLI ported to shell-gpt 1.x by a Sonnet subagent with a verify command.</p></div></li><li class="fx-step"><div class="fx-time"><b>~23:19</b><span>0:38</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>do not add the replayer code to satgpt-app, just make the updates such that someone could re-launch (the full version with dask etc.) if they want.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>The demo moved to an orphan gh-pages branch, Pages switched to it, main cleaned; same URL.</p></div></li><li class="fx-step"><div class="fx-time"><b>23:57</b><span>0:18</span></div><div class="fx-pair"><p class="fx-ask"><span class="fx-who">Kevin</span>Make a blog post on this &quot;SatGPT has been updated&quot; and use a similar html element as you did in &quot;hello claude&quot; to show today&#x27;s work.</p><p class="fx-ship"><span class="fx-who">Claude shipped</span>This post, filed under DITL with today&#x27;s date, with this element.</p></div></li></ol>
+</details>
+<blockquote class="fx-brief"><p>"A demo-style peek into what SatGPT is and what it can do."</p><cite>Kevin's restated goal at 21:32, the sentence that replaced the hosting plan</cite></blockquote>
+<style>
+.hfc-fx{--bg:#0e141b;--panel:#151d27;--ln:#26313e;--ink:#e8edf2;--mut:#93a1b0;--c:#f08a5d;--cs:rgba(240,138,93,.16);--k:#6fb3e0;
+font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);border-radius:14px;padding:clamp(16px,3vw,28px);margin:10px 0 30px;overflow:hidden;position:relative}
+.hfc-fx::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 220px at 85% -10%,rgba(240,138,93,.18),transparent 70%),radial-gradient(500px 200px at 0% 110%,rgba(111,179,224,.12),transparent 70%);pointer-events:none}
+.hfc-fx>*{position:relative}
+.hfc-fx .fx-kicker{font:500 11px/1.4 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.hfc-fx .fx-big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:6px 0 14px}
+.hfc-fx .fx-big span{font:600 clamp(48px,9vw,76px)/1 "Newsreader",Georgia,serif;color:var(--c);letter-spacing:-.02em}
+.hfc-fx .fx-big small{font-size:15px;color:var(--mut);max-width:24ch;line-height:1.35}
+.hfc-fx .fx-strip{position:relative;height:30px;border-radius:7px;background:repeating-linear-gradient(90deg,#1b2531 0 6px,#18212c 6px 12px);border:1px solid var(--ln)}
+.hfc-fx .fx-seg{position:absolute;top:3px;bottom:3px;min-width:6px;border-radius:4px;background:linear-gradient(180deg,#f6a07a,var(--c));box-shadow:0 0 14px rgba(240,138,93,.45);transform-origin:left;transform:scaleX(0);transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.hfc-fx.on .fx-seg{transform:scaleX(1)}
+.hfc-fx .fx-seg em{position:absolute;top:-19px;left:0;font:600 10px "IBM Plex Mono",monospace;font-style:normal;color:var(--mut)}
+.hfc-fx .fx-axis{display:flex;justify-content:space-between;font:11px "IBM Plex Mono",monospace;color:var(--mut);margin-top:5px}
+.hfc-fx .fx-split{display:flex;flex-wrap:wrap;gap:6px 18px;font:12px "IBM Plex Mono",monospace;color:var(--mut);margin:10px 0 16px}
+.hfc-fx .fx-split span{display:inline-flex;align-items:center;gap:7px}
+.hfc-fx .fx-sw-c,.hfc-fx .fx-sw-k{width:16px;height:8px;border-radius:2px;display:inline-block;background:var(--c)}
+.hfc-fx .fx-sw-k{background:#1b2531;border:1px solid var(--ln)}
+.hfc-fx .fx-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0 0 20px}
+.hfc-fx .fx-stats div{background:var(--panel);border:1px solid var(--ln);border-radius:10px;padding:10px 12px}
+.hfc-fx .fx-stats dt{font:600 24px/1.1 "Newsreader",Georgia,serif;color:var(--ink)}
+.hfc-fx .fx-stats dd{margin:2px 0 0;font-size:12px;color:var(--mut)}
+.hfc-fx .fx-steps{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:fx}
+.hfc-fx .fx-step{display:grid;grid-template-columns:62px minmax(0,1fr);gap:12px;opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s}
+.hfc-fx.on .fx-step{opacity:1;transform:none}
+.hfc-fx .fx-time{display:grid;align-content:start;gap:2px;font-family:"IBM Plex Mono",monospace;counter-increment:fx}
+.hfc-fx .fx-time b{font-size:13px;font-weight:500}
+.hfc-fx .fx-time b::before{content:counter(fx) " ";color:var(--c)}
+.hfc-fx .fx-time span{font-size:11px;color:var(--c)}
+.hfc-fx .fx-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.hfc-fx .fx-pair p{margin:0;padding:9px 12px;border-radius:10px;font-size:13.5px;line-height:1.45}
+.hfc-fx .fx-ask{background:#121a23;border:1px solid var(--ln);font-family:"IBM Plex Mono",monospace;font-size:12.5px!important;color:#cfe3f1}
+.hfc-fx .fx-pair p.fx-ship{color:var(--ink)!important;background:var(--cs);border:1px solid rgba(240,138,93,.35)}
+.hfc-fx .fx-who{display:block;font:500 10px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-bottom:3px}
+.hfc-fx .fx-ask .fx-who{color:var(--k)}
+.hfc-fx .fx-ship .fx-who{color:var(--c)}
+.hfc-fx .fx-brief{margin:20px 0 0;padding:14px 16px;border-left:3px solid var(--c);background:var(--panel);border-radius:0 10px 10px 0}
+.hfc-fx .fx-brief p{margin:0;font:italic 500 18px/1.4 "Newsreader",Georgia,serif;color:var(--ink)}
+.hfc-fx .fx-brief cite{display:block;margin-top:6px;font:normal 11px "IBM Plex Mono",monospace;color:var(--mut)}
+.hfc-fx .fx-more{margin:0}
+.hfc-fx .fx-more>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.04em;color:var(--c);padding:10px 12px;border:1px solid rgba(240,138,93,.35);background:var(--cs);border-radius:10px}
+.hfc-fx .fx-more>summary::-webkit-details-marker{display:none}
+.hfc-fx .fx-more>summary::before{content:"\25B8";transition:transform .15s}
+.hfc-fx .fx-more[open]>summary::before{transform:rotate(90deg)}
+.hfc-fx .fx-more[open]>summary{margin-bottom:12px}
+@media (max-width:640px){.hfc-fx .fx-pair{grid-template-columns:minmax(0,1fr)}.hfc-fx .fx-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.hfc-fx .fx-step{grid-template-columns:minmax(0,1fr);gap:6px}.hfc-fx .fx-time{display:flex;gap:10px}}
+@media (prefers-reduced-motion:reduce){.hfc-fx .fx-seg,.hfc-fx .fx-step{transition:none}}
+</style>
+<script>
+(function(){var el=document.getElementById('hfc-fx');if(!el)return;
+var steps=el.querySelectorAll('.fx-step'),segs=el.querySelectorAll('.fx-seg');
+steps.forEach(function(s,i){s.style.transitionDelay=(0.25+i*0.08)+'s'});segs.forEach(function(s,i){s.style.transitionDelay=(i*0.09)+'s'});
+function go(){el.classList.add('on')}
+if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){go();return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go();io.disconnect()}})},{threshold:.15});io.observe(el);
+setTimeout(go,4000);
+})();
+</script>
+</div><!--fx-end-->
+<p class="fx-note" style="font-size:13px;color:#5a6776;margin-top:-18px">The second column under each time is the minutes until Kevin's next ask. Times marked ~ are mid-turn messages, placed to the minute from the surrounding tool log.</p>
+</div>
+<div class="section" id="part-a-reviving-the-app">
+<h2>Part A: Reviving the app<a class="headerlink" href="#part-a-reviving-the-app" title="Permalink to this headline">¶</a></h2>
+<p>The 2023 code was never the problem; the ground under it had moved. Three of the four install attempts failed before any code ran:</p>
+<ol>
+<li><code>numba</code>, <code>llvmlite</code> and <code>cryptography</code> tried to compile from source because their current releases no longer ship Intel macOS wheels, and this Mac's only Python 3.11 is an Intel build. Pinning their 2023 releases fixed it.</li>
+<li><code>spyndex</code> 0.4.0 and <code>datashape</code> are source-only on PyPI, so a wheels-only install refused them. Letting pure-Python packages build fixed it.</li>
+<li>The newest <code>dask</code> requires pandas 2, the newest <code>httplib2</code> requires a pyparsing that matplotlib 3.7 forbids, and the newest Earth Engine client wants both. Pinning the 2023 releases of those fixed it.</li>
+</ol>
+<p>The result is <code>requirements-2023-lock.txt</code>, 33 pins, with <code>pip check</code> clean. It is a reconstruction, not the original lockfile, and the README says so.</p>
+<p>With the venv built, a smoke test called the tools directly: a Sentinel-2 search over Seattle for July 2024 returned 12 scenes, the footprint map and cloud-cover plot rendered, and the app imported at about 330 MB resident. Panel served it on port 5006 and the page rendered in the browser.</p>
+<p>The tunnel took longer than the app. Three quick tunnels in a row returned empty 404s from Cloudflare's edge. The cloudflared debug log showed it proxying to <code>localhost:8080</code>, not 5006: the Mac's <code>~/.cloudflared/config.yml</code> is the named tunnel for racinglines.bet, and cloudflared applies that file's ingress rules to quick tunnels too, ignoring <code>--url</code>. Its catch-all rule is <code>http_status:404</code>. Passing <code>--config /dev/null</code> fixed it, and the fix is now in the run script and in Claude's memory notes.</p>
+</div>
+<div class="section" id="part-b-the-first-ten-minutes-with-a-real-key">
+<h2>Part B: The first ten minutes with a real key<a class="headerlink" href="#part-b-the-first-ten-minutes-with-a-real-key" title="Permalink to this headline">¶</a></h2>
+<p>The owner pasted a key at a hidden prompt at about 21:14. The chat worked, and four things broke in the next ten minutes:</p>
+<ul>
+<li><strong>"Show the images" returned nothing.</strong> The agent had found Landsat 7 scenes, and the image loader got <code>Access Denied</code>: Landsat Collection 2 lives in the <code>usgs-landsat</code> bucket, which is requester-pays. The app had swallowed the exception, so the chat sat silent. Now a failed step posts its error into the chat, and the image tool refuses Landsat with a clear message unless <code>AWS_REQUEST_PAYER=requester</code> is set. Sentinel-2 is public and loads.</li>
+<li><strong>The search failed with <code>could not convert string to float: ''</code>.</strong> The verbose trace showed the model calling <code>stac_search</code> with <code>bbox='-122.485,'</code>: one free-form string argument, and gpt-4o-mini stopped after the first number, twice, identically. The tool now takes four numeric bounds, west, south, east and north, so the schema forces the shape.</li>
+<li><strong>Every spectral index failed.</strong> Not a band problem: the index computed, then the colour stretch called xarray's <code>quantile</code> on the lazy dask array, which needs a single chunk, and the loader chunks at 2048 pixels. The index now loads into memory first, as the RGB path already did.</li>
+<li><strong>The terminal filled with <code>can't resolve reference</code> tracebacks.</strong> Bokeh dropping pan and zoom events for figures the viewer had already rebuilt. Harmless, and now filtered so real errors stay visible.</li>
+</ul>
+<p>Each fix took a few minutes because the terminal pane was readable from the session: the owner asked "can you see the logs there?" and the answer was the diagnosis.</p>
+</div>
+<div class="section" id="part-c-from-a-vm-to-pyodide-to-a-replayer">
+<h2>Part C: From a VM to Pyodide to a replayer<a class="headerlink" href="#part-c-from-a-vm-to-pyodide-to-a-replayer" title="Permalink to this headline">¶</a></h2>
+<p>Three hosting ideas in one afternoon, each dropped for a specific reason.</p>
+<p><strong>A GCP VM.</strong> The owner's gcloud was signed in with billing and an organization, so a project and VM were one command away. They were never created: the owner asked for a free option first, and the free-tier e2-micro has 1 GB of RAM, too little for the image viewer.</p>
+<p><strong>Pyodide in the browser.</strong> The attractive version: a static page at kevinlalli.me/satgpt, each visitor supplying their own OpenAI key, nothing on any server. The checks were real: Earth Search answers CORS with <code>*</code>, api.openai.com allows the <code>authorization</code> header from kevinlalli.me, titiler.xyz allows the origin, and the Sentinel-2 COG bucket serves public range reads. Pyodide ships numpy, pandas, geopandas, shapely, pyproj and bokeh, even rasterio. What it does not have is dask, and GDAL inside WebAssembly has no network. The plan therefore replaced the pixel pipeline with TiTiler tiles, and a spike began. The owner's question at 21:30, "is this really going to work in pyodide with dask and everything going on?", got the honest answer: the search and chat half ports, the imagery half would be a re-implementation against a tile server. Two minutes later the owner stepped back.</p>
+<p><strong>A replayer.</strong> "A demo-style peek into what SatGPT is and what it can do." Record one real conversation once, on the Mac where everything works, and replay it as static files, with the imagery controls kept live in the browser. That removed the key prompt, the chat loop, the tile server and the 30 MB Python runtime in one move, and it satisfies the no-persistence rule more strictly than any server could.</p>
+<p>A helper session built it in 31 minutes: a recorder that runs the scripted conversation through the app (or calls the tools directly with <code>--no-llm</code>) and exports the transcript, footprints, per-scene metadata, an RGB PNG and one single-band PNG per index for four dates, plus the cloud mask from the SCL band; and a plain HTML and JavaScript page with Leaflet that replays it. Colormap, percentile stretch and the cloud mask are applied in a canvas, so switching index or date is instant and works offline. Total 9.0 MB.</p>
+<p>Verification found one real bug: a free-typed "hello, can you find hurricanes?" replayed the search step, because "find" alone counted as a keyword. The matcher now needs a domain noun (scenes, footprints, cloud cover, images, an index name), and off-script messages get the canned reply.</p>
+<p>Deploy took nine minutes: two commits, GitHub Pages enabled with the Actions source, the workflow green, and the page, its data and a raster all returning 200 through Cloudflare. The owner's reaction, verbatim, on seeing the preview: "holy 💩 that is cool".</p>
+</div>
+<div class="section" id="part-d-repo-updates">
+<h2>Part D: Repo updates<a class="headerlink" href="#part-d-repo-updates" title="Permalink to this headline">¶</a></h2>
+<p>At 23:15 the owner asked for the core updates to both repositories, then, four minutes later, for the replayer code to stay out of <code>satgpt-app</code> so that <code>main</code> is the relaunchable full app. The demo had already been deployed from <code>main</code>, so it was moved rather than deleted: an orphan <code>gh-pages</code> branch holds the page, its data and the recorder, Pages now serves that branch, and <code>main</code> dropped the demo folder and the workflow. The URL did not change. One detail worth knowing: switching the Pages source through the API does not trigger a build, so the first one had to be requested explicitly.</p>
+<p>The app's README now covers what it does, the 2026 status, the pins, how to relaunch it, and where the demo lives. The repo has a description, homepage and topics for the first time.</p>
+<p>The CLI repo got a port done by a Sonnet-class subagent with a verify command in its brief: shell-gpt 1.x renamed the shell role to "Shell Command Generator" and changed the role file's keys, so the old <code>make_role.py</code> wrote a file shell-gpt 1.x could not load. The new one writes the right file, backs up an existing one, and has a <code>--print</code> flag; <code>geogif</code> and <code>click</code> were missing from the dependencies. The role was verified to load in shell-gpt 1.5 without an API call. The stacker path, which needs AWS requester-pays credentials, was not re-tested.</p>
+</div>
+<div class="section" id="anomalies">
+<h2>Anomalies<a class="headerlink" href="#anomalies" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><strong>The named tunnel hijack.</strong> A quick tunnel that silently obeys a config file for a different site is a sharp edge; it cost about six minutes and three tunnel restarts.</li>
+<li><strong>A GitHub push over HTTPS died mid-transfer</strong> ("the remote end hung up unexpectedly") on a 13 MB push. The same push over SSH succeeded at once.</li>
+<li><strong>A second push ran past the tool's two-minute timeout</strong> and was reported as "still running" when it had in fact finished; the branch was on GitHub before the retry.</li>
+<li><strong>The shell's working directory moved to <code>demo/</code></strong> under the session for a few minutes, so relative paths failed until absolute ones were used.</li>
+<li><strong>The built-in browser could not open kevinlalli.me,</strong> so the live-site verification was by curl rather than a screenshot.</li>
+<li><strong>The owner clicked "verify the redirect" twice before adding the rule.</strong> The redirect was then skipped; <code>/satgpt-app</code> is the URL.</li>
+</ul>
+</div>
+<div class="section" id="lessons">
+<h2>Lessons<a class="headerlink" href="#lessons" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><strong>Restating the goal beat every plan.</strong> "Running again" became "running somewhere, even a tunnel", then "a plan for kevinlalli.me", then "a demo-style peek". The last one made two days of plausible engineering unnecessary.</li>
+<li><strong>Check the services, not the docs.</strong> The Pyodide plan was grounded in CORS preflights and range reads against the real endpoints; so was its rejection, in the one package that is not there.</li>
+<li><strong>A free-text argument is a bug waiting for a newer model.</strong> The 2023 agent worked because gpt-3.5 filled a bounding-box string correctly. The fix is in the schema, not the prompt.</li>
+<li><strong>Record once, replay forever.</strong> For a demo, a recorded session with live controls is cheaper, safer and more honest than a live agent behind a key prompt.</li>
+<li><strong>Keep the deciding seat out of the bulk work.</strong> The replayer and the CLI port ran in their own sessions and came back as footers with verify commands; the main session read conclusions, not transcripts.</li>
+</ul>
+</div>
+<div class="section" id="where-were-heading">
+<h2>Where we're heading<a class="headerlink" href="#where-were-heading" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li>Re-record with the real agent so the transcript holds the model's own tool calls (one command, a few cents); the page's badge changes with it.</li>
+<li>Swap the OpenStreetMap basemap for a keyless alternative if the demo gets traffic.</li>
+<li>Decide whether the <code>wasm/</code> spike is worth keeping; it is uncommitted on the Mac.</li>
+<li>Jev, TypeSafe's typed-judgment model, was assessed as a good fit for routing the four tools and a poor fit for inventing coordinates. Parked by the owner, possibly for later the same day.</li>
+</ul>
+</div>
+<div class="section" id="what-this-does-and-doesnt-show">
+<h2>What this does and doesn't show<a class="headerlink" href="#what-this-does-and-doesnt-show" title="Permalink to this headline">¶</a></h2>
+<p>This shows a 2023 LLM app brought back on its original library generation, the specific ways three years of drift broke it, and a hosting decision made by measuring rather than guessing. It does not show the app under load, any user but the owner, or Landsat imagery, which needs requester-pays credentials nobody set. The recorded demo's chat replies are canned, and its badge says so; the tool calls and imagery are real. The timeline element's times for mid-turn messages are approximate to the minute; all others come from the session transcript.</p></div>
+</div>
+</div>
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Home</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ditl-2026-10-14-part-1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DITL 14 Oct, part 1</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kevin Lalli<br/>
+    
+        &copy; Copyright 2026.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  <div class="rl-lb" id="rl-lb" role="dialog" aria-modal="true" aria-label="Expanded screenshot"><div class="rl-lb-bar"><button type="button" id="rl-lb-size">Actual size</button><button type="button" id="rl-lb-close">Close &times;</button></div><img alt=""></div>
+<script>(function(){var lb=document.getElementById('rl-lb'),im=lb.querySelector('img'),sz=document.getElementById('rl-lb-size');
+function close(){lb.classList.remove('open','full');document.body.style.overflow='';}
+document.querySelectorAll('a.rl-zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');im.alt=a.querySelector('img').alt;lb.classList.add('open');document.body.style.overflow='hidden';sz.textContent='Actual size';});});
+sz.addEventListener('click',function(e){e.stopPropagation();lb.classList.toggle('full');sz.textContent=lb.classList.contains('full')?'Fit to screen':'Actual size';});
+document.getElementById('rl-lb-close').addEventListener('click',function(e){e.stopPropagation();close();});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target===im)close();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();</script>
+</body>
+</html>

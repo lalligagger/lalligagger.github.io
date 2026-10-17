@@ -1,12 +1,14 @@
 # DITL, 15 to 25 Oct 2026, Part 2 (draft): first real bets, closing-line value, and NASCAR
 
 **Short summary.** Part 1 ended with nothing proven. Part 2 is where the work meets real books and an honest yardstick. On
-16 Oct we bet a sportsbook's US Grand Prix race-winner board on the calibrated F1 model (7 bets, $12.40). We bet five
-cycling books (24 bets, $128.70). We also measured, for the first time, whether our backtest trades beat the market's
-closing price (closing-line value, CLV), and whether our model beats Kalshi on NASCAR. So far: two cycling stages
-settled for +$152.50 on $26.50, both wins on long shots and neither evidence for the model. F1 calibration raises
-backtest profit in every strategy-season but not on the three-weekend holdout. On NASCAR, Kalshi prices race wins
-better than we do. **This is a working draft:** From here it adds only the work that locks in our Austin strategy and bets, and it will be finished after the race on Sun 25 Oct. Cycling and Phoenix results are follow-ups for a later part.
+16 Oct we bet a sportsbook's US Grand Prix race-winner board on the calibrated F1 model (6 of its 7 lines, $9.80). We
+bet six cycling races (28 bets, $169.20). We also measured, for the first time, whether our backtest trades beat the
+market's closing price (closing-line value, CLV), and whether our model beats Kalshi on NASCAR. So far, with one
+misclick and two off-model tickets taken out, three cycling stages settled for +$58.69 on $90.00, and the model's own
+lines made +$32.69 of that on $80.00. Three stages say little either way. F1 calibration raises backtest profit in
+every strategy-season but not on the three-weekend holdout. On NASCAR, Kalshi prices race wins more sharply than we do.
+**This is a working draft:** from here it adds only the work that locks in our Austin strategy and bets, and it will
+be finished after the race on Sun 25 Oct. The remaining cycling and Phoenix results are follow-ups for a later part.
 
 *All times are UTC. Sportsbooks are named only by letter (A, B, C). Stakes on the ₮ (USDT) book are shown as $.
 Nothing here is betting advice.*
@@ -25,19 +27,25 @@ Part 1 (13 to 14 Oct) left us with:
 
 ## Stats
 
-| | This part (to 17 Oct 00:00) |
+Every count below leaves out three tickets that were not the model's: one misclick (Eneco stage 3, Van Dijke, $2.00 at
+67, which won $134.00) and two "vibed" Austin tickets the owner added on their own call (Russell $1.00, a second
+Hamilton $1.00). A second misclick (Japan Cup, Garibbo over Prades $9.40, placed in place of Matthews over Vacek) is
+counted as the intended bet. As placed, misclicks included, the settled total is +$190.69 on $92.00.
+
+| | This part (to 17 Oct 14:00) |
 |---|---|
-| Bets placed | **31**: F1 7 (Sportsbook B); cycling 24 (Sportsbooks B and C) |
-| Staked | **$141.10**: F1 $12.40; cycling $128.70 |
-| Settled | 12 bets on $26.50: **2 won, 10 lost, net +$152.50** (Eneco stage 3 +$123.00, Tour of Guangxi stage 4 +$29.50) |
-| Open | 19: Austin (7, settles 25 Oct), Guangxi stage 5 (4), Japan Cup (7) and a Guangxi GC future (1), all settling by 18 Oct |
+| Bets placed | **34**: F1 6 (Sportsbook B); cycling 28 (Sportsbooks B and C) |
+| Staked | **$179.00**: F1 $9.80; cycling $169.20 |
+| Settled | 16 bets on $90.00: **5 won, 11 lost, net +$58.69**: Tour of Guangxi stage 5 +$47.19 (5 bets), stage 4 +$20.50 (6), Eneco stage 3 −$9.00 (5) |
+| Model lines only | 15 settled bets on $80.00, **+$32.69** (stage 4's Magnier ticket was outside the model slips) |
+| Every recommendation at its own size, placed or not | 48 settled lines on $100.50, **+$48.26**; 3 Guangxi stage 5 lines still unknown |
+| Open | 18: Austin (6, settles 25 Oct), Japan Cup (7), Chrono des Nations (4) and a Guangxi overall-winner future (1), settling 18 Oct |
 | Paper (picked, not placed) | Guangxi stage 4 analysis slips: 12 lines, $15.14, all lost |
 | NASCAR Phoenix (18 Oct) | No bet yet: one paper candidate (Chevrolet manufacturer, $16 at +335), owner's call |
-| Live CLV | *Pending*: the seven Austin bets get a CLV against Polymarket's close after the race. Cycling has none: no exchange tape, no captured closing odds |
+| Live CLV | *Pending*: the six Austin bets get a CLV against Polymarket's close after the race. Cycling has none: no exchange tape, no captured closing odds |
 
-Both settled wins were long shots. One was a misclick: Van Dijke at 67 to 1, which our model rated at 1%. The other was
-a 4.5-to-1 ticket placed outside both model slips. The five model-backed Eneco lines lost. Two stages say nothing about
-the model either way.
+Stakes on the ₮ book (Eneco, Guangxi stage 5, Japan Cup, Chrono) and the $ book (Guangxi stage 4, Austin) are added as
+dollars. Split by currency, the settled net is +$20.50 on $15.50 and +₮38.19 on ₮74.50.
 
 ## What ran
 
@@ -49,8 +57,8 @@ the model either way.
 - **CLV in every backtest (16 Oct, 05:06 to 05:45).** Every saved season sweep now records CLV per strategy. We ran the
   calibrated model off and on for 2025 and 2026 on Polymarket's recorded prices: 44,000 backtest bets, every one with a
   closing price.
-- **Cycling (15 to 16 Oct).** Eneco Tour stage 3, Tour of Guangxi stages 4 and 5 and its overall winner, and the Japan
-  Cup, priced on our road model. An experimental stage-aware model was tested and kept off.
+- **Cycling (15 to 17 Oct).** Eneco Tour stage 3, Tour of Guangxi stages 4 and 5 and its overall winner, the Japan
+  Cup and the Chrono des Nations, priced on our road model. An experimental stage-aware model was tested and kept off.
 - **Fill fidelity (14 to 16 Oct).** The F1 backtest re-run with fills at the ask on Probalytics' order books, on both
   Polymarket and Kalshi.
 - **NASCAR (16 Oct).** The same calibration fitted for NASCAR on 158 races, swept against Kalshi's recorded prices, and
@@ -63,16 +71,18 @@ the model either way.
 | Bet | Odds (decimal) | Stake | Calibrated model | Book |
 |---|---|---|---|---|
 | Leclerc to win | 13 | $3.50 | 14.1% | 7.7% |
-| Russell to win | 11 | $2.60 | 13.8% | 9.1% |
+| Russell to win | 11 | *not placed* (rec $2.60) | 13.8% | 9.1% |
 | Hamilton to win | 13 | $2.10 | 11.5% | 7.7% |
 | Hadjar to win | 21 | $1.20 | 7.0% | 4.8% |
-| Piastri to win | 19 | $1.00 | 5.9% | 5.3% |
+| Piastri to win | 19 | $1.00 (not yet on the book's history) | 5.9% | 5.3% |
 | Gasly to win | 501 | $1.00 | 0.3% | 0.2% |
 | Lindblad to win | 501 | $1.00 | 0.3% | 0.2% |
 
 We passed on Verstappen and Antonelli. The book (44% and 29%) and Polymarket (44% and 25%) agree, and our model is far
 lower (23% and 15%). That gap comes from how the model ranks drivers, which calibration doesn't touch. We also passed
-on Norris, whose 3% edge is under the 5% bar. Expected profit at our prices is +$7.38 on $12.40.
+on Norris, whose 3% edge is under the 5% bar. Expected profit at our prices was +$7.38 on the full $12.40 slip. The Russell line was not placed at its size: the
+only Russell ticket is a $1.00 the owner added on their own call, left out above along with a second $1.00 Hamilton
+ticket.
 
 ## Closing-line value: does the calibrated model beat the close?
 
@@ -132,20 +142,23 @@ flattered it. On three held-out 2025 weekends there is no edge on either tape.
 
 ![Eneco Tour stage 3 slip and result](img/eneco-stage3-slip.png)
 
-- **Eneco Tour stage 3** (Sportsbook C, 6 bets, $11.00): Van Dijke won at 67 to 1. That ticket was a misclick, and our
-  model had him at 1%. The five model-backed lines all lost. The two sprinter bets show a known gap: the road model
-  barely separates hilly stages from flat ones.
-- **Tour of Guangxi stage 4** (Sportsbook B, 6 tickets, $15.50): Magnier won at 4.5, a ticket placed outside both model
-  slips. +$29.50.
-- **Open** (settle 17 to 18 Oct): Guangxi stage 5 matchups (4 bets, $55.50), the Japan Cup (7 bets, $41.70) and a
-  Guangxi overall-winner future ($5.00 at 21).
+- **Eneco Tour stage 3** (Sportsbook C, 5 model bets, $9.00): all five lost, −$9.00. Van Dijke won at 67 to 1, and our
+  model had him at 1%; the one ticket on him was a misclick and is left out. The two sprinter bets show a known gap: the
+  road model barely separates hilly stages from flat ones.
+- **Tour of Guangxi stage 4** (Sportsbook B, 6 tickets, $15.50): +$20.50. Magnier won at 3.60 (+$26.00), a ticket the
+  owner placed outside both model slips; the five model-slip tickets lost (−$5.50).
+- **Tour of Guangxi stage 5** (Sportsbook C, 5 head-to-head matchups, $65.50): 4 won, 1 lost, **+$47.19**. Four came
+  from the baseline road model's slip, one (Blikra over Taminiaux) from a second recommendation table the same hour.
+  The experimental stage-aware model backed only one of the five.
+- **Open** (settle 18 Oct): the Japan Cup (7 bets, $41.70), the Chrono des Nations time trial (4 matchups, $32.50) and
+  a Guangxi overall-winner future ($5.00 at 21).
 - **CLV is not available for cycling:** there is no exchange and no captured closing odds. We report log loss instead.
   A stage-aware model beat our baseline on 2026 stage races, but its prices run too close to 50%. The one-day version was
   no better, so neither is in use.
 
 ![Cycling stage races: log loss before and after (not CLV)](img/cycling-logloss.png)
 
-## NASCAR: Kalshi is better than our model
+## NASCAR: Kalshi is sharper than our model
 
 The same walk-forward calibration, fitted on 158 NASCAR races 2023 to 2026, comes out at a power of 1.2. Swept on
 Kalshi's recorded prices for 2026 (34 races):
@@ -185,8 +198,8 @@ RFK Racing at +2500 ($21), resting on the model alone. Locking nothing is also d
 
 ## What's next
 
-- **Settle Austin** (25 Oct) and add the seven bets' live CLV against Polymarket's close and the winner's log loss at
-  the calibrated and uncalibrated price. Guangxi, the Japan Cup and Phoenix settle outside this part (follow-up below).
+- **Settle Austin** (25 Oct) and add the six bets' live CLV against Polymarket's close and the winner's log loss at
+  the calibrated and uncalibrated price. The Japan Cup, the Chrono, the Guangxi overall winner and Phoenix settle outside this part (follow-up below).
 - **Lock** the round 18 paper strategy before US GP practice one (Fri 23 Oct, 17:30 UTC), and score it as bet.
 - **Fix two open problems** before any 2026 number is final. A Lab diagnostic job fails on the Austin event. And the
   2026 sweep profits don't match the calibration study's own (2025 matches to the cent).
@@ -197,10 +210,10 @@ RFK Racing at +2500 ($21), resting on the model alone. Locking nothing is also d
 
 | Item | Bets | Staked | Settles | Where it's reported |
 |---|---|---|---|---|
-| F1 Austin race winner (Sportsbook B) | 7 | $12.40 | Sun 25 Oct | This page: result, live CLV, winner's log loss |
-| Tour of Guangxi stage 5 matchups | 4 | $55.50 | 17 to 18 Oct | A later part |
-| Japan Cup | 7 | $41.70 | 17 to 18 Oct | A later part |
-| Tour of Guangxi overall winner | 1 | $5.00 | 17 to 18 Oct | A later part |
+| F1 Austin race winner (Sportsbook B) | 6 | $9.80 | Sun 25 Oct | This page: result, live CLV, winner's log loss |
+| Japan Cup | 7 | $41.70 | 18 Oct | A later part |
+| Chrono des Nations | 4 | $32.50 | 18 Oct | A later part |
+| Tour of Guangxi overall winner | 1 | $5.00 | 18 Oct | A later part |
 | NASCAR Phoenix (paper) | 0 | $16 on paper | Sun 18 Oct | A later part (lock or pass before the green flag) |
 | F1 round 18 paper strategy | | | Sun 25 Oct | This page: lock before practice one, Fri 23 Oct 17:30 UTC |
 
@@ -208,6 +221,6 @@ RFK Racing at +2500 ($21), resting on the model alone. Locking nothing is also d
 
 - **It shows** our first real bets placed on a calibrated model, and the first CLV measurements on our backtests.
 - **It shows** calibration helps F1 backtest profit in-sample, and that Kalshi out-prices our NASCAR model.
-- **It doesn't show** that any strategy makes money. The settled profit comes from two long shots, one of them a
-  misclick. Every 2026 backtest number is in-sample, and the holdout is three weekends.
+- **It doesn't show** that any strategy makes money. Without the misclick, the settled profit is +$58.69 over three
+  stages, most of it from one stage's matchups. Every 2026 backtest number is in-sample, and the holdout is three weekends.
 - **It doesn't show** live CLV yet. That arrives with Austin, and it is what the +2%-over-100-bets goal is measured on.

@@ -1,7 +1,7 @@
 # DITL Part 2 (draft): NASCAR Phoenix thread, full chat
 
 
-*The full record of the thread "NASCAR Freeway Insurance 500 model", which built the NASCAR calibration, the Kalshi comparison and the Sportsbook A picks for the Freeway Insurance 500 at Phoenix (green flag Sun 18 Oct 19:00 UTC). Back to [DITL Part 2](ditl-2026-10-16-part-2-draft.html#nascar-kalshi-is-better-than-our-model). Command blocks and server logs are left out; everything else is as written.*
+*The full record of the thread "NASCAR Freeway Insurance 500 model", which built the NASCAR calibration, the Kalshi comparison and the Sportsbook A picks for the Freeway Insurance 500 at Phoenix (green flag Sun 18 Oct 19:00 UTC). Back to [DITL Part 2](ditl-2026-10-16-part-2-draft.html#nascar-kalshi-is-sharper-than-our-model). Command blocks and server logs are left out; everything else is as written.*
 
 ## Timeline (UTC, 16 Oct 2026)
 

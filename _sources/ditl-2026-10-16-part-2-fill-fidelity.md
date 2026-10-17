@@ -1,6 +1,6 @@
 # DITL Part 2 (draft): fill fidelity, our tape against Probalytics' order books
 
-*The full report behind the fill-fidelity section of [DITL Part 2](ditl-2026-10-16-part-2-draft.html#fill-fidelity-what-survives-real-order-books). Original title: "Old vs new: our tape and one-price fills against Probalytics' books (F1 2026)".*
+*The full report behind the fill-fidelity section of [DITL Part 2](ditl-2026-10-16-part-2-draft.html#c.-probalytics-fill-fidelity-what-survives-real-order-books). Original title: "Old vs new: our tape and one-price fills against Probalytics' books (F1 2026)".*
 
 *Fill-fidelity thread, 14 to 16 October 2026. All runs on staging (`racinglines_staging_demo`). Golden profile A
 (min edge 0.10), mean of 3 seeds unless stated. Every 2026 number is in-sample: profile A was tuned on 2026.*

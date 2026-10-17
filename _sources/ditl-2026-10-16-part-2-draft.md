@@ -13,9 +13,10 @@ be finished after the race on Sun 25 Oct. The remaining cycling and Phoenix resu
 *All times are UTC. Sportsbooks are named only by letter (A, B, C). Stakes on the ₮ (USDT) book are shown as $.
 Nothing here is betting advice.*
 
-## Where we started
+## Part 1 (13 to 14 Oct): where we started
 
-Part 1 (13 to 14 Oct) left us with:
+[Part 1](ditl-2026-10-14-part-1.html) (13 to 14 Oct) covered cycling bets, Austin preparation and our first
+Probalytics tests. It left us with:
 
 - **A calibration fix for the flat F1 model.** It was tested on two seasons of recorded prices but never used on a live
   board.
@@ -25,7 +26,12 @@ Part 1 (13 to 14 Oct) left us with:
 - **A rule from 15 Oct:** every remaining F1 round is paper-traded on one strategy locked before the first session, and
   scored as bet.
 
-## Stats
+## Part 2 (15 to 25 Oct)
+
+Part 2 has three sections: **A**, new data and model updates; **B**, the bets we placed or tracked on paper, and how
+they settled; **C**, what Probalytics' order books say about our backtest fills. The stats first.
+
+### Stats
 
 Every count below leaves out three tickets that were not the model's: one misclick (Eneco stage 3, Van Dijke, $2.00 at
 67, which won $134.00) and two "vibed" Austin tickets the owner added on their own call (Russell $1.00, a second
@@ -47,7 +53,7 @@ counted as the intended bet. As placed, misclicks included, the settled total is
 Stakes on the ₮ book (Eneco, Guangxi stage 5, Japan Cup, Chrono) and the $ book (Guangxi stage 4, Austin) are added as
 dollars. Split by currency, the settled net is +$20.50 on $15.50 and +₮38.19 on ₮74.50.
 
-## What ran
+### What ran
 
 - **The Austin board (16 Oct, 04:00 to 04:40).** Sportsbook B's 22-line race-winner board came in nine days before the
   race. We priced it on production data with the walk-forward calibration power applied (a = 2.1). Once that setting
@@ -64,27 +70,52 @@ dollars. Split by currency, the settled net is +$20.50 on $15.50 and +₮38.19 o
 - **NASCAR (16 Oct).** The same calibration fitted for NASCAR on 158 races, swept against Kalshi's recorded prices, and
   a Sportsbook A board for Sunday's Phoenix race priced against both.
 
-## F1: the Austin slip
+### Ops timeline
 
-![Our prices on Sportsbook B's US Grand Prix board](img/austin-hud.png)
+How the results above were produced, at the level of steps rather than messages. **High-touch** steps needed the
+owner: relaying a board, placing a bet, a step on the Mac, or an approval. **Streamlined** steps ran in the project
+threads or on the VM with no input. **Quick** means under 20 minutes end to end; **long** means 30 minutes or more.
 
-| Bet | Odds (decimal) | Stake | Calibrated model | Book |
-|---|---|---|---|---|
-| Leclerc to win | 13 | $3.50 | 14.1% | 7.7% |
-| Russell to win | 11 | *not placed* (rec $2.60) | 13.8% | 9.1% |
-| Hamilton to win | 13 | $2.10 | 11.5% | 7.7% |
-| Hadjar to win | 21 | $1.20 | 7.0% | 4.8% |
-| Piastri to win | 19 | $1.00 (not yet on the book's history) | 5.9% | 5.3% |
-| Gasly to win | 501 | $1.00 | 0.3% | 0.2% |
-| Lindblad to win | 501 | $1.00 | 0.3% | 0.2% |
+| Time (UTC) | Event | Touch | Speed |
+|------|------------------|----|----|
+| 15 Oct 00:22 | **Owner rule: every paper trade through season end is locked before the event and scored as bet** | High-touch | Quick |
+| 00:22 to 02:05 | Six-queue fill-fidelity chain on Probalytics' books (holdout, spread, calibration, book walk) | Streamlined | Long (1 h 45 min) |
+| 00:49 to 00:53 | Calibration option on staging; Austin priced with and without it | Streamlined | Quick |
+| 14:55 | Fill ladder done: buying at the ask on Probalytics' books beats our one-price fills (+1,415 vs +1,096); calibration the biggest gain | Streamlined | Quick |
+| 14:56 to 15:06 | 2025 order-book files pulled on the Mac after the VM pull failed; **2025 holdout shows no out-of-sample edge** | High-touch | Quick |
+| 15:18 to 15:52 | Book walk re-run with an order-book price limit | Streamlined | Long (35 min) |
+| 16 Oct 02:28 to 02:41 | **Guangxi stage 4 board in, priced, and 5 bets placed before the start; the new stage model switches the pick to Magnier** | High-touch | Quick (13 min) |
+| 04:00 to 04:45 | **Austin board priced on production; 7 race-winner bets placed on Sportsbook B** | High-touch | Long (45 min) |
+| 05:06 to 05:45 | CLV recorded in every season sweep; 44,000 backtest bets scored | Streamlined | Long (40 min) |
+| 16:34 to 17:35 | Sale floor found ad hoc, made an explicit setting, A/B swept (18 jobs) | Streamlined | Long (1 h) |
+| 16:53 | Sportsbook A NASCAR board for Phoenix arrives | High-touch | Quick |
+| 17:18 | Polymarket NASCAR prices pulled: too thin to compare against | Streamlined | Quick |
+| 17:23 | **Guangxi stage 4 settled: Magnier wins at +260, the stage nets +$20.50** | Streamlined | Quick |
+| 17:28 to 19:24 | Kalshi NASCAR prices pulled: 42 races, 1.3 million trades | Streamlined | Long (2 h) |
+| 21:19 to 21:55 | **NASCAR calibration run: Kalshi is sharper than our model** | Streamlined | Long (36 min) |
+| 17 Oct 05:37 | Owner makes one thread the only writer of the bets ledger and /mybets | High-touch | Quick |
+| 06:06 to 06:49 | Chrono des Nations slip priced; **4 head-to-heads placed on Sportsbook C** | High-touch | Long (43 min) |
+| 07:02 to 07:09 | Eneco stage 4, Chrono winner and Veneto boards priced: all passed | High-touch | Quick |
+| 09:04 to 12:20 | Per-car race pace for Austin; saving it with every F1 run approved and built | Streamlined, one approval | Long (3 h) |
+| 12:34 to 13:32 | **One ledger: Mac and project bets merged (164), stage 5 settled from screenshots, misclicks and vibed tickets flagged, cleaned view built** | High-touch | Long (1 h) |
+| 13:09 | Two extra $1 Austin tickets found on Sportsbook B slips; flagged as unplanned and left out of the analysis | High-touch | Quick |
+| 15:44 | **One request, three boards: Sportsbook B odds sheets for three cycling events pulled at once and bet** (slips not yet in the ledger) | High-touch | Quick |
+| 17:01 to 17:35 | Sale-floor holdout: waited on the owner freeing VM disk, then ran 9 jobs; **floor not adopted** | High-touch | Long (35 min) |
+| 17:47 | Fill-fidelity report published | Streamlined | Quick |
+| by 17:58 | DITL Part 2 draft live on kevinlalli.me (no-nav), with the NASCAR chat and fill-fidelity pages linked out | Streamlined | Quick |
 
-We passed on Verstappen and Antonelli. The book (44% and 29%) and Polymarket (44% and 25%) agree, and our model is far
-lower (23% and 15%). That gap comes from how the model ranks drivers, which calibration doesn't touch. We also passed
-on Norris, whose 3% edge is under the 5% bar. Expected profit at our prices was +$7.38 on the full $12.40 slip. The Russell line was not placed at its size: the
-only Russell ticket is a $1.00 the owner added on their own call, left out above along with a second $1.00 Hamilton
-ticket.
+The pattern: every betting step was high-touch, and most were quick when the board arrived close to the start. Data
+pulls and sweeps were streamlined but long. The slowest high-touch work was bookkeeping (one ledger, cleaned view),
+not pricing.
 
-## Closing-line value: does the calibrated model beat the close?
+### A. New data, model updates and calibration
+
+**New data this part.** Kalshi's recorded NASCAR prices for 42 races (1,328,148 trades, 351,032 prices) and
+Polymarket's for 20 (too thin to use). Probalytics' full-depth order books for the 2026 F1 season on Polymarket and
+Kalshi, used in C. And closing-line value (CLV) now saved with every season sweep: 44,000 F1 backtest bets, every one
+with a closing price.
+
+#### F1: does the calibrated model beat the close?
 
 **How CLV is measured.** Entry is the price we paid, as the YES price, with costs and fees. Close is the exchange's price
 at the start of the race that decides the market (qualifying for pole). Polymarket uses the last trade within 6 hours,
@@ -124,49 +155,15 @@ What this says:
 - **Log loss.** The model gets closer to Polymarket with calibration but stays behind it in 2025; in 2026 it edges
   ahead.
 
-## Fill fidelity: what survives real order books
+#### Cycling: log loss, because there is no CLV
 
-Backtest profit for the `update` taker strategy on F1 2026, in-sample, on Probalytics' order books:
-
-| | Polymarket | Kalshi |
-|---|---|---|
-| Our recorded prices, one price per order | +$1,096 | +$1,096 |
-| Probalytics' order books, fills at the ask | +$1,415 | +$25 |
-| … plus a sale floor (never sell below our fair price minus the edge) | +$2,031 | +$1,470 |
-| … walking the book instead, with the floor | +$1,918 | +$1,607 |
-
-At the ask, Polymarket's in-sample edge survives and Kalshi's almost disappears. Most of Kalshi's loss was the strategy
-selling into wide bids whenever our fair price dipped: a sale floor alone brings it back. Walking the book adds about
-nothing once the floor is on. All of this is in-sample and averaged over three seeds. On three held-out 2025 weekends the
-floor made things worse on Polymarket (−$37 to −$72 at the ask), so it is not adopted: it stays an option, off by
-default, and our live signals don't use it. Kalshi has no held-out test yet.
-
-The verdict: the new pipeline (Probalytics' tape, fills at the ask) is more faithful because it removes the optimism
-of filling at the mid price, but none of the strategy changes we tried (spread limit, calibration, book walk, sale
-floor) shows an edge out of sample. The full report is on [its own page](ditl-2026-10-16-part-2-fill-fidelity.html). On three held-out 2025 weekends, fills at the ask
-showed no edge on either tape.
-
-## Cycling: three stages settled, and a model gap
-
-![Eneco Tour stage 3 slip and result](img/eneco-stage3-slip.png)
-
-- **Eneco Tour stage 3** (Sportsbook C, 5 model bets, $9.00): all five lost, −$9.00. Van Dijke won at 67 to 1, and our
-  model had him at 1%; the one ticket on him was a misclick and is left out. The two sprinter bets show a known gap: the
-  road model barely separates hilly stages from flat ones.
-- **Tour of Guangxi stage 4** (Sportsbook B, 6 tickets, $15.50): +$20.50. Magnier won at 3.60 (+$26.00), a ticket the
-  owner placed outside both model slips; the five model-slip tickets lost (−$5.50).
-- **Tour of Guangxi stage 5** (Sportsbook C, 5 head-to-head matchups, $65.50): 4 won, 1 lost, **+$47.19**. Four came
-  from the baseline road model's slip, one (Blikra over Taminiaux) from a second recommendation table the same hour.
-  The experimental stage-aware model backed only one of the five.
-- **Open** (settle 18 Oct): the Japan Cup (7 bets, $41.70), the Chrono des Nations time trial (4 matchups, $32.50) and
-  a Guangxi overall-winner future ($5.00 at 21).
-- **CLV is not available for cycling:** there is no exchange and no captured closing odds. We report log loss instead.
+**CLV is not available for cycling:** there is no exchange and no captured closing odds. We report log loss instead.
   A stage-aware model beat our baseline on 2026 stage races, but its prices run too close to 50%. The one-day version was
   no better, so neither is in use.
 
 ![Cycling stage races: log loss before and after (not CLV)](img/cycling-logloss.png)
 
-## NASCAR: Kalshi is sharper than our model
+#### NASCAR: Kalshi is sharper than our model
 
 The same walk-forward calibration, fitted on 158 NASCAR races 2023 to 2026, comes out at a power of 1.2. Swept on
 Kalshi's recorded prices for 2026 (34 races):
@@ -182,6 +179,45 @@ Calibration fixes the shape of the prices but not their accuracy, and every take
 Polymarket's NASCAR books are too thin to trade or score.
 
 ![NASCAR CLV by strategy](img/nascar-clv-by-strategy.png)
+
+### B. Bets placed and tracked on paper, and their settlements
+
+#### F1: the Austin slip
+
+![Our prices on Sportsbook B's US Grand Prix board](img/austin-hud.png)
+
+| Bet | Odds (decimal) | Stake | Calibrated model | Book |
+|---|---|---|---|---|
+| Leclerc to win | 13 | $3.50 | 14.1% | 7.7% |
+| Russell to win | 11 | *not placed* (rec $2.60) | 13.8% | 9.1% |
+| Hamilton to win | 13 | $2.10 | 11.5% | 7.7% |
+| Hadjar to win | 21 | $1.20 | 7.0% | 4.8% |
+| Piastri to win | 19 | $1.00 (not yet on the book's history) | 5.9% | 5.3% |
+| Gasly to win | 501 | $1.00 | 0.3% | 0.2% |
+| Lindblad to win | 501 | $1.00 | 0.3% | 0.2% |
+
+We passed on Verstappen and Antonelli. The book (44% and 29%) and Polymarket (44% and 25%) agree, and our model is far
+lower (23% and 15%). That gap comes from how the model ranks drivers, which calibration doesn't touch. We also passed
+on Norris, whose 3% edge is under the 5% bar. Expected profit at our prices was +$7.38 on the full $12.40 slip. The Russell line was not placed at its size: the
+only Russell ticket is a $1.00 the owner added on their own call, left out above along with a second $1.00 Hamilton
+ticket.
+
+#### Cycling: three stages settled
+
+![Eneco Tour stage 3 slip and result](img/eneco-stage3-slip.png)
+
+- **Eneco Tour stage 3** (Sportsbook C, 5 model bets, $9.00): all five lost, −$9.00. Van Dijke won at 67 to 1, and our
+  model had him at 1%; the one ticket on him was a misclick and is left out. The two sprinter bets show a known gap: the
+  road model barely separates hilly stages from flat ones.
+- **Tour of Guangxi stage 4** (Sportsbook B, 6 tickets, $15.50): +$20.50. Magnier won at 3.60 (+$26.00), a ticket the
+  owner placed outside both model slips; the five model-slip tickets lost (−$5.50).
+- **Tour of Guangxi stage 5** (Sportsbook C, 5 head-to-head matchups, $65.50): 4 won, 1 lost, **+$47.19**. Four came
+  from the baseline road model's slip, one (Blikra over Taminiaux) from a second recommendation table the same hour.
+  The experimental stage-aware model backed only one of the five.
+- **Open** (settle 18 Oct): the Japan Cup (7 bets, $41.70), the Chrono des Nations time trial (4 matchups, $32.50) and
+  a Guangxi overall-winner future ($5.00 at 21).
+
+#### NASCAR: the Phoenix board (paper)
 
 Against Sportsbook A's board for Sunday's race at Phoenix (18 Oct, 19:00 UTC), one pick survives requiring the book to
 sit below both our model and Kalshi: Chevrolet as winning manufacturer at +335, $16 on paper. It is fragile, because
@@ -204,17 +240,7 @@ The Chevrolet pick clears the bar against Kalshi only because 12 Chevrolet drive
 ask, about 6 points. Without them Kalshi has Chevrolet at 19.5%, below the book's 23.0%. A model-only set would add
 RFK Racing at +2500 ($21), resting on the model alone. Locking nothing is also defensible.
 
-## What's next
-
-- **Settle Austin** (25 Oct) and add the six bets' live CLV against Polymarket's close and the winner's log loss at
-  the calibrated and uncalibrated price. The Japan Cup, the Chrono, the Guangxi overall winner and Phoenix settle outside this part (follow-up below).
-- **Lock** the round 18 paper strategy before US GP practice one (Fri 23 Oct, 17:30 UTC), and score it as bet.
-- **Fix two open problems** before any 2026 number is final. A Lab diagnostic job fails on the Austin event. And the
-  2026 sweep profits don't match the calibration study's own (2025 matches to the cent).
-- **Decide the open rules:** a minimum bid before an exchange price counts on long shots, a bank-relative minimum stake,
-  and whether calibration becomes the F1 default.
-
-## Follow-up: unsettled bets and open picks
+#### Follow-up: unsettled bets and open picks
 
 | Item | Bets | Staked | Settles | Where it's reported |
 |---|---|---|---|---|
@@ -224,6 +250,41 @@ RFK Racing at +2500 ($21), resting on the model alone. Locking nothing is also d
 | Tour of Guangxi overall winner | 1 | $5.00 | 18 Oct | A later part |
 | NASCAR Phoenix (paper) | 0 | $16 on paper | Sun 18 Oct | A later part (lock or pass before the green flag) |
 | F1 round 18 paper strategy | | | Sun 25 Oct | This page: lock before practice one, Fri 23 Oct 17:30 UTC |
+
+### C. Probalytics fill fidelity: what survives real order books
+
+Backtest profit for the `update` taker strategy on F1 2026, in-sample, on Probalytics' order books:
+
+| | Polymarket | Kalshi |
+|---|---|---|
+| Our recorded prices, one price per order | +$1,096 | +$1,096 |
+| Probalytics' order books, fills at the ask | +$1,415 | +$25 |
+| … plus a sale floor (never sell below our fair price minus the edge) | +$2,031 | +$1,470 |
+| … walking the book instead, with the floor | +$1,918 | +$1,607 |
+
+At the ask, Polymarket's in-sample edge survives and Kalshi's almost disappears. Most of Kalshi's loss was the strategy
+selling into wide bids whenever our fair price dipped: a sale floor alone brings it back. Walking the book adds about
+nothing once the floor is on. All of this is in-sample and averaged over three seeds. On three held-out 2025 weekends the
+floor made things worse on Polymarket (−$37 to −$72 at the ask), so it is not adopted: it stays an option, off by
+default, and our live signals don't use it. Kalshi has no held-out test yet.
+
+The verdict: the new pipeline (Probalytics' tape, fills at the ask) is more faithful because it removes the optimism
+of filling at the mid price, but none of the strategy changes we tried (spread limit, calibration, book walk, sale
+floor) shows an edge out of sample. On three held-out 2025 weekends, fills at the ask
+showed no edge on either tape.
+
+**Full detail:** the [fill-fidelity report](ditl-2026-10-16-part-2-fill-fidelity.html) has every run, the book-walk
+bug and its fix, the 2025 holdout and what's next.
+
+## What's next
+
+- **Settle Austin** (25 Oct) and add the six bets' live CLV against Polymarket's close and the winner's log loss at
+  the calibrated and uncalibrated price. The Japan Cup, the Chrono, the Guangxi overall winner and Phoenix settle outside this part (follow-up below).
+- **Lock** the round 18 paper strategy before US GP practice one (Fri 23 Oct, 17:30 UTC), and score it as bet.
+- **Fix two open problems** before any 2026 number is final. A Lab diagnostic job fails on the Austin event. And the
+  2026 sweep profits don't match the calibration study's own (2025 matches to the cent).
+- **Decide the open rules:** a minimum bid before an exchange price counts on long shots, a bank-relative minimum stake,
+  and whether calibration becomes the F1 default.
 
 ## What this does and doesn't show
 

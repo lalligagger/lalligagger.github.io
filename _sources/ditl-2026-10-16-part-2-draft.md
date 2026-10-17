@@ -126,19 +126,27 @@ What this says:
 
 ## Fill fidelity: what survives real order books
 
-Backtest profit for the `update` taker strategy on F1 2026, in-sample:
+Backtest profit for the `update` taker strategy on F1 2026, in-sample, on Probalytics' order books:
 
 | | Polymarket | Kalshi |
 |---|---|---|
 | Our recorded prices, one price per order | +$1,096 | +$1,096 |
 | Probalytics' order books, fills at the ask | +$1,415 | +$25 |
-| … plus a 10¢ spread limit | +$1,595 | +$151 |
-| … plus calibration | +$1,670 | +$207 |
+| … plus a sale floor (never sell below our fair price minus the edge) | +$2,031 | +$1,470 |
+| … walking the book instead, with the floor | +$1,918 | +$1,607 |
 
-Polymarket's in-sample edge survives realistic fills. Kalshi's almost disappears, because our 5-minute snapshots
-flattered it. On three held-out 2025 weekends there is no edge on either tape.
+At the ask, Polymarket's in-sample edge survives and Kalshi's almost disappears. Most of Kalshi's loss was the strategy
+selling into wide bids whenever our fair price dipped: a sale floor alone brings it back. Walking the book adds about
+nothing once the floor is on. All of this is in-sample and averaged over three seeds. On three held-out 2025 weekends the
+floor made things worse on Polymarket (−$37 to −$72 at the ask), so it is not adopted: it stays an option, off by
+default, and our live signals don't use it. Kalshi has no held-out test yet.
 
-## Cycling: two long shots and a model gap
+The verdict: the new pipeline (Probalytics' tape, fills at the ask) is more faithful because it removes the optimism
+of filling at the mid price, but none of the strategy changes we tried (spread limit, calibration, book walk, sale
+floor) shows an edge out of sample. The full report is on [its own page](ditl-2026-10-16-part-2-fill-fidelity.html). On three held-out 2025 weekends, fills at the ask
+showed no edge on either tape.
+
+## Cycling: three stages settled, and a model gap
 
 ![Eneco Tour stage 3 slip and result](img/eneco-stage3-slip.png)
 

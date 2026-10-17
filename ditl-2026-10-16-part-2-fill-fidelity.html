@@ -1,0 +1,855 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="prev" title="Home" href="index.html" />
+    <link rel="next" title="SatGPT updated" href="satgpt-updated.html" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DITL Part 2 (draft): fill fidelity, our tape against Probalytics&#x27; order books &#8212; kevinlalli.me</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  <style id="rl-zoom-css">
+.rl-zoom{position:relative;display:block;max-height:420px;overflow:hidden;border-radius:6px;cursor:zoom-in;border:1px solid var(--pst-color-border,#ddd)}
+.rl-zoom img{display:block;width:100%;height:auto;margin:0}
+.rl-zoom::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,rgba(13,14,18,.85))}
+.rl-zoom-hint{position:absolute;right:12px;bottom:10px;z-index:1;color:#fff;font-size:.85rem;font-weight:600;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:999px}
+.rl-lb{position:fixed;inset:0;z-index:2000;background:rgba(10,10,12,.97);display:none;overflow:auto;cursor:zoom-out;padding:16px}
+.rl-lb.open{display:block}
+.rl-lb img{display:block;margin:0 auto;max-width:100%;height:auto}
+.rl-lb.full img{max-width:none}
+.rl-lb-bar{position:fixed;top:10px;right:14px;z-index:2001;display:flex;gap:8px}
+.rl-lb-bar button{background:#222;color:#fff;border:1px solid #555;border-radius:6px;padding:4px 10px;font-size:.9rem;cursor:pointer}
+</style>
+</head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">kevinlalli.me</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The latest
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ditl-2026-10-14-part-1.html">
+   DITL 14 Oct, part 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="satgpt-updated.html">
+   SatGPT updated
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-from-claude.html">
+   Hello from Claude
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Old blog
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-earth.html">
+   Hello, Earth!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hyping-hsi.html">
+   Hyping Hyperspectral
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  I 💚 <a href="https://jupyterbook.org">Jupyter Books</a> & <a href="https://www.curvenote.com">Curvenote</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ditl-2026-10-16-part-2-fill-fidelity.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <a class="btn btn-secondary topbarbtn" href="https://github.com/lalligagger" aria-label="GitHub: lalligagger" title="GitHub: lalligagger"><i class="fab fa-github"></i></a>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#top-line">
+   Top line
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-wrong-were-our-fill-prices">
+   1. How wrong were our fill prices?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-tape-ours-vs-probalytics-same-strategy-same-fills">
+   2. The tape: ours vs Probalytics (same strategy, same fills)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spread-limit-and-calibration-on-both-tapes">
+   3. Spread limit and calibration (on both tapes)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-book-walk">
+   4. The book walk
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#holdout-out-of-sample">
+   5. 2025 holdout (out of sample)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-this-does-and-doesnt-show">
+   What this does and doesn&#x27;t show
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#whats-next">
+   What&#x27;s next
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>DITL Part 2 (draft): fill fidelity, our tape against Probalytics&#x27; order books</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#top-line">
+   Top line
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-wrong-were-our-fill-prices">
+   1. How wrong were our fill prices?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-tape-ours-vs-probalytics-same-strategy-same-fills">
+   2. The tape: ours vs Probalytics (same strategy, same fills)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spread-limit-and-calibration-on-both-tapes">
+   3. Spread limit and calibration (on both tapes)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-book-walk">
+   4. The book walk
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#holdout-out-of-sample">
+   5. 2025 holdout (out of sample)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-this-does-and-doesnt-show">
+   What this does and doesn&#x27;t show
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#whats-next">
+   What&#x27;s next
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="ditl-2026-10-16-part-2-fill-fidelity">
+<h1>DITL Part 2 (draft): fill fidelity, our tape against Probalytics&#x27; order books<a class="headerlink" href="#ditl-2026-10-16-part-2-fill-fidelity" title="Permalink to this headline">¶</a></h1>
+<style>
+.rl-article table{font-size:14px;margin:12px 0 18px;display:block;overflow-x:auto}
+.rl-article table th{white-space:nowrap}
+.rl-article img{max-width:100%;height:auto;border:1px solid #e3e6ea;border-radius:8px;margin:8px 0}
+.rl-article blockquote{border-left:3px solid #1d5a86;padding:4px 14px;color:#4a5562}
+</style>
+<div class="rl-article">
+<p><em>The full report behind the fill-fidelity section of <a href="ditl-2026-10-16-part-2-draft.html#fill-fidelity-what-survives-real-order-books">DITL Part 2</a>. Original title: "Old vs new: our tape and one-price fills against Probalytics' books (F1 2026)".</em></p>
+<p><em>Fill-fidelity thread, 14 to 16 October 2026. All runs on staging (<code>racinglines_staging_demo</code>). Golden profile A (min edge 0.10), mean of 3 seeds unless stated. Every 2026 number is in-sample: profile A was tuned on 2026.</em></p>
+<p>The owner's plan (14 Oct, 22:03Z) had three steps: measure how wrong our fill prices are against Probalytics' order books, iterate the fill logic on their data, and then compare the old pipeline (our 5-minute tape, one price per order) with the new one (Probalytics' tape, fills at the ask, then walked through the book). This report covers that comparison. It also covers the two changes tested alongside it, a 10¢ spread limit and the C48 walk-forward calibration, and adds a 2025 holdout (Las Vegas, Qatar, Abu Dhabi) as the only out-of-sample check.</p>
+<div class="section" id="top-line">
+<h2>Top line</h2>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Polymarket (R1–17)</th>
+<th>Kalshi (R5–17)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Old: our tape, one price</strong></td>
+<td><strong>+1,096</strong></td>
+<td><strong>+1,096</strong></td>
+</tr>
+<tr class="even">
+<td>New tape, Probalytics at mid</td>
+<td>+3,014</td>
+<td>+25</td>
+</tr>
+<tr class="odd">
+<td><strong>New tape, Probalytics at the ask</strong></td>
+<td><strong>+1,415</strong></td>
+<td><strong>+25</strong></td>
+</tr>
+<tr class="even">
+<td>… + spread limit 10¢</td>
+<td>+1,595</td>
+<td>+151</td>
+</tr>
+<tr class="odd">
+<td>… + calibration (<code>calib_power = walk_forward</code>)</td>
+<td>+1,670</td>
+<td>+207</td>
+</tr>
+<tr class="even">
+<td>… book walk, no limit price (bug, before #219)</td>
+<td>+629</td>
+<td>−2,026</td>
+</tr>
+<tr class="odd">
+<td>… book walk + sale floor <code>edge</code></td>
+<td>+1,918</td>
+<td>+1,607</td>
+</tr>
+<tr class="even">
+<td>… touch + sale floor <code>edge</code> (no walk)</td>
+<td>+2,031</td>
+<td>+1,470</td>
+</tr>
+<tr class="odd">
+<td><em>Old tape + spread limit</em></td>
+<td>(not run)</td>
+<td>+1,350</td>
+</tr>
+<tr class="even">
+<td><em>Old tape + calibration</em></td>
+<td>+1,737</td>
+<td>+1,430</td>
+</tr>
+<tr class="odd">
+<td><strong>2025 holdout (out of sample), our tape</strong></td>
+<td><strong>−71</strong></td>
+<td>n/a</td>
+</tr>
+<tr class="even">
+<td><strong>2025 holdout, Probalytics at the ask</strong></td>
+<td><strong>−37</strong></td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<p>These are taker <code>update</code> P&amp;L in $, from a $1k bankroll with a $50 maximum stake.</p>
+<p><strong>Verdict.</strong> - <strong>Polymarket:</strong> the edge survives realistic fills in-sample (+1,415 at the ask). - <strong>Kalshi:</strong> the edge almost disappears at the ask (+1,096 to +25). Our 5-minute snapshots flattered it. - <strong>Calibration and the spread limit</strong> both help on both tapes. - <strong>Out of sample</strong> (three 2025 weekends), profile A shows no edge on either tape. - <strong>The sale floor</strong> (no taker sale more than min edge under fair) is the largest single in-sample gain: +616 on Polymarket and +1,445 on Kalshi. Walking the book adds about nothing on top (section 4). On the 2025 holdout (Polymarket only), the floor is slightly worse (−$19 / −$35), so it stays off by default.</p>
+</div>
+<div class="section" id="how-wrong-were-our-fill-prices">
+<h2>1. How wrong were our fill prices?</h2>
+<p>The probe <code>scripts/probes/backtest_fill_error.py</code> (#202) priced each $50 taker order at every 2026 stage cutoff two ways: our one-price fill, and a walk through Probalytics' book at that moment. Median error by market kind, all priced markets, run <code>backtest-fill-error/20261014T221720Z</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Kind</th>
+<th>Polymarket</th>
+<th>Kalshi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>race_win</td>
+<td>−0.6%</td>
+<td>~0%</td>
+</tr>
+<tr class="even">
+<td>pole</td>
+<td>−6%</td>
+<td>~0%</td>
+</tr>
+<tr class="odd">
+<td>podium</td>
+<td>−18%</td>
+<td>~0%</td>
+</tr>
+<tr class="even">
+<td>constructor_top</td>
+<td>−47%</td>
+<td>~0%</td>
+</tr>
+<tr class="odd">
+<td>race_h2h</td>
+<td>−42%</td>
+<td>~0%</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Polymarket:</strong> we filled at the 5-minute price history, close to the mid. Thin markets sit far from their book: a head-to-head at ~0.50 on our tape sat at about 0.10 / 0.89 in the book.</li>
+<li><strong>Kalshi:</strong> we already bought at our snapshot's ask, so the price error is near zero. The P&amp;L gap there comes from snapshot timing, not the fill rule (section 2).</li>
+</ul>
+</div>
+<div class="section" id="the-tape-ours-vs-probalytics-same-strategy-same-fills">
+<h2>2. The tape: ours vs Probalytics (same strategy, same fills)</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Strategy</th>
+<th>PM ours</th>
+<th>PM Probalytics ask</th>
+<th>Kalshi ours</th>
+<th>Kalshi Probalytics ask</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>early</td>
+<td>+2,437</td>
+<td>+1,573</td>
+<td>+1,728</td>
+<td>+1,369</td>
+</tr>
+<tr class="even">
+<td>hold</td>
+<td>+1,640</td>
+<td>+1,304</td>
+<td>+1,835</td>
+<td>+1,760</td>
+</tr>
+<tr class="odd">
+<td>last</td>
+<td>+709</td>
+<td>+1,712</td>
+<td>+871</td>
+<td>+532</td>
+</tr>
+<tr class="even">
+<td><strong>update</strong></td>
+<td><strong>+1,096</strong></td>
+<td><strong>+1,415</strong></td>
+<td><strong>+1,096</strong></td>
+<td><strong>+25</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Polymarket:</strong> the Probalytics tape is better for <code>update</code> and <code>last</code> and worse for <code>early</code> and <code>hold</code>. Mid fills (+3,014) are an upper bound only; every real taker pays the ask.</li>
+<li><strong>Kalshi:</strong> <code>update</code> collapses on Probalytics' tape. It rebalances at every stage, and their exact-second books show the edge we saw at our 5-minute snapshot was often gone at the cutoff. <code>hold</code>, which trades once, barely moves (+1,835 to +1,760).</li>
+<li><strong>Maker P&amp;L is identical</strong> on both tapes for every job. The maker replays our own tape whatever <code>tape_source</code> says, so this report says nothing about maker fills.</li>
+</ul>
+</div>
+<div class="section" id="spread-limit-and-calibration-on-both-tapes">
+<h2>3. Spread limit and calibration (on both tapes)</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>update</code></th>
+<th>PM ours</th>
+<th>PM Probalytics</th>
+<th>Kalshi ours</th>
+<th>Kalshi Probalytics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>base</td>
+<td>+1,096</td>
+<td>+1,415</td>
+<td>+1,096</td>
+<td>+25</td>
+</tr>
+<tr class="even">
+<td>spread ≤ 10¢</td>
+<td>(not run)</td>
+<td>+1,595</td>
+<td>+1,350</td>
+<td>+151</td>
+</tr>
+<tr class="odd">
+<td>calibration</td>
+<td>+1,737</td>
+<td>+1,670</td>
+<td>+1,430</td>
+<td>+207</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>The 10¢ spread limit</strong> adds $125 to $255 wherever it ran. Skipping books with no real market is worth it.</li>
+<li><strong>Calibration</strong> gives the largest in-sample gain on both tapes. It also lifts the Polymarket maker from +586 to +1,385 (unseeded job). But the holdout (section 5) goes the other way.</li>
+</ul>
+<p><strong>Walk-forward (one seed, Probalytics at the ask).</strong> Choosing min edge and spread limit as you go, using only weekends already raced:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Walk-forward</th>
+<th>Best in hindsight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Polymarket</td>
+<td>+960</td>
+<td>+1,684 (min edge 0.10 + spread limit)</td>
+</tr>
+<tr class="even">
+<td>Kalshi</td>
+<td>+122</td>
+<td>+379 (min edge 0.15 + spread limit)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Choosing as you go costs about half the hindsight best.</li>
+<li>Min edge 0.05 loses on Kalshi (−516 / −560).</li>
+<li>No setting is clearly better than profile A beyond the noise floor of about $400 a season.</li>
+</ul>
+</div>
+<div class="section" id="the-book-walk">
+<h2>4. The book walk</h2>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>PM <code>update</code></th>
+<th>PM <code>hold</code></th>
+<th>Kalshi <code>update</code></th>
+<th>Kalshi <code>hold</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>at the ask</td>
+<td>+1,415</td>
+<td>+1,304</td>
+<td>+25</td>
+<td>+1,760</td>
+</tr>
+<tr class="even">
+<td>walk, no limit (old #205 code)</td>
+<td>+629</td>
+<td>+505</td>
+<td>−2,026</td>
+<td>+845</td>
+</tr>
+<tr class="odd">
+<td>walk with limit (#219)</td>
+<td>+1,918</td>
+<td>+1,018</td>
+<td>+1,607</td>
+<td>+1,508</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The first walk had a bug.</strong> An order was sized at the touch, then walked through every level until it filled. On a thin Kalshi book (a few contracts at the touch, then 0.99 asks) most of a $50 order filled at negative edge, and <code>update</code> sold down into 0.01 bids.</p>
+<p>#219 made the walk a limit order: - a buy takes only levels where fair − price − fee ≥ min edge; - a sale takes only levels where price − fee ≥ fair − min edge; - the rest of the order is not traded.</p>
+<p><strong><code>hold</code> never sells, so it shows the depth cost alone:</strong> walking costs a little against the touch (Kalshi +1,760 to +1,508, Polymarket +1,304 to +1,018).</p>
+<p><strong>The sale floor, separated (16 Oct, <code>golden-probalytics-sellfloor-2026</code>).</strong> #219's sale limit was ad hoc, so #225 made it an explicit setting, <code>sell_floor</code>, for both fill modes (<code>none</code> / <code>fair</code> / <code>edge</code>, where <code>edge</code> = no sale below fair − min edge). Each change then ran on its own:</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>update</code>, mean of 3 seeds</th>
+<th>Polymarket</th>
+<th>Kalshi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>touch, no floor</td>
+<td>+1,415</td>
+<td>+25</td>
+</tr>
+<tr class="even">
+<td><strong>touch + floor <code>edge</code></strong></td>
+<td><strong>+2,031</strong></td>
+<td><strong>+1,470</strong></td>
+</tr>
+<tr class="odd">
+<td>book, no floor (sells the touch level only)</td>
+<td>+1,795</td>
+<td>+806</td>
+</tr>
+<tr class="even">
+<td>book + floor <code>edge</code> (#219)</td>
+<td>+1,918</td>
+<td>+1,607</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>The exit rule is the big effect:</strong> the floor alone adds +616 on Polymarket and +1,445 on Kalshi. Without it, <code>update</code> sells into wide bids whenever fair dips at a stage.</li>
+<li><strong>Depth, with the floor on both sides,</strong> is about a wash: −113 on Polymarket and +137 on Kalshi, within the seed noise.</li>
+<li><strong>Other strategies:</strong>
+<ul>
+<li><code>hold</code> and <code>last</code> are unchanged by the floor (Polymarket +1,304 / +1,712, Kalshi +1,760 / +532).</li>
+<li><code>early</code> rises a little: Polymarket +1,573 to +1,642, Kalshi +1,369 to +1,602.</li>
+</ul></li>
+<li><strong>This is in-sample, and the holdout didn't confirm it</strong> (section 5): on 2025 Polymarket, the floor made <code>update</code> $19 to $35 worse.</li>
+</ul>
+</div>
+<div class="section" id="holdout-out-of-sample">
+<h2>5. 2025 holdout (out of sample)</h2>
+<p>Las Vegas, Qatar and Abu Dhabi 2025 (rounds 22–24), Polymarket only. Probalytics' stage files for these weekends were pulled on 15 Oct. The first run had none, so every Probalytics job traded nothing.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><code>update</code></th>
+<th><code>hold</code></th>
+<th>Maker</th>
+<th>Trades</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Our tape</td>
+<td>−71</td>
+<td>−171</td>
+<td>−228</td>
+<td>27</td>
+</tr>
+<tr class="even">
+<td>Probalytics at the ask</td>
+<td>−37</td>
+<td>−187</td>
+<td>−228</td>
+<td>27</td>
+</tr>
+<tr class="odd">
+<td>Probalytics + calibration</td>
+<td>−95</td>
+<td>−184</td>
+<td>−516</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<td>Our tape + sale floor <code>edge</code></td>
+<td>−90</td>
+<td>−171</td>
+<td>−228</td>
+<td>21–22</td>
+</tr>
+<tr class="odd">
+<td>Probalytics ask + sale floor <code>edge</code></td>
+<td>−72</td>
+<td>−188</td>
+<td>−228</td>
+<td>21–22</td>
+</tr>
+</tbody>
+</table>
+<p>The floor rows are from the 17 Oct run <code>holdout-2025-sellfloor</code> (#228). Trade counts are per seed, read from the run's results.json. The floor blocks the sales that cut losing positions, so there are fewer trades.</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>update</code> by weekend</th>
+<th>Ours</th>
+<th>Probalytics ask</th>
+<th>+ calibration</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Las Vegas (R22)</td>
+<td>+5</td>
+<td>+12</td>
+<td>−43</td>
+</tr>
+<tr class="even">
+<td>Qatar (R23)</td>
+<td>+73</td>
+<td>+49</td>
+<td>−16</td>
+</tr>
+<tr class="odd">
+<td>Abu Dhabi (R24)</td>
+<td>−149</td>
+<td>−99</td>
+<td>−36</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>No edge out of sample on either tape.</strong> With three weekends this is a direction, not a verdict.</li>
+<li><strong>The two tapes agree here</strong> (the same 27 trades, within $34). The 2026 tape gap is mostly a Kalshi effect, and this holdout has no Kalshi.</li>
+<li><strong>Calibration is worse here on both taker and maker.</strong> Its in-sample gain should not be treated as settled.</li>
+<li><strong>The sale floor doesn't help here either:</strong>
+<ul>
+<li><code>update</code> is $19 worse on our tape (−71 to −90) and $35 worse on Probalytics (−37 to −72).</li>
+<li><code>hold</code> is unchanged, as it should be.</li>
+<li>The amounts are small, but the sign is the wrong way.</li>
+<li>Most of the floor's in-sample gain was on Kalshi (+1,445), and this holdout has no Kalshi, so the test can't confirm or rule that part out.</li>
+</ul></li>
+</ul>
+</div>
+<div class="section" id="what-this-does-and-doesnt-show">
+<h2>What this does and doesn't show</h2>
+<ul>
+<li><strong>In-sample.</strong> Profile A, the spread limit and the calibration table were all chosen after seeing 2026. Only the 2025 holdout is clean, and it is three weekends of Polymarket.</li>
+<li><strong>Session overruns can leak results.</strong> A stage cutoff is the scheduled session end + 30 minutes (<code>racinglines/core/stages.py:43</code>), so a red-flagged session that overruns can leak its result into "after Quali" trades. This is the P0 in <code>docs/todo.md</code> (#208). It applies equally to every row here, so it shifts levels more than comparisons.</li>
+<li><strong>The maker is not tested.</strong> It replays our tape on every run.</li>
+<li><strong>The sale floor is not confirmed.</strong>
+<ul>
+<li>It wins in-sample.</li>
+<li>It loses slightly on the 2025 holdout, which is Polymarket only.</li>
+<li>Nothing out of sample tests it on Kalshi.</li>
+</ul></li>
+<li><strong>Fill-error probe not re-run.</strong> The <code>backtest_fill_error.py</code> probe has not been re-run with the walk's new limit.</li>
+<li><strong>Few seeds.</strong> Three seeds agree within about $100 to $300 per row. The walk-forward is one seed.</li>
+</ul>
+</div>
+<div class="section" id="whats-next">
+<h2>What's next</h2>
+<ol type="1">
+<li><strong>Forward test from the US GP</strong> (round 18, FP1 23 Oct 17:30Z): one strategy locked in <code>paper/locks/2026-18.toml</code> before FP1 and scored as bet. This is the only test that answers the in-sample question.</li>
+<li><strong>The sale floor stays off by default.</strong>
+<ul>
+<li>The holdout didn't confirm it: Polymarket was slightly worse, and Kalshi wasn't tested.</li>
+<li>Its decision-log row (#237) should record "not adopted".</li>
+<li>The next real test is the forward test: score the locked strategy both with and without the floor. That needs only a replay, so it doesn't change the lock.</li>
+<li><code>fair</code> (no sale below fair) has not been run.</li>
+</ul></li>
+<li><strong>Calibration</strong> stays off by default until the forward test. Promotion is an owner decision.</li>
+<li><strong>Fix the overrun P0</strong>, then re-run the golden queues once.</li>
+<li><strong>Re-run the fill-error probe</strong> with the limit walk.</li>
+</ol>
+</div>
+
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kevin Lalli<br/>
+    
+        &copy; Copyright 2026.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  <div class="rl-lb" id="rl-lb" role="dialog" aria-modal="true" aria-label="Expanded screenshot"><div class="rl-lb-bar"><button type="button" id="rl-lb-size">Actual size</button><button type="button" id="rl-lb-close">Close &times;</button></div><img alt=""></div>
+<script>(function(){var lb=document.getElementById('rl-lb'),im=lb.querySelector('img'),sz=document.getElementById('rl-lb-size');
+function close(){lb.classList.remove('open','full');document.body.style.overflow='';}
+document.querySelectorAll('a.rl-zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');im.alt=a.querySelector('img').alt;lb.classList.add('open');document.body.style.overflow='hidden';sz.textContent='Actual size';});});
+sz.addEventListener('click',function(e){e.stopPropagation();lb.classList.toggle('full');sz.textContent=lb.classList.contains('full')?'Fit to screen':'Actual size';});
+document.getElementById('rl-lb-close').addEventListener('click',function(e){e.stopPropagation();close();});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target===im)close();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();</script>
+</body>
+</html>

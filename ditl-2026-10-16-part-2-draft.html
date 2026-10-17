@@ -247,8 +247,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cycling-two-long-shots-and-a-model-gap">
-   Cycling: two long shots and a model gap
+  <a class="reference internal nav-link" href="#cycling-three-stages-settled-and-a-model-gap">
+   Cycling: three stages settled, and a model gap
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -322,8 +322,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cycling-two-long-shots-and-a-model-gap">
-   Cycling: two long shots and a model gap
+  <a class="reference internal nav-link" href="#cycling-three-stages-settled-and-a-model-gap">
+   Cycling: three stages settled, and a model gap
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -611,8 +611,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="fill-fidelity-what-survives-real-order-books">
 <h2>Fill fidelity: what survives real order books</h2>
-<p>Backtest profit for the <code>update</code> taker strategy on F1 2026, in-sample:</p>
+<p>Backtest profit for the <code>update</code> taker strategy on F1 2026, in-sample, on Probalytics' order books:</p>
 <table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
@@ -632,21 +637,22 @@ const thebe_selector_output = ".output, .cell_output"
 <td>+$25</td>
 </tr>
 <tr class="odd">
-<td>… plus a 10¢ spread limit</td>
-<td>+$1,595</td>
-<td>+$151</td>
+<td>… plus a sale floor (never sell below our fair price minus the edge)</td>
+<td>+$2,031</td>
+<td>+$1,470</td>
 </tr>
 <tr class="even">
-<td>… plus calibration</td>
-<td>+$1,670</td>
-<td>+$207</td>
+<td>… walking the book instead, with the floor</td>
+<td>+$1,918</td>
+<td>+$1,607</td>
 </tr>
 </tbody>
 </table>
-<p>Polymarket's in-sample edge survives realistic fills. Kalshi's almost disappears, because our 5-minute snapshots flattered it. On three held-out 2025 weekends there is no edge on either tape.</p>
+<p>At the ask, Polymarket's in-sample edge survives and Kalshi's almost disappears. Most of Kalshi's loss was the strategy selling into wide bids whenever our fair price dipped: a sale floor alone brings it back. Walking the book adds about nothing once the floor is on. All of this is in-sample and averaged over three seeds. On three held-out 2025 weekends the floor made things worse on Polymarket (−$37 to −$72 at the ask), so it is not adopted: it stays an option, off by default, and our live signals don't use it. Kalshi has no held-out test yet.</p>
+<p>The verdict: the new pipeline (Probalytics' tape, fills at the ask) is more faithful because it removes the optimism of filling at the mid price, but none of the strategy changes we tried (spread limit, calibration, book walk, sale floor) shows an edge out of sample. The full report is on <a href="ditl-2026-10-16-part-2-fill-fidelity.html">its own page</a>. On three held-out 2025 weekends, fills at the ask showed no edge on either tape.</p>
 </div>
-<div class="section" id="cycling-two-long-shots-and-a-model-gap">
-<h2>Cycling: two long shots and a model gap</h2>
+<div class="section" id="cycling-three-stages-settled-and-a-model-gap">
+<h2>Cycling: three stages settled, and a model gap</h2>
 <p><a class="rl-zoom" href="_images/ditl-2026-10-16-part-2-draft/eneco-stage3-slip.png"><img alt="Eneco Tour stage 3 slip and result" src="_images/ditl-2026-10-16-part-2-draft/eneco-stage3-slip.png" /><span class="rl-zoom-hint">Click to expand</span></a></p>
 <ul>
 <li><strong>Eneco Tour stage 3</strong> (Sportsbook C, 5 model bets, $9.00): all five lost, −$9.00. Van Dijke won at 67 to 1, and our model had him at 1%; the one ticket on him was a misclick and is left out. The two sprinter bets show a known gap: the road model barely separates hilly stages from flat ones.</li>

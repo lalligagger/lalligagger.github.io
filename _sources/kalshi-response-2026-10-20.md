@@ -10,7 +10,7 @@ The short answer: **our model is a useful second opinion in F1 2026 and not yet 
 - After our Kalshi trades, the price kept moving our way until the race. That is the paper's mark of an informed trader, but it is measured on backtest trades, not real ones.
 - So rule 1 (skill, not luck) is **partly met for F1 2026 only**, and the deciding tests are now forward: our locked per-race strategies and a pre-registered Polymarket holdout, both from the US Grand Prix in Austin (23 to 25 Oct).
 
-**v3, 20 Oct 12:30.** This version rewrites the whole page as a state of racinglines, with the overnight results. Earlier versions: [v1, first draft](https://github.com/lalligagger/lalligagger.github.io/blob/ffbb1e9c8e2512e76fefa816090172304f6cfb1a/_sources/kalshi-response-2026-10-20.md), and v2 (02:24, the first simulation), both in this site's commit history. **No cheating:** we said before running anything that we would publish these results whatever they showed, and we have.
+**v3, 20 Oct 12:30.** This version rewrites the whole page as a state of racinglines, with the overnight results. Edited after publishing (v3b): the paper's outputs in section 4 rebuilt on the overnight runs, and a conclusion (section 7). Earlier versions: [v1, first draft](https://github.com/lalligagger/lalligagger.github.io/blob/ffbb1e9c8e2512e76fefa816090172304f6cfb1a/_sources/kalshi-response-2026-10-20.md), and v2 (02:24, the first simulation), both in this site's commit history. **No cheating:** we said before running anything that we would publish these results whatever they showed, and we have.
 
 *All times are UTC. "The paper" is Kagan and Baiocchi (2026), [kalshi.com/research](https://kalshi.com/research/publications/who-calibrates-markets); we point to its sections rather than restating its methods, and we don't republish it. Our numbers come from read-only runs on a mirror of our production database, 19 Oct 23:45 to 20 Oct 11:03. Nothing here is betting advice.*
 
@@ -18,7 +18,7 @@ The short answer: **our model is a useful second opinion in F1 2026 and not yet 
 
 ## Why this paper matters to us
 
-A prediction market price is a crowd's forecast. The paper asks who makes that forecast accurate, and finds a small group of traders who buy and sell against the price and are right more often than it is. Racinglines is an attempt to be one of those traders, in motorsport, with a model instead of intuition. Our model simulates each race from the drivers' recent results, practice and qualifying, and turns that into a fair price for every market it can: who wins, who makes the podium, head-to-heads and more. A strategy then decides when a gap between our fair price and the market's is worth trading.
+A prediction market price is a crowd's forecast. The paper asks who makes that forecast accurate, and finds a small group of traders who buy and sell against the price and are right more often than it is. Racinglines is an attempt to be one of those traders, in motorsport, with a bottoms-up model and a lot of historical race data. Our model simulates each race from the drivers' recent results, practice and qualifying, and turns that into a fair price for every market it can: who wins, who makes the podium, head-to-heads and more. A strategy then decides when a gap between our fair price and the market's is worth trading.
 
 The paper gives us a way to check ourselves that most backtests skip. A backtest can look profitable because one of many settings got lucky, because it fills at prices nobody could have traded at, or because the season it was tuned on was unusual. The paper's tests (skill against the mid, a luck test over every account, what happens to the price after a trade) answer each of those. They are also the right tests for anyone, a customer included, who wants to trade on a model.
 
@@ -195,70 +195,82 @@ against the plain mid: Kalshi's tape in this run has no touch sizes, so there is
 
 Over 3.19 million resolved fills on the F1 markets we link (both venues, every month in our Probalytics pull), the price paid tracks the settled frequency at the ends: a Kalshi YES bought at 5¢ settled 6.7 % of the time, and at 95¢, 97.3 %. The middle (35 to 65¢) is noisy because a few big markets dominate it. A per-market weighting is still to do, so we draw no conclusion on the paper's Fig 6 yet.
 
-## 4. First pass (19 Oct): their outputs, rebuilt from our stored paper bets
+**Against bigger sports.** The paper doesn't split Sports by league, so we can't set motorsport against the NFL or NHL directly, and we hold no tape for those leagues. What we can compare is motorsport against the paper's averages:
 
-This was our first evening's work, before any simulation ran. It uses the paper bets already in our database, and it is kept here as it was published. Section 3 supersedes it wherever the two overlap.
+| | Motorsport (our data) | The paper |
+|---|---|---|
+| Taker pays over the size-weighted mid | 2.1 to 2.5¢ on Kalshi (4.4) | 1.2¢, other takers, all categories (sec 5.4) |
+| Volume in the last tenth of a market's life | Kalshi 62 %; Polymarket F1 17 % | Sports: "overwhelmingly in the final decile" (Fig 7) |
+| A model built only on race data | about half its edge is real in F1 2026 (3.1) | — |
+
+*Market life runs from a market's first fill to its last in Probalytics' data, both venues, every resolved F1 fill on markets we link.*
+
+Our reading, inferred rather than shown: motorsport on Kalshi trades like the paper's Sports markets, late and mostly during the event, but costs about twice as much to take, and it still leaves room for a model in some seasons. That fits a smaller, thinner market than the big leagues that dominate the paper's Sports volume. Polymarket's F1 markets are different again: most of their volume comes long before the race. A direct comparison needs Kalshi's per-sport numbers or our own tape on an NFL or NHL market, and neither is in this report.
+
+## 4. The paper's outputs, rebuilt for us
+
+Section 3 asked our own questions. This section rebuilds the paper's own tables and figures for racinglines, one by one. We first built them on 19 Oct from the paper bets already in our database, before any simulation ran; each one is now redone on the 20 Oct runs where those runs cover it, with the 19 Oct first cut kept beside it when the comparison says something.
 
 ### 4.1 Fig 1: where our strategies sit on the skill distribution
 
-**Paper method:** sec 3.2, eq. 2–3; luck test in sec 3.3.
+**Paper method:** sec 3.2, eq. 2–3; luck test in sec 3.3. The paper's skill score treats the price a trader paid as their forecast and compares it with the mid on the outcome, so it is scored on fills, not on our model's price.
 
-**What we scored:** our 850 stored Kalshi taker paper bets (followed, market resolved, de-duplicated). These are paper
-bets from demo profiles, not real money.
-- NASCAR: 815 bets over 40 races (race win 2025–26; top 5/10/20, podium and head-to-head in 2026).
-- MotoGP: 35 race-win bets over 11 races.
-- F1: our F1 strategies run on Kalshi in backtests, but no F1 Kalshi paper bets are stored yet.
+**What we scored (20 Oct):** every saved Polymarket setting at the touch on Probalytics' books, against the size-weighted mid, on the markets that pass the floor in 3.4 (106 settings over 13 weekends in 2026, 101 over 3 in 2025), and the Kalshi setting of 3.2 (our tape, plain mid). Update mode, all fees in the fill. The luck test redraws every outcome from the mid 500 times; on Polymarket the false-discovery correction covers all 207 settings.
 
-**The assumption we break:** our benchmark is each bet's stored price, not the size-weighted mid. For these bets that
-price is last-trade-type (sec 2.5).
+| Venue, season | Settings | Trades per setting (median) | Skill score of the fill, median (range) | Above the paper's median skilled trader (0.0189) | Luck test p < 0.05 | After correction |
+|---|---|---|---|---|---|---|
+| Polymarket F1 2026 | 106 | 136 | **+0.016 (+0.006 to +0.030)** | 19 of 106 | 3 of 106 | 0 |
+| Polymarket F1 2025 | 101 | 18 | −0.021 (−0.062 to −0.005) | 0 | 0 | 0 |
+| Kalshi F1 2026, the 3.2 setting | 1 | 223 | **+0.033** | yes | no (p = 0.06) | — |
+| Kalshi F1 2025, the 3.2 setting | 1 | 151 | +0.011 | no | no (p = 0.14) | — |
+| *First cut (19 Oct): NASCAR paper bets* | *815 bets* | — | *+0.0090* | *no* | *yes (p < 0.001)* | *—* |
 
-| Sport | Bets | Races | Skill score | Luck null: mean / 95th pct | p |
-|---|---|---|---|---|---|
-| NASCAR | 815 | 40 | **+0.0090** | −0.0008 / 0.0036 | < 0.001 |
-| MotoGP | 35 | 11 | +0.0034 | −0.0035 / 0.0141 | 0.33 |
+![Every saved setting on the paper's skill scale](img/fig1-bss-placement-v3.png)
 
-![Our two strategies on the skill scale](img/fig1-bss-placement.png)
-
-On the paper's Fig 1, NASCAR would sit just right of the peak, below the paper's median skilled trader.
-
-**Why this is not yet skill:**
-- **Selection.** The "best effort" profile picked each market kind's best setting on these same races, with no
-  false-discovery correction over the grid it came from.
-- **Too few events.** 40 races is under the paper's 100-event bar.
-- **A synthetic fill.** Every stored Kalshi taker bet filled at exactly its stored price ± 1¢.
+**What it says:**
+- **In 2026, every one of the 106 Polymarket settings has a positive skill score at real fills,** and about one in five sits above the paper's median skilled trader. The Kalshi setting sits between the paper's two medians. On the paper's Fig 1, F1 2026 would land in the skilled traders' range.
+- **In 2025 every Polymarket setting is below zero.** The same pattern as section 3: 2026 yes, 2025 no.
+- **None passes the luck test once every setting is counted,** and the luck test's 95th percentile (about 0.025 on Polymarket 2026, 0.034 on Kalshi) is above most of the scores. With 13 to 15 weekends, a score this size is still within what luck gives.
+- **On Polymarket the fill scores better than the model's own price.** Scored on our model's price instead, only 7 of the 106 settings are above zero in 2026 (median −0.05). The fill sits between the mid and our price, so it keeps the direction the model got right and drops the part of the size that was too big, which fits the edge curve in 3.1 (about half of the predicted edge is real). This reading is inferred. The Kalshi setting goes the other way: +0.05 on the model's price (3.2) and +0.033 on the fill.
+- **Against the first cut:** the NASCAR paper bets passed their luck test (p < 0.001), but on a synthetic fill and with no correction for the settings behind them; section 3.2 shows NASCAR's model losing to Kalshi's price once it trades on the real book. The 20 Oct runs replace that pass with real fills, more settings and a stricter test, and nothing passes.
 
 ### 4.2 Table 3: where the edge comes from
 
-**Paper method:** sec 4.3, eq. 5 (the Murphy split). Same 815 NASCAR bets, 20 bins, contract-weighted; our split leaves
-out the within-bin residual.
+**Paper method:** sec 4.3, eq. 5 (the Murphy split): Brier = reliability − resolution + uncertainty. Lower reliability means better calibrated; higher resolution means better at telling outcomes apart.
 
-| | Our fill | Market (stored price) | Difference |
+**Updated 20 Oct with F1 2026 trades.** The first pass (19 Oct) used our 815 stored NASCAR paper bets, with a synthetic fill. The simulation now gives F1 trades scored against a real mid, so we add two F1 columns: the Kalshi trades of section 3.2 (one setting, update mode, plain mid, 223 trades over 15 weekends) and the Polymarket pick of section 3.4 in its holdout (size-weighted mid from Probalytics' books, 213 trades over 9 weekends). F1 columns use 10 bins; the split leaves out the within-bin residual, so the parts don't sum exactly to the Brier score.
+
+| | NASCAR paper bets: our fill / stored price | F1 Kalshi 2026: model / mid | F1 Polymarket holdout: model / size-weighted mid |
 |---|---|---|---|
-| Reliability (lower is better) | 0.0087 | 0.0098 | −0.0011 |
-| Resolution (higher is better) | 0.0809 | 0.0816 | −0.0007 |
-| Uncertainty | 0.2344 | 0.2344 | 0 |
-| Brier | 0.1615 | 0.1630 | −0.0015 |
+| Reliability (lower is better) | 0.0087 / 0.0098 | **0.0067 / 0.0189** | **0.0088 / 0.0135** |
+| Resolution (higher is better) | 0.0809 / 0.0816 | 0.0218 / 0.0208 | 0.0333 / 0.0412 |
+| Uncertainty | 0.2344 | 0.2247 | — |
+| Brier | 0.1615 / 0.1630 | 0.2092 / 0.2210 | skill score −0.01 |
 
-The whole gain is calibration: the bets pick sides the stored price under-prices, and resolution is slightly worse.
-That fits the paper's majority pattern (Table 3B). Because the fill is fixed at price + 1¢, "our fill" here is the
-market price shifted 1¢ toward the sides we chose.
+**What it says:** in every case the model's gain is calibration. On Kalshi F1 2026 the model's reliability term is a third of the mid's, which is where its +0.05 skill score comes from; its resolution is about the same. On Polymarket the model is better calibrated too, but the size-weighted mid separates outcomes better, and the two cancel. That is the paper's majority pattern (Table 3B): the skilled trader corrects a miscalibrated price more than they know something the market doesn't. In the NASCAR column "our fill" is the stored price shifted 1¢ toward the sides we chose, so it says less.
 
 ### 4.3 App. A.1–A.2: a skill score is not profit
 
-The same 815 bets, re-priced at mid + h. The paper's App. A.2 explains why the score can rise while profit falls.
+Each trade re-priced at mid + h in its own direction. The paper's App. A.2 explains why the score can rise while profit falls: a fill further from the mid is a more extreme forecast, so it can score better while every contract earns less. **Updated 20 Oct:** the F1 rows use the 223 Kalshi F1 2026 trades of section 3.2, against Kalshi's plain mid.
 
 | Paid over mid | 1¢ | 2¢ | 3¢ | 4¢ |
 |---|---|---|---|---|
-| Skill score | 0.0090 | 0.0168 | 0.0234 | 0.0287 |
-| Profit per contract (¢, contract-weighted) | 6.85 | 5.86 | 4.86 | 3.87 |
+| NASCAR paper bets: skill score | 0.0090 | 0.0168 | 0.0234 | 0.0287 |
+| NASCAR paper bets: profit per contract (¢) | 6.85 | 5.86 | 4.86 | 3.87 |
+| F1 Kalshi 2026: skill score of the fill | 0.0104 | 0.0200 | 0.0286 | 0.0363 |
+| F1 Kalshi 2026: profit per contract (¢) | 16.87 | 15.87 | 14.87 | 13.87 |
+
+*Profit is contract-weighted and before fees. Per trade, unweighted, F1 makes 11.0¢ at 1¢ over the mid down to 8.0¢ at 4¢.*
 
 ![Skill score and profit as the fill gets worse](img/fig2-bss-vs-cost.png)
 
-So rule 1 is checked at realistic fills, and always next to profit and CLV.
+The figure shows the NASCAR rows. The F1 rows follow the same pattern at a higher level: each cent paid over the mid lifts the score and costs a cent of profit. So rule 1 is checked at realistic fills, and always next to profit and CLV.
 
 ### 4.4 Fig 9: price impact, for the whole motorsport crowd
 
 **Paper method:** sec 3.4 "Price Impact of Individual Orders", sec 5.4.
+
+*This is the 19 Oct first cut, kept as it was. The overnight runs measured our own trades (3.5), not the crowd's, so this table has not been rebuilt; it is here because it is the comparison 3.5 needs.*
 
 **What we used:** every Kalshi trade in our tape on markets that have resolved since 9 Oct: 34,327 F1 trades from one
 race weekend and 30,350 NASCAR trades from one race. m0 is the size-weighted mid of our last order-book snapshot at most
@@ -285,10 +297,13 @@ race weekend and 30,350 NASCAR trades from one race. m0 is the size-weighted mid
 
 We left out a "close" point: our last recorded book for a market isn't Kalshi's close.
 
+**Against our own trades (3.5).** The F1 crowd pays 2.45¢ over the mid and keeps 1.25¢ of it after an hour. Our Kalshi backtest trades paid 3.6¢ and the mid moved 4.5¢ our way by the last stage before the race. On these numbers our trades look like the paper's skilled takers and the crowd looks like its other takers, but the horizons differ (an hour against about a day) and ours are backtest trades, so this is a comparison of shapes, not a result.
+
 ### 4.5 Before eq. 4: how far the last trade is from the mid
 
-**Paper method:** sec 3.4 "Order Flow and the Last Traded Price". The regression itself comes with the simulation; this is the step
-before it. All Kalshi motorsport trades in the last 3 days were matched to our last book at most 6 minutes earlier.
+**Paper method:** sec 3.4 "Order Flow and the Last Traded Price". This is the step before the paper's regression. All Kalshi motorsport trades in the 3 days to 19 Oct were matched to our last book at most 6 minutes earlier.
+
+*19 Oct first cut, not rebuilt: like 4.4 it needs the crowd's trades matched to books, which the overnight runs didn't do.*
 
 | Taker side | Trades | Avg spread | Trade − plain mid | Trade − weighted mid | At or through the touch |
 |---|---|---|---|---|---|
@@ -296,16 +311,22 @@ before it. All Kalshi motorsport trades in the last 3 days were matched to our l
 | NO | 8,764 | 8.0¢ | −4.2¢ | −3.8¢ | 50.5 % |
 
 A last-trade price is the mid plus about 4¢ in the direction of whoever traded last. That is why rule 3 bans
-"last trade plus a fixed cost" fills, and why the simulation estimates the mid from the book wherever we have one.
+"last trade plus a fixed cost" fills. The 20 Oct runs follow it: every F1 backtest in section 3 fills against a recorded book, and Kalshi fills with no book at the stage are counted (5 to 9 % of F1 trades, 3.2) rather than priced off a last trade.
 
-### 4.6 What we can't rebuild yet
+### 4.6 What we have rebuilt, and what we can't yet
 
-| Paper output | Why not | Path |
+| Paper output | Status, 20 Oct | Where |
 |---|---|---|
-| Table 1, Fig 2–4, Table 4 (skilled accounts, their traits, persistence) | Kalshi's public tape has no account ids | Polymarket trades carry wallets (our tape: 1,282 wallets on 7,139 F1 trades) |
-| Table 5 for F1 (is F1 among the 8.2 % of Sports markets with no skilled taker?) | The paper gives no per-sport split | Per-sport skilled-taker coverage for F1 on Polymarket wallets |
-| Table 6 (eq. 4) | Needs a last-price series with net order flow | With the simulation |
-| Fig 6 by price bin | One resolved event per sport since our tape restarted | Probalytics fills, May to Sep 2026 |
+| Fig 1, skill distribution | **Rebuilt** on real fills, every saved setting | 4.1 |
+| Table 1, luck test with false-discovery correction | **Rebuilt** for our settings (not for accounts) | 3.3, 4.1 |
+| Table 3, Murphy split | **Rebuilt** on F1 2026 trades | 4.2 |
+| App. A.1–A.2, skill vs profit | **Rebuilt** on F1 2026 trades | 4.3 |
+| Fig 9, markouts | **Rebuilt for our trades**; crowd still the 19 Oct first cut | 3.5, 4.4 |
+| Fig 6, crowd calibration by price | Partly: the ends hold, the middle needs a per-market weighting | 3.6 |
+| Fig 7, volume by decile of market life | **Rebuilt**, both venues | 3.6 |
+| Fig 2–4, Table 4 (skilled accounts, their traits, persistence) | Not possible on Kalshi: its public tape has no account ids | Polymarket trades carry wallets (1,282 wallets on 7,139 F1 trades in our tape) |
+| Table 5 for F1 (is F1 among the 8.2 % of Sports markets with no skilled taker?) | Not yet: the paper gives no per-sport split | Skilled-taker coverage from Polymarket wallets |
+| Table 6 (eq. 4), last price on net order flow | Not yet | Needs a last-price series with net order flow per market |
 
 ## 5. Caveats
 
@@ -325,9 +346,9 @@ A last-trade price is the mid plus about 4¢ in the direction of whoever traded 
 10. **Scope.** We have no linked cycling markets on either venue, so cycling, which we model, is not tested here.
 11. **Not blind.** Every backtest window here, holdouts included, was seen in some form while the model was built. Only the forward tests (the per-event locks and the live Polymarket holdout from Austin) are blind.
 
-## How we built this: ops timeline
+## 6. How we built this: ops timeline
 
-From the paper's release to this page. The big steps are on their own rows; all the editorial passes share one row.
+From the paper's release to this page. The big steps are on their own rows; the editorial passes are grouped into three rounds.
 **High-touch** steps needed the owner (a decision, an upload, a publish); **streamlined** steps ran in our project
 threads with no input.
 
@@ -360,12 +381,37 @@ threads with no input.
 
 *Internal book pages behind this report: [3.4 Trading (golden rules)](https://racinglines.bet/docs/internal/system/trading.html), [3.5 Evaluation and sweeps](https://racinglines.bet/docs/internal/system/evaluation.html), [4.5 DITL reports](https://racinglines.bet/docs/internal/ops/ditl.html), [Appendix A: every report and its sources](https://racinglines.bet/docs/internal/appendix/reports.html).*
 
-## What's next
+## 7. What we take from this
+
+Kalshi's paper says a market is made accurate by a small group of traders who are right against the price, can be told apart from the lucky by a strict test, and leave a mark: the price moves their way and stays. We held racinglines to the same three tests, on every market our model prices and every strategy setting we have saved. Three things came out.
+
+**Our model is worth about half of what it says, in F1 2026.** Where it disagrees with the market, about half of the gap shows up in the results, on both venues and both tapes (3.1). That is enough to trade on when the gap is about twice the cost, and not otherwise. It turns the question of "a fair price or an edge worth trading" into one measured number instead of a tuned threshold.
+
+**The question is the season, not the setting.** Every setting we have saved bought on the right side of the mid in 2026, and at real fills the Polymarket strategies score close to the paper's median skilled trader (4.1). The same settings found nothing in 2025, and the model loses to Kalshi's price in NASCAR. So the luck test that matters is no longer "which setting" but "was 2026 a pattern or a one-off", and no backtest can answer it.
+
+**Motorsport is a thin market, and it has room in it.** Taking a price costs about twice what it does in the paper's average market (3.6, 4.4), and Kalshi's volume arrives late, like the paper's Sports. After our backtest trades on Kalshi, the price kept moving our way until the race (3.5): the shape the paper finds for its skilled traders, though we haven't traded yet, so our own impact is unknown.
+
+So rule 1 is partly met, rule 3 holds for F1, rule 4 holds on Kalshi in backtests, and rules 2 and 5 are where we start. From hand-off to this page took under 13 hours, most of it unattended runs on our own server ([timeline](#how-we-built-this-ops-timeline)); the slow part from here is the races.
+
+### 7. What we take from this
+
+Kalshi's paper says a market is made accurate by a small group of traders who are right against the price, can be told apart from the lucky by a strict test, and leave a mark: the price moves their way and stays. We held racinglines to the same three tests, on every market our model prices and every strategy setting we have saved. Three things came out.
+
+**Our model is worth about half of what it says, in F1 2026.** Where it disagrees with the market, about half of the gap shows up in the results, on both venues and both tapes (3.1). That is enough to trade on when the gap is about twice the cost, and not otherwise. It turns the question of "a fair price or an edge worth trading" into one measured number instead of a tuned threshold.
+
+**The question is the season, not the setting.** Every setting we have saved bought on the right side of the mid in 2026, and at real fills the Polymarket strategies score close to the paper's median skilled trader (4.1). The same settings found nothing in 2025, and the model loses to Kalshi's price in NASCAR. So the luck test that matters is no longer "which setting" but "was 2026 a pattern or a one-off", and no backtest can answer it.
+
+**Motorsport is a thin market, and it has room in it.** Taking a price costs about twice what it does in the paper's average market (3.6, 4.4), and Kalshi's volume arrives late, like the paper's Sports. After our backtest trades on Kalshi, the price kept moving our way until the race (3.5): the shape the paper finds for its skilled traders, though we haven't traded yet, so our own impact is unknown.
+
+So rule 1 is partly met, rule 3 holds for F1, rule 4 holds on Kalshi in backtests, and rules 2 and 5 are where we start. From hand-off to this page took under 13 hours, most of it unattended runs on our own server ([timeline](#how-we-built-this-ops-timeline)); the slow part from here is the races.
+
+### What's next
 
 - **Forward, from Austin (23 to 25 Oct).** Each race's locked strategy scores as bet, and the frozen Polymarket pick scores live. This is the only blind test, and rule 2's record starts here.
-- **The trade rule from 3.1.** Trade only where half the predicted edge clears the spread and fees. It replaces tuned thresholds with one number measured on every market, but it was found on 2026 data, so it is pre-registered before it counts.
-- **Finish rule 4.** Intervals and de-duplication for the markouts, and the crowd's price impact by order size (paper sec 5.4), which needs Probalytics' day books.
+- **The trade rule from 3.1.** Trade only where half the predicted edge clears the spread and fees. It was found on 2026 data, so it is pre-registered before it counts.
+- **Finish rule 4.** Intervals and de-duplication for our markouts, and the crowd's price impact by order size (paper sec 5.4), which needs Probalytics' day books.
 - **Calibration per sport and kind.** One win-price power doesn't fix 2025 or NASCAR; a fit per market kind and field might.
 - **Real fills (rule 5).** Only live trading answers it.
+- **Skilled takers in F1.** Polymarket trades carry wallets, so the paper's account-level tables (Table 1, Table 5 for F1) can be built there.
 
-Also on the list: F1 skilled-taker coverage on Polymarket, where trades carry wallets, and the market-life split of the paper's Fig 7.
+If the 2026 edge is real, Austin is where it starts to show. If it isn't, the locks will say that too, because they were written down first.

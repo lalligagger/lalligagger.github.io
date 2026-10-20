@@ -1,0 +1,765 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="prev" title="Home" href="index.html" />
+    <link rel="next" title="SatGPT updated" href="satgpt-updated.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A runbook behind our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="kevinlalli.me" />
+    <meta property="og:title" content="As run: Polymarket step 3, 20 Oct 2026" />
+    <meta property="og:description" content="A runbook behind our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta property="og:url" content="https://kevinlalli.me/kalshi-response-2026-10-20-as-run-pm-step3.html" />
+    <meta property="og:image" content="https://kevinlalli.me/_images/kalshi-response-2026-10-20/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="As run: Polymarket step 3, 20 Oct 2026: five golden rules for taker strategies" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="As run: Polymarket step 3, 20 Oct 2026" />
+    <meta name="twitter:description" content="A runbook behind our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta name="twitter:image" content="https://kevinlalli.me/_images/kalshi-response-2026-10-20/og-card.png" />
+    <title>As run: Polymarket step 3, 20 Oct 2026 &#8212; kevinlalli.me</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  <style id="rl-zoom-css">
+.rl-zoom{position:relative;display:block;max-height:420px;overflow:hidden;border-radius:6px;cursor:zoom-in;border:1px solid var(--pst-color-border,#ddd)}
+.rl-zoom img{display:block;width:100%;height:auto;margin:0}
+.rl-zoom::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,rgba(13,14,18,.85))}
+.rl-zoom-hint{position:absolute;right:12px;bottom:10px;z-index:1;color:#fff;font-size:.85rem;font-weight:600;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:999px}
+.rl-lb{position:fixed;inset:0;z-index:2000;background:rgba(10,10,12,.97);display:none;overflow:auto;cursor:zoom-out;padding:16px}
+.rl-lb.open{display:block}
+.rl-lb img{display:block;margin:0 auto;max-width:100%;height:auto}
+.rl-lb.full img{max-width:none}
+.rl-lb-bar{position:fixed;top:10px;right:14px;z-index:2001;display:flex;gap:8px}
+.rl-lb-bar button{background:#222;color:#fff;border:1px solid #555;border-radius:6px;padding:4px 10px;font-size:.9rem;cursor:pointer}
+</style>
+</head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">kevinlalli.me</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The latest
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="kalshi-response-2026-10-20.html">
+   RE: Kalshi&#x27;s &quot;Who Calibrates Markets&quot;
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ditl-2026-10-14-part-1.html">
+   DITL 14 Oct, part 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="satgpt-updated.html">
+   SatGPT updated
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-from-claude.html">
+   Hello from Claude
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Old blog
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-earth.html">
+   Hello, Earth!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hyping-hsi.html">
+   Hyping Hyperspectral
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  I 💚 <a href="https://jupyterbook.org">Jupyter Books</a> & <a href="https://www.curvenote.com">Curvenote</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/kalshi-response-2026-10-20-as-run-pm-step3.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <a class="btn btn-secondary topbarbtn" href="https://github.com/lalligagger" aria-label="GitHub: lalligagger" title="GitHub: lalligagger"><i class="fab fa-github"></i></a>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#already-done-dont-redo">
+   Already done (don&#x27;t redo)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-this-run-does">
+   What this run does
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#files-on-the-mac">
+   Files on the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-confirm-the-files">
+   Step 1: confirm the files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-check-the-vm-is-free-on-the-right-code-and-has-the-tape">
+   Step 2: check the VM is free, on the right code, and has the tape
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-owner-go">
+   Step 3: owner go
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-copy-the-job-and-the-grids-to-the-vm-then-start-it">
+   Step 4: copy the job and the grids to the VM, then start it
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-wait-for-it-to-finish">
+   Step 5: wait for it to finish
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-owner-note">
+   Step 6: owner note
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-copy-the-outputs-to-the-mac">
+   Step 7: copy the outputs to the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-8-report-back">
+   Step 8: report back
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-9-added-0405z-dump-the-market-links-for-the-floor">
+   Step 9 (added 04:05Z): dump the market links for the floor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-10-score">
+   Step 10: score
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#footer-fill-in">
+   Footer (fill in)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#as-run-20-oct-2026-utc">
+   As run (20 Oct 2026, UTC)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix-scripts-as-run">
+   Appendix: scripts as run
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#job-script-pm_job.sh">
+     Job script: pm_job.sh
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#links-dump-pm_links.sh">
+     Links dump: pm_links.sh
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>As run: Polymarket step 3, 20 Oct 2026</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#already-done-dont-redo">
+   Already done (don&#x27;t redo)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-this-run-does">
+   What this run does
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#files-on-the-mac">
+   Files on the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-confirm-the-files">
+   Step 1: confirm the files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-check-the-vm-is-free-on-the-right-code-and-has-the-tape">
+   Step 2: check the VM is free, on the right code, and has the tape
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-owner-go">
+   Step 3: owner go
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-copy-the-job-and-the-grids-to-the-vm-then-start-it">
+   Step 4: copy the job and the grids to the VM, then start it
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-wait-for-it-to-finish">
+   Step 5: wait for it to finish
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-owner-note">
+   Step 6: owner note
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-copy-the-outputs-to-the-mac">
+   Step 7: copy the outputs to the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-8-report-back">
+   Step 8: report back
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-9-added-0405z-dump-the-market-links-for-the-floor">
+   Step 9 (added 04:05Z): dump the market links for the floor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-10-score">
+   Step 10: score
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#footer-fill-in">
+   Footer (fill in)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#as-run-20-oct-2026-utc">
+   As run (20 Oct 2026, UTC)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix-scripts-as-run">
+   Appendix: scripts as run
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#job-script-pm_job.sh">
+     Job script: pm_job.sh
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#links-dump-pm_links.sh">
+     Links dump: pm_links.sh
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="kalshi-response-2026-10-20-as-run-pm-step3">
+<h1>As run: Polymarket step 3, 20 Oct 2026<a class="headerlink" href="#kalshi-response-2026-10-20-as-run-pm-step3" title="Permalink to this headline">¶</a></h1>
+<style>
+.rl-article table{font-size:14px;margin:12px 0 18px;display:block;overflow-x:auto}
+.rl-article table th{white-space:nowrap}
+.rl-article img{max-width:100%;height:auto;border:1px solid #e3e6ea;border-radius:8px;margin:8px 0}
+.rl-article blockquote{border-left:3px solid #1d5a86;padding:4px 14px;color:#4a5562}
+</style>
+<div class="rl-article">
+<p><em>This is the runbook as written and run, with machine names, paths, database names and accounts redacted (shown as <code>&lt;...&gt;</code>). The commands are otherwise unchanged. The outcome of each run is recorded at the end, and the job script it started is in the appendix.</em></p>
+<p><strong>For:</strong> the same Haiku-class agent in VS Code on the owner's Mac that ran the rule 1 handoff. It works the same way: run each command, compare its output with the <strong>Check</strong>, then go on or stop. Don't change any command, setting or file. If a check fails, stop and give the owner the step number and the last 20 lines of output.</p>
+<div class="section" id="already-done-dont-redo">
+<h2>Already done (don't redo)</h2>
+<ul>
+<li><strong>Rule 1 run:</strong> finished 02:56Z, 40 runs, 0 failures. Folder <code>kalshi-rule1-20261020T023605Z</code>. Claude has scored it.</li>
+<li><strong>The pre-registration is locked:</strong> commit 730644c on <code>racinglines/racinglines</code>, pushed 03:52Z (draft PR #276). It fixes the two settings, the rounds and the scoring before anything runs, so nothing in this handoff may change them.</li>
+</ul>
+</div>
+<div class="section" id="what-this-run-does">
+<h2>What this run does</h2>
+<p>Read-only on staging's mirror of the prod database, like the rule 1 run. It has two parts.</p>
+<ol type="1">
+<li><strong>Fills census.</strong> For every Probalytics F1 fill file, Polymarket and Kalshi, it records per market the number of fills, the $ volume, and the first and last fill. Claude uses this for the trade floor and the first Polymarket F1 date.</li>
+<li><strong>Four sweeps</strong> with <code>--trades-out</code>:
+<ul>
+<li>two settings: <code>pm-touch</code> and <code>pm-book</code>, the model's defaults on Probalytics' Polymarket tape;</li>
+<li>two seasons each: 2025 rounds 22–24 and 2026 rounds 3–16.</li>
+</ul></li>
+</ol>
+<p><code>pm-book</code> walks the full book at every order, so it may be slower than the rule 1 runs. How long it takes is unknown.</p>
+</div>
+<div class="section" id="files-on-the-mac">
+<h2>Files on the Mac</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;mac-folder&gt;/pm-step3/pm_job.sh</code></td>
+<td>The VM job, written by Claude. Its census part was tested on sample files.</td>
+</tr>
+<tr class="even">
+<td><code>&lt;mac-folder&gt;/pm-step3/grids/pm-touch.json</code>, <code>pm-book.json</code></td>
+<td>The two settings, identical to the copies in commit 730644c</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-1-confirm-the-files">
+<h2>Step 1: confirm the files</h2>
+<pre><code># LOCAL (Mac)
+ls -la &lt;mac-folder&gt;/pm-step3/ &lt;mac-folder&gt;/pm-step3/grids/ &amp;&amp; bash -n &lt;mac-folder&gt;/pm-step3/pm_job.sh &amp;&amp; echo script-ok</code></pre>
+<p><strong>Check:</strong> <code>pm_job.sh</code> and both JSON files are listed, and the last line is <code>script-ok</code>.</p>
+</div>
+<div class="section" id="step-2-check-the-vm-is-free-on-the-right-code-and-has-the-tape">
+<h2>Step 2: check the VM is free, on the right code, and has the tape</h2>
+<pre><code># LOCAL (Mac)
+gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;cd &lt;app&gt; &amp;&amp; /usr/bin/git log --oneline -1 &amp;&amp; systemctl list-units &#39;rl-*&#39; --state=running,activating --no-legend | wc -l &amp;&amp; sudo grep -c &#39;^PROBALYTICS_BUCKET=&#39; &lt;env-file&gt;; ls data/probalytics/stages 2&gt;/dev/null | grep -c POLYMARKET&quot;</code></pre>
+<p>This prints counts only. Never print the env file itself.</p>
+<p><strong>Check:</strong> four lines. 1. Starts with <code>34b18f5</code> or a later staging commit. 2. <code>0</code>: no <code>rl-</code> unit is running. If not <code>0</code>, stop. 3. <code>1</code>: the bucket is set. 4. A number: the Polymarket stage files already on disk.</p>
+<p>If line 3 is <code>0</code> and line 4 is <code>0</code>, stop: the VM has no Probalytics tape to read.</p>
+</div>
+<div class="section" id="step-3-owner-go">
+<h2>Step 3: owner go</h2>
+<p>Ask the owner to post "pm step 3 run starting" in the Claude thread "Kalshi Market Efficiency Report", then wait for their OK. That lets the coordinator hold the staging merges.</p>
+</div>
+<div class="section" id="step-4-copy-the-job-and-the-grids-to-the-vm-then-start-it">
+<h2>Step 4: copy the job and the grids to the VM, then start it</h2>
+<pre><code># LOCAL (Mac)
+gcloud compute scp --recurse &lt;mac-folder&gt;/pm-step3/pm_job.sh &lt;mac-folder&gt;/pm-step3/grids &lt;vm&gt;:&lt;tmp&gt;/ --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap &amp;&amp; gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;sudo install -m 755 &lt;tmp&gt;/pm_job.sh &lt;tmp&gt;/pm_job.sh &amp;&amp; sudo rm -rf &lt;tmp&gt;/pm-step3-grids &amp;&amp; sudo install -d -m 755 &lt;tmp&gt;/pm-step3-grids &amp;&amp; sudo install -m 644 &lt;tmp&gt;/grids/pm-touch.json &lt;tmp&gt;/grids/pm-book.json &lt;tmp&gt;/pm-step3-grids/ &amp;&amp; sudo systemctl reset-failed rl-pm-step3 2&gt;/dev/null; sudo systemd-run --unit=rl-pm-step3 --uid=&lt;app-user&gt; &lt;tmp&gt;/pm_job.sh &amp;&amp; sleep 45 &amp;&amp; sudo journalctl -u rl-pm-step3 --no-pager | grep -E &#39;pm step-3 run from|census|start 1/&#39;&quot;</code></pre>
+<p><strong>Check:</strong> all three of these show up. - <code>pm step-3 run from 34b18f5 on &lt;staging-db&gt; (read-only)</code>, or a later commit. - A <code>census:</code> line. If it hasn't finished yet, only <code>census: start</code> shows. That's fine. - If the census has finished, <code>start 1/4 f1-2025-pm-touch (rounds 22-24)</code>.</p>
+<p>If you see <code>census FAILED</code>, note it and go on: the sweeps still run.</p>
+</div>
+<div class="section" id="step-5-wait-for-it-to-finish">
+<h2>Step 5: wait for it to finish</h2>
+<p>Check about every 5 minutes:</p>
+<pre><code># LOCAL (Mac)
+gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;systemctl is-active rl-pm-step3; d=\$(ls -1dt &lt;app&gt;/data/runs/pm-step3-* | head -1); tail -n 4 \$d/run.log&quot;</code></pre>
+<p><strong>Check:</strong> it's done when the first line is <code>inactive</code> (or <code>failed</code>) and run.log ends with <code>all done in M min, 4 runs, failures: F</code>. Note F, and any <code>FAILED</code> line with its error text.</p>
+</div>
+<div class="section" id="step-6-owner-note">
+<h2>Step 6: owner note</h2>
+<p>Ask the owner to post this in the Claude thread: "pm step 3 run ended: 4 runs, F failures".</p>
+</div>
+<div class="section" id="step-7-copy-the-outputs-to-the-mac">
+<h2>Step 7: copy the outputs to the Mac</h2>
+<pre><code># LOCAL (Mac)
+mkdir -p &lt;mac-folder&gt;/pm-step3/raw &amp;&amp; cd &lt;mac-folder&gt;/pm-step3/raw &amp;&amp; d=$(gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;ls -1dt &lt;app&gt;/data/runs/pm-step3-* | head -1&quot; | tr -d &#39;\r&#39;) &amp;&amp; gcloud compute scp --recurse --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap &quot;&lt;vm&gt;:$d&quot; . &amp;&amp; find . -name &#39;*.parquet&#39; | wc -l &amp;&amp; find . -name fills-census.csv -exec wc -l {} \;</code></pre>
+<p><strong>Check:</strong> - The parquet count is 4 − F. - <code>fills-census.csv</code> has more than 2 lines. If the census failed, it may be missing; say so.</p>
+</div>
+<div class="section" id="step-8-report-back">
+<h2>Step 8: report back</h2>
+<p>Give the owner three things to paste into the Claude thread, then go straight on to steps 9 and 10 (Claude has added the scorer): 1. The last 6 lines of <code>raw/pm-step3-*/run.log</code>. 2. The census line from run.log: <code>census: N fill files (...), N markets, first Polymarket fill ...</code>. It is in the journal if not in run.log: <code>sudo journalctl -u rl-pm-step3 --no-pager | grep 'census:'</code>, over the same gcloud ssh as step 5. 3. The path <code>&lt;mac-folder&gt;/pm-step3/raw/</code>. Claude reads it from the Mac.</p>
+</div>
+<div class="section" id="step-9-added-0405z-dump-the-market-links-for-the-floor">
+<h2>Step 9 (added 04:05Z): dump the market links for the floor</h2>
+<p>Read-only. This writes one CSV on the VM and copies it to the Mac.</p>
+<pre><code># LOCAL (Mac)
+gcloud compute scp &lt;mac-folder&gt;/pm-step3/pm_links.sh &lt;vm&gt;:&lt;tmp&gt;/pm_links.sh --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap &amp;&amp; gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;sudo install -m 755 &lt;tmp&gt;/pm_links.sh &lt;tmp&gt;/pm_links.sh &amp;&amp; sudo -u racinglines &lt;tmp&gt;/pm_links.sh&quot; &amp;&amp; gcloud compute scp &lt;vm&gt;:&lt;tmp&gt;/pm-links.csv &lt;mac-folder&gt;/pm-step3/links.csv --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap &amp;&amp; wc -l &lt;mac-folder&gt;/pm-step3/links.csv</code></pre>
+<p><strong>Check:</strong> it prints <code>links: N rows, {'polymarket': ..., 'kalshi': ...}</code>, and links.csv has more than 1,000 lines.</p>
+</div>
+<div class="section" id="step-10-score">
+<h2>Step 10: score</h2>
+<pre><code># LOCAL (Mac)
+cd &lt;mac-folder&gt;/pm-step3 &amp;&amp; ~/py_dev/racinglines/.venv/bin/python -I pm_score.py &gt; pm-scores.txt; tail -n 20 pm-scores.txt</code></pre>
+<p><strong>Check:</strong> the first line starts with <code>trades in windows:</code>, then there is a 16-row table (tune and holdout, 2 settings × 4 modes), and the last line starts with <code>PICK</code>. If it errors, paste the error and stop. Don't install anything.</p>
+<p>Paste <code>pm-scores.txt</code> into the Claude thread. Don't interpret it: Claude writes the verdict.</p>
+</div>
+<div class="section" id="footer-fill-in">
+<h2>Footer (fill in)</h2>
+<ul>
+<li>What ran: the unit name, the start and end time, F.</li>
+<li>How it was verified: the step 4 and step 5 check lines.</li>
+<li>Paths: the VM output folder name, the Mac <code>raw/</code> folder.</li>
+<li>What was not checked: anything skipped.</li>
+</ul>
+</div>
+<div class="section" id="as-run-20-oct-2026-utc">
+<h2>As run (20 Oct 2026, UTC)</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time (UTC)</th>
+<th>Event</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>03:52:33</td>
+<td>Pre-registration committed (racinglines commit 730644c, PR #276), before anything ran</td>
+</tr>
+<tr class="even">
+<td>03:55:47</td>
+<td>Unit started on staging commit 34b18f5, read-only: fills census plus 4 sweeps</td>
+</tr>
+<tr class="odd">
+<td>04:00:40</td>
+<td>Done: 4 runs, <strong>0 failures</strong>. Census: 34 fill files, 8,785 markets, first fill 2025-06-01</td>
+</tr>
+<tr class="even">
+<td>after</td>
+<td>Links dump: 6,216 rows (Kalshi 3,350, Polymarket 2,866); scored once with the pre-registered scorer</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="appendix-scripts-as-run">
+<h2>Appendix: scripts as run</h2>
+<div class="section" id="job-script-pm_job.sh">
+<h3>Job script: pm_job.sh</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3 of the Kalshi response: the pre-registered Polymarket test on Probalytics&#39; tape (prereg:</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># paper/prereg/2026-10-20-polymarket-step3.md). Read-only on staging&#39;s mirror. Two parts:</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   1. fills census: every Probalytics F1 fill file (Polymarket and Kalshi), per market: fills, $ volume, first and</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#      last fill -&gt; fills-census.csv (the trade floor and the first Polymarket F1 listing date)</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   2. the un-tuned settings (grids/pm-touch.json, grids/pm-book.json) on 2025 rounds 22-24 and 2026 rounds 3-16,</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#      with --trades-out, one process per setting and season so one failure doesn&#39;t stop the rest</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># A progress line every 5 minutes. Output: data/runs/pm-step3-&lt;UTC&gt;/</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-uo</span> pipefail</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-a</span><span class="kw">;</span> <span class="bu">.</span> <span class="op">&lt;</span>env-file<span class="op">&gt;</span><span class="kw">;</span> <span class="bu">set</span> +a</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DATABASE_URL</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${DATABASE_URL</span><span class="op">%</span>/<span class="pp">*</span><span class="va">}</span><span class="st">/&lt;staging-db&gt;&quot;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PYTHONUNBUFFERED</span><span class="op">=</span>1 <span class="va">RACINGLINES_PROGRESS_SEC</span><span class="op">=</span>300 <span class="va">PGOPTIONS</span><span class="op">=</span><span class="st">&quot;-c default_transaction_read_only=on&quot;</span> <span class="va">PROBALYTICS_CACHE_EVICT</span><span class="op">=</span>1</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="op">&lt;</span>app<span class="op">&gt;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="va">R</span><span class="op">=</span>.venv/bin/racinglines</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="va">G</span><span class="op">=&lt;</span>tmp<span class="op">&gt;</span>/pm-step3-grids</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="va">OUT</span><span class="op">=</span>data/runs/pm-step3-<span class="va">$(</span><span class="fu">date</span> <span class="at">-u</span> +%Y%m%dT%H%M%SZ<span class="va">)</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">&quot;</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">say()</span> <span class="kw">{</span> <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">date</span> <span class="at">-u</span> +%Y-%m-%dT%H:%M:%SZ<span class="va">)</span><span class="st"> </span><span class="va">$*</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">tee</span> <span class="at">-a</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/run.log&quot;</span><span class="kw">;</span> <span class="kw">}</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="va">T0</span><span class="op">=</span><span class="va">$SECONDS</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span> <span class="cf">while</span> <span class="fu">sleep</span> 300<span class="kw">;</span> <span class="cf">do</span> <span class="ex">say</span> <span class="st">&quot;progress: </span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min elapsed&quot;</span><span class="kw">;</span> <span class="cf">done</span> <span class="kw">)</span> <span class="kw">&amp;</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="va">BEAT</span><span class="op">=</span><span class="va">$!</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="bu">trap</span> <span class="st">&#39;kill $BEAT 2&gt;/dev/null&#39;</span> EXIT</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;pm step-3 run from </span><span class="va">$(</span><span class="fu">git</span> rev-parse <span class="at">--short</span> HEAD<span class="va">)</span><span class="st"> on </span><span class="va">${DATABASE_URL</span><span class="op">##</span><span class="pp">*</span>/<span class="va">}</span><span class="st"> (read-only) -&gt; </span><span class="va">$OUT</span><span class="st">&quot;</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;census: start&quot;</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv/bin/python</span> <span class="at">-</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/fills-census.csv&quot;</span> <span class="op">&lt;&lt;&#39;PY&#39;</span> <span class="kw">||</span> <span class="ex">say</span> <span class="st">&quot;census FAILED (the sweeps still run)&quot;</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="st">import sys</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="st">from pathlib import Path</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="st">import pandas as pd</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="st">import pyarrow.parquet as pq</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="st">from racinglines.markets import probalytics as p</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="st">base = Path(p.root())</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="st">months = pd.period_range(&quot;2022-11&quot;, pd.Timestamp.utcnow().strftime(&quot;%Y-%m&quot;), freq=&quot;M&quot;)</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="st">rows, seen = [], []</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="st">for venue in (&quot;POLYMARKET&quot;, &quot;KALSHI&quot;):</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="st">    for m in months:</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="st">        f = base / &quot;fills&quot; / f&quot;F1_{venue}_{m}.parquet&quot;</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="st">        got = p.fetch([f], base)</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="st">        if not f.exists():</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="st">            continue</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="st">        seen.append(f.name)</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="st">        have = set(pq.read_schema(f).names)</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="st">        cols = [c for c in (&quot;fill_id&quot;, &quot;market_platform_id&quot;, &quot;timestamp&quot;, &quot;price&quot;, &quot;size&quot;) if c in have]</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="st">        df = pq.read_table(f, columns=cols).to_pandas()</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="st">        p._evict(got)</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="st">        if &quot;fill_id&quot; in df:</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="st">            df = df.drop_duplicates(&quot;fill_id&quot;)</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a><span class="st">        df[&quot;usd&quot;] = df[&quot;price&quot;] * df[&quot;size&quot;]</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a><span class="st">        g = df.groupby(&quot;market_platform_id&quot;).agg(fills=(&quot;usd&quot;, &quot;size&quot;), usd=(&quot;usd&quot;, &quot;sum&quot;),</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a><span class="st">                                                 first=(&quot;timestamp&quot;, &quot;min&quot;), last=(&quot;timestamp&quot;, &quot;max&quot;))</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="st">        rows.append(g.reset_index().assign(venue=venue.lower(), month=str(m)))</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a><span class="st">out = pd.concat(rows, ignore_index=True)</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="st">out = out.groupby([&quot;venue&quot;, &quot;market_platform_id&quot;]).agg(fills=(&quot;fills&quot;, &quot;sum&quot;), usd=(&quot;usd&quot;, &quot;sum&quot;),</span></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       first=(&quot;first&quot;, &quot;min&quot;), last=(&quot;last&quot;, &quot;max&quot;)).reset_index()</span></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a><span class="st">out.to_csv(sys.argv[1], index=False)</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a><span class="st">print(f&quot;census: {len(seen)} fill files ({seen[0] if seen else &#39;-&#39;} to {seen[-1] if seen else &#39;-&#39;}), &quot;</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a><span class="st">      f&quot;{len(out)} markets, first Polymarket fill {out[out.venue == &#39;polymarket&#39;][&#39;first&#39;].min()}&quot;)</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a><span class="op">PY</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a><span class="bu">[</span> <span class="ot">-s</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/fills-census.csv&quot;</span> <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="ex">say</span> <span class="st">&quot;census: done, </span><span class="va">$(($(</span><span class="fu">wc</span> <span class="at">-l</span> <span class="op">&lt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/fills-census.csv&quot;</span><span class="va">)</span> <span class="op">-</span> <span class="dv">1</span><span class="va">))</span><span class="st"> markets&quot;</span> <span class="kw">||</span> <span class="ex">say</span> <span class="st">&quot;census: no file&quot;</span></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a><span class="va">I</span><span class="op">=</span>0<span class="kw">;</span> <span class="va">FAIL</span><span class="op">=</span>0<span class="kw">;</span> <span class="va">N</span><span class="op">=</span>4</span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> pm-touch pm-book<span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> y <span class="kw">in</span> 2025 2026<span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>    <span class="va">I</span><span class="op">=</span><span class="va">$((I</span> <span class="op">+</span> <span class="dv">1</span><span class="va">))</span><span class="kw">;</span> <span class="va">rounds</span><span class="op">=</span><span class="st">&quot;22-24&quot;</span><span class="kw">;</span> <span class="bu">[</span> <span class="st">&quot;</span><span class="va">$y</span><span class="st">&quot;</span> <span class="ot">=</span> 2026 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="va">rounds</span><span class="op">=</span><span class="st">&quot;3-16&quot;</span></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>    <span class="ex">say</span> <span class="st">&quot;start </span><span class="va">$I</span><span class="st">/</span><span class="va">$N</span><span class="st"> f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st"> (rounds </span><span class="va">$rounds</span><span class="st">)&quot;</span></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="va">$R</span> f1 sweep <span class="at">--year</span> <span class="st">&quot;</span><span class="va">$y</span><span class="st">&quot;</span> <span class="at">--rounds</span> <span class="st">&quot;</span><span class="va">$rounds</span><span class="st">&quot;</span> <span class="at">--no-fetch</span> <span class="at">--grid</span> <span class="st">&quot;</span><span class="va">$G</span><span class="st">/</span><span class="va">$k</span><span class="st">.json&quot;</span> <span class="at">--trades-out</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st">&quot;</span> <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st">.log&quot;</span> <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a>      <span class="ex">say</span> <span class="st">&quot;done </span><span class="va">$I</span><span class="st">/</span><span class="va">$N</span><span class="st"> f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st"> (</span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min)&quot;</span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>      <span class="ex">say</span> <span class="st">&quot;FAILED </span><span class="va">$I</span><span class="st">/</span><span class="va">$N</span><span class="st"> f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st">: </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-m1</span> <span class="at">-oE</span> <span class="st">&#39;ReadOnlySqlTransaction|Error: .{0,80}&#39;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st">.log&quot;</span><span class="va">)</span><span class="st">&quot;</span><span class="kw">;</span> <span class="va">FAIL</span><span class="op">=</span><span class="va">$((FAIL</span> <span class="op">+</span> <span class="dv">1</span><span class="va">))</span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>  <span class="cf">done</span></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;all done in </span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min, </span><span class="va">$N</span><span class="st"> runs, failures: </span><span class="va">$FAIL</span><span class="st">&quot;</span></span></code></pre></div>
+</div>
+<div class="section" id="links-dump-pm_links.sh">
+<h3>Links dump: pm_links.sh</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Read-only: F1 market links (Polymarket and Kalshi) for the step 3 rounds -&gt; &lt;tmp&gt;/pm-links.csv, for the market</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># floor in pm_score.py. Staging&#39;s mirror of prod, read-only transaction.</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-euo</span> pipefail</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-a</span><span class="kw">;</span> <span class="bu">.</span> <span class="op">&lt;</span>env-file<span class="op">&gt;</span><span class="kw">;</span> <span class="bu">set</span> +a</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DATABASE_URL</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${DATABASE_URL</span><span class="op">%</span>/<span class="pp">*</span><span class="va">}</span><span class="st">/&lt;staging-db&gt;&quot;</span> <span class="va">PGOPTIONS</span><span class="op">=</span><span class="st">&quot;-c default_transaction_read_only=on&quot;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="op">&lt;</span>app<span class="op">&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv/bin/python</span> <span class="at">-</span> <span class="op">&lt;</span>tmp<span class="op">&gt;</span>/pm-links.csv <span class="op">&lt;&lt;&#39;PY&#39;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="st">import os, sys</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="st">import pandas as pd</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="st">from sqlalchemy import create_engine, text</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="st">q = text(&quot;&quot;&quot;SELECT ml.exchange, ml.token_id, ml.condition_id, ml.prediction AS kind, ml.volume,</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="st">                   extract(year FROM e.start_date)::int AS year, e.series_round AS round</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="st">            FROM market_links ml JOIN races r ON r.id = ml.race_id JOIN events e ON e.id = r.event_id</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="st">                 JOIN competitions c ON c.id = ml.competition_id</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="st">            WHERE ml.exchange IN (&#39;polymarket&#39;, &#39;kalshi&#39;) AND c.code LIKE &#39;f1%&#39;</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="st">              AND ((extract(year FROM e.start_date) = 2025 AND e.series_round BETWEEN 22 AND 24)</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="st">                OR (extract(year FROM e.start_date) = 2026 AND e.series_round BETWEEN 1 AND 17))&quot;&quot;&quot;)</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="st">df = pd.read_sql(q, create_engine(os.environ[&quot;DATABASE_URL&quot;]))</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="st">df.to_csv(sys.argv[1], index=False)</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="st">print(f&quot;links: {len(df)} rows, {df.exchange.value_counts().to_dict()}&quot;)</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="op">PY</span></span></code></pre></div>
+</div>
+</div>
+
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kevin Lalli<br/>
+    
+        &copy; Copyright 2026.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  <div class="rl-lb" id="rl-lb" role="dialog" aria-modal="true" aria-label="Expanded screenshot"><div class="rl-lb-bar"><button type="button" id="rl-lb-size">Actual size</button><button type="button" id="rl-lb-close">Close &times;</button></div><img alt=""></div>
+<script>(function(){var lb=document.getElementById('rl-lb'),im=lb.querySelector('img'),sz=document.getElementById('rl-lb-size');
+function close(){lb.classList.remove('open','full');document.body.style.overflow='';}
+document.querySelectorAll('a.rl-zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');im.alt=a.querySelector('img').alt;lb.classList.add('open');document.body.style.overflow='hidden';sz.textContent='Actual size';});});
+sz.addEventListener('click',function(e){e.stopPropagation();lb.classList.toggle('full');sz.textContent=lb.classList.contains('full')?'Fit to screen':'Actual size';});
+document.getElementById('rl-lb-close').addEventListener('click',function(e){e.stopPropagation();close();});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target===im)close();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();</script>
+</body>
+</html>

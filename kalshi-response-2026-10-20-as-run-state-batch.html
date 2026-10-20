@@ -1,0 +1,1259 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="prev" title="Home" href="index.html" />
+    <link rel="next" title="SatGPT updated" href="satgpt-updated.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A runbook behind our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="kevinlalli.me" />
+    <meta property="og:title" content="As run: overnight batch, 20 Oct 2026" />
+    <meta property="og:description" content="A runbook behind our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta property="og:url" content="https://kevinlalli.me/kalshi-response-2026-10-20-as-run-state-batch.html" />
+    <meta property="og:image" content="https://kevinlalli.me/_images/kalshi-response-2026-10-20/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="As run: overnight batch, 20 Oct 2026: five golden rules for taker strategies" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="As run: overnight batch, 20 Oct 2026" />
+    <meta name="twitter:description" content="A runbook behind our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta name="twitter:image" content="https://kevinlalli.me/_images/kalshi-response-2026-10-20/og-card.png" />
+    <title>As run: overnight batch, 20 Oct 2026 &#8212; kevinlalli.me</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  <style id="rl-zoom-css">
+.rl-zoom{position:relative;display:block;max-height:420px;overflow:hidden;border-radius:6px;cursor:zoom-in;border:1px solid var(--pst-color-border,#ddd)}
+.rl-zoom img{display:block;width:100%;height:auto;margin:0}
+.rl-zoom::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,rgba(13,14,18,.85))}
+.rl-zoom-hint{position:absolute;right:12px;bottom:10px;z-index:1;color:#fff;font-size:.85rem;font-weight:600;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:999px}
+.rl-lb{position:fixed;inset:0;z-index:2000;background:rgba(10,10,12,.97);display:none;overflow:auto;cursor:zoom-out;padding:16px}
+.rl-lb.open{display:block}
+.rl-lb img{display:block;margin:0 auto;max-width:100%;height:auto}
+.rl-lb.full img{max-width:none}
+.rl-lb-bar{position:fixed;top:10px;right:14px;z-index:2001;display:flex;gap:8px}
+.rl-lb-bar button{background:#222;color:#fff;border:1px solid #555;border-radius:6px;padding:4px 10px;font-size:.9rem;cursor:pointer}
+</style>
+</head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">kevinlalli.me</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The latest
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="kalshi-response-2026-10-20.html">
+   RE: Kalshi&#x27;s &quot;Who Calibrates Markets&quot;
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ditl-2026-10-14-part-1.html">
+   DITL 14 Oct, part 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="satgpt-updated.html">
+   SatGPT updated
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-from-claude.html">
+   Hello from Claude
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Old blog
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-earth.html">
+   Hello, Earth!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hyping-hsi.html">
+   Hyping Hyperspectral
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  I 💚 <a href="https://jupyterbook.org">Jupyter Books</a> & <a href="https://www.curvenote.com">Curvenote</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/kalshi-response-2026-10-20-as-run-state-batch.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <a class="btn btn-secondary topbarbtn" href="https://github.com/lalligagger" aria-label="GitHub: lalligagger" title="GitHub: lalligagger"><i class="fab fa-github"></i></a>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-the-state-batch">
+   Part 1: the state batch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#already-done-dont-redo">
+   Already done (don&#x27;t redo)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-this-batch-does">
+   What this batch does
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#files-on-the-mac">
+   Files on the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-confirm-the-files">
+   Step 1: confirm the files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-check-the-vm-is-free-and-what-tape-it-has">
+   Step 2: check the VM is free, and what tape it has
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-owner-go">
+   Step 3: owner go
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-copy-the-files-to-the-vm-and-start-the-batch">
+   Step 4: copy the files to the VM and start the batch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-wait-for-it-to-finish">
+   Step 5: wait for it to finish
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-owner-note">
+   Step 6: owner note
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-copy-the-outputs-to-the-mac">
+   Step 7: copy the outputs to the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-8-report-back">
+   Step 8: report back
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#footer-fill-in">
+   Footer (fill in)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-rule-1-on-polymarket-one-process-per-setting">
+   Part 2: rule 1 on Polymarket, one process per setting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why">
+   Why
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-confirm-the-file">
+   Step 1: confirm the file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-check-the-vm-is-free">
+   Step 2: check the VM is free
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-owner-go-1">
+   Step 3: owner go
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-copy-and-start">
+   Step 4: copy and start
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-wait-for-it-to-finish-1">
+   Step 5: wait for it to finish
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-owner-note-1">
+   Step 6: owner note
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-copy-the-outputs-to-the-mac-1">
+   Step 7: copy the outputs to the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-8-report-back-1">
+   Step 8: report back
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#as-run-20-oct-2026-utc">
+   As run (20 Oct 2026, UTC)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix-scripts-as-run">
+   Appendix: scripts as run
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#job-script-state_job.sh">
+     Job script: state_job.sh
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-on-every-market-calib_dump.py">
+     Model on every market: calib_dump.py
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistics-stats.py">
+     Statistics: stats.py
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-2-job-script-pm_rule1_rerun.sh">
+     Part 2 job script: pm_rule1_rerun.sh
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>As run: overnight batch, 20 Oct 2026</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-the-state-batch">
+   Part 1: the state batch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#already-done-dont-redo">
+   Already done (don&#x27;t redo)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-this-batch-does">
+   What this batch does
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#files-on-the-mac">
+   Files on the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-confirm-the-files">
+   Step 1: confirm the files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-check-the-vm-is-free-and-what-tape-it-has">
+   Step 2: check the VM is free, and what tape it has
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-owner-go">
+   Step 3: owner go
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-copy-the-files-to-the-vm-and-start-the-batch">
+   Step 4: copy the files to the VM and start the batch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-wait-for-it-to-finish">
+   Step 5: wait for it to finish
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-owner-note">
+   Step 6: owner note
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-copy-the-outputs-to-the-mac">
+   Step 7: copy the outputs to the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-8-report-back">
+   Step 8: report back
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#footer-fill-in">
+   Footer (fill in)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-rule-1-on-polymarket-one-process-per-setting">
+   Part 2: rule 1 on Polymarket, one process per setting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why">
+   Why
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-confirm-the-file">
+   Step 1: confirm the file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-check-the-vm-is-free">
+   Step 2: check the VM is free
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-owner-go-1">
+   Step 3: owner go
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-copy-and-start">
+   Step 4: copy and start
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-wait-for-it-to-finish-1">
+   Step 5: wait for it to finish
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-owner-note-1">
+   Step 6: owner note
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-copy-the-outputs-to-the-mac-1">
+   Step 7: copy the outputs to the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-8-report-back-1">
+   Step 8: report back
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#as-run-20-oct-2026-utc">
+   As run (20 Oct 2026, UTC)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix-scripts-as-run">
+   Appendix: scripts as run
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#job-script-state_job.sh">
+     Job script: state_job.sh
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-on-every-market-calib_dump.py">
+     Model on every market: calib_dump.py
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistics-stats.py">
+     Statistics: stats.py
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-2-job-script-pm_rule1_rerun.sh">
+     Part 2 job script: pm_rule1_rerun.sh
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="kalshi-response-2026-10-20-as-run-state-batch">
+<h1>As run: overnight batch, 20 Oct 2026<a class="headerlink" href="#kalshi-response-2026-10-20-as-run-state-batch" title="Permalink to this headline">¶</a></h1>
+<style>
+.rl-article table{font-size:14px;margin:12px 0 18px;display:block;overflow-x:auto}
+.rl-article table th{white-space:nowrap}
+.rl-article img{max-width:100%;height:auto;border:1px solid #e3e6ea;border-radius:8px;margin:8px 0}
+.rl-article blockquote{border-left:3px solid #1d5a86;padding:4px 14px;color:#4a5562}
+</style>
+<div class="rl-article">
+<p><em>This is the runbook as written and run, with machine names, paths, database names and accounts redacted (shown as <code>&lt;...&gt;</code>). The commands are otherwise unchanged. The outcome of each run is recorded at the end, and the job script it started is in the appendix.</em></p>
+<div class="section" id="part-1-the-state-batch">
+<h2>Part 1: the state batch</h2>
+<p><strong>For:</strong> the same Haiku-class agent in VS Code on the owner's Mac. It works the same way as before: run each command, compare its output with the <strong>Check</strong>, then go on or stop. Don't change any command or file. If a check fails, stop and give the owner the step number and the last 20 lines of output. <strong>Read this file fresh from disk.</strong> It is new, so don't go by any earlier copy.</p>
+</div>
+<div class="section" id="already-done-dont-redo">
+<h2>Already done (don't redo)</h2>
+<ul>
+<li>Rule 1 Kalshi run: <code>kalshi-rule1-20261020T023605Z</code>.</li>
+<li>Step 3 Polymarket run: <code>pm-step3-20261020T035547Z</code>. Its trade files and census are on the VM, and this batch reads them there.</li>
+<li>Claude has scored both.</li>
+</ul>
+</div>
+<div class="section" id="what-this-batch-does">
+<h2>What this batch does</h2>
+<p>It is one unit, <code>rl-state-batch</code>, read-only on staging's mirror of prod. It writes no database rows. The parts run in this order:</p>
+<ol type="1">
+<li><strong>A and F, the model on every market.</strong> The un-tuned model, run as a season sweep that keeps every market it priced at every stage, traded or not. This covers F1 on Polymarket (our tape from 2025, which is "ready at launch", and Probalytics' books), F1 on Kalshi (ours, and Probalytics' books from round 5), NASCAR 2025 and 2026, and MotoGP
+<ol start="2026" type="1">
+<li>Ten runs.</li>
+</ol></li>
+<li><strong>G, the same model calibrated.</strong> As part 1, with the win-price calibration fitted on earlier races only (<code>calib_power = walk_forward</code>), for F1 on both venues and NASCAR on Kalshi. Six runs.</li>
+<li><strong>C, Kalshi on Probalytics' books.</strong> The 20 saved Kalshi F1 settings, 2026 rounds 5 to 16. One run.</li>
+<li><strong>E, statistics.</strong> Markouts of our trades, every F1 fill by price and outcome, and fills by stage of market life. This takes minutes.</li>
+<li><strong>B, rule 1 on Polymarket.</strong> Every saved Polymarket F1 setting, at the touch on Probalytics' books, 2025 rounds 22 to 24 and 2026 rounds 3 to 16. The two seasons run side by side. This is the long part: roughly 1 to 3 hours, a guess.</li>
+</ol>
+<p>All of it is one start command (step 4), so it can run unattended overnight. Parts 1 to 4 are a guess of 1 to 2 hours more; the whole batch, roughly 2 to 5 hours.</p>
+</div>
+<div class="section" id="files-on-the-mac">
+<h2>Files on the Mac</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;mac-folder&gt;/state-batch/state_job.sh</code></td>
+<td>The VM job, written by Claude</td>
+</tr>
+<tr class="even">
+<td><code>&lt;mac-folder&gt;/state-batch/stats.py</code></td>
+<td>Part E, tested on sample files</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;mac-folder&gt;/state-batch/calib_dump.py</code></td>
+<td>Parts A and F</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-1-confirm-the-files">
+<h2>Step 1: confirm the files</h2>
+<pre><code># LOCAL (Mac)
+ls -la &lt;mac-folder&gt;/state-batch/ &amp;&amp; bash -n &lt;mac-folder&gt;/state-batch/state_job.sh &amp;&amp; echo script-ok</code></pre>
+<p><strong>Check:</strong> the three files are listed, and the last line is <code>script-ok</code>.</p>
+</div>
+<div class="section" id="step-2-check-the-vm-is-free-and-what-tape-it-has">
+<h2>Step 2: check the VM is free, and what tape it has</h2>
+<p>Use the same one-time <code>safe.directory</code> override as before if git refuses.</p>
+<pre><code># LOCAL (Mac)
+gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;cd &lt;app&gt; &amp;&amp; /usr/bin/git log --oneline -1 &amp;&amp; systemctl list-units &#39;rl-*&#39; --state=running,activating --no-legend | grep -vc jev-monitor; ls data/probalytics/stages | grep -c KALSHI; ls -d data/runs/kalshi-rule1-* data/runs/pm-step3-*&quot;</code></pre>
+<p><strong>Check:</strong> - The first line starts with <code>34b18f5</code> or a later staging commit. - The second line is <code>0</code>. If not, stop: another queue is running. The one exception is <code>rl-jev-monitor</code> (the Jev review timer, every 15 minutes): it doesn't count, so if it is the only unit listed, go on. - The third line is a number: the Kalshi stage files. If it's <code>0</code>, note it and go on. Part C will then have no books. - Both run folders are listed.</p>
+</div>
+<div class="section" id="step-3-owner-go">
+<h2>Step 3: owner go</h2>
+<p>Ask the owner to post "state batch starting" in the Claude thread "Kalshi Market Efficiency Report", then wait for their OK. That lets the coordinator hold the staging merges.</p>
+</div>
+<div class="section" id="step-4-copy-the-files-to-the-vm-and-start-the-batch">
+<h2>Step 4: copy the files to the VM and start the batch</h2>
+<pre><code># LOCAL (Mac)
+gcloud compute scp &lt;mac-folder&gt;/state-batch/state_job.sh &lt;mac-folder&gt;/state-batch/stats.py &lt;mac-folder&gt;/state-batch/calib_dump.py &lt;vm&gt;:&lt;tmp&gt;/ --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap &amp;&amp; gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;sudo install -d -m 755 &lt;tmp&gt;/state-batch &amp;&amp; sudo install -m 755 &lt;tmp&gt;/state_job.sh &lt;tmp&gt;/state-batch/state_job.sh &amp;&amp; sudo install -m 644 &lt;tmp&gt;/stats.py &lt;tmp&gt;/calib_dump.py &lt;tmp&gt;/state-batch/ &amp;&amp; sudo systemctl reset-failed rl-state-batch 2&gt;/dev/null; sudo systemd-run --unit=rl-state-batch --uid=&lt;app-user&gt; &lt;tmp&gt;/state-batch/state_job.sh &amp;&amp; sleep 60 &amp;&amp; sudo journalctl -u rl-state-batch --no-pager | grep -E &#39;state batch from|grids:|dropped|start calib&#39;&quot;</code></pre>
+<p><strong>Check:</strong> you should see: - <code>state batch from 34b18f5 on &lt;staging-db&gt; (read-only)</code>, or a later commit; - <code>grids: N polymarket, 20 kalshi, D dropped</code>. Note N and D. N should be around 100; - <code>start calib f1-pm-ours-2025</code>.</p>
+<p>If you see <code>STOP: could not build the grids</code>, stop.</p>
+</div>
+<div class="section" id="step-5-wait-for-it-to-finish">
+<h2>Step 5: wait for it to finish</h2>
+<p>Check about every 10 minutes:</p>
+<pre><code># LOCAL (Mac)
+gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;systemctl is-active rl-state-batch; d=\$(ls -1dt &lt;app&gt;/data/runs/state-batch-* | head -1); tail -n 5 \$d/run.log&quot;</code></pre>
+<p><strong>Check:</strong> it's done when the first line is <code>inactive</code> (or <code>failed</code>) and run.log ends with <code>all done in M min, failures: F</code>. If a <code>FAILED</code> line appears, note it and keep waiting: the parts after it still run.</p>
+</div>
+<div class="section" id="step-6-owner-note">
+<h2>Step 6: owner note</h2>
+<p>Ask the owner to post this in the Claude thread: "state batch ended: F failures".</p>
+</div>
+<div class="section" id="step-7-copy-the-outputs-to-the-mac">
+<h2>Step 7: copy the outputs to the Mac</h2>
+<pre><code># LOCAL (Mac)
+mkdir -p &lt;mac-folder&gt;/state-batch/raw &amp;&amp; cd &lt;mac-folder&gt;/state-batch/raw &amp;&amp; d=$(gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;ls -1dt &lt;app&gt;/data/runs/state-batch-* | head -1&quot; | tr -d &#39;\r&#39;) &amp;&amp; gcloud compute scp --recurse --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap &quot;&lt;vm&gt;:$d&quot; . &amp;&amp; find . -name &#39;*.parquet&#39; | wc -l &amp;&amp; ls */*.csv</code></pre>
+<p><strong>Check:</strong> the parquet count is printed, and <code>markouts.csv</code>, <code>fills-bins.csv</code>, <code>fills-life.csv</code> and <code>fills-sample.csv</code> are listed.</p>
+</div>
+<div class="section" id="step-8-report-back">
+<h2>Step 8: report back</h2>
+<p>Give the owner three things to paste into the Claude thread: 1. The whole <code>raw/state-batch-*/run.log</code>. 2. The last 3 lines of <code>raw/state-batch-*/stats.log</code>. 3. The path <code>&lt;mac-folder&gt;/state-batch/raw/</code>. Claude reads and scores it from the Mac.</p>
+<p>Don't score or interpret anything.</p>
+</div>
+<div class="section" id="footer-fill-in">
+<h2>Footer (fill in)</h2>
+<ul>
+<li>What ran: the unit name, the start and end time, N, D and F.</li>
+<li>How it was verified: the step 4 and step 5 check lines.</li>
+<li>Paths: the VM output folder name, the Mac <code>raw/</code> folder.</li>
+<li>What was not checked: anything skipped.</li>
+</ul>
+</div>
+<div class="section" id="part-2-rule-1-on-polymarket-one-process-per-setting">
+<h2>Part 2: rule 1 on Polymarket, one process per setting</h2>
+<p><strong>For:</strong> the same agent. It works the same way: run each command, compare with the <strong>Check</strong>, go on or stop. Don't change any command or file. If a check fails, stop and give the owner the step number and the last 20 lines of output. Read this file fresh from disk.</p>
+</div>
+<div class="section" id="why">
+<h2>Why</h2>
+<p>In the first batch (<code>state-batch-20261020T052307Z</code>), part B ran every setting in one process per season. A setting whose model pricings weren't already stored for every round tried to save them, the read-only database refused (<code>ReadOnlySqlTransaction</code>), and that stopped the whole season. As a result, 2025 got 42 of 106 settings and 2026 got 1. This run starts one process per setting, so a refused setting drops only itself. A 2026 setting that fails on rounds 3 to 16 is retried once on rounds 3 to 15. Everything else in the first batch finished and is kept.</p>
+<p>It is still read-only: it writes no database rows. It takes roughly 3 to 6 hours (a guess).</p>
+</div>
+<div class="section" id="step-1-confirm-the-file">
+<h2>Step 1: confirm the file</h2>
+<pre><code># LOCAL (Mac)
+ls -la &lt;mac-folder&gt;/state-batch/pm_rule1_rerun.sh &amp;&amp; bash -n &lt;mac-folder&gt;/state-batch/pm_rule1_rerun.sh &amp;&amp; echo script-ok</code></pre>
+<p><strong>Check:</strong> the file is listed, and the last line is <code>script-ok</code>.</p>
+</div>
+<div class="section" id="step-2-check-the-vm-is-free">
+<h2>Step 2: check the VM is free</h2>
+<pre><code># LOCAL (Mac)
+gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;systemctl list-units &#39;rl-*&#39; --state=running,activating --no-legend | grep -vc jev-monitor; ls &lt;app&gt;/data/runs/state-batch-20261020T052307Z/grids/pm-rule1.json&quot;</code></pre>
+<p><strong>Check:</strong> the first line is <code>0</code>, and the grid file is listed. If the count isn't <code>0</code>, stop: another queue is running.</p>
+</div>
+<div class="section" id="step-3-owner-go-1">
+<h2>Step 3: owner go</h2>
+<p>Ask the owner to post "pm rule 1 rerun starting" in the Claude thread "Kalshi Market Efficiency Report", then wait for their OK.</p>
+</div>
+<div class="section" id="step-4-copy-and-start">
+<h2>Step 4: copy and start</h2>
+<pre><code># LOCAL (Mac)
+gcloud compute scp &lt;mac-folder&gt;/state-batch/pm_rule1_rerun.sh &lt;vm&gt;:&lt;tmp&gt;/ --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap &amp;&amp; gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;sudo install -d -m 755 &lt;tmp&gt;/state-batch &amp;&amp; sudo install -m 755 &lt;tmp&gt;/pm_rule1_rerun.sh &lt;tmp&gt;/state-batch/pm_rule1_rerun.sh &amp;&amp; sudo systemctl reset-failed rl-pm-rule1 2&gt;/dev/null; sudo systemd-run --unit=rl-pm-rule1 --uid=&lt;app-user&gt; &lt;tmp&gt;/state-batch/pm_rule1_rerun.sh &amp;&amp; sleep 30 &amp;&amp; sudo journalctl -u rl-pm-rule1 --no-pager -o cat | grep &#39;pm rule 1 rerun&#39;&quot;</code></pre>
+<p><strong>Check:</strong> one line, <code>... pm rule 1 rerun from 34b18f5 ...: 106 settings, one process each -&gt; data/runs/pm-rule1-&lt;time&gt;</code>.</p>
+</div>
+<div class="section" id="step-5-wait-for-it-to-finish-1">
+<h2>Step 5: wait for it to finish</h2>
+<p>Check about every 30 minutes. It is fine to leave it overnight.</p>
+<pre><code># LOCAL (Mac)
+gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;systemctl is-active rl-pm-rule1; d=\$(ls -1dt &lt;app&gt;/data/runs/pm-rule1-* | head -1); tail -n 4 \$d/run.log&quot;</code></pre>
+<p><strong>Check:</strong> it's done when the first line is <code>inactive</code> (or <code>failed</code>) and run.log ends with <code>all done in M min: K ok, F failed</code>. <code>FAILED &lt;job&gt;</code> lines along the way are expected, so note the count and keep waiting.</p>
+</div>
+<div class="section" id="step-6-owner-note-1">
+<h2>Step 6: owner note</h2>
+<p>Ask the owner to post this in the Claude thread: "pm rule 1 rerun ended: K ok, F failed".</p>
+</div>
+<div class="section" id="step-7-copy-the-outputs-to-the-mac-1">
+<h2>Step 7: copy the outputs to the Mac</h2>
+<pre><code># LOCAL (Mac)
+mkdir -p &lt;mac-folder&gt;/state-batch/raw &amp;&amp; cd &lt;mac-folder&gt;/state-batch/raw &amp;&amp; d=$(gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;ls -1dt &lt;app&gt;/data/runs/pm-rule1-* | head -1&quot; | tr -d &#39;\r&#39;) &amp;&amp; gcloud compute scp --recurse --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap &quot;&lt;vm&gt;:$d&quot; . &amp;&amp; find . -path &#39;./pm-rule1-*&#39; -name &#39;*.parquet&#39; | wc -l &amp;&amp; wc -l pm-rule1-*/status.csv</code></pre>
+<p><strong>Check:</strong> a parquet count is printed, and <code>status.csv</code> has 213 lines (a header plus 2 × 106).</p>
+</div>
+<div class="section" id="step-8-report-back-1">
+<h2>Step 8: report back</h2>
+<p>Give the owner the folder path <code>&lt;mac-folder&gt;/state-batch/raw/pm-rule1-&lt;time&gt;/</code> and the last 3 lines of its <code>run.log</code>. Claude reads the rest from the Mac. Don't score or interpret anything.</p>
+</div>
+<div class="section" id="as-run-20-oct-2026-utc">
+<h2>As run (20 Oct 2026, UTC)</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time (UTC)</th>
+<th>Event</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>05:23:07</td>
+<td><strong>Part 1</strong> started on staging commit 34b18f5, read-only on the mirror. 0 saved settings dropped</td>
+</tr>
+<tr class="even">
+<td>05:23 to 05:42</td>
+<td>16 model-on-every-market runs (F1 both venues and tapes, NASCAR, MotoGP; un-tuned and calibrated), all done</td>
+</tr>
+<tr class="odd">
+<td>05:41:58 to 05:47:23</td>
+<td>Kalshi on Probalytics' books, 20 settings: 20 trade files</td>
+</tr>
+<tr class="even">
+<td>05:47:56</td>
+<td>Statistics done: 20,594 trade markouts, 3,185,559 resolved fills binned</td>
+</tr>
+<tr class="odd">
+<td>05:52:21</td>
+<td>Polymarket rule 1, 2026: <strong>failed</strong> after 2 settings. A setting without stored stage pricings tried to save them, and the read-only guard refused</td>
+</tr>
+<tr class="even">
+<td>06:01:40</td>
+<td>Polymarket rule 1, 2025: <strong>failed</strong> after 43 settings, same cause. Part 1 ended: 38 min, 2 failures</td>
+</tr>
+<tr class="odd">
+<td>06:41:40</td>
+<td><strong>Part 2</strong> started: the same 106 Polymarket settings, one process per setting and season</td>
+</tr>
+<tr class="even">
+<td>11:02:35</td>
+<td>Part 2 done in 260 min: <strong>207 of 212 ok</strong>. 5 failed, all 2025 settings refused for the same read-only reason. 53 of the 106 2026 settings ran on rounds 3 to 15 after failing on 3 to 16 (round 16 had no stored pricing for them)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="appendix-scripts-as-run">
+<h2>Appendix: scripts as run</h2>
+<div class="section" id="job-script-state_job.sh">
+<h3>Job script: state_job.sh</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;State of racinglines&quot; batch (20 Oct 2026): the historical tests still missing from the Kalshi response. Read-only on</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># staging&#39;s mirror of prod (one queue; nothing writes to a database). Parts, in order:</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   A+F the un-tuned model on every market it prices, kept row by row (calib_dump.py): F1 on Polymarket (our tape, from</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#      F1&#39;s first 2025 markets = &quot;ready at launch&quot;; and Probalytics&#39; books), F1 on Kalshi (ours; Probalytics&#39; books from</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#      round 5), NASCAR 2025-26 and MotoGP 2026 on Kalshi</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   G  the same model calibrated (F1 and NASCAR, the two sports with a fitted table) (calib_power = walk_forward: the win-price power fitted on earlier races only), on our tape - does calibration close the gap between a fair price and a tradeable edge</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   C  Kalshi on Probalytics&#39; books (sizes -&gt; a size-weighted mid): the 20 saved Kalshi F1 settings, 2026 rounds 5-16</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#   E  stats.py: markouts of our trades from the stage files; every F1 fill by price bin and outcome; fills by decile</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">#      of market life (reads the rule 1 and step 3 trade files already on the VM)</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   B  rule 1 on Polymarket: every saved Polymarket F1 sweep setting at the touch on Probalytics&#39; books,</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">#      2025 rounds 22-24 and 2026 rounds 3-16 (the two seasons run side by side, 2 vCPU)</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Each sweep is one process per grid (entries share caches); a setting whose saved dict no longer parses is dropped and</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># logged. A progress line every 5 minutes. Output: data/runs/state-batch-&lt;UTC&gt;/</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-uo</span> pipefail</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-a</span><span class="kw">;</span> <span class="bu">.</span> <span class="op">&lt;</span>env-file<span class="op">&gt;</span><span class="kw">;</span> <span class="bu">set</span> +a</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DATABASE_URL</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${DATABASE_URL</span><span class="op">%</span>/<span class="pp">*</span><span class="va">}</span><span class="st">/&lt;staging-db&gt;&quot;</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PYTHONUNBUFFERED</span><span class="op">=</span>1 <span class="va">RACINGLINES_PROGRESS_SEC</span><span class="op">=</span>300 <span class="va">PGOPTIONS</span><span class="op">=</span><span class="st">&quot;-c default_transaction_read_only=on&quot;</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="op">&lt;</span>app<span class="op">&gt;</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="va">R</span><span class="op">=</span>.venv/bin/racinglines</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="va">PY</span><span class="op">=</span>.venv/bin/python</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="va">S</span><span class="op">=&lt;</span>tmp<span class="op">&gt;</span>/state-batch</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="va">OUT</span><span class="op">=</span>data/runs/state-batch-<span class="va">$(</span><span class="fu">date</span> <span class="at">-u</span> +%Y%m%dT%H%M%SZ<span class="va">)</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/grids&quot;</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="fu">say()</span> <span class="kw">{</span> <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">date</span> <span class="at">-u</span> +%Y-%m-%dT%H:%M:%SZ<span class="va">)</span><span class="st"> </span><span class="va">$*</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">tee</span> <span class="at">-a</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/run.log&quot;</span><span class="kw">;</span> <span class="kw">}</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="va">T0</span><span class="op">=</span><span class="va">$SECONDS</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span> <span class="cf">while</span> <span class="fu">sleep</span> 300<span class="kw">;</span> <span class="cf">do</span> <span class="ex">say</span> <span class="st">&quot;progress: </span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min elapsed; </span><span class="va">$(</span><span class="fu">cat</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">&quot;</span>/<span class="pp">*</span>.log <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-c</span> <span class="st">&#39;^grid &#39;</span><span class="va">)</span><span class="st"> grid entries started&quot;</span><span class="kw">;</span> <span class="cf">done</span> <span class="kw">)</span> <span class="kw">&amp;</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="va">BEAT</span><span class="op">=</span><span class="va">$!</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="bu">trap</span> <span class="st">&#39;kill $BEAT 2&gt;/dev/null&#39;</span> EXIT</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="va">FAIL</span><span class="op">=</span>0</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="fu">sweep()</span> <span class="kw">{</span>   <span class="co"># name year rounds grid</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>  <span class="bu">local</span> <span class="va">name</span><span class="op">=</span><span class="va">$1</span> <span class="va">y</span><span class="op">=</span><span class="va">$2</span> <span class="va">rounds</span><span class="op">=</span><span class="va">$3</span> <span class="va">g</span><span class="op">=</span><span class="va">$4</span> <span class="va">n</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>  <span class="va">n</span><span class="op">=</span><span class="va">$($PY</span> <span class="at">-c</span> <span class="st">&quot;import json,sys; print(len(json.load(open(sys.argv[1]))))&quot;</span> <span class="st">&quot;</span><span class="va">$g</span><span class="st">&quot;</span><span class="va">)</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  <span class="ex">say</span> <span class="st">&quot;start </span><span class="va">$name</span><span class="st"> (year </span><span class="va">$y</span><span class="st">, rounds </span><span class="va">${rounds</span><span class="op">:-</span>all<span class="va">}</span><span class="st">, </span><span class="va">$n</span><span class="st"> settings)&quot;</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="va">$R</span> f1 sweep <span class="at">--year</span> <span class="st">&quot;</span><span class="va">$y</span><span class="st">&quot;</span> <span class="va">${rounds</span><span class="op">:+</span>--rounds <span class="st">&quot;</span><span class="va">$rounds</span><span class="st">&quot;</span><span class="va">}</span> <span class="at">--no-fetch</span> <span class="at">--grid</span> <span class="st">&quot;</span><span class="va">$g</span><span class="st">&quot;</span> <span class="at">--trades-out</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/</span><span class="va">$name</span><span class="st">&quot;</span> <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/</span><span class="va">$name</span><span class="st">.log&quot;</span> <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>    <span class="ex">say</span> <span class="st">&quot;done </span><span class="va">$name</span><span class="st">: </span><span class="va">$(</span><span class="fu">ls</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/</span><span class="va">$name</span><span class="st">&quot;</span>/<span class="pp">*</span>.parquet <span class="dv">2</span><span class="op">&gt;</span>/dev/null <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="va">)</span><span class="st"> trade files (</span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min)&quot;</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>    <span class="ex">say</span> <span class="st">&quot;FAILED </span><span class="va">$name</span><span class="st">: </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-m1</span> <span class="at">-oE</span> <span class="st">&#39;ReadOnlySqlTransaction|Error: .{0,100}&#39;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/</span><span class="va">$name</span><span class="st">.log&quot;</span><span class="va">)</span><span class="st"> (</span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&#39;^grid &#39;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/</span><span class="va">$name</span><span class="st">.log&quot;</span><span class="va">)</span><span class="st"> entries started)&quot;</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>    <span class="va">FAIL</span><span class="op">=</span><span class="va">$((FAIL</span> <span class="op">+</span> <span class="dv">1</span><span class="va">))</span></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>  <span class="cf">fi</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;state batch from </span><span class="va">$(</span><span class="fu">git</span> rev-parse <span class="at">--short</span> HEAD<span class="va">)</span><span class="st"> on </span><span class="va">${DATABASE_URL</span><span class="op">##</span><span class="pp">*</span>/<span class="va">}</span><span class="st"> (read-only) -&gt; </span><span class="va">$OUT</span><span class="st">&quot;</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a><span class="va">$PY</span> <span class="at">-</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/grids&quot;</span> <span class="op">&lt;&lt;&#39;PY&#39;</span> <span class="kw">||</span> <span class="kw">{</span> <span class="ex">say</span> <span class="st">&quot;STOP: could not build the grids&quot;</span><span class="kw">;</span> <span class="bu">exit</span> 1<span class="kw">;</span> <span class="kw">}</span></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a><span class="st">import json, os, sys</span></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="st">from sqlalchemy import create_engine, text</span></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="st">from racinglines.pipelines import sweep_settings as SS</span></span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a><span class="st">out = sys.argv[1]</span></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a><span class="st">rows = create_engine(os.environ[&quot;DATABASE_URL&quot;]).connect().execute(text(</span></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a><span class="st">    &quot;SELECT DISTINCT ON (params-&gt;&gt;&#39;settings_key&#39;) params-&gt;&gt;&#39;settings_key&#39;, params-&gt;&#39;settings&#39;, &quot;</span></span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a><span class="st">    &quot;coalesce(params-&gt;&#39;settings&#39;-&gt;&gt;&#39;venue&#39;, &#39;polymarket&#39;) FROM model_runs WHERE kind = &#39;sweep&#39; &quot;</span></span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a><span class="st">    &quot;ORDER BY params-&gt;&gt;&#39;settings_key&#39;, id DESC&quot;)).fetchall()</span></span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a><span class="st">pm, ka, bad = [], [], []</span></span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a><span class="st">for key, st, venue in rows:</span></span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a><span class="st">    st = dict(st or {})</span></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a><span class="st">    try:</span></span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a><span class="st">        if venue == &quot;kalshi&quot;:</span></span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a><span class="st">            s = dict(st, tape_source=&quot;probalytics&quot;)</span></span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a><span class="st">            SS.Settings.from_dict(s)</span></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="st">            ka.append({&quot;job&quot;: f&quot;k-{key}&quot;, &quot;settings&quot;: s})</span></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a><span class="st">        elif venue == &quot;polymarket&quot;:</span></span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a><span class="st">            s = dict(st, venue=&quot;polymarket&quot;, tape_source=&quot;probalytics&quot;, taker_fill=&quot;touch&quot;)</span></span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a><span class="st">            SS.Settings.from_dict(s)</span></span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a><span class="st">            pm.append({&quot;job&quot;: f&quot;pm-{key}&quot;, &quot;settings&quot;: s})</span></span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a><span class="st">    except Exception as e:                                   # an old saved dict the schema no longer takes</span></span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a><span class="st">        bad.append(f&quot;{key}: {type(e).__name__}: {e}&quot;[:200])</span></span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a><span class="st">json.dump(pm, open(os.path.join(out, &quot;pm-rule1.json&quot;), &quot;w&quot;))</span></span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a><span class="st">json.dump(ka, open(os.path.join(out, &quot;kalshi-pb.json&quot;), &quot;w&quot;))</span></span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a><span class="st">open(os.path.join(out, &quot;dropped.txt&quot;), &quot;w&quot;).write(&quot;\n&quot;.join(bad) + (&quot;\n&quot; if bad else &quot;&quot;))</span></span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a><span class="st">print(f&quot;grids: {len(pm)} polymarket, {len(ka)} kalshi, {len(bad)} dropped&quot;)</span></span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a><span class="op">PY</span></span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">cat</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">&quot;</span>/grids/dropped.txt <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="va">)</span><span class="st"> saved settings dropped (see grids/dropped.txt)&quot;</span></span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a><span class="co"># A + F: the un-tuned model on every market it prices (calib.parquet: every tradeable market at every stage, traded</span></span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a><span class="co"># or not) and its trades. A = the first two (ready at launch: our own Polymarket tape from F1&#39;s first 2025 markets).</span></span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a><span class="fu">calib()</span> <span class="kw">{</span>   <span class="co"># name sport year rounds settings-json</span></span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a>  <span class="ex">say</span> <span class="st">&quot;start calib </span><span class="va">$1</span><span class="st"> (</span><span class="va">$2</span><span class="st"> </span><span class="va">$3</span><span class="st">, rounds </span><span class="va">$4</span><span class="st">, settings </span><span class="va">$5</span><span class="st">)&quot;</span></span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="va">$PY</span> <span class="st">&quot;</span><span class="va">$S</span><span class="st">/calib_dump.py&quot;</span> <span class="st">&quot;</span><span class="va">$2</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$3</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$4</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$5</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/calib-</span><span class="va">$1</span><span class="st">&quot;</span> <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/calib-</span><span class="va">$1</span><span class="st">.log&quot;</span> <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a>    <span class="ex">say</span> <span class="st">&quot;done calib </span><span class="va">$1</span><span class="st">: </span><span class="va">$(</span><span class="fu">tail</span> <span class="at">-n</span> 1 <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/calib-</span><span class="va">$1</span><span class="st">.log&quot;</span><span class="va">)</span><span class="st"> (</span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min)&quot;</span></span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>    <span class="ex">say</span> <span class="st">&quot;FAILED calib </span><span class="va">$1</span><span class="st">: </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-m1</span> <span class="at">-oE</span> <span class="st">&#39;[A-Za-z]+Error: .{0,100}&#39;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/calib-</span><span class="va">$1</span><span class="st">.log&quot;</span><span class="va">)</span><span class="st">&quot;</span><span class="kw">;</span> <span class="va">FAIL</span><span class="op">=</span><span class="va">$((FAIL</span> <span class="op">+</span> <span class="dv">1</span><span class="va">))</span></span>
+<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>  <span class="cf">fi</span></span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> f1-pm-ours-2025 f1 2025 all <span class="st">&#39;{}&#39;</span></span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> f1-pm-ours-2026 f1 2026 1-16 <span class="st">&#39;{}&#39;</span></span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> f1-kalshi-ours-2025 f1 2025 all <span class="st">&#39;{&quot;venue&quot;: &quot;kalshi&quot;}&#39;</span></span>
+<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> f1-kalshi-ours-2026 f1 2026 1-16 <span class="st">&#39;{&quot;venue&quot;: &quot;kalshi&quot;}&#39;</span></span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> f1-pm-pb-2025 f1 2025 22-24 <span class="st">&#39;{&quot;tape_source&quot;: &quot;probalytics&quot;, &quot;taker_fill&quot;: &quot;touch&quot;}&#39;</span></span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> f1-pm-pb-2026 f1 2026 3-16 <span class="st">&#39;{&quot;tape_source&quot;: &quot;probalytics&quot;, &quot;taker_fill&quot;: &quot;touch&quot;}&#39;</span></span>
+<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> f1-kalshi-pb-2026 f1 2026 5-16 <span class="st">&#39;{&quot;venue&quot;: &quot;kalshi&quot;, &quot;tape_source&quot;: &quot;probalytics&quot;}&#39;</span></span>
+<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> nascar-kalshi-2025 nascar 2025 all <span class="st">&#39;{&quot;venue&quot;: &quot;kalshi&quot;}&#39;</span></span>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> nascar-kalshi-2026 nascar 2026 all <span class="st">&#39;{&quot;venue&quot;: &quot;kalshi&quot;}&#39;</span></span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> motogp-kalshi-2026 motogp 2026 all <span class="st">&#39;{&quot;venue&quot;: &quot;kalshi&quot;}&#39;</span></span>
+<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a><span class="co"># G: the same model, calibrated on earlier races only</span></span>
+<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> f1-pm-cal-2025 f1 2025 all <span class="st">&#39;{&quot;calib_power&quot;: &quot;walk_forward&quot;}&#39;</span></span>
+<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> f1-pm-cal-2026 f1 2026 1-16 <span class="st">&#39;{&quot;calib_power&quot;: &quot;walk_forward&quot;}&#39;</span></span>
+<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> f1-kalshi-cal-2025 f1 2025 all <span class="st">&#39;{&quot;venue&quot;: &quot;kalshi&quot;, &quot;calib_power&quot;: &quot;walk_forward&quot;}&#39;</span></span>
+<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> f1-kalshi-cal-2026 f1 2026 1-16 <span class="st">&#39;{&quot;venue&quot;: &quot;kalshi&quot;, &quot;calib_power&quot;: &quot;walk_forward&quot;}&#39;</span></span>
+<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> nascar-kalshi-cal-2025 nascar 2025 all <span class="st">&#39;{&quot;venue&quot;: &quot;kalshi&quot;, &quot;calib_power&quot;: &quot;walk_forward&quot;}&#39;</span></span>
+<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a><span class="ex">calib</span> nascar-kalshi-cal-2026 nascar 2026 all <span class="st">&#39;{&quot;venue&quot;: &quot;kalshi&quot;, &quot;calib_power&quot;: &quot;walk_forward&quot;}&#39;</span></span>
+<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a><span class="co"># C: Kalshi on Probalytics&#39; books</span></span>
+<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a><span class="ex">sweep</span> kalshi-pb-2026 2026 <span class="st">&quot;5-16&quot;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/grids/kalshi-pb.json&quot;</span></span>
+<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a><span class="co"># E: markouts, crowd calibration, market-life deciles</span></span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;stats: start&quot;</span></span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">$PY</span> <span class="st">&quot;</span><span class="va">$S</span><span class="st">/stats.py&quot;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">&quot;</span> <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/stats.log&quot;</span> <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span><span class="kw">;</span> <span class="cf">then</span> <span class="ex">say</span> <span class="st">&quot;stats: done (</span><span class="va">$(</span><span class="fu">tail</span> <span class="at">-n</span> 1 <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/stats.log&quot;</span><span class="va">)</span><span class="st">)&quot;</span><span class="kw">;</span> <span class="cf">else</span> <span class="ex">say</span> <span class="st">&quot;stats FAILED: </span><span class="va">$(</span><span class="fu">tail</span> <span class="at">-n</span> 1 <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/stats.log&quot;</span><span class="va">)</span><span class="st">&quot;</span><span class="kw">;</span> <span class="va">FAIL</span><span class="op">=</span><span class="va">$((FAIL</span> <span class="op">+</span> <span class="dv">1</span><span class="va">))</span><span class="kw">;</span> <span class="cf">fi</span></span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a><span class="co"># B: rule 1 on Polymarket, the two seasons side by side</span></span>
+<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a><span class="ex">sweep</span> pm-rule1-2025 2025 <span class="st">&quot;22-24&quot;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/grids/pm-rule1.json&quot;</span> <span class="kw">&amp;</span></span>
+<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a><span class="va">P1</span><span class="op">=</span><span class="va">$!</span></span>
+<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a><span class="ex">sweep</span> pm-rule1-2026 2026 <span class="st">&quot;3-16&quot;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/grids/pm-rule1.json&quot;</span> <span class="kw">&amp;</span></span>
+<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a><span class="va">P2</span><span class="op">=</span><span class="va">$!</span></span>
+<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a><span class="bu">wait</span> <span class="va">$P1</span><span class="kw">;</span> <span class="bu">wait</span> <span class="va">$P2</span></span>
+<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a><span class="va">FAIL</span><span class="op">=</span><span class="va">$((FAIL</span> <span class="op">+</span> <span class="va">$(</span><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&#39;^.* FAILED pm-rule1&#39;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/run.log&quot;</span><span class="va">)))</span></span>
+<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;all done in </span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min, failures: </span><span class="va">$FAIL</span><span class="st">&quot;</span></span></code></pre></div>
+</div>
+<div class="section" id="model-on-every-market-calib_dump.py">
+<h3>Model on every market: calib_dump.py</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;State-of-racinglines batch, part F (read-only): one season sweep, run as `racinglines strategy sweep` runs it</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">(pipelines/season_sweep.run), that also keeps every (fair, price, outcome) row the sweep scores for calibration -</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">every tradeable market at every stage, traded or not - instead of only the summary tables. It wraps</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">core/calibration.table to keep its input; nothing in the sweep changes.</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">Usage: calib_dump.py &lt;sport&gt; &lt;year&gt; &lt;rounds|all&gt; &#39;&lt;settings json&gt;&#39; &lt;out dir&gt;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">Writes &lt;out dir&gt;/calib.parquet (event_key, stage, kind, model, market, y, ...), &lt;out dir&gt;/trades.parquet (--trades-out)</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">and prints the sweep&#39;s totals.</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> racinglines.core <span class="im">import</span> calibration <span class="im">as</span> CAL</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> racinglines.db.config <span class="im">import</span> get_engine</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> racinglines.pipelines <span class="im">import</span> season_sweep <span class="im">as</span> S</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> racinglines.pipelines <span class="im">import</span> weekend_sweep <span class="im">as</span> SW</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>sport, year, rounds, settings, out <span class="op">=</span> sys.argv[<span class="dv">1</span>], <span class="bu">int</span>(sys.argv[<span class="dv">2</span>]), sys.argv[<span class="dv">3</span>], json.loads(sys.argv[<span class="dv">4</span>]), sys.argv[<span class="dv">5</span>]</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>rounds <span class="op">=</span> <span class="va">None</span> <span class="cf">if</span> rounds <span class="op">==</span> <span class="st">&quot;all&quot;</span> <span class="cf">else</span> [i <span class="cf">for</span> a, b <span class="kw">in</span> [(p.split(<span class="st">&quot;-&quot;</span>) <span class="op">+</span> p.split(<span class="st">&quot;-&quot;</span>))[:<span class="dv">2</span>] <span class="cf">for</span> p <span class="kw">in</span> rounds.split(<span class="st">&quot;,&quot;</span>)]</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>                                       <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">int</span>(a), <span class="bu">int</span>(b) <span class="op">+</span> <span class="dv">1</span>)]</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>kept <span class="op">=</span> []</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>_table <span class="op">=</span> CAL.table</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> table(rows, <span class="op">*</span>a, <span class="op">**</span>k):</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> kept:                                   <span class="co"># the first call gets every row; later ones are the same rows</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>        kept.append(pd.DataFrame(rows).copy())</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> _table(rows, <span class="op">*</span>a, <span class="op">**</span>k)</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>CAL.table <span class="op">=</span> table</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>cls <span class="op">=</span> S.settings_class(sport)</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>st <span class="op">=</span> cls.from_dict(settings) <span class="cf">if</span> <span class="bu">hasattr</span>(cls, <span class="st">&quot;from_dict&quot;</span>) <span class="cf">else</span> cls(<span class="op">**</span>settings)</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> S.run(get_engine(<span class="va">None</span>), <span class="va">None</span>, sport, year, rounds, settings<span class="op">=</span>st, echo<span class="op">=</span><span class="kw">lambda</span> m: <span class="bu">print</span>(m, flush<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>os.makedirs(out, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> kept:</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>    kept[<span class="dv">0</span>].to_parquet(os.path.join(out, <span class="st">&quot;calib.parquet&quot;</span>), index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>SW.write_trades(res, out)</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> (res.get(<span class="st">&quot;totals&quot;</span>) <span class="kw">or</span> {}).items():</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>k<span class="sc">:7s}</span><span class="ss"> P&amp;L </span><span class="sc">{</span>v<span class="sc">.</span>get(<span class="st">&#39;pnl&#39;</span>, <span class="dv">0</span>)<span class="sc">:+9.2f}</span><span class="ss"> on $</span><span class="sc">{</span>v<span class="sc">.</span>get(<span class="st">&#39;bought&#39;</span>, <span class="dv">0</span>)<span class="sc">:,.0f}</span><span class="ss">&quot;</span>, flush<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;calib rows: </span><span class="sc">{</span><span class="bu">len</span>(kept[<span class="dv">0</span>]) <span class="cf">if</span> kept <span class="cf">else</span> <span class="dv">0</span><span class="sc">}</span><span class="ss">&quot;</span>, flush<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+</div>
+<div class="section" id="statistics-stats.py">
+<h3>Statistics: stats.py</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;State-of-racinglines batch, part E (read-only): three tables from Probalytics&#39; files and our own trade files.</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">  markouts.csv   every opening taker trade of the rule 1 run (Kalshi), the step 3 run (Polymarket) and this batch&#39;s</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">                 Kalshi-on-Probalytics run: the size-weighted mid at its stage, at the next stage and at the last stage</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">                 before the race, from Probalytics&#39; stage files (data/probalytics/stages/&lt;event&gt;_&lt;VENUE&gt;.parquet)</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">  fills-bins.csv every F1 fill on both venues (F1 tag), de-duplicated by fill id: contracts and fills per venue, raw</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">                 outcome side, taker side, 5-cent price bin and the market&#39;s resolution (market_links) - the raw counts</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">                 for the paper&#39;s Fig 6, interpreted offline</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">  fills-life.csv the same fills by decile of the market&#39;s traded life (first to last fill in fills-census.csv), plus</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">                 our own trades by the same deciles - the paper&#39;s Fig 7</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">  fills-sample.csv 5 rows per venue, ids dropped, to check the columns&#39; meaning before reading the bins</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">Usage: stats.py &lt;batch output dir&gt;   (finds the rule 1 and step 3 folders under data/runs/ itself)</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyarrow.parquet <span class="im">as</span> pq</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sqlalchemy <span class="im">import</span> create_engine, text</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> racinglines.markets <span class="im">import</span> probalytics <span class="im">as</span> P</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>OUT <span class="op">=</span> Path(sys.argv[<span class="dv">1</span>])</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>BASE <span class="op">=</span> Path(P.root())</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>TAKER <span class="op">=</span> [<span class="st">&quot;update&quot;</span>, <span class="st">&quot;hold&quot;</span>, <span class="st">&quot;last&quot;</span>, <span class="st">&quot;early&quot;</span>]</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> latest(pattern):</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>    got <span class="op">=</span> <span class="bu">sorted</span>(glob.glob(pattern))</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> got[<span class="op">-</span><span class="dv">1</span>] <span class="cf">if</span> got <span class="cf">else</span> <span class="va">None</span></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> trade_files():</span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> []</span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>    r1 <span class="op">=</span> latest(<span class="st">&quot;data/runs/kalshi-rule1-*&quot;</span>)</span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> r1:</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>        out <span class="op">+=</span> [(<span class="st">&quot;rule1-kalshi-ours&quot;</span>, f) <span class="cf">for</span> f <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="ss">f&quot;</span><span class="sc">{</span>r1<span class="sc">}</span><span class="ss">/f1-2026-*/*.parquet&quot;</span>))]</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>    s3 <span class="op">=</span> latest(<span class="st">&quot;data/runs/pm-step3-*&quot;</span>)</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> s3:</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>        out <span class="op">+=</span> [(<span class="st">&quot;step3-pm&quot;</span>, f) <span class="cf">for</span> f <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="ss">f&quot;</span><span class="sc">{</span>s3<span class="sc">}</span><span class="ss">/f1-*/*.parquet&quot;</span>))]</span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>    out <span class="op">+=</span> [(<span class="st">&quot;kalshi-pb&quot;</span>, f) <span class="cf">for</span> f <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="bu">str</span>(OUT <span class="op">/</span> <span class="st">&quot;kalshi-pb-2026&quot;</span> <span class="op">/</span> <span class="st">&quot;*.parquet&quot;</span>)))]</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> stage_books(event_key, venue):</span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> BASE <span class="op">/</span> <span class="st">&quot;stages&quot;</span> <span class="op">/</span> <span class="ss">f&quot;</span><span class="sc">{</span>event_key<span class="sc">}</span><span class="ss">_</span><span class="sc">{</span>venue<span class="sc">.</span>upper()<span class="sc">}</span><span class="ss">.parquet&quot;</span></span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> f.exists():</span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> pq.read_table(f)</span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> venue <span class="op">==</span> <span class="st">&quot;kalshi&quot;</span>:</span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> pyarrow.compute <span class="im">as</span> pc</span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a>        t <span class="op">=</span> t.<span class="bu">filter</span>(pc.equal(t[<span class="st">&quot;outcome_pid&quot;</span>], <span class="st">&quot;yes&quot;</span>))</span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>        key <span class="op">=</span> t[<span class="st">&quot;market_platform_id&quot;</span>]</span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>        key <span class="op">=</span> t[<span class="st">&quot;outcome_pid&quot;</span>]</span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a>    bid, bsz <span class="op">=</span> P.best_levels(t[<span class="st">&quot;bid_px&quot;</span>], t[<span class="st">&quot;bid_sz&quot;</span>], highest<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a>    ask, asz <span class="op">=</span> P.best_levels(t[<span class="st">&quot;ask_px&quot;</span>], t[<span class="st">&quot;ask_sz&quot;</span>], highest<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame(<span class="bu">dict</span>(key<span class="op">=</span>key.to_pandas().astype(<span class="bu">str</span>), cutoff<span class="op">=</span>pd.to_datetime(t[<span class="st">&quot;cutoff&quot;</span>].to_pandas(), utc<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a>                           .dt.tz_localize(<span class="va">None</span>), bid<span class="op">=</span>bid, ask<span class="op">=</span>ask, bsz<span class="op">=</span>bsz, asz<span class="op">=</span>asz))</span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a>    ok <span class="op">=</span> (df[<span class="st">&quot;bsz&quot;</span>] <span class="op">+</span> df[<span class="st">&quot;asz&quot;</span>]) <span class="op">&gt;</span> <span class="dv">0</span></span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&quot;smid&quot;</span>] <span class="op">=</span> np.where(ok <span class="op">&amp;</span> df[<span class="st">&quot;bid&quot;</span>].notna() <span class="op">&amp;</span> df[<span class="st">&quot;ask&quot;</span>].notna(),</span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>                          (df[<span class="st">&quot;bid&quot;</span>] <span class="op">*</span> df[<span class="st">&quot;asz&quot;</span>] <span class="op">+</span> df[<span class="st">&quot;ask&quot;</span>] <span class="op">*</span> df[<span class="st">&quot;bsz&quot;</span>]) <span class="op">/</span> (df[<span class="st">&quot;bsz&quot;</span>] <span class="op">+</span> df[<span class="st">&quot;asz&quot;</span>]), np.nan)</span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df.dropna(subset<span class="op">=</span>[<span class="st">&quot;smid&quot;</span>]).sort_values([<span class="st">&quot;key&quot;</span>, <span class="st">&quot;cutoff&quot;</span>])</span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> markouts():</span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a>    rows, books <span class="op">=</span> [], {}</span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> src, f <span class="kw">in</span> trade_files():</span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a>        t <span class="op">=</span> pd.read_parquet(f)</span>
+<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a>        t <span class="op">=</span> t[t[<span class="st">&quot;mode&quot;</span>].isin(TAKER) <span class="op">&amp;</span> (t[<span class="st">&quot;shares&quot;</span>] <span class="op">&gt;</span> <span class="dv">0</span>)]</span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a>        setting <span class="op">=</span> os.path.basename(os.path.dirname(f))</span>
+<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> (ev, venue), g <span class="kw">in</span> t.groupby([<span class="st">&quot;event_key&quot;</span>, <span class="st">&quot;venue&quot;</span>]):</span>
+<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a>            k <span class="op">=</span> (ev, venue)</span>
+<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> k <span class="kw">not</span> <span class="kw">in</span> books:</span>
+<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a>                books[k] <span class="op">=</span> stage_books(ev, venue)</span>
+<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>            b <span class="op">=</span> books[k]</span>
+<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> b <span class="kw">is</span> <span class="va">None</span> <span class="kw">or</span> <span class="kw">not</span> <span class="bu">len</span>(b):</span>
+<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a>                <span class="cf">continue</span></span>
+<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a>            by_key <span class="op">=</span> {kk: kg <span class="cf">for</span> kk, kg <span class="kw">in</span> b.groupby(<span class="st">&quot;key&quot;</span>)}</span>
+<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> r <span class="kw">in</span> g.itertuples(index<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a>                kb <span class="op">=</span> by_key.get(<span class="bu">str</span>(r.key))</span>
+<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> kb <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">continue</span></span>
+<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a>                ts <span class="op">=</span> pd.Timestamp(r.t).tz_localize(<span class="va">None</span>) <span class="cf">if</span> pd.Timestamp(r.t).tzinfo <span class="cf">else</span> pd.Timestamp(r.t)</span>
+<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a>                at <span class="op">=</span> kb[kb[<span class="st">&quot;cutoff&quot;</span>] <span class="op">&lt;=</span> ts <span class="op">+</span> pd.Timedelta(minutes<span class="op">=</span><span class="dv">1</span>)]</span>
+<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="kw">not</span> <span class="bu">len</span>(at):</span>
+<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">continue</span></span>
+<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a>                e <span class="op">=</span> at.iloc[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a>                nxt <span class="op">=</span> kb[kb[<span class="st">&quot;cutoff&quot;</span>] <span class="op">&gt;</span> e[<span class="st">&quot;cutoff&quot;</span>]]</span>
+<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a>                last <span class="op">=</span> kb.iloc[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a>                d <span class="op">=</span> <span class="fl">1.0</span> <span class="cf">if</span> r.side <span class="op">==</span> <span class="st">&quot;YES&quot;</span> <span class="cf">else</span> <span class="op">-</span><span class="fl">1.0</span></span>
+<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a>                m0 <span class="op">=</span> e[<span class="st">&quot;smid&quot;</span>]</span>
+<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a>                paid <span class="op">=</span> (r.price <span class="op">-</span> m0) <span class="cf">if</span> d <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> (r.price <span class="op">-</span> (<span class="dv">1</span> <span class="op">-</span> m0))</span>
+<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a>                rows.append(<span class="bu">dict</span>(source<span class="op">=</span>src, setting<span class="op">=</span>setting, mode<span class="op">=</span>r.mode, event_key<span class="op">=</span>ev, venue<span class="op">=</span>venue, key<span class="op">=</span>r.key,</span>
+<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a>                                 kind<span class="op">=</span><span class="bu">getattr</span>(r, <span class="st">&quot;kind&quot;</span>, <span class="va">None</span>), side<span class="op">=</span>r.side, shares<span class="op">=</span>r.shares, m0<span class="op">=</span>m0, paid<span class="op">=</span>paid,</span>
+<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a>                                 next_min<span class="op">=</span>(nxt.iloc[<span class="dv">0</span>][<span class="st">&quot;cutoff&quot;</span>] <span class="op">-</span> e[<span class="st">&quot;cutoff&quot;</span>]).total_seconds() <span class="op">/</span> <span class="dv">60</span> <span class="cf">if</span> <span class="bu">len</span>(nxt) <span class="cf">else</span> np.nan,</span>
+<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a>                                 mo_next<span class="op">=</span>d <span class="op">*</span> (nxt.iloc[<span class="dv">0</span>][<span class="st">&quot;smid&quot;</span>] <span class="op">-</span> m0) <span class="cf">if</span> <span class="bu">len</span>(nxt) <span class="cf">else</span> np.nan,</span>
+<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a>                                 mo_last<span class="op">=</span>d <span class="op">*</span> (last[<span class="st">&quot;smid&quot;</span>] <span class="op">-</span> m0) <span class="cf">if</span> last[<span class="st">&quot;cutoff&quot;</span>] <span class="op">&gt;</span> e[<span class="st">&quot;cutoff&quot;</span>] <span class="cf">else</span> np.nan,</span>
+<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a>                                 last_min<span class="op">=</span>(last[<span class="st">&quot;cutoff&quot;</span>] <span class="op">-</span> e[<span class="st">&quot;cutoff&quot;</span>]).total_seconds() <span class="op">/</span> <span class="dv">60</span>,</span>
+<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a>                                 gap<span class="op">=</span>d <span class="op">*</span> (<span class="bu">float</span>(r.outcome) <span class="op">-</span> m0) <span class="cf">if</span> pd.notna(r.outcome) <span class="cf">else</span> np.nan))</span>
+<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame(rows)</span>
+<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a>    df.to_csv(OUT <span class="op">/</span> <span class="st">&quot;markouts.csv&quot;</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(df), (df[<span class="st">&quot;source&quot;</span>].value_counts().to_dict() <span class="cf">if</span> <span class="bu">len</span>(df) <span class="cf">else</span> {})</span>
+<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> links():</span>
+<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> text(<span class="st">&quot;SELECT ml.exchange, ml.token_id, ml.condition_id, ml.outcome, ml.resolved_yes, ml.prediction AS kind &quot;</span></span>
+<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;FROM market_links ml JOIN competitions c ON c.id = ml.competition_id &quot;</span></span>
+<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;WHERE c.code LIKE &#39;f1%&#39; AND ml.exchange IN (&#39;polymarket&#39;, &#39;kalshi&#39;)&quot;</span>)</span>
+<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.read_sql(q, create_engine(os.environ[<span class="st">&quot;DATABASE_URL&quot;</span>]))</span>
+<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fills():</span>
+<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a>    L <span class="op">=</span> links()</span>
+<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a>    pm_tok <span class="op">=</span> {r.token_id: r <span class="cf">for</span> r <span class="kw">in</span> L[L.exchange <span class="op">==</span> <span class="st">&quot;polymarket&quot;</span>].itertuples(index<span class="op">=</span><span class="va">False</span>)}</span>
+<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a>    pm_cond <span class="op">=</span> {r.condition_id: r <span class="cf">for</span> r <span class="kw">in</span> L[L.exchange <span class="op">==</span> <span class="st">&quot;polymarket&quot;</span>].itertuples(index<span class="op">=</span><span class="va">False</span>)}</span>
+<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a>    ka <span class="op">=</span> {r.token_id: r <span class="cf">for</span> r <span class="kw">in</span> L[L.exchange <span class="op">==</span> <span class="st">&quot;kalshi&quot;</span>].itertuples(index<span class="op">=</span><span class="va">False</span>)}</span>
+<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a>    census <span class="op">=</span> pd.read_csv(latest(<span class="st">&quot;data/runs/pm-step3-*&quot;</span>) <span class="op">+</span> <span class="st">&quot;/fills-census.csv&quot;</span>, dtype<span class="op">=</span>{<span class="st">&quot;market_platform_id&quot;</span>: <span class="bu">str</span>})</span>
+<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>    life <span class="op">=</span> {(v, m): (pd.Timestamp(a), pd.Timestamp(b)) <span class="cf">for</span> v, m, a, b <span class="kw">in</span></span>
+<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a>            census[[<span class="st">&quot;venue&quot;</span>, <span class="st">&quot;market_platform_id&quot;</span>, <span class="st">&quot;first&quot;</span>, <span class="st">&quot;last&quot;</span>]].itertuples(index<span class="op">=</span><span class="va">False</span>)}</span>
+<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a>    bins, lifes, samples <span class="op">=</span> [], [], []</span>
+<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a>    months <span class="op">=</span> pd.period_range(<span class="st">&quot;2022-11&quot;</span>, pd.Timestamp.utcnow().strftime(<span class="st">&quot;%Y-%m&quot;</span>), freq<span class="op">=</span><span class="st">&quot;M&quot;</span>)</span>
+<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> venue <span class="kw">in</span> (<span class="st">&quot;POLYMARKET&quot;</span>, <span class="st">&quot;KALSHI&quot;</span>):</span>
+<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a>        v <span class="op">=</span> venue.lower()</span>
+<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> m <span class="kw">in</span> months:</span>
+<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a>            f <span class="op">=</span> BASE <span class="op">/</span> <span class="st">&quot;fills&quot;</span> <span class="op">/</span> <span class="ss">f&quot;F1_</span><span class="sc">{</span>venue<span class="sc">}</span><span class="ss">_</span><span class="sc">{</span>m<span class="sc">}</span><span class="ss">.parquet&quot;</span></span>
+<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> f.exists():</span>
+<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a>                <span class="cf">continue</span></span>
+<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a>            cols <span class="op">=</span> [c <span class="cf">for</span> c <span class="kw">in</span> (<span class="st">&quot;fill_id&quot;</span>, <span class="st">&quot;market_platform_id&quot;</span>, <span class="st">&quot;outcome_pid&quot;</span>, <span class="st">&quot;outcome_name&quot;</span>, <span class="st">&quot;outcome_index&quot;</span>,</span>
+<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a>                                <span class="st">&quot;taker_side&quot;</span>, <span class="st">&quot;price&quot;</span>, <span class="st">&quot;normalized_price&quot;</span>, <span class="st">&quot;size&quot;</span>, <span class="st">&quot;timestamp&quot;</span>)</span>
+<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> c <span class="kw">in</span> <span class="bu">set</span>(pq.read_schema(f).names)]</span>
+<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a>            df <span class="op">=</span> pq.read_table(f, columns<span class="op">=</span>cols).to_pandas()</span>
+<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">&quot;fill_id&quot;</span> <span class="kw">in</span> df:</span>
+<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a>                df <span class="op">=</span> df.drop_duplicates(<span class="st">&quot;fill_id&quot;</span>)</span>
+<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="bu">len</span>(samples) <span class="op">&lt;</span> (<span class="dv">5</span> <span class="cf">if</span> v <span class="op">==</span> <span class="st">&quot;polymarket&quot;</span> <span class="cf">else</span> <span class="dv">10</span>):</span>
+<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a>                samples.append(df.drop(columns<span class="op">=</span>[c <span class="cf">for</span> c <span class="kw">in</span> (<span class="st">&quot;fill_id&quot;</span>,) <span class="cf">if</span> c <span class="kw">in</span> df]).head(<span class="dv">5</span>).assign(venue<span class="op">=</span>v))</span>
+<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a>            df[<span class="st">&quot;mpid&quot;</span>] <span class="op">=</span> df[<span class="st">&quot;market_platform_id&quot;</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> v <span class="op">==</span> <span class="st">&quot;polymarket&quot;</span>:</span>
+<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a>                link <span class="op">=</span> [pm_tok.get(<span class="bu">str</span>(o)) <span class="kw">or</span> pm_cond.get(c) <span class="cf">for</span> o, c <span class="kw">in</span> <span class="bu">zip</span>(df[<span class="st">&quot;outcome_pid&quot;</span>].astype(<span class="bu">str</span>), df[<span class="st">&quot;mpid&quot;</span>])]</span>
+<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a>                df[<span class="st">&quot;is_link_token&quot;</span>] <span class="op">=</span> [lk <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="kw">and</span> <span class="bu">str</span>(o) <span class="op">==</span> lk.token_id</span>
+<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a>                                       <span class="cf">for</span> lk, o <span class="kw">in</span> <span class="bu">zip</span>(link, df[<span class="st">&quot;outcome_pid&quot;</span>].astype(<span class="bu">str</span>))]</span>
+<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a>                link <span class="op">=</span> [ka.get(c) <span class="cf">for</span> c <span class="kw">in</span> df[<span class="st">&quot;mpid&quot;</span>]]</span>
+<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a>                df[<span class="st">&quot;is_link_token&quot;</span>] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a>            df[<span class="st">&quot;resolved_yes&quot;</span>] <span class="op">=</span> [lk.resolved_yes <span class="cf">if</span> lk <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">else</span> <span class="va">None</span> <span class="cf">for</span> lk <span class="kw">in</span> link]</span>
+<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a>            df[<span class="st">&quot;kind&quot;</span>] <span class="op">=</span> [lk.kind <span class="cf">if</span> lk <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">else</span> <span class="va">None</span> <span class="cf">for</span> lk <span class="kw">in</span> link]</span>
+<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a>            df <span class="op">=</span> df[df[<span class="st">&quot;resolved_yes&quot;</span>].notna()]</span>
+<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> <span class="bu">len</span>(df):</span>
+<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a>                <span class="cf">continue</span></span>
+<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a>            df[<span class="st">&quot;pbin&quot;</span>] <span class="op">=</span> (np.clip(df[<span class="st">&quot;price&quot;</span>].astype(<span class="bu">float</span>), <span class="dv">0</span>, <span class="fl">0.9999</span>) <span class="op">//</span> <span class="fl">0.05</span> <span class="op">*</span> <span class="dv">5</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a>            df[<span class="st">&quot;contracts&quot;</span>] <span class="op">=</span> df[<span class="st">&quot;size&quot;</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a>            g <span class="op">=</span> df.groupby([<span class="st">&quot;outcome_name&quot;</span>, <span class="st">&quot;is_link_token&quot;</span>, <span class="st">&quot;taker_side&quot;</span>, <span class="st">&quot;pbin&quot;</span>, <span class="st">&quot;resolved_yes&quot;</span>, <span class="st">&quot;kind&quot;</span>],</span>
+<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a>                           dropna<span class="op">=</span><span class="va">False</span>).agg(contracts<span class="op">=</span>(<span class="st">&quot;contracts&quot;</span>, <span class="st">&quot;sum&quot;</span>), fills<span class="op">=</span>(<span class="st">&quot;contracts&quot;</span>, <span class="st">&quot;size&quot;</span>)).reset_index()</span>
+<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a>            bins.append(g.assign(venue<span class="op">=</span>v, month<span class="op">=</span><span class="bu">str</span>(m)))</span>
+<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a>            sec <span class="op">=</span> <span class="kw">lambda</span> x: pd.to_datetime(pd.Series(x), utc<span class="op">=</span><span class="va">True</span>).astype(<span class="st">&quot;int64&quot;</span>).to_numpy() <span class="op">/</span> <span class="fl">1e9</span></span>
+<span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a>            lo <span class="op">=</span> [life.get((v, k), (pd.NaT, pd.NaT)) <span class="cf">for</span> k <span class="kw">in</span> df[<span class="st">&quot;mpid&quot;</span>]]</span>
+<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a>            ts, a, b <span class="op">=</span> sec(df[<span class="st">&quot;timestamp&quot;</span>].to_numpy()), sec([x[<span class="dv">0</span>] <span class="cf">for</span> x <span class="kw">in</span> lo]), sec([x[<span class="dv">1</span>] <span class="cf">for</span> x <span class="kw">in</span> lo])</span>
+<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a>            known <span class="op">=</span> np.array([x[<span class="dv">0</span>] <span class="kw">is</span> <span class="kw">not</span> pd.NaT <span class="kw">and</span> pd.notna(x[<span class="dv">0</span>]) <span class="cf">for</span> x <span class="kw">in</span> lo])</span>
+<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a>            span <span class="op">=</span> np.where(known, b <span class="op">-</span> a, <span class="dv">0</span>)</span>
+<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a>            frac <span class="op">=</span> np.where(span <span class="op">&gt;</span> <span class="dv">0</span>, (ts <span class="op">-</span> a) <span class="op">/</span> np.where(span <span class="op">&gt;</span> <span class="dv">0</span>, span, <span class="dv">1</span>), np.nan)</span>
+<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a>            df[<span class="st">&quot;decile&quot;</span>] <span class="op">=</span> np.clip(np.floor(frac <span class="op">*</span> <span class="dv">10</span>), <span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a>            lifes.append(df.groupby([<span class="st">&quot;decile&quot;</span>], dropna<span class="op">=</span><span class="va">True</span>).agg(contracts<span class="op">=</span>(<span class="st">&quot;contracts&quot;</span>, <span class="st">&quot;sum&quot;</span>),</span>
+<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a>                                                                 fills<span class="op">=</span>(<span class="st">&quot;contracts&quot;</span>, <span class="st">&quot;size&quot;</span>)).reset_index().assign(venue<span class="op">=</span>v))</span>
+<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a>    B <span class="op">=</span> pd.concat(bins, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a>    B.groupby([c <span class="cf">for</span> c <span class="kw">in</span> B.columns <span class="cf">if</span> c <span class="kw">not</span> <span class="kw">in</span> (<span class="st">&quot;contracts&quot;</span>, <span class="st">&quot;fills&quot;</span>, <span class="st">&quot;month&quot;</span>)], dropna<span class="op">=</span><span class="va">False</span>)[[<span class="st">&quot;contracts&quot;</span>, <span class="st">&quot;fills&quot;</span>]] <span class="op">\</span></span>
+<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">sum</span>().reset_index().to_csv(OUT <span class="op">/</span> <span class="st">&quot;fills-bins.csv&quot;</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a>    Lf <span class="op">=</span> pd.concat(lifes, ignore_index<span class="op">=</span><span class="va">True</span>).groupby([<span class="st">&quot;venue&quot;</span>, <span class="st">&quot;decile&quot;</span>])[[<span class="st">&quot;contracts&quot;</span>, <span class="st">&quot;fills&quot;</span>]].<span class="bu">sum</span>().reset_index()</span>
+<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a>    ours <span class="op">=</span> []</span>
+<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> src, f <span class="kw">in</span> trade_files():</span>
+<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a>        t <span class="op">=</span> pd.read_parquet(f)</span>
+<span id="cb13-174"><a href="#cb13-174" aria-hidden="true" tabindex="-1"></a>        t <span class="op">=</span> t[t[<span class="st">&quot;mode&quot;</span>].isin(TAKER) <span class="op">&amp;</span> (t[<span class="st">&quot;shares&quot;</span>] <span class="op">&gt;</span> <span class="dv">0</span>)]</span>
+<span id="cb13-175"><a href="#cb13-175" aria-hidden="true" tabindex="-1"></a>        v <span class="op">=</span> t[<span class="st">&quot;venue&quot;</span>].iloc[<span class="dv">0</span>] <span class="cf">if</span> <span class="bu">len</span>(t) <span class="cf">else</span> <span class="va">None</span></span>
+<span id="cb13-176"><a href="#cb13-176" aria-hidden="true" tabindex="-1"></a>        mk <span class="op">=</span> t[<span class="st">&quot;cond&quot;</span>].astype(<span class="bu">str</span>) <span class="cf">if</span> v <span class="op">==</span> <span class="st">&quot;polymarket&quot;</span> <span class="kw">and</span> <span class="st">&quot;cond&quot;</span> <span class="kw">in</span> t <span class="cf">else</span> t[<span class="st">&quot;key&quot;</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k, ts, sh <span class="kw">in</span> <span class="bu">zip</span>(mk, pd.to_datetime(t[<span class="st">&quot;t&quot;</span>], utc<span class="op">=</span><span class="va">True</span>), t[<span class="st">&quot;shares&quot;</span>]):</span>
+<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a>            a, b <span class="op">=</span> life.get((v, k), (<span class="va">None</span>, <span class="va">None</span>))</span>
+<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> a <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="kw">and</span> pd.Timestamp(b) <span class="op">&gt;</span> pd.Timestamp(a):</span>
+<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a>                fr <span class="op">=</span> (ts <span class="op">-</span> pd.Timestamp(a)).total_seconds() <span class="op">/</span> (pd.Timestamp(b) <span class="op">-</span> pd.Timestamp(a)).total_seconds()</span>
+<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a>                ours.append(<span class="bu">dict</span>(source<span class="op">=</span>src, venue<span class="op">=</span>v, decile<span class="op">=</span><span class="bu">int</span>(<span class="bu">min</span>(<span class="bu">max</span>(np.floor(fr <span class="op">*</span> <span class="dv">10</span>), <span class="dv">0</span>), <span class="dv">9</span>)), contracts<span class="op">=</span>sh))</span>
+<span id="cb13-182"><a href="#cb13-182" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ours:</span>
+<span id="cb13-183"><a href="#cb13-183" aria-hidden="true" tabindex="-1"></a>        O <span class="op">=</span> pd.DataFrame(ours).groupby([<span class="st">&quot;source&quot;</span>, <span class="st">&quot;venue&quot;</span>, <span class="st">&quot;decile&quot;</span>]).agg(contracts<span class="op">=</span>(<span class="st">&quot;contracts&quot;</span>, <span class="st">&quot;sum&quot;</span>),</span>
+<span id="cb13-184"><a href="#cb13-184" aria-hidden="true" tabindex="-1"></a>                                                                        fills<span class="op">=</span>(<span class="st">&quot;contracts&quot;</span>, <span class="st">&quot;size&quot;</span>)).reset_index()</span>
+<span id="cb13-185"><a href="#cb13-185" aria-hidden="true" tabindex="-1"></a>        Lf <span class="op">=</span> pd.concat([Lf.assign(source<span class="op">=</span><span class="st">&quot;all fills&quot;</span>), O], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-186"><a href="#cb13-186" aria-hidden="true" tabindex="-1"></a>    Lf.to_csv(OUT <span class="op">/</span> <span class="st">&quot;fills-life.csv&quot;</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-187"><a href="#cb13-187" aria-hidden="true" tabindex="-1"></a>    pd.concat(samples, ignore_index<span class="op">=</span><span class="va">True</span>).to_csv(OUT <span class="op">/</span> <span class="st">&quot;fills-sample.csv&quot;</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-188"><a href="#cb13-188" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">int</span>(B[<span class="st">&quot;fills&quot;</span>].<span class="bu">sum</span>())</span>
+<span id="cb13-189"><a href="#cb13-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-190"><a href="#cb13-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-191"><a href="#cb13-191" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb13-192"><a href="#cb13-192" aria-hidden="true" tabindex="-1"></a>    n, by <span class="op">=</span> markouts()</span>
+<span id="cb13-193"><a href="#cb13-193" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;markouts: </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> trades </span><span class="sc">{</span>by<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb13-194"><a href="#cb13-194" aria-hidden="true" tabindex="-1"></a>    nf <span class="op">=</span> fills()</span>
+<span id="cb13-195"><a href="#cb13-195" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;stats: </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> trade markouts, </span><span class="sc">{</span>nf<span class="sc">}</span><span class="ss"> resolved fills binned&quot;</span>)</span></code></pre></div>
+</div>
+<div class="section" id="part-2-job-script-pm_rule1_rerun.sh">
+<h3>Part 2 job script: pm_rule1_rerun.sh</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Part B again (20 Oct 2026): rule 1 on Polymarket, every saved Polymarket F1 setting at the touch on Probalytics&#39;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># books, ONE PROCESS PER SETTING, so a setting that can&#39;t run read-only drops only itself. Read-only on staging&#39;s</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># mirror of prod. In the first batch (state-batch-20261020T052307Z) a setting whose stage pricings aren&#39;t stored for</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># every round tried to save them (INSERT INTO model_runs) and the read-only error stopped the whole season.</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 2026: rounds 3-16; a setting that fails there is retried once on rounds 3-15 (logged as &quot;on 3-15&quot;).</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2025: rounds 22-24, no retry. The two seasons run side by side (2 vCPU).</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: data/runs/pm-rule1-&lt;UTC&gt;/{2025,2026}/&lt;job&gt;/trades-&lt;job&gt;.parquet, status.csv (job, year, rounds, ok|failed)</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-uo</span> pipefail</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-a</span><span class="kw">;</span> <span class="bu">.</span> <span class="op">&lt;</span>env-file<span class="op">&gt;</span><span class="kw">;</span> <span class="bu">set</span> +a</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DATABASE_URL</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${DATABASE_URL</span><span class="op">%</span>/<span class="pp">*</span><span class="va">}</span><span class="st">/&lt;staging-db&gt;&quot;</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PYTHONUNBUFFERED</span><span class="op">=</span>1 <span class="va">RACINGLINES_PROGRESS_SEC</span><span class="op">=</span>300 <span class="va">PGOPTIONS</span><span class="op">=</span><span class="st">&quot;-c default_transaction_read_only=on&quot;</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="op">&lt;</span>app<span class="op">&gt;</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="va">R</span><span class="op">=</span>.venv/bin/racinglines</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="va">PY</span><span class="op">=</span>.venv/bin/python</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="va">SRC</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> <span class="at">-1dt</span> data/runs/state-batch-<span class="pp">*</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span><span class="va">)</span>/grids/pm-rule1.json</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="va">OUT</span><span class="op">=</span>data/runs/pm-rule1-<span class="va">$(</span><span class="fu">date</span> <span class="at">-u</span> +%Y%m%dT%H%M%SZ<span class="va">)</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/one&quot;</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="fu">say()</span> <span class="kw">{</span> <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">date</span> <span class="at">-u</span> +%Y-%m-%dT%H:%M:%SZ<span class="va">)</span><span class="st"> </span><span class="va">$*</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">tee</span> <span class="at">-a</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/run.log&quot;</span><span class="kw">;</span> <span class="kw">}</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="va">T0</span><span class="op">=</span><span class="va">$SECONDS</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="va">N</span><span class="op">=</span><span class="va">$($PY</span> <span class="at">-</span> <span class="st">&quot;</span><span class="va">$SRC</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/one&quot;</span> <span class="op">&lt;&lt;&#39;PY&#39;</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="st">import json, sys</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="st">g = json.load(open(sys.argv[1]))</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="st">for e in g:</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="st">    json.dump([e], open(f&quot;{sys.argv[2]}/{e[&#39;job&#39;]}.json&quot;, &quot;w&quot;))</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="st">print(len(g))</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="op">PY</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="va">)</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;pm rule 1 rerun from </span><span class="va">$(</span><span class="fu">git</span> rev-parse <span class="at">--short</span> HEAD<span class="va">)</span><span class="st">, grid </span><span class="va">$SRC</span><span class="st">: </span><span class="va">$N</span><span class="st"> settings, one process each -&gt; </span><span class="va">$OUT</span><span class="st">&quot;</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;job,year,rounds,status&quot;</span> <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/status.csv&quot;</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span> <span class="cf">while</span> <span class="fu">sleep</span> 300<span class="kw">;</span> <span class="cf">do</span> <span class="ex">say</span> <span class="st">&quot;progress: </span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min elapsed; </span><span class="va">$((</span> <span class="va">$(</span><span class="fu">wc</span> <span class="at">-l</span> <span class="op">&lt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/status.csv&quot;</span><span class="va">)</span> <span class="op">-</span> <span class="dv">1</span> <span class="va">))</span><span class="st"> of </span><span class="va">$((</span><span class="dv">2</span> <span class="op">*</span> <span class="va">N))</span><span class="st"> season runs done, </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&#39;,failed&#39;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/status.csv&quot;</span><span class="va">)</span><span class="st"> failed&quot;</span><span class="kw">;</span> <span class="cf">done</span> <span class="kw">)</span> <span class="kw">&amp;</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="va">BEAT</span><span class="op">=</span><span class="va">$!</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="bu">trap</span> <span class="st">&#39;kill $BEAT 2&gt;/dev/null&#39;</span> EXIT</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="fu">one()</span> <span class="kw">{</span>   <span class="co"># year rounds grid-file -&gt; 0 ok / 1 failed</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>  <span class="bu">local</span> <span class="va">y</span><span class="op">=</span><span class="va">$1</span> <span class="va">rounds</span><span class="op">=</span><span class="va">$2</span> <span class="va">g</span><span class="op">=</span><span class="va">$3</span> <span class="va">job</span><span class="kw">;</span> <span class="va">job</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="st">&quot;</span><span class="va">$g</span><span class="st">&quot;</span> .json<span class="va">)</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  <span class="va">$R</span> f1 sweep <span class="at">--year</span> <span class="st">&quot;</span><span class="va">$y</span><span class="st">&quot;</span> <span class="at">--rounds</span> <span class="st">&quot;</span><span class="va">$rounds</span><span class="st">&quot;</span> <span class="at">--no-fetch</span> <span class="at">--grid</span> <span class="st">&quot;</span><span class="va">$g</span><span class="st">&quot;</span> <span class="at">--trades-out</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/</span><span class="va">$y</span><span class="st">/</span><span class="va">$job</span><span class="st">&quot;</span> <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/</span><span class="va">$y</span><span class="st">/</span><span class="va">$job</span><span class="st">.log&quot;</span> <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="fu">season()</span> <span class="kw">{</span>   <span class="co"># year rounds [retry-rounds]</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>  <span class="bu">local</span> <span class="va">y</span><span class="op">=</span><span class="va">$1</span> <span class="va">rounds</span><span class="op">=</span><span class="va">$2</span> <span class="va">retry</span><span class="op">=</span><span class="va">${3</span><span class="op">:-</span><span class="va">}</span> <span class="va">g</span> <span class="va">job</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/</span><span class="va">$y</span><span class="st">&quot;</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> g <span class="kw">in</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">&quot;</span>/one/<span class="pp">*</span>.json<span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>    <span class="va">job</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="st">&quot;</span><span class="va">$g</span><span class="st">&quot;</span> .json<span class="va">)</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="ex">one</span> <span class="st">&quot;</span><span class="va">$y</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$rounds</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$g</span><span class="st">&quot;</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$job</span><span class="st">,</span><span class="va">$y</span><span class="st">,</span><span class="va">$rounds</span><span class="st">,ok&quot;</span> <span class="op">&gt;&gt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/status.csv&quot;</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">[</span> <span class="ot">-n</span> <span class="st">&quot;</span><span class="va">$retry</span><span class="st">&quot;</span> <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="fu">mv</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/</span><span class="va">$y</span><span class="st">/</span><span class="va">$job</span><span class="st">.log&quot;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/</span><span class="va">$y</span><span class="st">/</span><span class="va">$job</span><span class="st">.first.log&quot;</span> <span class="kw">&amp;&amp;</span> <span class="ex">one</span> <span class="st">&quot;</span><span class="va">$y</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$retry</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$g</span><span class="st">&quot;</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>      <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$job</span><span class="st">,</span><span class="va">$y</span><span class="st">,</span><span class="va">$retry</span><span class="st">,ok&quot;</span> <span class="op">&gt;&gt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/status.csv&quot;</span><span class="kw">;</span> <span class="ex">say</span> <span class="st">&quot;</span><span class="va">$job</span><span class="st"> </span><span class="va">$y</span><span class="st">: ok on </span><span class="va">$retry</span><span class="st">&quot;</span></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$job</span><span class="st">,</span><span class="va">$y</span><span class="st">,</span><span class="va">${retry</span><span class="op">:-</span><span class="va">$rounds}</span><span class="st">,failed&quot;</span> <span class="op">&gt;&gt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/status.csv&quot;</span></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>      <span class="ex">say</span> <span class="st">&quot;FAILED </span><span class="va">$job</span><span class="st"> </span><span class="va">$y</span><span class="st">: </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-m1</span> <span class="at">-oE</span> <span class="st">&#39;ReadOnlySqlTransaction|[A-Za-z]+Error: .{0,80}&#39;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/</span><span class="va">$y</span><span class="st">/</span><span class="va">$job</span><span class="st">.log&quot;</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>  <span class="cf">done</span></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>  <span class="ex">say</span> <span class="st">&quot;season </span><span class="va">$y</span><span class="st"> done: </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&quot;,</span><span class="va">$y</span><span class="st">,.*,ok&quot;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/status.csv&quot;</span><span class="va">)</span><span class="st"> ok, </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&quot;,</span><span class="va">$y</span><span class="st">,.*,failed&quot;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/status.csv&quot;</span><span class="va">)</span><span class="st"> failed (</span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min)&quot;</span></span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a><span class="ex">season</span> 2025 22-24 <span class="kw">&amp;</span></span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a><span class="va">P1</span><span class="op">=</span><span class="va">$!</span></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="ex">season</span> 2026 3-16 3-15 <span class="kw">&amp;</span></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a><span class="va">P2</span><span class="op">=</span><span class="va">$!</span></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a><span class="bu">wait</span> <span class="va">$P1</span><span class="kw">;</span> <span class="bu">wait</span> <span class="va">$P2</span></span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;all done in </span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min: </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&#39;,ok&#39;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/status.csv&quot;</span><span class="va">)</span><span class="st"> ok, </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&#39;,failed&#39;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/status.csv&quot;</span><span class="va">)</span><span class="st"> failed&quot;</span></span></code></pre></div>
+</div>
+</div>
+
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kevin Lalli<br/>
+    
+        &copy; Copyright 2026.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  <div class="rl-lb" id="rl-lb" role="dialog" aria-modal="true" aria-label="Expanded screenshot"><div class="rl-lb-bar"><button type="button" id="rl-lb-size">Actual size</button><button type="button" id="rl-lb-close">Close &times;</button></div><img alt=""></div>
+<script>(function(){var lb=document.getElementById('rl-lb'),im=lb.querySelector('img'),sz=document.getElementById('rl-lb-size');
+function close(){lb.classList.remove('open','full');document.body.style.overflow='';}
+document.querySelectorAll('a.rl-zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');im.alt=a.querySelector('img').alt;lb.classList.add('open');document.body.style.overflow='hidden';sz.textContent='Actual size';});});
+sz.addEventListener('click',function(e){e.stopPropagation();lb.classList.toggle('full');sz.textContent=lb.classList.contains('full')?'Fit to screen':'Actual size';});
+document.getElementById('rl-lb-close').addEventListener('click',function(e){e.stopPropagation();close();});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target===im)close();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();</script>
+</body>
+</html>

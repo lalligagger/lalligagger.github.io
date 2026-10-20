@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="prev" title="Home" href="index.html" />
+    <link rel="next" title="SatGPT updated" href="satgpt-updated.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A runbook behind our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="kevinlalli.me" />
+    <meta property="og:title" content="As run: Kalshi rule 1, 20 Oct 2026" />
+    <meta property="og:description" content="A runbook behind our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta property="og:url" content="https://kevinlalli.me/kalshi-response-2026-10-20-as-run-rule1.html" />
+    <meta property="og:image" content="https://kevinlalli.me/_images/kalshi-response-2026-10-20/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="As run: Kalshi rule 1, 20 Oct 2026: five golden rules for taker strategies" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="As run: Kalshi rule 1, 20 Oct 2026" />
+    <meta name="twitter:description" content="A runbook behind our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta name="twitter:image" content="https://kevinlalli.me/_images/kalshi-response-2026-10-20/og-card.png" />
+    <title>As run: Kalshi rule 1, 20 Oct 2026 &#8212; kevinlalli.me</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  <style id="rl-zoom-css">
+.rl-zoom{position:relative;display:block;max-height:420px;overflow:hidden;border-radius:6px;cursor:zoom-in;border:1px solid var(--pst-color-border,#ddd)}
+.rl-zoom img{display:block;width:100%;height:auto;margin:0}
+.rl-zoom::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,rgba(13,14,18,.85))}
+.rl-zoom-hint{position:absolute;right:12px;bottom:10px;z-index:1;color:#fff;font-size:.85rem;font-weight:600;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:999px}
+.rl-lb{position:fixed;inset:0;z-index:2000;background:rgba(10,10,12,.97);display:none;overflow:auto;cursor:zoom-out;padding:16px}
+.rl-lb.open{display:block}
+.rl-lb img{display:block;margin:0 auto;max-width:100%;height:auto}
+.rl-lb.full img{max-width:none}
+.rl-lb-bar{position:fixed;top:10px;right:14px;z-index:2001;display:flex;gap:8px}
+.rl-lb-bar button{background:#222;color:#fff;border:1px solid #555;border-radius:6px;padding:4px 10px;font-size:.9rem;cursor:pointer}
+</style>
+</head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">kevinlalli.me</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The latest
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="kalshi-response-2026-10-20.html">
+   RE: Kalshi&#x27;s &quot;Who Calibrates Markets&quot;
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ditl-2026-10-14-part-1.html">
+   DITL 14 Oct, part 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="satgpt-updated.html">
+   SatGPT updated
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-from-claude.html">
+   Hello from Claude
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Old blog
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-earth.html">
+   Hello, Earth!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hyping-hsi.html">
+   Hyping Hyperspectral
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  I 💚 <a href="https://jupyterbook.org">Jupyter Books</a> & <a href="https://www.curvenote.com">Curvenote</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/kalshi-response-2026-10-20-as-run-rule1.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <a class="btn btn-secondary topbarbtn" href="https://github.com/lalligagger" aria-label="GitHub: lalligagger" title="GitHub: lalligagger"><i class="fab fa-github"></i></a>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#already-done-dont-redo">
+   Already done (don&#x27;t redo)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why">
+   Why
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ground-rules">
+   Ground rules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#files">
+   Files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-confirm-the-files-are-on-the-mac">
+   Step 1: confirm the files are on the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-check-the-vm-is-free-and-on-the-right-code">
+   Step 2: check the VM is free and on the right code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-owner-go">
+   Step 3: owner go
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-copy-the-job-to-the-vm-and-start-it">
+   Step 4: copy the job to the VM and start it
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-wait-for-it-to-finish">
+   Step 5: wait for it to finish
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-owner-note">
+   Step 6: owner note
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-copy-the-trade-files-to-the-mac">
+   Step 7: copy the trade files to the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-8-arrange-the-files-for-the-scorer-and-score-them">
+   Step 8: arrange the files for the scorer and score them
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-9-report-back">
+   Step 9: report back
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#footer-fill-in">
+   Footer (fill in)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#as-run-20-oct-2026-utc">
+   As run (20 Oct 2026, UTC)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix-scripts-as-run">
+   Appendix: scripts as run
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#job-script-rule1_job.sh">
+     Job script: rule1_job.sh
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>As run: Kalshi rule 1, 20 Oct 2026</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#already-done-dont-redo">
+   Already done (don&#x27;t redo)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why">
+   Why
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ground-rules">
+   Ground rules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#files">
+   Files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-confirm-the-files-are-on-the-mac">
+   Step 1: confirm the files are on the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2-check-the-vm-is-free-and-on-the-right-code">
+   Step 2: check the VM is free and on the right code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3-owner-go">
+   Step 3: owner go
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4-copy-the-job-to-the-vm-and-start-it">
+   Step 4: copy the job to the VM and start it
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-5-wait-for-it-to-finish">
+   Step 5: wait for it to finish
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-6-owner-note">
+   Step 6: owner note
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-7-copy-the-trade-files-to-the-mac">
+   Step 7: copy the trade files to the Mac
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-8-arrange-the-files-for-the-scorer-and-score-them">
+   Step 8: arrange the files for the scorer and score them
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-9-report-back">
+   Step 9: report back
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#footer-fill-in">
+   Footer (fill in)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#as-run-20-oct-2026-utc">
+   As run (20 Oct 2026, UTC)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix-scripts-as-run">
+   Appendix: scripts as run
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#job-script-rule1_job.sh">
+     Job script: rule1_job.sh
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="kalshi-response-2026-10-20-as-run-rule1">
+<h1>As run: Kalshi rule 1, 20 Oct 2026<a class="headerlink" href="#kalshi-response-2026-10-20-as-run-rule1" title="Permalink to this headline">¶</a></h1>
+<style>
+.rl-article table{font-size:14px;margin:12px 0 18px;display:block;overflow-x:auto}
+.rl-article table th{white-space:nowrap}
+.rl-article img{max-width:100%;height:auto;border:1px solid #e3e6ea;border-radius:8px;margin:8px 0}
+.rl-article blockquote{border-left:3px solid #1d5a86;padding:4px 14px;color:#4a5562}
+</style>
+<div class="rl-article">
+<p><em>This is the runbook as written and run, with machine names, paths, database names and accounts redacted (shown as <code>&lt;...&gt;</code>). The commands are otherwise unchanged. The outcome of each run is recorded at the end, and the job script it started is in the appendix.</em></p>
+<p><strong>For:</strong> a Haiku-class agent in VS Code on the owner's Mac (terminal access). Every step below is mechanical: run the command, compare the output with the <strong>Check</strong>, and go on or stop. Don't change any command, setting or file except where a step says so. If a check fails, stop, and give the owner the step number and the last 20 lines of output.</p>
+<div class="section" id="already-done-dont-redo">
+<h2>Already done (don't redo)</h2>
+<p>Step 2 of the re-sim ran at 01:49 and 01:58Z. That was our own run, triggered by the owner. Its outputs are in two folders, <code>data/runs/kalshi-resim-20261020T014914Z/</code> (F1 2025, NASCAR 2025 and 2026, MotoGP 2026) and <code>data/runs/kalshi-resim-f1-2026-r1-16-20261020T015845Z/</code> (F1 2026). Leave both alone. "0 min" in those logs means under a minute, which is expected because the stage pricings were already stored.</p>
+</div>
+<div class="section" id="why">
+<h2>Why</h2>
+<p>Golden rule 1 says a strategy's edge must survive a luck test corrected for <strong>every setting tried</strong>. Step 2 of our Kalshi response re-ran one F1 setting (11c96efd2255). Its F1 2026 edge was +12¢/share against the mid, but that setting is one of 20 saved Kalshi F1 sweep settings per season. This run re-runs all of them with <code>--trades-out</code>, so the correction covers them all.</p>
+<ul>
+<li>2025: every round.</li>
+<li>2026: rounds 1 to 16. Round 17 has no stored stage pricings, and this run is read-only.</li>
+</ul>
+<p>The results get published whatever they show (the owner's no-cheating rule).</p>
+</div>
+<div class="section" id="ground-rules">
+<h2>Ground rules</h2>
+<ul>
+<li><strong>Read-only:</strong> the job sets <code>PGOPTIONS=default_transaction_read_only=on</code>, so it cannot write to any database. A setting that needs a write fails on its own, gets logged, and the loop goes on.</li>
+<li><strong>One queue at a time:</strong> the VM has 2 vCPUs. Step 2 checks that no <code>rl-*</code> unit is running.</li>
+<li><strong>The coordinator holds the staging merges</strong> while this runs. Step 3 has the owner tell the Claude thread before starting, and step 6 has them tell it when the run ends.</li>
+<li><strong>No secrets:</strong> none are needed. Never print <code>/etc/*.env</code> files.</li>
+<li><strong>Mac shell:</strong> run <code>conda deactivate</code> first if a conda env is active, and use <code>/usr/bin/git</code>.</li>
+</ul>
+</div>
+<div class="section" id="files">
+<h2>Files</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Path on the Mac</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;mac-folder&gt;/kalshi-rule1/rule1_job.sh</code></td>
+<td>The VM job (built and tested by Claude; the grid builder was tested on a local Postgres)</td>
+</tr>
+<tr class="even">
+<td><code>&lt;mac-folder&gt;/kalshi-rule1/score.py</code></td>
+<td>The scorer used for step 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-1-confirm-the-files-are-on-the-mac">
+<h2>Step 1: confirm the files are on the Mac</h2>
+<pre><code># LOCAL (Mac)
+ls -la &lt;mac-folder&gt;/kalshi-rule1/ &amp;&amp; bash -n &lt;mac-folder&gt;/kalshi-rule1/rule1_job.sh &amp;&amp; echo script-ok</code></pre>
+<p><strong>Check:</strong> both files are listed and the last line is <code>script-ok</code>.</p>
+</div>
+<div class="section" id="step-2-check-the-vm-is-free-and-on-the-right-code">
+<h2>Step 2: check the VM is free and on the right code</h2>
+<pre><code># LOCAL (Mac)
+gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;cd &lt;app&gt; &amp;&amp; /usr/bin/git log --oneline -1 &amp;&amp; systemctl list-units &#39;rl-*&#39; --state=running,activating --no-legend | wc -l&quot;</code></pre>
+<p><strong>Check:</strong> - The first line starts with <code>34b18f5</code> or a later staging commit. - The last line is <code>0</code>, meaning no <code>rl-</code> unit is running. Old <code>failed</code> units and timers don't count. If it is not <code>0</code>, stop: another queue is running.</p>
+</div>
+<div class="section" id="step-3-owner-go">
+<h2>Step 3: owner go</h2>
+<p>Ask the owner to post "rule 1 run starting" in the Claude thread "Kalshi Market Efficiency Report", then wait for their OK to continue. That lets the coordinator hold the staging merges.</p>
+</div>
+<div class="section" id="step-4-copy-the-job-to-the-vm-and-start-it">
+<h2>Step 4: copy the job to the VM and start it</h2>
+<pre><code># LOCAL (Mac)
+gcloud compute scp &lt;mac-folder&gt;/kalshi-rule1/rule1_job.sh &lt;vm&gt;:&lt;tmp&gt;/rule1_job.sh --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap &amp;&amp; gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;sudo install -m 755 &lt;tmp&gt;/rule1_job.sh &lt;tmp&gt;/rule1_job.sh &amp;&amp; sudo systemctl reset-failed rl-kalshi-rule1 2&gt;/dev/null; sudo systemd-run --unit=rl-kalshi-rule1 --uid=&lt;app-user&gt; &lt;tmp&gt;/rule1_job.sh &amp;&amp; sleep 30 &amp;&amp; sudo journalctl -u rl-kalshi-rule1 --no-pager | tail -n 5&quot;</code></pre>
+<p><strong>Check:</strong> the output shows these three lines: - <code>kalshi rule-1 run from 34b18f5 on &lt;staging-db&gt; (read-only)</code> - <code>N settings x years to run</code>, where N should be 40 (20 settings × 2 years) - <code>start 1/N ...</code></p>
+<p>If you see <code>STOP: could not build the grids</code>, stop.</p>
+</div>
+<div class="section" id="step-5-wait-for-it-to-finish">
+<h2>Step 5: wait for it to finish</h2>
+<p>Each setting takes about 20 to 60 seconds, so expect about 15 to 40 minutes in all. Check every 5 minutes:</p>
+<pre><code># LOCAL (Mac)
+gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;systemctl is-active rl-kalshi-rule1; d=\$(ls -1dt &lt;app&gt;/data/runs/kalshi-rule1-* | head -1); tail -n 3 \$d/run.log&quot;</code></pre>
+<p><strong>Check:</strong> it's done when the first line is <code>inactive</code> (or <code>failed</code>) and run.log ends with <code>all done in M min, N runs, failures: F</code>. A few <code>FAILED ... ReadOnlySqlTransaction</code> lines are expected and fine: those settings need stage pricings that aren't stored. Note F.</p>
+</div>
+<div class="section" id="step-6-owner-note">
+<h2>Step 6: owner note</h2>
+<p>Ask the owner to post this in the Claude thread: "rule 1 run ended: N runs, F failures".</p>
+</div>
+<div class="section" id="step-7-copy-the-trade-files-to-the-mac">
+<h2>Step 7: copy the trade files to the Mac</h2>
+<pre><code># LOCAL (Mac)
+mkdir -p &lt;mac-folder&gt;/kalshi-rule1/raw &amp;&amp; cd &lt;mac-folder&gt;/kalshi-rule1/raw &amp;&amp; d=$(gcloud compute ssh &lt;vm&gt; --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap --command &quot;ls -1dt &lt;app&gt;/data/runs/kalshi-rule1-* | head -1&quot; | tr -d &#39;\r&#39;) &amp;&amp; gcloud compute scp --recurse --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap &quot;&lt;vm&gt;:$d&quot; . &amp;&amp; find . -name &#39;*.parquet&#39; | wc -l</code></pre>
+<p><strong>Check:</strong> the count is N − F.</p>
+</div>
+<div class="section" id="step-8-arrange-the-files-for-the-scorer-and-score-them">
+<h2>Step 8: arrange the files for the scorer and score them</h2>
+<pre><code># LOCAL (Mac)
+cd &lt;mac-folder&gt;/kalshi-rule1 &amp;&amp; mkdir -p data &amp;&amp; for f in raw/kalshi-rule1-*/f1-*/trades-*.parquet; do cp &quot;$f&quot; &quot;data/$(basename &quot;$(dirname &quot;$f&quot;)&quot;).parquet&quot;; done &amp;&amp; ls data | wc -l &amp;&amp; ~/py_dev/racinglines/.venv/bin/python -I score.py &gt; scores.txt &amp;&amp; wc -l scores.csv &amp;&amp; tail -n 5 scores.txt</code></pre>
+<p><strong>Check:</strong> the data count is N − F, scores.csv has more than 100 lines, and the tail shows a table. Each setting and year is one block of 4 rows: update, hold, last and early. If the import fails, report the error and stop. Don't install anything.</p>
+</div>
+<div class="section" id="step-9-report-back">
+<h2>Step 9: report back</h2>
+<p>Tell the owner the run is done, and give them two things to paste into the Claude thread: 1. The last 5 lines of <code>raw/kalshi-rule1-*/run.log</code>. 2. The path <code>&lt;mac-folder&gt;/kalshi-rule1/scores.csv</code>. Claude reads it from the Mac.</p>
+<p>Don't interpret the results. Claude does the selection-corrected verdict, the report text and the publish.</p>
+</div>
+<div class="section" id="footer-fill-in">
+<h2>Footer (fill in)</h2>
+<ul>
+<li>What ran: the unit name, the start and end time, N, F.</li>
+<li>How it was verified: the step 4 and step 5 check lines.</li>
+<li>Paths: the VM output folder name, <code>&lt;mac-folder&gt;/kalshi-rule1/scores.csv</code>.</li>
+<li>What was not checked: anything that was skipped.</li>
+</ul>
+</div>
+<div class="section" id="as-run-20-oct-2026-utc">
+<h2>As run (20 Oct 2026, UTC)</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time (UTC)</th>
+<th>Event</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>02:36:05</td>
+<td>Unit started on staging commit 34b18f5, read-only on the mirror</td>
+</tr>
+<tr class="even">
+<td>02:56</td>
+<td>40 runs done (20 settings × F1 2025 and 2026 rounds 1 to 16), <strong>0 failures</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Output folder <code>kalshi-rule1-20261020T023605Z</code>, scored on the Mac with the step 2 scorer, unchanged.</p>
+</div>
+<div class="section" id="appendix-scripts-as-run">
+<h2>Appendix: scripts as run</h2>
+<div class="section" id="job-script-rule1_job.sh">
+<h3>Job script: rule1_job.sh</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Rule 1 run: every saved Kalshi F1 sweep setting (model_runs kind=sweep, venue kalshi), 2025 and 2026 rounds 1-16,</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># re-run with --trades-out, one process per setting so one failure doesn&#39;t stop the rest. Read-only on staging&#39;s mirror.</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># A progress line every 5 minutes. Output: data/runs/kalshi-rule1-&lt;UTC&gt;/ (run.log, f1-&lt;year&gt;-&lt;key&gt;.log, f1-&lt;year&gt;-&lt;key&gt;/trades-&lt;key&gt;.parquet)</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-uo</span> pipefail</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span> <span class="at">-a</span><span class="kw">;</span> <span class="bu">.</span> <span class="op">&lt;</span>env-file<span class="op">&gt;</span><span class="kw">;</span> <span class="bu">set</span> +a</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DATABASE_URL</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${DATABASE_URL</span><span class="op">%</span>/<span class="pp">*</span><span class="va">}</span><span class="st">/&lt;staging-db&gt;&quot;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PYTHONUNBUFFERED</span><span class="op">=</span>1 <span class="va">RACINGLINES_PROGRESS_SEC</span><span class="op">=</span>300 <span class="va">PGOPTIONS</span><span class="op">=</span><span class="st">&quot;-c default_transaction_read_only=on&quot;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="op">&lt;</span>app<span class="op">&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="va">R</span><span class="op">=</span>.venv/bin/racinglines</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="va">OUT</span><span class="op">=</span>data/runs/kalshi-rule1-<span class="va">$(</span><span class="fu">date</span> <span class="at">-u</span> +%Y%m%dT%H%M%SZ<span class="va">)</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/grids&quot;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">say()</span> <span class="kw">{</span> <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">date</span> <span class="at">-u</span> +%Y-%m-%dT%H:%M:%SZ<span class="va">)</span><span class="st"> </span><span class="va">$*</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">tee</span> <span class="at">-a</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/run.log&quot;</span><span class="kw">;</span> <span class="kw">}</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="va">T0</span><span class="op">=</span><span class="va">$SECONDS</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span> <span class="cf">while</span> <span class="fu">sleep</span> 300<span class="kw">;</span> <span class="cf">do</span> <span class="ex">say</span> <span class="st">&quot;progress: </span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min elapsed&quot;</span><span class="kw">;</span> <span class="cf">done</span> <span class="kw">)</span> <span class="kw">&amp;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="va">BEAT</span><span class="op">=</span><span class="va">$!</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="bu">trap</span> <span class="st">&#39;kill $BEAT 2&gt;/dev/null&#39;</span> EXIT</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;kalshi rule-1 run from </span><span class="va">$(</span><span class="fu">git</span> rev-parse <span class="at">--short</span> HEAD<span class="va">)</span><span class="st"> on </span><span class="va">${DATABASE_URL</span><span class="op">##</span><span class="pp">*</span>/<span class="va">}</span><span class="st"> (read-only) -&gt; </span><span class="va">$OUT</span><span class="st">&quot;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv/bin/python</span> <span class="at">-</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/grids&quot;</span> <span class="op">&lt;&lt;&#39;PY&#39;</span> <span class="kw">||</span> <span class="kw">{</span> <span class="ex">say</span> <span class="st">&quot;STOP: could not build the grids&quot;</span><span class="kw">;</span> <span class="bu">exit</span> 1<span class="kw">;</span> <span class="kw">}</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="st">import json, os, sys</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="st">from sqlalchemy import create_engine, text</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="st">rows = create_engine(os.environ[&quot;DATABASE_URL&quot;]).connect().execute(text(</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="st">    &quot;SELECT DISTINCT ON (params-&gt;&gt;&#39;year&#39;, params-&gt;&gt;&#39;settings_key&#39;) params-&gt;&gt;&#39;year&#39;, params-&gt;&gt;&#39;settings_key&#39;, &quot;</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="st">    &quot;params-&gt;&#39;settings&#39; FROM model_runs WHERE kind = &#39;sweep&#39; AND params-&gt;&#39;settings&#39;-&gt;&gt;&#39;venue&#39; = &#39;kalshi&#39; &quot;</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="st">    &quot;ORDER BY params-&gt;&gt;&#39;year&#39;, params-&gt;&gt;&#39;settings_key&#39;, id DESC&quot;)).fetchall()</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="st">for y, k, s in rows:</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="st">    json.dump([{&quot;job&quot;: k, &quot;settings&quot;: s}], open(os.path.join(sys.argv[1], f&quot;{y}-{k}.json&quot;), &quot;w&quot;))</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="st">print(f&quot;{len(rows)} grids&quot;)</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="op">PY</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="va">N</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/grids&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="va">)</span><span class="kw">;</span> <span class="va">I</span><span class="op">=</span>0<span class="kw">;</span> <span class="va">FAIL</span><span class="op">=</span>0</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;</span><span class="va">$N</span><span class="st"> settings x years to run&quot;</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> g <span class="kw">in</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/grids&quot;</span>/<span class="pp">*</span>.json<span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="va">I</span><span class="op">=</span><span class="va">$((I</span> <span class="op">+</span> <span class="dv">1</span><span class="va">))</span><span class="kw">;</span> <span class="va">b</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="st">&quot;</span><span class="va">$g</span><span class="st">&quot;</span> .json<span class="va">)</span><span class="kw">;</span> <span class="va">y</span><span class="op">=</span><span class="va">${b</span><span class="op">%%</span>-<span class="pp">*</span><span class="va">}</span><span class="kw">;</span> <span class="va">k</span><span class="op">=</span><span class="va">${b</span><span class="op">#</span><span class="pp">*</span>-<span class="va">}</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="va">rounds</span><span class="op">=</span><span class="st">&quot;&quot;</span><span class="kw">;</span> <span class="bu">[</span> <span class="st">&quot;</span><span class="va">$y</span><span class="st">&quot;</span> <span class="ot">=</span> 2026 <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="va">rounds</span><span class="op">=</span><span class="st">&quot;--rounds 1-16&quot;</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="ex">say</span> <span class="st">&quot;start </span><span class="va">$I</span><span class="st">/</span><span class="va">$N</span><span class="st"> f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st">&quot;</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># shellcheck disable=SC2086</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="va">$R</span> f1 sweep <span class="at">--year</span> <span class="st">&quot;</span><span class="va">$y</span><span class="st">&quot;</span> <span class="va">$rounds</span> <span class="at">--no-fetch</span> <span class="at">--grid</span> <span class="st">&quot;</span><span class="va">$g</span><span class="st">&quot;</span> <span class="at">--trades-out</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st">&quot;</span> <span class="op">&gt;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st">.log&quot;</span> <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>    <span class="ex">say</span> <span class="st">&quot;done </span><span class="va">$I</span><span class="st">/</span><span class="va">$N</span><span class="st"> f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st"> (</span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min)&quot;</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    <span class="ex">say</span> <span class="st">&quot;FAILED </span><span class="va">$I</span><span class="st">/</span><span class="va">$N</span><span class="st"> f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st">: </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-m1</span> <span class="at">-oE</span> <span class="st">&#39;ReadOnlySqlTransaction|Error: .{0,80}&#39;</span> <span class="st">&quot;</span><span class="va">$OUT</span><span class="st">/f1-</span><span class="va">$y</span><span class="st">-</span><span class="va">$k</span><span class="st">.log&quot;</span><span class="va">)</span><span class="st">&quot;</span><span class="kw">;</span> <span class="va">FAIL</span><span class="op">=</span><span class="va">$((FAIL</span> <span class="op">+</span> <span class="dv">1</span><span class="va">))</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  <span class="cf">fi</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="ex">say</span> <span class="st">&quot;all done in </span><span class="va">$((</span> (<span class="va">SECONDS</span> <span class="op">-</span> <span class="va">T0</span>) <span class="op">/</span> <span class="dv">60</span> <span class="va">))</span><span class="st"> min, </span><span class="va">$N</span><span class="st"> runs, failures: </span><span class="va">$FAIL</span><span class="st">&quot;</span></span></code></pre></div>
+</div>
+</div>
+
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kevin Lalli<br/>
+    
+        &copy; Copyright 2026.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  <div class="rl-lb" id="rl-lb" role="dialog" aria-modal="true" aria-label="Expanded screenshot"><div class="rl-lb-bar"><button type="button" id="rl-lb-size">Actual size</button><button type="button" id="rl-lb-close">Close &times;</button></div><img alt=""></div>
+<script>(function(){var lb=document.getElementById('rl-lb'),im=lb.querySelector('img'),sz=document.getElementById('rl-lb-size');
+function close(){lb.classList.remove('open','full');document.body.style.overflow='';}
+document.querySelectorAll('a.rl-zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');im.alt=a.querySelector('img').alt;lb.classList.add('open');document.body.style.overflow='hidden';sz.textContent='Actual size';});});
+sz.addEventListener('click',function(e){e.stopPropagation();lb.classList.toggle('full');sz.textContent=lb.classList.contains('full')?'Fit to screen':'Actual size';});
+document.getElementById('rl-lb-close').addEventListener('click',function(e){e.stopPropagation();close();});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target===im)close();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();</script>
+</body>
+</html>

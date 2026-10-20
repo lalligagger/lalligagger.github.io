@@ -346,8 +346,6 @@ threads with no input.
 | 01:49 to 01:59 | **Simulation run** on our server, read-only: five sport-seasons in two runs, about 4.5 minutes in all. Every F1 total matches the published backtest to the cent. [Runbook as run](kalshi-response-2026-10-20-as-run-resim.html) | High-touch |
 | 02:07 to 02:12 | **Trades scored** in the paper's framework (step 2 below) | Streamlined |
 | 02:15 | **Polymarket test split chosen**, before any of it runs (step 3) | High-touch |
-
-*Internal book pages behind this report: [3.4 Trading (golden rules)](https://racinglines.bet/docs/internal/system/trading.html), [3.5 Evaluation and sweeps](https://racinglines.bet/docs/internal/system/evaluation.html), [4.5 DITL reports](https://racinglines.bet/docs/internal/ops/ditl.html), [Appendix A: every report and its sources](https://racinglines.bet/docs/internal/appendix/reports.html).*
 | 02:15 to 02:40 | **Editorial work, round 2** (v2): simulation results, as-run runbook page, PR tooltips, access note | High-touch |
 | 02:24 | **v2 published**, with the simulation results | High-touch |
 | 02:36 to 02:56 | **Rule 1 on Kalshi:** all 20 saved F1 settings re-run trade by trade, 40 runs, read-only. [As run](kalshi-response-2026-10-20-as-run-rule1.html) | Streamlined |
@@ -356,7 +354,11 @@ threads with no input.
 | 05:02 to 05:10 | **"State of racinglines" set:** run every historical test our data allows, and say what decides "a fair price" vs "an edge worth trading" | High-touch |
 | 05:23 to 11:03 | **Overnight batch** on our server, read-only, in two parts: the model on every market it prices, Kalshi on full order books, markouts, every resolved fill, and rule 1 over all 106 saved Polymarket settings (212 season runs, 207 completed). [As run](kalshi-response-2026-10-20-as-run-state-batch.html) | Streamlined |
 | 06:45 to 12:22 | **Overnight results scored:** the model on every market, all 126 saved settings with the luck test, markouts, crowd fills | Streamlined |
-| 12:13 to 12:35 | **Editorial work, round 3** (v3): the whole page rewritten as a state of racinglines, with context before each test, and every as-run runbook linked | High-touch |
+| 12:13 to 12:40 | **Editorial work, round 3** (v3): the whole page rewritten as a state of racinglines, with context before each test, every as-run runbook linked, demo and repo links | High-touch |
+| by 12:35 | **v3 published** here | High-touch |
+| 13:00 (6:00 Pacific) | **Published on LinkedIn** | High-touch |
+
+*Internal book pages behind this report: [3.4 Trading (golden rules)](https://racinglines.bet/docs/internal/system/trading.html), [3.5 Evaluation and sweeps](https://racinglines.bet/docs/internal/system/evaluation.html), [4.5 DITL reports](https://racinglines.bet/docs/internal/ops/ditl.html), [Appendix A: every report and its sources](https://racinglines.bet/docs/internal/appendix/reports.html).*
 
 ## What's next
 

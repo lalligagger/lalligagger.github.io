@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="prev" title="Home" href="index.html" />
+    <link rel="next" title="SatGPT updated" href="satgpt-updated.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The runbook behind step 2 of our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="kevinlalli.me" />
+    <meta property="og:title" content="As run: Kalshi re-sim, 20 Oct 2026" />
+    <meta property="og:description" content="The runbook behind step 2 of our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta property="og:url" content="https://kevinlalli.me/kalshi-response-2026-10-20-as-run-resim.html" />
+    <meta property="og:image" content="https://kevinlalli.me/_images/kalshi-response-2026-10-20/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="As run: Kalshi re-sim, 20 Oct 2026: five golden rules for taker strategies" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="As run: Kalshi re-sim, 20 Oct 2026" />
+    <meta name="twitter:description" content="The runbook behind step 2 of our response to Kalshi&#x27;s paper, as written and run, with machine details redacted." />
+    <meta name="twitter:image" content="https://kevinlalli.me/_images/kalshi-response-2026-10-20/og-card.png" />
+    <title>As run: Kalshi re-sim, 20 Oct 2026 &#8212; kevinlalli.me</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  <style id="rl-zoom-css">
+.rl-zoom{position:relative;display:block;max-height:420px;overflow:hidden;border-radius:6px;cursor:zoom-in;border:1px solid var(--pst-color-border,#ddd)}
+.rl-zoom img{display:block;width:100%;height:auto;margin:0}
+.rl-zoom::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,rgba(13,14,18,.85))}
+.rl-zoom-hint{position:absolute;right:12px;bottom:10px;z-index:1;color:#fff;font-size:.85rem;font-weight:600;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:999px}
+.rl-lb{position:fixed;inset:0;z-index:2000;background:rgba(10,10,12,.97);display:none;overflow:auto;cursor:zoom-out;padding:16px}
+.rl-lb.open{display:block}
+.rl-lb img{display:block;margin:0 auto;max-width:100%;height:auto}
+.rl-lb.full img{max-width:none}
+.rl-lb-bar{position:fixed;top:10px;right:14px;z-index:2001;display:flex;gap:8px}
+.rl-lb-bar button{background:#222;color:#fff;border:1px solid #555;border-radius:6px;padding:4px 10px;font-size:.9rem;cursor:pointer}
+</style>
+</head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">kevinlalli.me</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The latest
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="kalshi-response-2026-10-20.html">
+   RE: Kalshi&#x27;s &quot;Who Calibrates Markets&quot;
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ditl-2026-10-14-part-1.html">
+   DITL 14 Oct, part 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="satgpt-updated.html">
+   SatGPT updated
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-from-claude.html">
+   Hello from Claude
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Old blog
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hello-earth.html">
+   Hello, Earth!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hyping-hsi.html">
+   Hyping Hyperspectral
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  I 💚 <a href="https://jupyterbook.org">Jupyter Books</a> & <a href="https://www.curvenote.com">Curvenote</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/kalshi-response-2026-10-20-as-run-resim.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <a class="btn btn-secondary topbarbtn" href="https://github.com/lalligagger" aria-label="GitHub: lalligagger" title="GitHub: lalligagger"><i class="fab fa-github"></i></a>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#as-run-20-oct-2026-utc">
+   As run (20 Oct 2026, UTC)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>As run: Kalshi re-sim, 20 Oct 2026</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#as-run-20-oct-2026-utc">
+   As run (20 Oct 2026, UTC)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="kalshi-response-2026-10-20-as-run-resim">
+<h1>As run: Kalshi re-sim, 20 Oct 2026<a class="headerlink" href="#kalshi-response-2026-10-20-as-run-resim" title="Permalink to this headline">¶</a></h1>
+<style>
+.rl-article table{font-size:14px;margin:12px 0 18px;display:block;overflow-x:auto}
+.rl-article table th{white-space:nowrap}
+.rl-article img{max-width:100%;height:auto;border:1px solid #e3e6ea;border-radius:8px;margin:8px 0}
+.rl-article blockquote{border-left:3px solid #1d5a86;padding:4px 14px;color:#4a5562}
+</style>
+<div class="rl-article">
+<p><em>This is the runbook as written and run, with machine names, paths, database names and accounts redacted (shown as <code>&lt;...&gt;</code>). The commands are otherwise unchanged. The outcome of each run is recorded at the end.</em></p>
+<p><strong>What this runs.</strong> These are the published Kalshi sweeps, re-run with <code>--trades-out</code> (#275, on staging at 34b18f5), so every trade is saved with the touch bid, ask, sizes and outcome:</p>
+<ul>
+<li><strong>F1 2025 and 2026:</strong> the settings of sweep runs 9636 and 9637 (<code>settings_key</code> 11c96efd2255, checked in the cloud: the grid entry below hashes to that key).</li>
+<li><strong>NASCAR 2025 and 2026, MotoGP 2026:</strong> each sport's baseline settings on Kalshi.</li>
+</ul>
+<p><strong>Database.</strong> Every connection is read-only (<code>PGOPTIONS=default_transaction_read_only=on</code>), the same way <code>scripts/vm/nascar_calibration.sh</code> reads the staging mirror.</p>
+<p>This job is an exception to the rule that staging VM jobs set <code>STAGING_DB=&lt;demo-db&gt;</code>. That rule exists because writes break the mirror, and this job cannot write: the read-only guard refuses any write. The mirror holds the same Kalshi data as the published runs 9636 and 9637, which is why the job reads from it. Nothing is saved (no <code>--save</code>) and nothing is downloaded (<code>--no-fetch</code>). If the F1 sweep needs to price a stage that isn't stored, it stops with a read-only error rather than writing to the mirror. In that case, send me the log line and I'll switch that part to <code>&lt;demo-db&gt;</code>.</p>
+<p><strong>Output.</strong> <code>&lt;app&gt;/data/runs/kalshi-resim-&lt;UTC&gt;/</code>, holding <code>run.log</code>, <code>&lt;sport&gt;-&lt;year&gt;.log</code>, and <code>&lt;sport&gt;-&lt;year&gt;/trades*.parquet</code>.</p>
+<p>Run the steps in order. Each check says what you should see.</p>
+<p><strong>Step 1: open a shell on the VM.</strong></p>
+<pre><code># LOCAL (Mac)
+conda deactivate 2&gt;/dev/null; cd &lt;checkout&gt; &amp;&amp; bash scripts/deploy/vm.sh ssh</code></pre>
+<p><strong>Step 2: confirm the 34b18f5 staging deploy finished, so the <code>--trades-out</code> code is what runs, and that no other sweep is running.</strong></p>
+<pre><code># VM (production)
+cd &lt;app&gt; &amp;&amp; /usr/bin/git log --oneline -1 &amp;&amp; systemctl list-units &#39;rl-*&#39; --no-legend</code></pre>
+<p>Check: the first line starts with <code>34b18f5</code> (or a later staging commit), and no <code>rl-</code> unit is listed. If one is listed, stop here: the VM runs one queue at a time.</p>
+<p><strong>Step 3: confirm the mirror has the Kalshi links.</strong></p>
+<pre><code># VM (production)
+cd &lt;prod-app&gt; &amp;&amp; sudo -u &lt;app-user&gt; &lt;psql&gt; -U &lt;db-user&gt; -d &lt;staging-db&gt; -tAc &quot;SELECT c.code, s.year, count(*) FROM market_links ml JOIN races r ON r.id=ml.race_id JOIN events e ON e.id=r.event_id JOIN seasons s ON s.id=e.season_id JOIN competitions c ON c.id=s.competition_id WHERE ml.exchange=&#39;kalshi&#39; AND c.code IN (&#39;f1_wdc&#39;,&#39;nascar_cup&#39;,&#39;motogp_wc&#39;) GROUP BY 1,2 ORDER BY 1,2&quot;</code></pre>
+<p>Check: production showed these counts at 01:45Z: f1_wdc 2025 = 1074, f1_wdc 2026 = 3256, motogp_wc 2026 = 310, nascar_cup 2025 = 303, nascar_cup 2026 = 7910. The mirror should match or be slightly higher.</p>
+<p><strong>Step 4: write the job script and the F1 grid.</strong> The first part of this block writes the grid, the second part writes the script, and the last line checks the script's syntax.</p>
+<pre><code># VM (production)
+sudo tee &lt;tmp&gt;/kalshi-resim-grid.json &gt;/dev/null &lt;&lt;&#39;EOF&#39;
+[{&quot;job&quot;: &quot;kalshi-11c96efd2255&quot;, &quot;settings&quot;: {&quot;cost&quot;:0.01,&quot;fill&quot;:&quot;through&quot;,&quot;seed&quot;:null,&quot;sims&quot;:16000,&quot;size&quot;:50.0,&quot;skew&quot;:1.0,&quot;kelly&quot;:null,&quot;venue&quot;:&quot;kalshi&quot;,&quot;widen&quot;:1.5,&quot;max_pos&quot;:250.0,&quot;variant&quot;:&quot;gridq+pretrain+reset&quot;,&quot;bankroll&quot;:null,&quot;min_edge&quot;:0.1,&quot;info_skew&quot;:2.0,&quot;max_stake&quot;:50.0,&quot;ridge_team&quot;:2.0,&quot;half_spread&quot;:0.02,&quot;late_stages&quot;:[&quot;after FP3&quot;,&quot;after Quali&quot;],&quot;ridge_slope&quot;:6.0,&quot;market_kinds&quot;:[&quot;race_win&quot;,&quot;race_podium&quot;,&quot;race_h2h&quot;,&quot;race_constructor_top&quot;,&quot;race_pole&quot;,&quot;race_top10&quot;],&quot;max_deployed&quot;:null,&quot;max_disagree&quot;:0.15,&quot;min_edge_h2h&quot;:0.05,&quot;reset_weight&quot;:0.25,&quot;taker_stages&quot;:[&quot;after FP1&quot;,&quot;after FP2&quot;,&quot;after FP3&quot;,&quot;after SQ&quot;,&quot;after Sprint&quot;,&quot;after Quali&quot;],&quot;teammate_corr&quot;:true,&quot;driver_prior_n&quot;:3.0,&quot;half_life_days&quot;:120.0,&quot;min_volume_24h&quot;:50.0,&quot;practice_prior&quot;:true,&quot;stake_per_edge&quot;:250.0,&quot;thin_edge_mult&quot;:null,&quot;track_features&quot;:true,&quot;finish_rho_scale&quot;:1.0,&quot;min_edge_by_kind&quot;:null,&quot;maker_min_volume_24h&quot;:null,&quot;coherence_tol_by_kind&quot;:null}}]
+EOF
+sudo tee &lt;tmp&gt;/kalshi-resim.sh &gt;/dev/null &lt;&lt;&#39;EOF&#39;
+#!/usr/bin/env bash
+# Kalshi re-sim with --trades-out (read-only on staging&#39;s mirror). A progress line every 5 minutes.
+set -uo pipefail
+set -a; . &lt;env-file&gt;; set +a
+export DATABASE_URL=&quot;${DATABASE_URL%/*}/&lt;staging-db&gt;&quot;
+export PYTHONUNBUFFERED=1 RACINGLINES_PROGRESS_SEC=300 PGOPTIONS=&quot;-c default_transaction_read_only=on&quot;
+cd &lt;app&gt;
+R=.venv/bin/racinglines
+OUT=data/runs/kalshi-resim-$(date -u +%Y%m%dT%H%M%SZ)
+mkdir -p &quot;$OUT&quot;
+say() { echo &quot;$(date -u +%Y-%m-%dT%H:%M:%SZ) $*&quot; | tee -a &quot;$OUT/run.log&quot;; }
+T0=$SECONDS
+( while sleep 300; do say &quot;progress: $(( (SECONDS - T0) / 60 )) min elapsed&quot;; done ) &amp;
+BEAT=$!
+trap &#39;kill $BEAT 2&gt;/dev/null&#39; EXIT
+say &quot;kalshi re-sim from $(git rev-parse --short HEAD) on ${DATABASE_URL##*/} (read-only) -&gt; $OUT&quot;
+FAIL=0
+run() { local name=$1; shift; say &quot;start $name&quot;; mkdir -p &quot;$OUT/$name&quot;
+  if &quot;$@&quot; --trades-out &quot;$OUT/$name&quot; &gt; &quot;$OUT/$name.log&quot; 2&gt;&amp;1; then say &quot;done $name ($(( (SECONDS - T0) / 60 )) min)&quot;
+  else say &quot;FAILED $name (see $name.log)&quot;; FAIL=1; fi; }
+run f1-2025 $R f1 sweep --year 2025 --no-fetch --grid &lt;tmp&gt;/kalshi-resim-grid.json
+run f1-2026 $R f1 sweep --year 2026 --no-fetch --grid &lt;tmp&gt;/kalshi-resim-grid.json
+run nascar-2025 $R strategy sweep nascar --year 2025 --venue kalshi --no-fetch
+run nascar-2026 $R strategy sweep nascar --year 2026 --venue kalshi --no-fetch
+run motogp-2026 $R strategy sweep motogp --year 2026 --venue kalshi --no-fetch
+say &quot;all done in $(( (SECONDS - T0) / 60 )) min, failures: $FAIL&quot;
+exit $FAIL
+EOF
+sudo chmod 755 &lt;tmp&gt;/kalshi-resim.sh &amp;&amp; sudo chmod 644 &lt;tmp&gt;/kalshi-resim-grid.json &amp;&amp; bash -n &lt;tmp&gt;/kalshi-resim.sh &amp;&amp; echo script-ok</code></pre>
+<p>Check: the last line printed is <code>script-ok</code>.</p>
+<p><strong>Step 5: start it as a transient unit.</strong></p>
+<pre><code># VM (production)
+sudo systemctl reset-failed rl-kalshi-resim 2&gt;/dev/null; sudo systemd-run --unit=rl-kalshi-resim --uid=&lt;app-user&gt; &lt;tmp&gt;/kalshi-resim.sh &amp;&amp; sleep 20 &amp;&amp; journalctl -u rl-kalshi-resim --no-pager | tail -n 5</code></pre>
+<p>Check: you see <code>kalshi re-sim from 34b18f5 on &lt;staging-db&gt; (read-only)</code> and then <code>start f1-2025</code>. Send me those lines. Leave the session; the unit keeps running after you disconnect.</p>
+<p><strong>Step 6a: follow it live (optional).</strong> This prints each start and done line, plus a progress line every 5 minutes. Ctrl-C stops the watching, not the job.</p>
+<pre><code># VM (production)
+sudo journalctl -fu rl-kalshi-resim</code></pre>
+<p><strong>Step 6 (later): check on it.</strong></p>
+<pre><code># VM (production)
+systemctl is-active rl-kalshi-resim; d=$(ls -1dt &lt;app&gt;/data/runs/kalshi-resim-* | head -1); tail -n 8 &quot;$d/run.log&quot;; ls -la &quot;$d&quot;/*/</code></pre>
+<p>Check: when it finishes, the unit shows <code>inactive</code> and run.log ends with <code>all done in N min, failures: 0</code>. Send me the run.log tail and the parquet listing. I take the trades from there to the bucket and score them; the scoring doesn't run on the VM.</p>
+<p><strong>Rollback:</strong> nothing to roll back, because the job only reads. To stop it early: <code>sudo systemctl stop rl-kalshi-resim</code>. To clean up afterwards: <code>sudo rm &lt;tmp&gt;/kalshi-resim.sh &lt;tmp&gt;/kalshi-resim-grid.json</code>.</p>
+<p><strong>Step 7 (only if a sport FAILED): show its log.</strong> Run 1 (01:49Z) failed on f1-2026.</p>
+<pre><code># VM (production)
+d=&lt;app&gt;/data/runs/kalshi-resim-20261020T014914Z; sudo grep -n -iE &quot;error|read-only|traceback&quot; $d/f1-2026.log | head -n 5; sudo tail -n 25 $d/f1-2026.log</code></pre>
+<p><strong>Run 1 result (step 7, 01:57Z):</strong> f1-2026 tried to INSERT a <code>model_runs</code> diagnostic for event 2026-17, which means round 17's stage pricing isn't stored on the mirror. The published run 9637 (6 Oct) predates round 17 (11 Oct), so it covers rounds 1 to 16 only. The read-only guard worked as intended and nothing was written.</p>
+<p><strong>Step 8: re-run F1 2026 for rounds 1 to 16 only (read-only, reproduces run 9637).</strong> Round 17 needs a writable database and comes later as its own run. Wait for the coordinator's go before starting, because it holds the staging merges while this runs.</p>
+<pre><code># VM (production)
+sudo sed -e &#39;s/^run f1-2025 .*$//&#39; -e &#39;s/^run nascar-.*$//&#39; -e &#39;s/^run motogp-.*$//&#39; -e &#39;s/--year 2026 --no-fetch/--year 2026 --rounds 1-16 --no-fetch/&#39; -e &#39;s/kalshi-resim-\$(date/kalshi-resim-f1-2026-r1-16-$(date/&#39; &lt;tmp&gt;/kalshi-resim.sh | sudo tee &lt;tmp&gt;/kalshi-resim-2.sh &gt;/dev/null &amp;&amp; sudo chmod 755 &lt;tmp&gt;/kalshi-resim-2.sh &amp;&amp; grep -n &#39;^run &#39; &lt;tmp&gt;/kalshi-resim-2.sh &amp;&amp; bash -n &lt;tmp&gt;/kalshi-resim-2.sh &amp;&amp; echo script-ok</code></pre>
+<p>Check: exactly one <code>run f1-2026 ... --year 2026 --rounds 1-16 --no-fetch ...</code> line, then <code>script-ok</code>.</p>
+<pre><code># VM (production)
+sudo systemctl reset-failed rl-kalshi-resim 2&gt;/dev/null; sudo systemd-run --unit=rl-kalshi-resim --uid=&lt;app-user&gt; &lt;tmp&gt;/kalshi-resim-2.sh &amp;&amp; sleep 60 &amp;&amp; sudo journalctl -u rl-kalshi-resim --no-pager | tail -n 4</code></pre>
+<p>Check: you see <code>done f1-2026</code> and <code>all done ..., failures: 0</code>. If it still says running, check again with step 6a. Then paste this, so I can compare it with run 9637:</p>
+<pre><code># VM (production)
+d=$(ls -1dt &lt;app&gt;/data/runs/kalshi-resim-f1-2026-r1-16-* | head -1); sudo grep -E &quot;^(update|hold|last|early|maker)&quot; $d/f1-2026.log; ls -la $d/f1-2026/</code></pre>
+<p><strong>Run 2 result (02:02Z):</strong> F1 2026 rounds 1 to 16. All nine totals match run 9637 to the cent (update +3,968.52 on $7,744), and the trades file was written. Step 2 has all five trade files.</p>
+<p><strong>Step 9: copy the trade files to the Mac.</strong> Run this in a Mac terminal, not on the VM. It copies about 450 KB.</p>
+<pre><code># LOCAL (Mac)
+mkdir -p &lt;mac-folder&gt;/kalshi-resim &amp;&amp; cd &lt;mac-folder&gt;/kalshi-resim &amp;&amp; gcloud compute scp --recurse --project &lt;project&gt; --zone &lt;zone&gt; --tunnel-through-iap &quot;&lt;vm&gt;:&lt;app&gt;/data/runs/kalshi-resim-20261020T014914Z&quot; &quot;&lt;vm&gt;:&lt;app&gt;/data/runs/kalshi-resim-f1-2026-r1-16-*&quot; . &amp;&amp; find . -name &#39;*.parquet&#39; | sort</code></pre>
+<p>Check: five parquet files are listed: four in the first folder (its f1-2026 folder is empty because that run failed) and the f1-2026 file in the <code>-r1-16-</code> folder. I read them from <code>&lt;mac-folder&gt;/kalshi-resim</code>.</p>
+<div class="section" id="as-run-20-oct-2026-utc">
+<h2>As run (20 Oct 2026, UTC)</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Event</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>01:49:14</td>
+<td>Run 1 started on staging commit 34b18f5, read-only</td>
+</tr>
+<tr class="even">
+<td>01:50:03</td>
+<td>F1 2025 done. All nine strategy totals match the published sweep run 9636 (update +1,256.67 on $5,010)</td>
+</tr>
+<tr class="odd">
+<td>01:50:23</td>
+<td>F1 2026 <strong>failed</strong>: round 17 had no stored stage pricing, and the read-only guard refused the write</td>
+</tr>
+<tr class="even">
+<td>01:50:36</td>
+<td>NASCAR 2025 done</td>
+</tr>
+<tr class="odd">
+<td>01:52:34</td>
+<td>NASCAR 2026 done</td>
+</tr>
+<tr class="even">
+<td>01:52:45</td>
+<td>MotoGP 2026 done. Run 1 ended with 1 failure</td>
+</tr>
+<tr class="odd">
+<td>01:59:21</td>
+<td><strong>Run 2</strong>: F1 2026 rounds 1 to 16, done. All nine totals match run 9637 (update +3,968.52 on $7,744)</td>
+</tr>
+</tbody>
+</table>
+<p>Total run time: about 4.5 minutes of wall-clock time (run 1 took 3.5 minutes, run 2 under 1 minute). The two F1 sweeps reused stored stage pricings.</p>
+</div>
+
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Kevin Lalli<br/>
+    
+        &copy; Copyright 2026.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  <div class="rl-lb" id="rl-lb" role="dialog" aria-modal="true" aria-label="Expanded screenshot"><div class="rl-lb-bar"><button type="button" id="rl-lb-size">Actual size</button><button type="button" id="rl-lb-close">Close &times;</button></div><img alt=""></div>
+<script>(function(){var lb=document.getElementById('rl-lb'),im=lb.querySelector('img'),sz=document.getElementById('rl-lb-size');
+function close(){lb.classList.remove('open','full');document.body.style.overflow='';}
+document.querySelectorAll('a.rl-zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');im.alt=a.querySelector('img').alt;lb.classList.add('open');document.body.style.overflow='hidden';sz.textContent='Actual size';});});
+sz.addEventListener('click',function(e){e.stopPropagation();lb.classList.toggle('full');sz.textContent=lb.classList.contains('full')?'Fit to screen':'Actual size';});
+document.getElementById('rl-lb-close').addEventListener('click',function(e){e.stopPropagation();close();});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target===im)close();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();</script>
+</body>
+</html>

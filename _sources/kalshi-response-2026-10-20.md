@@ -10,8 +10,13 @@ things any taker strategy, ours or a customer's, must prove before it trades rea
 market. We then rebuilt the parts of their analysis our own data allows. On their skill scale, our stored NASCAR Kalshi
 paper bets score +0.0090 and beat a 1,000-draw luck test (p < 0.001), but that is not yet skill: the bets are in-sample,
 their fills are synthetic, and 40 races are too few. Motorsport takers on Kalshi pay 2.1 to 2.5¢ over the mid, about
-twice the paper's average, and a last Kalshi trade prints about 4¢ from the mid. **This is a live draft, before our simulation runs and tracked in our commit history** (link TBA after the
-first commit). As the simulation runs, it will score our strategies trade by trade in the paper's framework.
+twice the paper's average, and a last Kalshi trade prints about 4¢ from the mid.
+
+**Update, 20 Oct 02:20 (v2): the Kalshi simulation has run.** Re-scored trade by trade, our F1 2026 trades beat
+Kalshi's mid by 12¢ a share (8¢ after costs), and the edge holds across race weekends. But the same settings find no
+edge in 2025, and they are one of 20 tried on these seasons, so it is not yet skill. On NASCAR, Kalshi's price beats our
+model. Results are in [step 2](#step-2-kalshi-re-simulated-trade-by-trade-done-20-oct); the Polymarket test (step 3) is now
+pre-registered. **This is a live draft, tracked in our commit history** ([first draft](https://github.com/lalligagger/lalligagger.github.io/commit/ffbb1e9c8e2512e76fefa816090172304f6cfb1a)).
 
 *All times are UTC. "The paper" is Kagan and Baiocchi (2026), [kalshi.com/research](https://kalshi.com/research/publications/who-calibrates-markets); we point to its sections rather than restating its
 methods, and we don't republish it. Our numbers come from read-only queries on our production database, run 19 Oct
@@ -25,13 +30,49 @@ Before any taker strategy is deployed with real money on Kalshi or any predictio
 must prove all five. A customer proves them on their own fees, latency and size. We adopted these as our own rules on
 19 Oct; every taker strategy we build is now checked against them. They open our development guide ([#274](https://github.com/racinglines/racinglines/pull/274)) and the trading chapter of our internal book ([3.4 Trading](https://racinglines.bet/docs/internal/system/trading.html)).
 
-| # | Rule | Paper | What we already have | What's missing | Status today |
-|---|---|---|---|---|---|
-| 1 | **Skill, not luck or selection.** A positive Brier skill score against the size-weighted mid at realistic fills, surviving a luck test with a false-discovery correction across *every* setting tried | sec 3.2–3.3, Table 1, App. A.1 | Model log loss, Brier and calibration against the market in every sweep ([#221](https://github.com/racinglines/racinglines/pull/221), [#227](https://github.com/racinglines/racinglines/pull/227)); a stage-by-stage walk-forward pick ([#206](https://github.com/racinglines/racinglines/pull/206)) | Skill score per trade against the weighted mid; luck test; correction across the whole grid | **Not met.** NASCAR scores +0.009, but in-sample and with no grid correction |
-| 2 | **Out of sample.** It holds forward on pre-registered locks, not on the season it was tuned on | sec 4.4, Table 4 | Per-event strategy locks, committed before each event and scored as bet (since 15 Oct, [#213](https://github.com/racinglines/racinglines/pull/213)); season holdouts ([#212](https://github.com/racinglines/racinglines/pull/212), [#228](https://github.com/racinglines/racinglines/pull/228), [#237](https://github.com/racinglines/racinglines/pull/237)) | A long enough forward record | In force; the record is still short |
-| 3 | **The real book.** The edge clears the actual spread, depth and fees: fills at the touch or walking the recorded book, never a last-trade price plus a fixed cost | sec 2.1, App. A.4 | Kalshi touch fills ([#55](https://github.com/racinglines/racinglines/pull/55), on candle bid/ask from [#52](https://github.com/racinglines/racinglines/pull/52), [#53](https://github.com/racinglines/racinglines/pull/53)); touch or book-walk fill options ([#203](https://github.com/racinglines/racinglines/pull/203), [#204](https://github.com/racinglines/racinglines/pull/204), [#205](https://github.com/racinglines/racinglines/pull/205)) with a depth limit ([#219](https://github.com/racinglines/racinglines/pull/219)); a fill-error check against Probalytics' full order books ([#202](https://github.com/racinglines/racinglines/pull/202); tape from [#181](https://github.com/racinglines/racinglines/pull/181), [#200](https://github.com/racinglines/racinglines/pull/200)) | Our stored NASCAR/MotoGP Kalshi paper bets used a one-price fill (last price ± 1¢) | **Not met** for those paper bets; our F1 backtests fill at the touch |
-| 4 | **The price comes our way.** After entry the mid moves toward our side and doesn't reverse | sec 3.4, 5.4, Fig 9 | Closing-line value (CLV) for every backtest ([#223](https://github.com/racinglines/racinglines/pull/223)) and paper bet ([#81](https://github.com/racinglines/racinglines/pull/81)), which is the close-time point of that path | Markouts at 5 min, 1 h and the next stage; the outcome gap | Partial: close point only |
-| 5 | **Paper reconciles with real.** Simulated fills match real fills before any money goes in | (ours, not the paper's) | Probalytics' books as the truth for fills ([#202](https://github.com/racinglines/racinglines/pull/202), [#212](https://github.com/racinglines/racinglines/pull/212)); our go/no-go goal of CLV above +2 % over 100 live bets | Real fills | Not started (no real money yet) |
+| # | Rule | Status today |
+|---|---|---|
+| 1 | **Skill, not luck or selection** | **Not met** |
+| 2 | **Out of sample** | In force, short record |
+| 3 | **The real book** | **Not met** for NASCAR/MotoGP paper bets |
+| 4 | **The price comes our way** | Partial: close point only |
+| 5 | **Paper reconciles with real** | Not started |
+
+**1. Skill, not luck or selection.** A positive Brier skill score against the size-weighted mid at realistic fills, surviving a luck test with a false-discovery correction across *every* setting tried
+
+- *Paper:* sec 3.2–3.3, Table 1, App. A.1
+- *What we have:* Model log loss, Brier and calibration against the market in every sweep ([#221](https://github.com/racinglines/racinglines/pull/221), [#227](https://github.com/racinglines/racinglines/pull/227)); a stage-by-stage walk-forward pick ([#206](https://github.com/racinglines/racinglines/pull/206))
+- *Missing:* Skill score per trade against the weighted mid; luck test; correction across the whole grid
+- *Today:* **Not met.** NASCAR scores +0.009, but in-sample and with no grid correction
+
+**2. Out of sample.** It holds forward on pre-registered locks, not on the season it was tuned on
+
+- *Paper:* sec 4.4, Table 4
+- *What we have:* Per-event strategy locks, committed before each event and scored as bet (since 15 Oct, [#213](https://github.com/racinglines/racinglines/pull/213)); season holdouts ([#212](https://github.com/racinglines/racinglines/pull/212), [#228](https://github.com/racinglines/racinglines/pull/228), [#237](https://github.com/racinglines/racinglines/pull/237))
+- *Missing:* A long enough forward record
+- *Today:* In force; the record is still short
+
+**3. The real book.** The edge clears the actual spread, depth and fees: fills at the touch or walking the recorded book, never a last-trade price plus a fixed cost
+
+- *Paper:* sec 2.1, App. A.4
+- *What we have:* Kalshi touch fills ([#55](https://github.com/racinglines/racinglines/pull/55), on candle bid/ask from [#52](https://github.com/racinglines/racinglines/pull/52), [#53](https://github.com/racinglines/racinglines/pull/53)); touch or book-walk fill options ([#203](https://github.com/racinglines/racinglines/pull/203), [#204](https://github.com/racinglines/racinglines/pull/204), [#205](https://github.com/racinglines/racinglines/pull/205)) with a depth limit ([#219](https://github.com/racinglines/racinglines/pull/219)); a fill-error check against Probalytics' full order books ([#202](https://github.com/racinglines/racinglines/pull/202); tape from [#181](https://github.com/racinglines/racinglines/pull/181), [#200](https://github.com/racinglines/racinglines/pull/200))
+- *Missing:* Our stored NASCAR/MotoGP Kalshi paper bets used a one-price fill (last price ± 1¢)
+- *Today:* **Not met** for those paper bets; our F1 backtests fill at the touch
+
+**4. The price comes our way.** After entry the mid moves toward our side and doesn't reverse
+
+- *Paper:* sec 3.4, 5.4, Fig 9
+- *What we have:* Closing-line value (CLV) for every backtest ([#223](https://github.com/racinglines/racinglines/pull/223)) and paper bet ([#81](https://github.com/racinglines/racinglines/pull/81)), which is the close-time point of that path
+- *Missing:* Markouts at 5 min, 1 h and the next stage; the outcome gap
+- *Today:* Partial: close point only
+
+**5. Paper reconciles with real.** Simulated fills match real fills before any money goes in
+
+- *Paper:* (ours, not the paper's)
+- *What we have:* Probalytics' books as the truth for fills ([#202](https://github.com/racinglines/racinglines/pull/202), [#212](https://github.com/racinglines/racinglines/pull/212)); our go/no-go goal of CLV above +2 % over 100 live bets
+- *Missing:* Real fills
+- *Today:* Not started (no real money yet)
+
 
 ## 1. The paper in one table
 
@@ -192,21 +233,21 @@ threads with no input.
 | 20 Oct 00:04 | **First draft** (internal, 7 pages), 21 minutes after the hand-off | Streamlined |
 | 00:12 to 00:54 | Editorial work, several passes: public edition in the site's layout, title, PR and source links, preview card, landing-page card | High-touch |
 | by 00:54 | **Live draft published** here | High-touch |
-| from 00:54 | **Simulation started:** writing every backtest trade out for scoring; run time added when it finishes | Streamlined |
+| 00:54 to 01:36 | Simulation code: every backtest trade written out with the book's bid, ask and sizes (racinglines PR #275); one CI fix, so the backtest's own results stay byte-identical | Streamlined |
+| 01:16 to 01:18 | **No-cheating rule set:** steps 2 and 3 get published whatever they show; a new blind test is always allowed | High-touch |
+| 01:49 to 01:59 | **Simulation run** on our server, read-only: five sport-seasons in two runs, about 4.5 minutes in all. Every F1 total matches the published backtest to the cent. [Runbook as run](kalshi-response-2026-10-20-as-run-resim.html) | High-touch |
+| 02:07 to 02:12 | **Trades scored** in the paper's framework (step 2 below) | Streamlined |
+| 02:15 | **Polymarket test split chosen**, before any of it runs (step 3) | High-touch |
 
 *Internal book pages behind this report: [3.4 Trading (golden rules)](https://racinglines.bet/docs/internal/system/trading.html), [3.5 Evaluation and sweeps](https://racinglines.bet/docs/internal/system/evaluation.html), [4.5 DITL reports](https://racinglines.bet/docs/internal/ops/ditl.html), [Appendix A: every report and its sources](https://racinglines.bet/docs/internal/appendix/reports.html).*
 
-## What's next
+## What's next: three steps
 
-- **Estimate the mid from last trades** (paper sec 3.4) on Probalytics' order books and our own, scoring four simple
-  estimators against the true weighted mid, then run eq. 4 on the crowd.
-- **Dump every backtest trade** (ticker, time, side, fill, size, our fair, book with sizes, weighted mid, outcome) for
-  F1, NASCAR and MotoGP on Kalshi, at touch and book-walk fills.
-- **Score them in the paper's framework:** skill score for our fills and our fair, the Murphy split, a luck test with a
-  false-discovery correction over the whole grid, markouts, random event halves, and a crowd baseline.
-- **F1 skilled-taker coverage on Polymarket**, where trades carry wallets.
+Each step gets its own "what this does and doesn't show".
 
-## What this does and doesn't show
+**No cheating:** we will publish the results of steps 2 and 3 whatever they say about our early models and strategies.
+
+### Step 1: Kalshi, from the paper bets already in our database (first draft)
 
 - **It shows** the five rules we now hold every taker strategy to, and where each stands for us today.
 - **It shows** our stored NASCAR Kalshi paper bets score +0.0090 on the paper's scale, beyond a 1,000-draw luck null,
@@ -216,3 +257,62 @@ threads with no input.
   fewer than 100 events.
 - **It doesn't show** anything about F1 on Kalshi from our own paper bets, any estimator's accuracy, or Kalshi's
   market-level calibration in motorsport.
+
+### Step 2: Kalshi, re-simulated trade by trade (done, 20 Oct)
+
+We re-ran the published Kalshi backtests with every trade written out: F1 2025 and 2026 (one fixed settings set) and
+each sport's baseline for NASCAR 2025–26 and MotoGP 2026 ([runbook as run](kalshi-response-2026-10-20-as-run-resim.html)). Each opening taker trade is one
+forecast. We score our fair f against Kalshi's mid m at that moment, with outcome y. The edge is y − m for a YES buy
+and m − y for a NO buy. All intervals are 95% and resample whole race weekends, because outcomes in one race are linked.
+
+| Sport, season | Trades (weekends) | Edge vs mid, ¢/share | After costs | Skill score vs mid | No book at the fill |
+|---|---|---|---|---|---|
+| F1 2025 | 151 (20) | +5.4 [−2.9, +15.0] | +1.0 | −0.19 [−0.46, +0.03] | 5 % |
+| F1 2026 | 223 (15) | **+12.0 [+5.5, +18.4]** | **+8.0** | +0.05 [−0.14, +0.18] | 9 % |
+| NASCAR 2025 | 24 (8) | +12.0 [−5.2, +19.8] | +7.6 | −0.33 [−1.36, +0.89] | 4 % |
+| NASCAR 2026 | 584 (31) | −0.4 [−4.7, +3.8] | **−5.8** | **−0.16 [−0.25, −0.08]** | 1 % |
+| MotoGP 2026 | 30 (11) | +2.0 [−11.4, +17.4] | −0.1 | −0.26 [−1.00, +0.22] | **100 %** |
+
+*Update mode shown; the hold, last and early modes agree. The skill score is the paper's 1 − Brier(ours) / Brier(mid),
+against the plain mid: Kalshi's tape in this run has no touch sizes, so there is no size-weighted mid.*
+
+- **It shows** that F1 2026's trades landed on the right side of Kalshi's mid, by 12¢ a share before costs and 8¢
+  after, in all four taker modes (each with a false-discovery-corrected q of 0.013 or less).
+- **It shows** that NASCAR's model loses to Kalshi's price (skill score −0.16, entirely below zero), and that MotoGP
+  fails rule 3 before skill can be judged: none of its fills had a recorded book.
+- **It doesn't show** skill (rule 1). The same F1 settings find no edge in 2025, and they are one of 20 settings tried
+  on these seasons (6th of 20 by profit in 2026). We label the F1 result 2026-specific until a forward test agrees.
+- **It doesn't show** price impact or markouts (rule 4). The trade file carries the mid at entry only. The close-point
+  CLV from the same runs is +7.3 % for F1 2026 and −0.1 % for F1 2025.
+- **It doesn't show** a full rule 1 test, which needs every one of the 20 settings re-run trade by trade so that the
+  correction covers them all. That run is next.
+
+### Step 3: Polymarket on Probalytics, a fresh, pre-registered test (split chosen 20 Oct 02:15)
+
+Probalytics' full order books give the best fill fidelity and the most volume. We drop every tuned or "best" setting
+and start from un-tuned candidates. Committed before anything runs:
+
+- **Window:** Probalytics' Polymarket books begin 20 Nov 2025. That makes the window Las Vegas 2025 to 2026 round 17.
+  Rounds 1 and 2 of 2026 are left out because they had almost no Polymarket volume in our links.
+- **Market floor:** a market is tested only if its Polymarket volume and trade count both reach the Kalshi median for
+  the same round and market kind. That keeps about 95 % of Polymarket F1 volume. NASCAR and MotoGP fail the floor
+  on Polymarket, so this test is F1 only.
+- **Split, forward in time:** tune on Las Vegas, Qatar and Abu Dhabi 2025 plus 2026 rounds 3 to 6 (296 markets,
+  $10.8M). Hold out rounds 7 to 17 (474 markets, $13.1M), scored once. The holdout is the bigger half on purpose: the
+  model is fit on race data and needs no prices, so the tuning window only picks among a few un-tuned strategy
+  candidates.
+- **A second, live holdout:** from Austin (round 18) on, the same frozen settings are scored as each race settles.
+- **Scoring:** skill score against the size-weighted mid, Murphy split, the luck test with false-discovery
+  correction over every candidate, markouts, and CLV.
+
+We also add one hypothetical: **a model ready the day F1 first traded on Polymarket.** It asks what edge that model
+would have had, and how long the edge lasted.
+
+- **It will show** whether any candidate is skilled out of sample, on the best book data we have. The hypothetical
+  adds a decay curve: edge per race over time, with a half-life.
+- **It won't show** real fills: that is rule 5, and only live trading answers it.
+- **It won't show** the hypothetical against a real book. Before 20 Nov 2025 there are only trades, no books, so it
+  is an upper bound. Today's model was also designed after those seasons were seen, and a real early trader would
+  have moved the prices.
+
+Also on the list: F1 skilled-taker coverage on Polymarket, where trades carry wallets.

@@ -178,22 +178,21 @@ A last-trade price is the mid plus about 4¢ in the direction of whoever traded 
 
 ## How we built this: ops timeline
 
-From the paper's release to this page, at the level of steps. **High-touch** steps needed the owner (a decision, an
-upload, a publish); **streamlined** steps ran in our project threads with no input. **Quick** is under 20 minutes end
-to end.
+From the paper's release to this page. The big steps are on their own rows; all the editorial passes share one row.
+**High-touch** steps needed the owner (a decision, an upload, a publish); **streamlined** steps ran in our project
+threads with no input.
 
-| Time (UTC) | Event | Touch | Speed |
-|---|---|---|---|
-| 19 Oct, about 19:20 | Kalshi publishes the paper | — | — |
-| 23:43 | Owner reads it and hands it to our research thread | High-touch | Quick |
-| 23:45 to 23:46 | Paper read; our Kalshi data and taker backtests inventoried; price impact (sec 3.4) mapped onto our closing-line value | Streamlined | Quick (2 min) |
-| 23:46 to 23:50 | Owner sets the brief: findings, a simulation design in their framework, our gaps, the mid from last trades, our place on Fig 1 | High-touch | Quick |
-| 23:50 to 23:59 | Stored Kalshi paper bets scored on their skill scale with a 1,000-draw luck test; crowd price impact rebuilt from our tape | Streamlined | Quick (9 min) |
-| 23:54 to 23:56 | By-account analysis checked: possible on Polymarket only, parked | High-touch | Quick |
-| 23:56 | **The question for this report is set: what must a strategy prove before it trades real money?** | High-touch | Quick |
-| 23:57 to 00:01 | **Five golden rules adopted** and written into our development guide and internal book | Streamlined | Quick (4 min) |
-| 20 Oct 00:04 | Internal draft (7 pages) delivered, 21 minutes after the hand-off | Streamlined | Quick |
-| 00:12 to 00:20 | Owner decides to publish; this public edition built | High-touch | Quick |
+| Time (UTC) | Step | Touch |
+|---|---|---|
+| 19 Oct, about 19:20 | Kalshi publishes the paper | — |
+| 23:43 | The paper is handed to our research thread | High-touch |
+| 23:46 to 23:56 | **Key questions set:** the paper's findings, a simulation in its framework, our gaps, the mid from last trades, our place on Fig 1, and then the top-line one: what must a strategy prove before it trades real money? | High-touch |
+| 23:50 to 23:59 | **First numbers:** our stored Kalshi paper bets on their skill scale with a 1,000-draw luck test; crowd price impact rebuilt from our tape (9 min) | Streamlined |
+| 23:57 to 00:01 | **Five golden rules adopted** and written into our development guide and internal book (4 min) | Streamlined |
+| 20 Oct 00:04 | **First draft** (internal, 7 pages), 21 minutes after the hand-off | Streamlined |
+| 00:12 to 00:54 | Editorial work, several passes: public edition in the site's layout, title, PR and source links, preview card, landing-page card | High-touch |
+| by 00:54 | **Live draft published** here | High-touch |
+| from 00:54 | **Simulation started:** writing every backtest trade out for scoring; run time added when it finishes | Streamlined |
 
 *Internal book pages behind this report: [3.4 Trading (golden rules)](https://racinglines.bet/docs/internal/system/trading.html), [3.5 Evaluation and sweeps](https://racinglines.bet/docs/internal/system/evaluation.html), [4.5 DITL reports](https://racinglines.bet/docs/internal/ops/ditl.html), [Appendix A: every report and its sources](https://racinglines.bet/docs/internal/appendix/reports.html).*
 

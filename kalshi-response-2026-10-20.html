@@ -128,6 +128,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="kalshi-response-2026-10-20.html">
+   RE: Kalshi&#x27;s &quot;Who Calibrates Markets&quot;
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="ditl-2026-10-14-part-1.html">
    DITL 14 Oct, part 1
   </a>
@@ -250,18 +255,55 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-v3-got-wrong-the-favourite">
-   3. What v3 got wrong: the favourite
+  <a class="reference internal nav-link" href="#where-the-2026-edge-came-from">
+   3. Where the 2026 edge came from
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-fixed-model-results">
-   4. The fixed model: results
+  <a class="reference internal nav-link" href="#before-and-after-the-model">
+   4. Before and after calibration: the model
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-and-after-every-test">
+   5. Before and after calibration: every test
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-one-setting-on-kalshi">
+     5.1 One setting on Kalshi, trade by trade
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-every-setting-tried">
+     5.2 Every setting tried: the luck test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-the-polymarket-candidates">
+     5.3 The Polymarket candidates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-does-the-price-come-our-way">
+     5.4 Does the price come our way?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-the-papers-outputs">
+     5.5 The paper&#x27;s outputs: Fig 1, Table 3, App. A.1–A.2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-what-it-adds-up-to">
+     5.6 Where the rules stand
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-we-take-from-this">
-   5. What we take from this
+   6. What we take from this
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -273,34 +315,17 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#caveats">
-   6. Caveats
+   7. Caveats
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#appendix-a-the-v3-results-20-oct">
-   Appendix A: the v3 results (20 Oct)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#where-racinglines-stands-every-historical-test-we-can-run-20-oct">
-     A3 Where racinglines stands: every historical test we can run (20 Oct)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-papers-outputs-rebuilt-for-us">
-     A4 The paper&#x27;s outputs, rebuilt for us
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#appendix-b-revisions">
-   Appendix B: revisions
+  <a class="reference internal nav-link" href="#appendix-a-revisions">
+   Appendix A: revisions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#appendix-c-how-we-built-this">
-   Appendix C: how we built this
+  <a class="reference internal nav-link" href="#appendix-b-how-we-built-this">
+   Appendix B: how we built this
   </a>
  </li>
 </ul>
@@ -339,18 +364,55 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-v3-got-wrong-the-favourite">
-   3. What v3 got wrong: the favourite
+  <a class="reference internal nav-link" href="#where-the-2026-edge-came-from">
+   3. Where the 2026 edge came from
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-fixed-model-results">
-   4. The fixed model: results
+  <a class="reference internal nav-link" href="#before-and-after-the-model">
+   4. Before and after calibration: the model
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-and-after-every-test">
+   5. Before and after calibration: every test
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-one-setting-on-kalshi">
+     5.1 One setting on Kalshi, trade by trade
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-every-setting-tried">
+     5.2 Every setting tried: the luck test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-the-polymarket-candidates">
+     5.3 The Polymarket candidates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-does-the-price-come-our-way">
+     5.4 Does the price come our way?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-the-papers-outputs">
+     5.5 The paper&#x27;s outputs: Fig 1, Table 3, App. A.1–A.2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calibrated-what-it-adds-up-to">
+     5.6 Where the rules stand
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-we-take-from-this">
-   5. What we take from this
+   6. What we take from this
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -362,34 +424,17 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#caveats">
-   6. Caveats
+   7. Caveats
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#appendix-a-the-v3-results-20-oct">
-   Appendix A: the v3 results (20 Oct)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#where-racinglines-stands-every-historical-test-we-can-run-20-oct">
-     A3 Where racinglines stands: every historical test we can run (20 Oct)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-papers-outputs-rebuilt-for-us">
-     A4 The paper&#x27;s outputs, rebuilt for us
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#appendix-b-revisions">
-   Appendix B: revisions
+  <a class="reference internal nav-link" href="#appendix-a-revisions">
+   Appendix A: revisions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#appendix-c-how-we-built-this">
-   Appendix C: how we built this
+  <a class="reference internal nav-link" href="#appendix-b-how-we-built-this">
+   Appendix B: how we built this
   </a>
  </li>
 </ul>
@@ -411,13 +456,17 @@ const thebe_selector_output = ".output, .cell_output"
 </style>
 <div class="rl-article">
 <p><strong>What must a taker strategy prove before it trades real money, and how close are we?</strong></p>
-<p><strong>v4, 21 Oct.</strong> This is a major revision. v3 found an F1 2026 edge; that evening we found most of it was a flaw in our model, which priced favourites far too low. v4 explains the flaw, tests two fixes on both seasons, and says where that leaves us. The v3 results are kept unchanged in Appendix A.</p>
-<p><strong>Short summary.</strong> Kalshi's research team published <a href="https://kalshi.com/research/publications/who-calibrates-markets">"Who Calibrates Markets? Evidence from Trader Micro-Data"</a> (Kagan and Baiocchi, October 2026) on 19 Oct. Their headline is that about 0.15 % of Kalshi accounts forecast better than the price they trade against, after correcting for luck, and that the price moves their way after they trade. We build racinglines (<a href="https://racinglines.bet/term">web demo</a>, <a href="https://github.com/racinglines/racinglines-public">repo</a>), a model that prices motorsport markets (Formula 1, NASCAR, MotoGP and more) and strategies that trade on it. So we turned their paper into five rules a taker strategy must pass before it trades real money, and tested ourselves against them.</p>
-<p>The short answer: <strong>not yet, and our first claim of an edge was mostly a model flaw.</strong> - Our F1 model had been pricing favourites far too low. After qualifying it gave its own top pick about 37 % to win; that driver won about two races in three. v3's 2026 "edge" was mostly this flaw betting against favourites in a season when they lost more often than priced (<a href="#what-v3-got-wrong-the-favourite">section 3</a>). - Calibrating the model on earlier races fixes the favourite's price after qualifying, in both seasons (56 to 67 %, against 63 to 71 % won). A second fix, adding noise to the starting grid, makes no difference (<a href="#the-fixed-model-results">section 4</a>). - Even fixed, the model doesn't beat the market in both seasons: it loses to the price on race winners in 2025 and is about even or better in 2026. So rule 1, skill, is <strong>not met</strong>. - The forward test from the US Grand Prix in Austin (23 to 25 Oct), locked before each race, is now the test that counts.</p>
-<p><strong>What changed since v3.</strong> v3 (20 Oct) found an F1 2026 edge. That evening we found that most of it was our model pricing favourites far too low, with calibration off, in a season when favourites lost more often than their prices said (<a href="#what-v3-got-wrong-the-favourite">section 3</a>). v4 rebuilds the results on the fixed model. The v3 results, the correction and every revision are kept in <a href="#appendix-a-the-v3-results-20-oct">Appendix A</a> and <a href="#appendix-b-revisions">Appendix B</a>. <strong>No cheating:</strong> we said before running anything that we would publish these results whatever they showed, and we have, including what we got wrong.</p>
-<p><em>v4's new runs are eight model sweeps on a copy of our production database (20 Oct 23:42 to 21 Oct 01:21); nothing touched production.</em></p>
-<p><em>All times are UTC. "The paper" is Kagan and Baiocchi (2026), <a href="https://kalshi.com/research/publications/who-calibrates-markets">kalshi.com/research</a>; we point to its sections rather than restating its methods, and we don't republish it. Our numbers come from read-only runs on a mirror of our production database, 19 Oct 23:45 to 20 Oct 11:03. Nothing here is betting advice.</em></p>
-<p><em>Access on request: the PR links (#NNN) point to github.com/racinglines/racinglines, our private source repository, so they only open for its collaborators. Our public code is <a href="https://github.com/racinglines/racinglines-public">racinglines/racinglines-public</a> (MIT) and the <code>racinglines</code> package on PyPI. Internal-book links (racinglines.bet/docs/internal) are for admins only. The PRs, our process notes, the internal draft and the query list behind every number can be shared on request: hello@racinglines.bet.</em></p>
+<p><strong>Short summary.</strong> On 19 Oct Kalshi's research team published <a href="https://kalshi.com/research/publications/who-calibrates-markets">"Who Calibrates Markets? Evidence from Trader Micro-Data"</a> (Kagan and Baiocchi). They find that about 0.15 % of Kalshi accounts forecast better than the price they trade against, after correcting for luck, and that the price moves their way after they trade. We build racinglines (<a href="https://racinglines.bet/term">web demo</a>, <a href="https://github.com/racinglines/racinglines-public">repo</a>), a model that prices motorsport markets (Formula 1, NASCAR, MotoGP and more) and strategies that trade on it. We turned the paper into five rules a taker strategy must pass before it trades real money, and tested ourselves against them.</p>
+<p><strong>The answer: not yet.</strong></p>
+<ul>
+<li><strong>Our first edge was mostly a model flaw.</strong> After qualifying, our F1 model gave its own top pick about 37 % to win; that driver won about two races in three. In 2026 favourites lost more often than priced, so a model that priced them too low looked like it had an edge (<a href="#where-the-2026-edge-came-from">section 3</a>).</li>
+<li><strong>Calibration fixes the favourite, not the edge.</strong> Calibrating win prices on earlier races lifts the favourite after qualifying to 56 to 67 % (it won 63 to 71 %), in both seasons. The model still loses to the market on race winners in 2025 (<a href="#before-and-after-the-model">section 4</a>).</li>
+<li><strong>Every test, re-run with calibration on, splits the same way.</strong> 2026 looks better (Kalshi trades +13.7¢ a share against the mid), 2025 worse, and no setting holds in both seasons (<a href="#before-and-after-every-test">section 5</a>). So rule 1, skill, is <strong>not met</strong>.</li>
+<li><strong>What counts now is forward:</strong> strategies locked before each race, from the US Grand Prix in Austin (23 to 25 Oct).</li>
+</ul>
+<p><strong>Edit note.</strong> v3 (20 Oct) reported an F1 2026 edge; v4 and v4.1 (21 Oct) found the flaw behind it, fixed it and re-ran every test. Each version is linked in <a href="#appendix-a-revisions">Appendix A</a>. We said we would publish these results whatever they showed, and we have.</p>
+<p><em>How to read this. All times are UTC. "The paper" is Kagan and Baiocchi (2026); we point to its sections rather than restating its methods, and we don't republish it. Every number here is a backtest: v3's ran read-only on a mirror of our production database (19 Oct 23:45 to 20 Oct 11:03), v4's and v4.1's on a copy of it (20 Oct 23:42 to 21 Oct 08:47). Nothing touched production, and nothing here is betting advice.</em></p>
+<p><em>Access on request: PR links (#NNN) go to our private source repository, so they open only for its collaborators; our public code is <a href="https://github.com/racinglines/racinglines-public">racinglines/racinglines-public</a> (MIT) and the <code>racinglines</code> package on PyPI. Internal-book links are for admins only. The PRs, process notes and the query behind every number can be shared on request: hello@racinglines.bet.</em></p>
 <div class="section" id="why-this-paper-matters-to-us">
 <h2>Why this paper matters to us</h2>
 <p>A prediction market price is a crowd's forecast. The paper asks who makes that forecast accurate, and finds a small group of traders who buy and sell against the price and are right more often than it is. Racinglines is an attempt to be one of those traders, in motorsport, with a bottoms-up model and a lot of historical race data. Our model simulates each race from the drivers' recent results, practice and qualifying, and turns that into a fair price for every market it can: who wins, who makes the podium, head-to-heads and more. A strategy then decides when a gap between our fair price and the market's is worth trading.</p>
@@ -445,26 +494,26 @@ const thebe_selector_output = ".output, .cell_output"
 <tr class="odd">
 <td>1</td>
 <td><strong>Skill, not luck or selection</strong></td>
-<td><strong>Not met:</strong> v3's 2026 edge was mostly a bias against favourites; the fixed model doesn't beat the market in both seasons</td>
-<td><a href="#what-v3-got-wrong-the-favourite">3</a>, <a href="#the-fixed-model-results">4</a>, <a href="#every-setting-tried-the-luck-test">A3.3</a></td>
+<td><strong>Not met:</strong> v3's 2026 edge was mostly a bias against favourites; the fixed model doesn't beat the market in both seasons, and with calibration on no setting holds in both seasons or passes the luck test</td>
+<td><a href="#where-the-2026-edge-came-from">3</a>, <a href="#before-and-after-the-model">4</a>, <a href="#calibrated-every-setting-tried">5.2</a></td>
 </tr>
 <tr class="even">
 <td>2</td>
 <td><strong>Out of sample</strong></td>
 <td>In force; forward record starts at Austin</td>
-<td><a href="#a-pre-registered-polymarket-test">A3.4</a></td>
+<td><a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">A3.4 in v4</a></td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td><strong>The real book</strong></td>
 <td><strong>Met for F1 backtests</strong> (full order books, every fill had a book); not met for NASCAR/MotoGP paper bets</td>
-<td><a href="#every-setting-tried-the-luck-test">A3.3</a>, <a href="#fig-1-where-our-strategies-sit-on-the-skill-distribution">A4.1</a></td>
+<td><a href="#calibrated-the-polymarket-candidates">5.3</a>, <a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">A3.3 in v4</a></td>
 </tr>
 <tr class="even">
 <td>4</td>
 <td><strong>The price comes our way</strong></td>
-<td><strong>Partly met in v3</strong> (yes on Kalshi in backtests, about break-even on Polymarket); not yet re-measured on the fixed model</td>
-<td><a href="#does-the-price-come-our-way">A3.5</a></td>
+<td><strong>Partly met,</strong> re-measured with calibration on: yes on Kalshi in backtests (by more than in v3), about break-even on Polymarket; no intervals yet</td>
+<td><a href="#calibrated-does-the-price-come-our-way">5.4</a>, <a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">A3.5 in v4</a></td>
 </tr>
 <tr class="odd">
 <td>5</td>
@@ -474,11 +523,31 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-<p><strong>1. Skill, not luck or selection.</strong> A positive Brier skill score against the size-weighted mid at realistic fills, surviving a luck test with a false-discovery correction across <em>every</em> setting tried. - <em>Paper:</em> sec 3.2–3.3, Table 1, App. A.1 - <em>Where we are:</em> in F1 2026 every saved setting beats the mid on both venues, but none survives the correction over all settings, and none holds in 2025 as well. Most of the 2026 edge was the model pricing favourites too low (section 3), and the fixed model doesn't beat the market in both seasons (section 4).</p>
-<p><strong>2. Out of sample.</strong> It holds forward on pre-registered locks, not on the season it was tuned on. - <em>Paper:</em> sec 4.4, Table 4 - <em>Where we are:</em> per-event strategy locks, committed before each race and scored as bet (since 15 Oct, <a href="https://github.com/racinglines/racinglines/pull/213" title="#213 · [docs] Paper trading locked per event through the 2026 F1 season (owner rule), lock file template; the one-second leakage test · merged 15 Oct 2026">#213</a>), and a pre-registered Polymarket test (<a href="https://github.com/racinglines/racinglines/pull/276" title="#276 · [docs] Pre-registration: Kalshi response step 3, F1 on Polymarket with Probalytics&#x27; books · opened 20 Oct 2026">#276</a>) whose blind half starts at Austin.</p>
-<p><strong>3. The real book.</strong> The edge clears the actual spread, depth and fees: fills at the touch or walking the recorded book, never a last-trade price plus a fixed cost. - <em>Paper:</em> sec 2.1, App. A.4 - <em>Where we are:</em> our F1 backtests now fill against Probalytics' full order books on both venues (<a href="https://github.com/racinglines/racinglines/pull/202" title="#202 · [models] Backtest fill-price error probe: our one-price taker fill vs Probalytics&#x27; book walk · merged 14 Oct 2026">#202</a>, <a href="https://github.com/racinglines/racinglines/pull/203" title="#203 · [models] Fill fidelity: fill-error probe by kind, taker_fill = touch | book, max_spread, stage files for sweeps · merged 14 Oct 2026">#203</a>–<a href="https://github.com/racinglines/racinglines/pull/205" title="#205 · [models] Taker fills: taker_fill = touch | book, max_spread, stage files for sweeps · merged 14 Oct 2026">#205</a>, <a href="https://github.com/racinglines/racinglines/pull/219" title="#219 · [models] Book-walk fills stop where the edge runs out · merged 15 Oct 2026">#219</a>), with every trade written out (<a href="https://github.com/racinglines/racinglines/pull/275" title="#275 · [models] Opt-in --trades-out: write every sweep trade (touch bid/ask, sizes, outcome) to parquet · merged 20 Oct 2026">#275</a>). Our stored NASCAR and MotoGP paper bets still used a one-price fill.</p>
-<p><strong>4. The price comes our way.</strong> After entry the mid moves toward our side and doesn't reverse. - <em>Paper:</em> sec 3.4, 5.4, Fig 9 - <em>Where we are:</em> markouts of every backtest trade, at the next stage of the race weekend and at the last one before the race, plus closing-line value (<a href="https://github.com/racinglines/racinglines/pull/223" title="#223 · [models] Closing-line value in every season sweep (metrics.clv): CLI, run page, Edge Finder, MCP · merged 16 Oct 2026">#223</a>).</p>
-<p><strong>5. Paper reconciles with real.</strong> Simulated fills match real fills before any money goes in. - <em>Paper:</em> (ours, not the paper's) - <em>Where we are:</em> our go/no-go goal is CLV above +2 % over 100 live bets and six live race weekends that reconcile. No real money yet.</p>
+<p><strong>1. Skill, not luck or selection.</strong> A positive Brier skill score against the size-weighted mid at realistic fills, surviving a luck test with a false-discovery correction across <em>every</em> setting tried.</p>
+<ul>
+<li><em>Paper:</em> sec 3.2–3.3, Table 1, App. A.1</li>
+<li><em>Where we are:</em> in F1 2026 every saved setting beats the mid on both venues, but none survives the correction over all settings, and none holds in 2025 as well. Most of the 2026 edge was the model pricing favourites too low (section 3), and the fixed model doesn't beat the market in both seasons (section 4). With calibration on, every setting's 2026 edge grows and its 2025 loss deepens (section 5).</li>
+</ul>
+<p><strong>2. Out of sample.</strong> It holds forward on pre-registered locks, not on the season it was tuned on.</p>
+<ul>
+<li><em>Paper:</em> sec 4.4, Table 4</li>
+<li><em>Where we are:</em> per-event strategy locks, committed before each race and scored as bet (since 15 Oct, <a href="https://github.com/racinglines/racinglines/pull/213" title="#213 · [docs] Paper trading locked per event through the 2026 F1 season (owner rule), lock file template; the one-second leakage test · merged 15 Oct 2026">#213</a>), and a pre-registered Polymarket test (<a href="https://github.com/racinglines/racinglines/pull/276" title="#276 · [docs] Pre-registration: Kalshi response step 3, F1 on Polymarket with Probalytics&#x27; books · opened 20 Oct 2026">#276</a>) whose blind half starts at Austin.</li>
+</ul>
+<p><strong>3. The real book.</strong> The edge clears the actual spread, depth and fees: fills at the touch or walking the recorded book, never a last-trade price plus a fixed cost.</p>
+<ul>
+<li><em>Paper:</em> sec 2.1, App. A.4</li>
+<li><em>Where we are:</em> our F1 backtests now fill against Probalytics' full order books on both venues (<a href="https://github.com/racinglines/racinglines/pull/202" title="#202 · [models] Backtest fill-price error probe: our one-price taker fill vs Probalytics&#x27; book walk · merged 14 Oct 2026">#202</a>, <a href="https://github.com/racinglines/racinglines/pull/203" title="#203 · [models] Fill fidelity: fill-error probe by kind, taker_fill = touch | book, max_spread, stage files for sweeps · merged 14 Oct 2026">#203</a>–<a href="https://github.com/racinglines/racinglines/pull/205" title="#205 · [models] Taker fills: taker_fill = touch | book, max_spread, stage files for sweeps · merged 14 Oct 2026">#205</a>, <a href="https://github.com/racinglines/racinglines/pull/219" title="#219 · [models] Book-walk fills stop where the edge runs out · merged 15 Oct 2026">#219</a>), with every trade written out (<a href="https://github.com/racinglines/racinglines/pull/275" title="#275 · [models] Opt-in --trades-out: write every sweep trade (touch bid/ask, sizes, outcome) to parquet · merged 20 Oct 2026">#275</a>). Our stored NASCAR and MotoGP paper bets still used a one-price fill.</li>
+</ul>
+<p><strong>4. The price comes our way.</strong> After entry the mid moves toward our side and doesn't reverse.</p>
+<ul>
+<li><em>Paper:</em> sec 3.4, 5.4, Fig 9</li>
+<li><em>Where we are:</em> markouts of every backtest trade, at the next stage of the race weekend and at the last one before the race, plus closing-line value (<a href="https://github.com/racinglines/racinglines/pull/223" title="#223 · [models] Closing-line value in every season sweep (metrics.clv): CLI, run page, Edge Finder, MCP · merged 16 Oct 2026">#223</a>). Re-measured with calibration on in section 5.4.</li>
+</ul>
+<p><strong>5. Paper reconciles with real.</strong> Simulated fills match real fills before any money goes in.</p>
+<ul>
+<li><em>Paper:</em> (ours, not the paper's)</li>
+<li><em>Where we are:</em> our go/no-go goal is CLV above +2 % over 100 live bets and six live race weekends that reconcile. No real money yet.</li>
+</ul>
 </div>
 <div class="section" id="the-paper-in-one-table">
 <h2>2. The paper in one table</h2>
@@ -540,10 +609,9 @@ const thebe_selector_output = ".output, .cell_output"
 </table>
 <p>Their own limits are in sec 6: the impact results are associations, the skilled set is chosen on outcomes, arbitrage scores as skill, and the sample covers one year.</p>
 </div>
-<div class="section" id="what-v3-got-wrong-the-favourite">
-<h2>3. What v3 got wrong: the favourite</h2>
-<p>v3 (Appendix A) found that every strategy setting we had saved bought on the right side of the market in F1 2026, and that about half of the model's predicted edge showed up in the results. On the evening of 20 Oct a live run for Austin priced the favourite far below the market, and we went back to v3's own runs to see where its edge came from. This section is that check, as first published in the v3c correction. "Section 3.1" below means <a href="#the-model-on-every-market-it-prices">A3.1</a>.</p>
-<p><em>Added 20 Oct evening (v3c), after a live run for Austin showed the model far below the market on the favourite.</em></p>
+<div class="section" id="where-the-2026-edge-came-from">
+<h2>3. Where the 2026 edge came from</h2>
+<p>On 20 Oct v3 reported that every strategy setting we had saved bought on the right side of the market in F1 2026, and that about half of the model's predicted edge showed up in the results (<a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">as published in v4</a>). That evening a live run for Austin priced the favourite far below the market, so we went back to v3's own runs and split their edge by direction: bets against the favourite, and everything else. Then we scored the model's top pick to win in 18 sweeps our core team ran that night, in both seasons. "Section 3.1" below means <a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">A3.1 in v4</a>.</p>
 <p><strong>What this tests.</strong> Section 3.1 counts every market where the model and the price disagree by more than 5¢. Here we split those by direction. "Against the favourite" means the market prices the outcome above 35¢ and the model is lower. Same runs as 3.1; calibration off unless named.</p>
 <table style="width:100%;">
 <colgroup>
@@ -616,7 +684,13 @@ const thebe_selector_output = ".output, .cell_output"
 </tbody>
 </table>
 <p><em>Rows are market-stages, so one race counts several times; the race-win favourite rows cover 13 to 23 races per run.</em></p>
-<p><strong>What it says:</strong> - <strong>The model prices favourites far too low, in both seasons.</strong> Where the market says 65 to 72 %, the model says 37 to 50 %. For the race-win favourite it says about 17 to 20 % where the market says about 40 %. Walk-forward calibration of win prices moves that only to 23 %. - <strong>2026 rewarded that bias; 2025 didn't.</strong> 2026 favourites won less often than priced (race-win favourite 30 to 34 % against 40 to 42 %), so betting against them made most of the 2026 edge. 2025 favourites won about as priced, so the same model had nothing. - <strong>Buying longshots added little</strong> (+2 to +3.5¢ on markets under 15¢). The edge isn't the classic favourite-longshot story; it is the model's flat field meeting a season of beaten favourites. - <strong>Inferred, not shown:</strong> whether 2026's favourites were truly overpriced or just unlucky over 13 to 16 races. A model that priced favourites closer to the market would have given up most of the 2026 edge and lost less in 2025.</p>
+<p><strong>What it says:</strong></p>
+<ul>
+<li><strong>The model prices favourites far too low, in both seasons.</strong> Where the market says 65 to 72 %, the model says 37 to 50 %. For the race-win favourite it says about 17 to 20 % where the market says about 40 %. Walk-forward calibration of win prices moves that only to 23 %.</li>
+<li><strong>2026 rewarded that bias; 2025 didn't.</strong> 2026 favourites won less often than priced (race-win favourite 30 to 34 % against 40 to 42 %), so betting against them made most of the 2026 edge. 2025 favourites won about as priced, so the same model had nothing.</li>
+<li><strong>Buying longshots added little</strong> (+2 to +3.5¢ on markets under 15¢). The edge isn't the classic favourite-longshot story; it is the model's flat field meeting a season of beaten favourites.</li>
+<li><strong>Inferred, not shown:</strong> whether 2026's favourites were truly overpriced or just unlucky over 13 to 16 races. A model that priced favourites closer to the market would have given up most of the 2026 edge and lost less in 2025.</li>
+</ul>
 <p><strong>Update, 20 Oct about 23:45 UTC: 18 new model runs.</strong> Our core team re-ran the season sweeps on Polymarket's tapes with the recent-form half-life at 30, 60, 120 and 240 days, calibration off and on, and a grid variant: 9 settings × 2 seasons, every completed race. For each race and stage we took the model's top pick to win and asked how often it won.</p>
 <table>
 <colgroup>
@@ -669,81 +743,63 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>Script: <code>reconcile_favs.py</code> in our state batch folder (<a href="kalshi-response-2026-10-20-as-run-state-batch.html">as run</a>).</p>
 </div>
-<div class="section" id="the-fixed-model-results">
-<h2>4. The fixed model: results</h2>
-<p><strong>What this tests.</strong> Two fixes for the flaw in section 3, each scored on 2025 and 2026, every completed race, on Polymarket's tapes: - <strong>Calibration</strong> (<code>walk_forward</code>): the model's win prices are sharpened by a power fitted only on earlier races, so the favourite gets more of the probability. - <strong>Grid noise:</strong> randomness added to the starting grid in the simulation, meant to stop the front of the grid looking more settled than it is.</p>
-<p>That is eight runs: two seasons × with and without grid noise × calibration off and on. Scores are the model's own predictions before and after qualifying; we compare them with how races ended and with the market's price at the same stage.</p>
-<p><strong>The favourite.</strong> The model's top pick to win, its probability and how often it won:</p>
-<table style="width:100%;">
+<div class="section" id="before-and-after-the-model">
+<h2>4. Before and after calibration: the model</h2>
+<p>Sections 4 and 5 compare two versions of the same model:</p>
+<ul>
+<li><strong>Before</strong> is v3 (20 Oct), with calibration off, as the model ran then.</li>
+<li><strong>After</strong> is v4.1 (21 Oct), with calibration on (<code>walk_forward</code>: the win prices sharpened by a power fitted only on earlier races), as our F1 model now runs.</li>
+</ul>
+<p>Section 4 scores the model's own predictions. Section 5 re-runs every v3 test.</p>
+<p><strong>The favourite.</strong> The model's top pick to win, its probability / how often it won, on Polymarket's tapes, every completed race:</p>
+<table>
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Calibration</th>
+<th></th>
 <th>2025 after qualifying</th>
 <th>2026 after qualifying</th>
-<th>2025 before</th>
-<th>2026 before</th>
+<th>2025 before qualifying</th>
+<th>2026 before qualifying</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Base</td>
-<td>off</td>
-<td><strong>0.38</strong> / won 0.63</td>
-<td><strong>0.36</strong> / won 0.68</td>
+<td>Before</td>
+<td>0.38 / won 0.63</td>
+<td>0.36 / won 0.68</td>
 <td>0.22 / won 0.27</td>
 <td>0.18 / won 0.15</td>
 </tr>
 <tr class="even">
-<td>Grid noise</td>
-<td>off</td>
-<td>0.37 / won 0.50</td>
-<td>0.35 / won 0.71</td>
-<td>0.22 / won 0.27</td>
-<td>0.19 / won 0.18</td>
-</tr>
-<tr class="odd">
-<td>Base</td>
-<td><strong>on</strong></td>
+<td>After</td>
 <td><strong>0.56</strong> / won 0.63</td>
 <td><strong>0.67</strong> / won 0.71</td>
 <td>0.32 / won 0.27</td>
 <td>0.29 / won 0.21</td>
 </tr>
-<tr class="even">
-<td>Grid noise</td>
-<td>on</td>
-<td>0.55 / won 0.50</td>
-<td>0.64 / won 0.71</td>
-<td>0.32 / won 0.27</td>
-<td>0.28 / won 0.19</td>
-</tr>
 </tbody>
 </table>
-<p><em>24 races in 2025, 17 in 2026. "Before" covers every stage before qualifying, so each race counts several times. Grid noise can change who the top pick is, which is why "won" differs. The 2026 base row without calibration also includes a few older stored predictions for the same model (19 and 92 rather than 17 and 68), so it isn't quite the same sample. The calibrated runs on our database copy differ slightly from the same settings run on production on 20 Oct (the 2026 top pick after qualifying: 0.670 on production, 0.668 here), while the uncalibrated runs match exactly; the cause is not yet checked.</em></p>
-<p><strong>Against the market.</strong> Brier score of the model minus the market's on race winners (below zero means the model was more accurate), and closing-line value (CLV: how far the price moved our way by the close) for the "update" strategy:</p>
+<p><em>24 races in 2025, 17 in 2026; "before qualifying" counts every earlier stage, so each race counts several times.</em></p>
+<p><strong>Against the market on race winners.</strong> Brier score, model minus market (below zero means the model was more accurate), and closing-line value (CLV) for the "update" strategy:</p>
 <table style="width:100%;">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Calibration</th>
+<th></th>
 <th>2025 before / after qualifying</th>
 <th>2026 before / after qualifying</th>
 <th>CLV 2025</th>
@@ -753,8 +809,7 @@ const thebe_selector_output = ".output, .cell_output"
 </thead>
 <tbody>
 <tr class="odd">
-<td>Base</td>
-<td>off</td>
+<td>Before</td>
 <td>+0.0068 / +0.0079</td>
 <td>−0.0006 / +0.0025</td>
 <td>+0.99 pp</td>
@@ -762,332 +817,239 @@ const thebe_selector_output = ".output, .cell_output"
 <td>−0.99 pp</td>
 </tr>
 <tr class="even">
-<td>Grid noise</td>
-<td>off</td>
-<td>+0.0068 / +0.0087</td>
-<td>−0.0006 / +0.0034</td>
-<td>+1.05 pp</td>
-<td>+0.29 pp</td>
-<td>−1.13 pp</td>
-</tr>
-<tr class="odd">
-<td>Base</td>
-<td>on</td>
+<td>After</td>
 <td>+0.0077 / +0.0088</td>
 <td>−0.0018 / <strong>−0.0065</strong></td>
 <td>+1.30 pp</td>
 <td>+0.58 pp</td>
 <td>−0.19 pp</td>
 </tr>
-<tr class="even">
-<td>Grid noise</td>
-<td>on</td>
-<td>+0.0078 / +0.0107</td>
-<td>−0.0016 / −0.0060</td>
-<td>+1.29 pp</td>
-<td>+0.47 pp</td>
-<td>−0.66 pp</td>
-</tr>
 </tbody>
 </table>
-<p><em>Rounds 13 to 17 of 2026 are the part of the season held out from earlier tuning (4 to 5 race weekends). The "early" strategy's CLV there is +0.51 pp with calibration on and −0.18 pp without. Pole markets go the other way: the model beats the market before qualifying in 2025 (−0.0035) and loses in 2026 (+0.010) in every run.</em></p>
-<p><strong>What it says:</strong> - <strong>Calibration fixes the favourite after qualifying, in both seasons.</strong> The top pick goes from about 37 % to 56–67 %, close to how often it won. That is a real fix to the model, and it holds in both years. - <strong>It doesn't make an edge.</strong> After qualifying the calibrated model beats the market on race winners in 2026 (−0.0065) and still loses in 2025 (+0.0088). Before qualifying, where v3's edge came from, the calibrated favourite (29 to 32 %) is still below the market's (about 40 % in v3's runs), and the model loses in 2025 and is about even in 2026. - <strong>Grid noise doesn't help.</strong> It changes nothing before qualifying and makes the model slightly worse after qualifying in all four pairs. - <strong>CLV is positive over whole seasons and negative on the held-out rounds,</strong> except the calibrated "early" strategy (+0.51 pp over 4 to 5 weekends, too few to count). - <strong>So rule 1 is not met.</strong> The fixed model is a better model, not yet a better forecaster than the market in both seasons. The season split v3 found is still there; it is just smaller.</p>
-<p>The scoring queries are in our state batch folder (<code>gridnoise-toppick.sql</code>) and our core team's sweep runbook; the runs are 10475, 10596, 10789, 10910 (2025) and 10597, 10683, 10911, 10997 (2026) on the copy of our database.</p>
-</div>
-<div class="section" id="what-we-take-from-this">
-<h2>5. What we take from this</h2>
-<p>Kalshi's paper says a market is made accurate by a small group of traders who are right against the price, can be told apart from the lucky by a strict test, and leave a mark: the price moves their way and stays. We held racinglines to those tests, and the first thing they caught was us.</p>
-<p><strong>The tests worked on us.</strong> v3 passed most of what we could measure in 2026: positive scores against the mid, every saved setting on the right side, the price moving our way afterwards. The check the paper insists on, whether a result survives across samples, is what failed: the same model lost in 2025. Splitting the edge by direction showed why. Most of it was one bet, against favourites, made by a model that priced them far too low.</p>
-<p><strong>Calibration is the fix, and it isn't an edge.</strong> Fitted on earlier races only, it brings the favourite's price after qualifying close to how often favourites won, in both seasons. It doesn't make the model beat the market in both seasons, and before qualifying the model still prices favourites below the market. A better model is necessary; it isn't the same thing as skill.</p>
-<p><strong>Motorsport still looks like room for a model.</strong> Taking a price costs about twice the paper's average, volume arrives late on Kalshi (Appendix A3.6), and in 2026 the market's favourites were overpriced. Whether that last part is a pattern or one season is exactly what we can't tell from history.</p>
-<p>So rule 1 is not met, rule 3 holds for F1 backtests, rule 4 was partly met in v3 and needs re-measuring on the fixed model, and rules 2 and 5 are where we start.</p>
-<div class="section" id="whats-next">
-<h3>What's next</h3>
-<ul>
-<li><strong>Forward, from Austin (23 to 25 Oct).</strong> Each race's locked strategy scores as bet, and the frozen Polymarket pick scores live. This is the only blind test, and rule 2's record starts here.</li>
-<li><strong>Whether live prices use calibration.</strong> It fixes the favourite after qualifying in both seasons; switching it on is a decision we are making before Austin, and it is logged before it counts.</li>
-<li><strong>The favourite before qualifying.</strong> Even calibrated, the model is below the market there. The next model work is how the model spreads the front of the field before qualifying, judged on both seasons together.</li>
-<li><strong>Re-measure rule 4 and the luck test on the fixed model,</strong> with intervals and de-duplication for the markouts.</li>
-<li><strong>Real fills (rule 5).</strong> Only live trading answers it.</li>
-<li><strong>Skilled takers in F1.</strong> Polymarket trades carry wallets, so the paper's account-level tables (Table 1, Table 5 for F1) can be built there.</li>
-</ul>
-<p>We said we would publish what the tests showed, whatever it was. This is what they showed: our first claim of an edge was mostly a model flaw, the flaw is partly fixed, and the edge isn't proven.</p>
-</div>
-</div>
-<div class="section" id="caveats">
-<h2>6. Caveats</h2>
-<ol type="1">
-<li><strong>Simulated, not executed.</strong> A mid move after a backtest trade is the market coming round to our view, not our impact. Our own impact on thin books is unmeasured.</li>
-<li><strong>The fill model changes the score itself</strong> (sec 2.3). We report touch and book-walk fills side by side.</li>
-<li><strong>The benchmark mid is estimated</strong> wherever we have no recorded book. 2025 Kalshi is estimate-only.</li>
-<li><strong>Horizons.</strong> Our books are 5-minute snapshots, and we trade at stage cutoffs, while the paper's Sports volume sits in the last tenth of a market's life (Fig 7).</li>
-<li><strong>Selection.</strong> The false-discovery correction runs over every combination tried. In-sample profiles are never evidence.</li>
-<li><strong>Joint outcomes.</strong> Our luck test draws each driver independently and ignores "one winner per race", so its p-values are approximate.</li>
-<li><strong>Sample size.</strong> NASCAR has 40 races and MotoGP 11; the paper's bar is 100 events.</li>
-<li><strong>Tape gaps.</strong> Our own Kalshi trade tape has a gap from 29 Sep to 9 Oct.</li>
-<li><strong>Fees.</strong> The skill score ignores fees; profit and CLV include them. We report all three together.</li>
-<li><strong>Scope.</strong> We have no linked cycling markets on either venue, so cycling, which we model, is not tested here.</li>
-<li><strong>Not blind.</strong> Every backtest window here, holdouts included, was seen in some form while the model was built. Only the forward tests (the per-event locks and the live Polymarket holdout from Austin) are blind.</li>
-</ol>
-</div>
-<div class="section" id="appendix-a-the-v3-results-20-oct">
-<h2>Appendix A: the v3 results (20 Oct)</h2>
-<p><em>These are the results as published in v3 and v3b (20 Oct), with the v3c correction's edits. Almost every run here had calibration off, so they describe the model before the fix. They are kept for the record; <a href="#what-v3-got-wrong-the-favourite">section 3</a> explains what they got wrong. Section numbers inside follow v3's: 3.x here is A3.x, 4.x is A4.x.</em></p>
-<div class="section" id="where-racinglines-stands-every-historical-test-we-can-run-20-oct">
-<h3>A3 Where racinglines stands: every historical test we can run (20 Oct)</h3>
-<p>Two questions run through this section. First, <strong>is the model's price better than the market's?</strong> That is a question about the model alone, so we score it on every market it prices. Second, <strong>is a gap between our price and the market's an edge worth trading?</strong> That is a question about strategies, so we score every strategy setting we have ever saved, with the fills a real trader would have got. The paper answers both for Kalshi's traders; we answer them for ourselves.</p>
-<p>Everything here is a backtest on a mirror of our production database, read-only. Prices and fills come from two tapes: our own recorder's ("our tape") and Probalytics' full order books, which carry every level and size ("Probalytics' books"). All intervals are 95 % and resample whole race weekends, because outcomes within one race are linked.</p>
-<div class="section" id="the-model-on-every-market-it-prices">
-<h4>A3.1 The model on every market it prices</h4>
-<p><strong>What this tests.</strong> Here the model is the strategy: no tuned thresholds, no selection. At every stage of every race weekend (before the weekend, after each practice, after qualifying), we take every market the model prices and the venue's price at that moment, whether or not we traded. Two numbers come out: - <strong>Skill score against the market</strong> (the paper's BSS): above zero means the model's probabilities beat the market's on the outcomes. - <strong>The edge curve.</strong> For each market, the predicted edge is our price minus the market's, and the realized edge is the outcome minus the market's price. If the slope of realized on predicted is 1, the model's edge is all real; if it is 0, none of it is. This is what decides "a fair price" vs "an edge worth trading": a strategy should trade only where the part of the edge that is real clears the costs.</p>
-<table style="width:100%;">
+<p><strong>Every market it prices, every stage</strong>, traded or not:</p>
+<table>
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>Model, venue, tape, season</th>
-<th>Race weekends</th>
-<th>Market-stages</th>
-<th>Skill vs market</th>
-<th>Edge slope [95 % CI]</th>
-<th>Realized where |edge| &gt; 5¢</th>
+<th>Skill vs market: after (before)</th>
+<th>Edge slope: after (before)</th>
+<th>Realized where |edge| &gt; 5¢: after (before)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>F1, Kalshi, our tape, 2026 R1–16</td>
-<td>15</td>
-<td>1,013</td>
-<td>+0.00<br><span style="white-space:nowrap">[−0.10, +0.09]</span></td>
-<td><strong>0.52<br><span style="white-space:nowrap">[0.23, 0.83]</span></strong></td>
-<td><strong>+6.2¢<br><span style="white-space:nowrap">[+0.8, +12.2]</span></strong></td>
+<td>−0.01<br><span style="white-space:nowrap">[−0.10, +0.09]</span> (+0.00)</td>
+<td><strong>0.48<br><span style="white-space:nowrap">[0.20, 0.85]</span></strong> (0.52)</td>
+<td><strong>+6.7¢<br><span style="white-space:nowrap">[+1.0, +13.4]</span></strong> (+6.2¢)</td>
 </tr>
 <tr class="even">
 <td>F1, Kalshi, Probalytics' books, 2026 R5–16</td>
-<td>11</td>
-<td>1,084</td>
-<td>+0.00<br><span style="white-space:nowrap">[−0.11, +0.10]</span></td>
-<td><strong>0.51<br><span style="white-space:nowrap">[0.13, 0.89]</span></strong></td>
-<td>+5.8¢<br><span style="white-space:nowrap">[−0.6, +12.8]</span></td>
+<td>+0.02<br><span style="white-space:nowrap">[−0.07, +0.11]</span> (+0.00)</td>
+<td><strong>0.59<br><span style="white-space:nowrap">[0.18, 1.00]</span></strong> (0.51)</td>
+<td>+7.1¢<br><span style="white-space:nowrap">[−0.1, +14.0]</span> (+5.8¢)</td>
 </tr>
 <tr class="odd">
 <td>F1, Polymarket, Probalytics' books, 2026 R3–16</td>
-<td>13</td>
-<td>963</td>
-<td>+0.01<br><span style="white-space:nowrap">[−0.13, +0.11]</span></td>
-<td><strong>0.53<br><span style="white-space:nowrap">[0.08, 0.93]</span></strong></td>
-<td>+7.4¢<br><span style="white-space:nowrap">[0.0, +14.4]</span></td>
+<td>+0.03<br><span style="white-space:nowrap">[−0.12, +0.12]</span> (+0.01)</td>
+<td><strong>0.59<br><span style="white-space:nowrap">[0.05, 1.01]</span></strong> (0.53)</td>
+<td>+8.4¢<br><span style="white-space:nowrap">[−0.8, +16.2]</span> (+7.4¢)</td>
 </tr>
 <tr class="even">
 <td>F1, Polymarket, our tape, 2026 R1–16</td>
-<td>16</td>
-<td>1,774</td>
-<td>−0.04<br><span style="white-space:nowrap">[−0.18, +0.07]</span></td>
-<td>0.38<br><span style="white-space:nowrap">[−0.04, 0.74]</span></td>
-<td>+4.0¢<br><span style="white-space:nowrap">[−2.1, +9.9]</span></td>
+<td>−0.04<br><span style="white-space:nowrap">[−0.17, +0.06]</span> (−0.04)</td>
+<td>0.36<br><span style="white-space:nowrap">[−0.02, 0.76]</span> (0.38)</td>
+<td>+5.4¢<br><span style="white-space:nowrap">[−1.3, +12.4]</span> (+4.0¢)</td>
 </tr>
 <tr class="odd">
 <td>F1, Kalshi, our tape, 2025</td>
-<td>22</td>
-<td>844</td>
-<td>−0.14<br><span style="white-space:nowrap">[−0.31, +0.01]</span></td>
-<td>0.09<br><span style="white-space:nowrap">[−0.31, 0.54]</span></td>
-<td>+4.2¢<br><span style="white-space:nowrap">[−1.3, +10.4]</span></td>
+<td>−0.10<br><span style="white-space:nowrap">[−0.24, +0.02]</span> (−0.14)</td>
+<td>0.09<br><span style="white-space:nowrap">[−0.34, 0.58]</span> (0.09)</td>
+<td>+3.2¢<br><span style="white-space:nowrap">[−2.9, +10.1]</span> (+4.2¢)</td>
 </tr>
 <tr class="even">
 <td>F1, Polymarket, our tape, 2025</td>
-<td>23</td>
-<td>2,662</td>
-<td><strong>−0.16<br><span style="white-space:nowrap">[−0.28, −0.08]</span></strong></td>
-<td>−0.10<br><span style="white-space:nowrap">[−0.33, 0.14]</span></td>
-<td>−0.8¢<br><span style="white-space:nowrap">[−4.8, +3.3]</span></td>
+<td><strong>−0.14<br><span style="white-space:nowrap">[−0.24, −0.05]</span></strong> (−0.16)</td>
+<td>−0.11<br><span style="white-space:nowrap">[−0.38, 0.22]</span> (−0.10)</td>
+<td>−1.0¢<br><span style="white-space:nowrap">[−5.9, +4.6]</span> (−0.8¢)</td>
 </tr>
 <tr class="odd">
 <td>NASCAR, Kalshi, 2026</td>
-<td>34</td>
-<td>2,086</td>
-<td><strong>−0.10<br><span style="white-space:nowrap">[−0.15, −0.05]</span></strong></td>
-<td>−0.06<br><span style="white-space:nowrap">[−0.35, 0.19]</span></td>
-<td>−0.7¢<br><span style="white-space:nowrap">[−4.4, +2.8]</span></td>
+<td><strong>−0.10<br><span style="white-space:nowrap">[−0.15, −0.05]</span></strong> (−0.10)</td>
+<td>−0.07<br><span style="white-space:nowrap">[−0.34, 0.18]</span> (−0.06)</td>
+<td>−1.3¢<br><span style="white-space:nowrap">[−5.0, +2.5]</span> (−0.7¢)</td>
 </tr>
 <tr class="even">
 <td>NASCAR, Kalshi, 2025</td>
-<td>8</td>
-<td>104</td>
-<td>−0.19</td>
-<td>too few</td>
-<td>too few</td>
-</tr>
-<tr class="odd">
-<td>MotoGP, Kalshi, 2026</td>
-<td>11</td>
-<td>46</td>
-<td>−0.20</td>
+<td>−0.19 (−0.19)</td>
 <td>too few</td>
 <td>too few</td>
 </tr>
 </tbody>
 </table>
-<p><em>"Realized where |edge| &gt; 5¢" is the average result of siding with the model on those markets, before costs. A market appears once per stage, so the rows are not independent; the intervals resample whole weekends.</em></p>
-<p><strong>What it says:</strong> - <strong>F1 2026: about half the model's edge is real.</strong> The slope is close to 0.5 on both venues and both tapes, with three of the four intervals above zero. Overall the model is no better than the market (skill ≈ 0), but where they disagree by more than 5¢ the model was right more often than wrong. <strong>Corrected:</strong> most of that comes from markets where the model prices a favourite well below the market (3.7). It is one directional bet that 2026 rewarded, not a general second opinion worth half its face value. - <strong>F1 2025 and NASCAR: no edge.</strong> The slope is about zero, and the model loses to the market on accuracy. The worst case is the 2025 Polymarket constructor markets (skill −1.6 over 16 weekends). - <strong>The 2025 Polymarket row is our "ready at launch" case.</strong> It asks what today's model would have done from F1's first Polymarket markets: it would have lost to them. Our tape starts with those markets, and the answer doesn't need a decay curve, because there was no edge to decay. - <strong>Calibrating doesn't change it.</strong> The same runs with the model's win prices recalibrated on earlier races only (<code>calib_power = walk_forward</code>) move every number by a few hundredths at most (F1 Kalshi 2026 slope 0.48, F1 Polymarket 2025 skill −0.14, NASCAR 2026 skill −0.10). Calibrating per sport and per market kind, rather than one power on win prices, isn't built yet.</p>
-<p>The paper's Table 3 makes the same split for Kalshi's skilled traders; here it is for the model, and it is 2026-specific.</p>
-</div>
-<div class="section" id="one-setting-on-kalshi-trade-by-trade-20-oct-0149z">
-<h4>A3.2 One setting on Kalshi, trade by trade (20 Oct, 01:49Z)</h4>
-<p>We re-ran the published Kalshi backtests with every trade written out: F1 2025 and 2026 (one fixed settings set) and each sport's baseline for NASCAR 2025–26 and MotoGP 2026 (<a href="kalshi-response-2026-10-20-as-run-resim.html">runbook as run</a>). Each opening taker trade is one forecast. We score our fair f against Kalshi's mid m at that moment, with outcome y. The edge is y − m for a YES buy and m − y for a NO buy. All intervals are 95% and resample whole race weekends, because outcomes in one race are linked.</p>
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Race-win favourite: model / market / won</th>
+<th>Markets above 50¢: model / market</th>
+<th>Share of the 2026 edge against the favourite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Before</td>
+<td>0.17–0.20 / 0.39–0.42 / 0.30–0.45</td>
+<td>2026 0.37–0.39, 2025 0.45–0.50 / 0.63–0.72</td>
+<td>62–86 %</td>
+</tr>
+<tr class="even">
+<td>After</td>
+<td><strong>0.23–0.28</strong> / 0.39–0.42 / 0.30–0.45</td>
+<td>2026 0.40–0.42, 2025 0.52–0.54 / 0.63–0.72</td>
+<td><strong>52–74 %</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>What it says:</strong> calibration fixes the favourite after qualifying in both seasons, but it doesn't make an edge. Before qualifying, which is most stages, the favourite is still well below the market, and the model still loses to the market in 2025.</p>
+<p><em>v4 also tried adding noise to the starting grid; it made no difference, so it is left out here (<a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">v4 as published</a>).</em></p>
+</div>
+<div class="section" id="before-and-after-every-test">
+<h2>5. Before and after calibration: every test</h2>
+<p>Every run behind v3's tables and plots, again with calibration on: the same settings, windows, tapes and scorers. That is 262 runs (21 Oct 02:59 to 08:47), none failed (<a href="kalshi-response-2026-10-21-as-run-calib-rerun.html">as run</a>). MotoGP (no calibration yet) and the crowd tables (they don't use our model) aren't rerun. Each table shows after, with before in brackets.</p>
+<div class="section" id="calibrated-one-setting-on-kalshi">
+<h3>5.1 One setting on Kalshi, trade by trade</h3>
+<p>One saved setting, every opening taker trade, against Kalshi's plain mid (<a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">v3's method</a>).</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>Sport, season</th>
-<th>Trades (weekends)</th>
-<th>Edge vs mid, ¢/share</th>
-<th>After costs</th>
-<th>Skill score vs mid</th>
-<th>No book at the fill</th>
+<th>Trades (weekends): after (before)</th>
+<th>Edge vs mid, ¢/share: after (before)</th>
+<th>After costs: after (before)</th>
+<th>Skill score vs mid: after (before)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>F1 2025</td>
-<td>151 (20)</td>
-<td>+5.4<br><span style="white-space:nowrap">[−2.9, +15.0]</span></td>
-<td>+1.0</td>
-<td>−0.19<br><span style="white-space:nowrap">[−0.46, +0.03]</span></td>
-<td>5 %</td>
+<td>131 (20) (151)</td>
+<td>+1.0<br><span style="white-space:nowrap">[−8.7, +11.4]</span> (+5.4)</td>
+<td>−3.6 (+1.0)</td>
+<td><strong>−0.28<br><span style="white-space:nowrap">[−0.59, −0.02]</span></strong> (−0.19)</td>
 </tr>
 <tr class="even">
 <td>F1 2026</td>
-<td>223 (15)</td>
-<td><strong>+12.0<br><span style="white-space:nowrap">[+5.5, +18.4]</span></strong></td>
-<td><strong>+8.0</strong></td>
-<td>+0.05<br><span style="white-space:nowrap">[−0.14, +0.18]</span></td>
-<td>9 %</td>
+<td>234 (15) (223)</td>
+<td><strong>+13.7<br><span style="white-space:nowrap">[+7.4, +20.1]</span></strong> (+12.0)</td>
+<td><strong>+9.7</strong> (+8.0)</td>
+<td>+0.08<br><span style="white-space:nowrap">[−0.06, +0.19]</span> (+0.05)</td>
 </tr>
 <tr class="odd">
 <td>NASCAR 2025</td>
-<td>24 (8)</td>
-<td>+12.0<br><span style="white-space:nowrap">[−5.2, +19.8]</span></td>
-<td>+7.6</td>
-<td>−0.33<br><span style="white-space:nowrap">[−1.36, +0.89]</span></td>
-<td>4 %</td>
+<td>23 (8) (24)</td>
+<td>+11.9<br><span style="white-space:nowrap">[−6.9, +20.3]</span> (+12.0)</td>
+<td>+7.5 (+7.6)</td>
+<td>−0.36<br><span style="white-space:nowrap">[−1.42, +0.88]</span> (−0.33)</td>
 </tr>
 <tr class="even">
 <td>NASCAR 2026</td>
-<td>584 (31)</td>
-<td>−0.4<br><span style="white-space:nowrap">[−4.7, +3.8]</span></td>
-<td><strong>−5.8</strong></td>
-<td><strong>−0.16<br><span style="white-space:nowrap">[−0.25, −0.08]</span></strong></td>
-<td>1 %</td>
-</tr>
-<tr class="odd">
-<td>MotoGP 2026</td>
-<td>30 (11)</td>
-<td>+2.0<br><span style="white-space:nowrap">[−11.4, +17.4]</span></td>
-<td>−0.1</td>
-<td>−0.26<br><span style="white-space:nowrap">[−1.00, +0.22]</span></td>
-<td><strong>100 %</strong></td>
+<td>575 (31) (584)</td>
+<td>+0.1<br><span style="white-space:nowrap">[−4.1, +4.6]</span> (−0.4)</td>
+<td><strong>−5.3</strong> (−5.8)</td>
+<td><strong>−0.16<br><span style="white-space:nowrap">[−0.26, −0.07]</span></strong> (−0.16)</td>
 </tr>
 </tbody>
 </table>
-<p><em>Update mode shown; the hold, last and early modes agree. The skill score is the paper's 1 − Brier(ours) / Brier(mid), against the plain mid: Kalshi's tape in this run has no touch sizes, so there is no size-weighted mid.</em></p>
-<ul>
-<li><strong>It shows</strong> that F1 2026's trades landed on the right side of Kalshi's mid, by 12¢ a share before costs and 8¢ after, in all four taker modes (each with a false-discovery-corrected q of 0.013 or less).</li>
-<li><strong>It shows</strong> that NASCAR's model loses to Kalshi's price (skill score −0.16, entirely below zero), and that MotoGP fails rule 3 before skill can be judged: none of its fills had a recorded book.</li>
-<li><strong>It doesn't show</strong> skill (rule 1). The same F1 settings find no edge in 2025, and they are one of 20 settings tried on these seasons (6th of 20 by profit in 2026). We label the F1 result 2026-specific until a forward test agrees.</li>
-<li><strong>It doesn't show</strong> price impact or markouts (rule 4). The trade file carries the mid at entry only. The close-point CLV from the same runs is +7.3 % for F1 2026 and −0.1 % for F1 2025.</li>
-<li><strong>It doesn't show</strong> a full rule 1 test. That needs every setting tried, which is section 3.3.</li>
-</ul>
 </div>
-<div class="section" id="every-setting-tried-the-luck-test">
-<h4>A3.3 Every setting tried: the luck test</h4>
-<p><strong>What this tests.</strong> A strategy setting is our choice of thresholds, sizing and timing on top of the model. We have tried many over the past months, and the paper's rule is that a setting's result only counts after correcting for every setting tried. So we re-ran <strong>every setting we ever saved</strong>: 20 on Kalshi (F1 2025 and 2026, our tape) and 106 on Polymarket (F1, at the touch on Probalytics' books, on the markets that pass the test floor in 3.4). Each trade is scored against the venue's mid, and the false-discovery correction (Benjamini–Hochberg) covers every setting, season and taker mode together.</p>
-<table>
+<div class="section" id="calibrated-every-setting-tried">
+<h3>5.2 Every setting tried: the luck test</h3>
+<p>Every setting we ever saved, 20 on Kalshi and 106 on Polymarket, with a false-discovery correction over every setting, season and taker mode (<a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">v3's method</a>).</p>
+<table style="width:100%;">
 <colgroup>
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>Venue, season</th>
 <th>Settings</th>
-<th>Weekends</th>
-<th>Edge vs mid, median (range)</th>
-<th>After costs, median</th>
-<th>CI above zero (vs mid)</th>
-<th>Skill CI above zero</th>
-<th>Pass after correction</th>
+<th>Edge vs mid, median (range): after (before)</th>
+<th>After costs, median: after (before)</th>
+<th>CI above zero: after (before)</th>
+<th>Skill CI above zero: after (before)</th>
+<th>Pass after correction: after (before)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Kalshi, 2026 R1–16</td>
 <td>20</td>
-<td>15</td>
-<td>+9.2¢ (+4.3 to +25.2)</td>
-<td>+5.1¢</td>
-<td>11 of 20</td>
-<td>3 of 20</td>
-<td>19 of 20 (q &lt; 0.05)</td>
+<td>+10.9¢ (+4.9 to +24.2) (+9.2¢)</td>
+<td>+7.0¢ (+5.1¢)</td>
+<td><strong>18 of 20</strong> (11)</td>
+<td>3 of 20 (3)</td>
+<td>20 of 20 (19)</td>
 </tr>
 <tr class="even">
 <td>Kalshi, 2025</td>
 <td>20</td>
-<td>20–22</td>
-<td>+4.7¢ (+2.4 to +7.3)</td>
-<td>+0.8¢</td>
-<td>4 of 20</td>
-<td>0 of 20</td>
-<td>4 of 20</td>
+<td>+3.3¢ (−0.7 to +6.3) (+4.7¢)</td>
+<td><strong>−0.9¢</strong> (+0.8¢)</td>
+<td>0 of 20 (4)</td>
+<td>0 of 20 (0)</td>
+<td>4 of 20 (4)</td>
 </tr>
 <tr class="odd">
 <td>Polymarket, 2026 R3–16</td>
 <td>106</td>
-<td>13</td>
-<td>+8.8¢ (+4.3 to +13.5)</td>
-<td>+5.7¢</td>
-<td>2 of 106</td>
-<td>0 of 106</td>
-<td><strong>0 of 749 cells</strong></td>
+<td>+12.2¢ (+5.5 to +20.0) (+8.8¢)</td>
+<td>+9.1¢ (+5.7¢)</td>
+<td><strong>40 of 106</strong> (2)</td>
+<td><strong>0 of 106</strong> (0)</td>
+<td>301 of 773 cells (0 of 749)</td>
 </tr>
 <tr class="even">
 <td>Polymarket, 2025 R22–24</td>
-<td>101</td>
-<td>3</td>
-<td>+4.5¢ (−14.5 to +10.4)</td>
-<td>+0.6¢</td>
-<td>15 of 101</td>
-<td>0 of 101</td>
-<td><strong>0</strong></td>
+<td>106 (101)</td>
+<td><strong>−15.2¢ (−35.6 to +8.8)</strong> (+4.5¢)</td>
+<td><strong>−19.9¢</strong> (+0.6¢)</td>
+<td>0 of 106 (15)</td>
+<td>0 of 106 (0)</td>
+<td>0 (0)</td>
 </tr>
 </tbody>
 </table>
-<p><em>Update mode shown; the correction runs over all four taker modes. On Kalshi our tape has no order sizes, so the mid is plain; on Polymarket it is size-weighted. The 2025 Polymarket window is only Las Vegas, Qatar and Abu Dhabi, the first races with Probalytics' books. Five 2025 Polymarket settings couldn't run read-only, and 53 of the 2026 settings ran on rounds 3 to 15 because round 16 had no stored pricing for them. Polymarket intervals use 500 resamples.</em></p>
-<p><strong>What it says:</strong> - <strong>In 2026, every saved setting bought on the right side of the mid, on both venues,</strong> and every Polymarket setting stayed positive after costs. That is a property of the model, not of one lucky setting: selection alone would not make all 126 positive. - <strong>None passes the full test.</strong> On Polymarket no setting survives the correction across all 749 cells (the smallest q is 0.054), and none has a skill score interval above zero. On Kalshi 19 of 20 pass the correction in 2026, but those q-values treat trades as independent, so they're optimistic; the weekend-resampled intervals are the ones to trust, and they clear zero for 11 of 20. - <strong>Nothing holds across seasons.</strong> No setting has an interval above zero in both 2025 and 2026 on either venue, and the ranking reverses: across settings, 2025's edge and 2026's are negatively correlated (Kalshi −0.51, Polymarket −0.33). Picking a setting by last season's result would have hurt. - The 2026 edge doesn't depend on the setting because it comes from the model itself: every setting inherits its low prices on favourites (3.7, added in v3c). So rule 1 is <strong>not met</strong>.</p>
-<p><a href="kalshi-response-2026-10-20-as-run-rule1.html">Kalshi rule 1, as run</a> · <a href="kalshi-response-2026-10-20-as-run-state-batch.html">Polymarket rule 1, as run (part 2 of the overnight batch)</a></p>
+<p><em>Update mode except the last column. The correction's q-values treat every trade as independent; the skill intervals resample whole weekends and are the ones to trust.</em></p>
+<p><strong>What it says:</strong> no setting has an interval above zero in both seasons on either venue, and none has a skill interval above zero on Polymarket. Rule 1 is not met.</p>
 </div>
-<div class="section" id="a-pre-registered-polymarket-test">
-<h4>A3.4 A pre-registered Polymarket test</h4>
-<p><strong>What this tests.</strong> Section 3.3 scores settings we tuned in the past. To get a clean read, we dropped every tuned setting and wrote down two un-tuned candidates (the model's defaults, filling at the touch or walking the book), the windows, a market floor, the rule for picking one candidate, and the scorer, and committed all of it before anything ran (racinglines commit 730644c, 20 Oct 03:52, <a href="https://github.com/racinglines/racinglines/pull/276" title="#276 · [docs] Pre-registration: Kalshi response step 3, F1 on Polymarket with Probalytics&#x27; books · opened 20 Oct 2026">#276</a>). - <strong>Window:</strong> Probalytics' Polymarket books begin 20 Nov 2025, so the test covers Las Vegas 2025 to 2026 round 16. - <strong>Market floor:</strong> a Polymarket market counts only if its volume and its trade count both reach the Kalshi median for the same race and market kind. 717 of 2,866 Polymarket markets pass. NASCAR and MotoGP fail it, so the test is F1 only. - <strong>Split, forward in time:</strong> pick on Las Vegas, Qatar, Abu Dhabi and 2026 rounds 3 to 6; score the pick once on rounds 7 to 16; then score the same frozen pick live from Austin (round 18).</p>
+<div class="section" id="calibrated-the-polymarket-candidates">
+<h3>5.3 The Polymarket candidates</h3>
+<p>The two un-tuned candidates and pick rule of our pre-registered test (<a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">v3</a>). The pre-registered result is the before row; the after rows are a new entry, not registered before they ran.</p>
 <table style="width:100%;">
 <colgroup>
 <col style="width: 16%" />
@@ -1109,37 +1071,36 @@ const thebe_selector_output = ".output, .cell_output"
 </thead>
 <tbody>
 <tr class="odd">
-<td>Pick window</td>
+<td>Pick window, after</td>
 <td><strong>book-walk, update (the pick)</strong></td>
-<td>124 (7)</td>
-<td>−3.2¢<br><span style="white-space:nowrap">[−10.0, +1.8]</span></td>
-<td>−1.2¢<br><span style="white-space:nowrap">[−7.9, +4.1]</span></td>
-<td>−0.21<br><span style="white-space:nowrap">[−0.39, −0.07]</span></td>
+<td>103 (7)</td>
+<td>−4.2¢<br><span style="white-space:nowrap">[−14.2, +5.0]</span></td>
+<td>−1.6¢<br><span style="white-space:nowrap">[−11.6, +7.9]</span></td>
+<td>−0.20<br><span style="white-space:nowrap">[−0.48, +0.02]</span></td>
 </tr>
 <tr class="even">
-<td>Holdout R7–16</td>
+<td>Holdout R7–16, after</td>
 <td><strong>book-walk, update (the pick)</strong></td>
+<td>198 (9)</td>
+<td><strong>+8.8¢<br><span style="white-space:nowrap">[−1.4, +18.1]</span></strong></td>
+<td>+10.8¢<br><span style="white-space:nowrap">[0.0, +19.6]</span></td>
+<td>+0.05<br><span style="white-space:nowrap">[−0.21, +0.21]</span></td>
+</tr>
+<tr class="odd">
+<td>Holdout R7–16, before</td>
+<td>book-walk, update (the pick)</td>
 <td>213 (9)</td>
-<td><strong>+6.8¢<br><span style="white-space:nowrap">[−4.7, +18.0]</span></strong></td>
+<td>+6.8¢<br><span style="white-space:nowrap">[−4.7, +18.0]</span></td>
 <td>+8.9¢<br><span style="white-space:nowrap">[−2.7, +20.0]</span></td>
 <td>−0.01<br><span style="white-space:nowrap">[−0.32, +0.21]</span></td>
 </tr>
-<tr class="odd">
-<td>Holdout R7–16</td>
-<td>book-walk, hold (not picked)</td>
-<td>93 (9)</td>
-<td>+8.6¢<br><span style="white-space:nowrap">[+0.1, +17.0]</span></td>
-<td>+10.6¢<br><span style="white-space:nowrap">[+2.8, +19.3]</span></td>
-<td>+0.03<br><span style="white-space:nowrap">[−0.20, +0.25]</span></td>
-</tr>
 </tbody>
 </table>
-<p><strong>What it says:</strong> - <strong>No candidate passes.</strong> The pick made money in the holdout, but its interval includes zero and its skill score is zero. Every candidate lost in the pick window. - <strong>Every fill had a real book,</strong> and walking the book cost under 1¢ more than the touch at these sizes. Rule 3 holds for this test. - <strong>The holdout isn't blind.</strong> Earlier work had already run our model on those races, so the live holdout from Austin is the only truly blind test. It is frozen and scores as each race settles.</p>
-<p><a href="kalshi-response-2026-10-20-as-run-pm-step3.html">As run</a></p>
+<p><strong>What it says:</strong> the same candidate is picked, its holdout interval still includes zero, and its skill is about zero. No candidate passes. Every fill had a real book.</p>
 </div>
-<div class="section" id="does-the-price-come-our-way">
-<h4>A3.5 Does the price come our way?</h4>
-<p><strong>What this tests.</strong> The paper's Fig 9 follows the mid after a skilled trader's order: it moves their way and stays there, while other takers' trades leave little trace. We do the same for every backtest trade, against Probalytics' size-weighted mid: at the trade, at the next stage of the weekend (a median 2.5 to 3.5 hours later), and at the last stage before the race (a median 23 to 29 hours later).</p>
+<div class="section" id="calibrated-does-the-price-come-our-way">
+<h3>5.4 Does the price come our way?</h3>
+<p>The mid after each backtest trade, against Probalytics' size-weighted mid (<a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">v3's method</a>).</p>
 <table style="width:100%;">
 <colgroup>
 <col style="width: 16%" />
@@ -1153,46 +1114,38 @@ const thebe_selector_output = ".output, .cell_output"
 <tr class="header">
 <th>Trades</th>
 <th>Mode</th>
-<th>Trades</th>
-<th>Paid over the mid</th>
-<th>Mid move by the next stage</th>
-<th>By the last stage</th>
+<th>Trades: after (before)</th>
+<th>Paid over the mid: after (before)</th>
+<th>Mid move by the next stage: after (before)</th>
+<th>By the last stage: after (before)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Kalshi, 20 settings, Probalytics' books, 2026 R5–16</td>
 <td>update</td>
-<td>4,844</td>
-<td>3.6¢</td>
-<td><strong>+2.8¢</strong></td>
-<td><strong>+4.5¢</strong></td>
+<td>4,799 (4,844)</td>
+<td>3.6¢ (3.6¢)</td>
+<td><strong>+3.4¢</strong> (+2.8¢)</td>
+<td><strong>+6.7¢</strong> (+4.5¢)</td>
 </tr>
 <tr class="even">
-<td>same</td>
-<td>early</td>
-<td>3,268</td>
-<td>3.6¢</td>
-<td>+2.9¢</td>
-<td>+4.7¢</td>
-</tr>
-<tr class="odd">
 <td>Kalshi, 20 settings, our tape, 2026</td>
 <td>update</td>
-<td>3,084</td>
-<td>1.6¢</td>
-<td>+3.4¢</td>
-<td>+5.3¢</td>
-</tr>
-<tr class="even">
-<td>Polymarket, pre-registered test</td>
-<td>update</td>
-<td>709</td>
-<td>1.8¢</td>
-<td>+1.6¢</td>
-<td>+1.4¢</td>
+<td>3,282 (3,084)</td>
+<td>1.5¢ (1.6¢)</td>
+<td><strong>+4.8¢</strong> (+3.4¢)</td>
+<td><strong>+8.1¢</strong> (+5.3¢)</td>
 </tr>
 <tr class="odd">
+<td>Polymarket, the candidates (5.3)</td>
+<td>update</td>
+<td>641 (709)</td>
+<td>1.9¢ (1.8¢)</td>
+<td>+1.7¢ (+1.6¢)</td>
+<td>+1.9¢ (+1.4¢)</td>
+</tr>
+<tr class="even">
 <td><em>Paper, skilled takers</em></td>
 <td></td>
 <td></td>
@@ -1202,72 +1155,27 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-<p><strong>What it says:</strong> - <strong>On Kalshi the price keeps moving our way until the race, by more than we paid.</strong> That is the paper's skilled-trader shape, and it is rule 4. On Polymarket the move is about what we paid, so it breaks even. - <strong>These are backtest trades.</strong> They didn't move the price; the price came round to the model's view on its own. Our own impact on thin books is unmeasured until we trade. - No intervals yet, and the same trade appears under many settings, so the rows overlap. These numbers don't count towards rule 4 until both are fixed.</p>
+<p><strong>What it says:</strong> on Kalshi the price comes our way by about twice what we paid; on Polymarket it about breaks even. These are backtest trades with no intervals yet, so rule 4 is partly met and doesn't count yet.</p>
 </div>
-<div class="section" id="the-crowd-is-motorsport-priced-fairly">
-<h4>A3.6 The crowd: is motorsport priced fairly?</h4>
-<p>Over 3.19 million resolved fills on the F1 markets we link (both venues, every month in our Probalytics pull), the price paid tracks the settled frequency at the ends: a Kalshi YES bought at 5¢ settled 6.7 % of the time, and at 95¢, 97.3 %. The middle (35 to 65¢) is noisy because a few big markets dominate it. A per-market weighting is still to do, so we draw no conclusion on the paper's Fig 6 yet.</p>
-<p><strong>Against bigger sports.</strong> The paper doesn't split Sports by league, so we can't set motorsport against the NFL or NHL directly, and we hold no tape for those leagues. What we can compare is motorsport against the paper's averages:</p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Motorsport (our data)</th>
-<th>The paper</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Taker pays over the size-weighted mid</td>
-<td>2.1 to 2.5¢ on Kalshi (4.4)</td>
-<td>1.2¢, other takers, all categories (sec 5.4)</td>
-</tr>
-<tr class="even">
-<td>Volume in the last tenth of a market's life</td>
-<td>Kalshi 62 %; Polymarket F1 17 %</td>
-<td>Sports: "overwhelmingly in the final decile" (Fig 7)</td>
-</tr>
-<tr class="odd">
-<td>A model built only on race data</td>
-<td>about half its edge is real in F1 2026 (3.1)</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<p><em>Market life runs from a market's first fill to its last in Probalytics' data, both venues, every resolved F1 fill on markets we link.</em></p>
-<p>Our reading, inferred rather than shown: motorsport on Kalshi trades like the paper's Sports markets, late and mostly during the event, but costs about twice as much to take, and it still leaves room for a model in some seasons. That fits a smaller, thinner market than the big leagues that dominate the paper's Sports volume. Polymarket's F1 markets are different again: most of their volume comes long before the race. A direct comparison needs Kalshi's per-sport numbers or our own tape on an NFL or NHL market, and neither is in this report.</p>
-</div>
-</div>
-<div class="section" id="the-papers-outputs-rebuilt-for-us">
-<h3>A4 The paper's outputs, rebuilt for us</h3>
-<p>Section 3 asked our own questions. This section rebuilds the paper's own tables and figures for racinglines, one by one. We first built them on 19 Oct from the paper bets already in our database, before any simulation ran; each one is now redone on the 20 Oct runs where those runs cover it, with the 19 Oct first cut kept beside it when the comparison says something.</p>
-<div class="section" id="fig-1-where-our-strategies-sit-on-the-skill-distribution">
-<h4>A4.1 Fig 1: where our strategies sit on the skill distribution</h4>
-<p><strong>Paper method:</strong> sec 3.2, eq. 2–3; luck test in sec 3.3. The paper's skill score treats the price a trader paid as their forecast and compares it with the mid on the outcome, so it is scored on fills, not on our model's price.</p>
-<p><strong>What we scored (20 Oct):</strong> every saved Polymarket setting at the touch on Probalytics' books, against the size-weighted mid, on the markets that pass the floor in 3.4 (106 settings over 13 weekends in 2026, 101 over 3 in 2025), and the Kalshi setting of 3.2 (our tape, plain mid). Update mode, all fees in the fill. The luck test redraws every outcome from the mid 500 times; on Polymarket the false-discovery correction covers all 207 settings.</p>
+<div class="section" id="calibrated-the-papers-outputs">
+<h3>5.5 The paper's outputs: Fig 1, Table 3, App. A.1–A.2</h3>
+<p><strong>Fig 1:</strong> the skill score of each setting's fills against the mid, with the luck test.</p>
 <table style="width:100%;">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>Venue, season</th>
 <th>Settings</th>
-<th>Trades per setting (median)</th>
-<th>Skill score of the fill, median (range)</th>
-<th>Above the paper's median skilled trader (0.0189)</th>
-<th>Luck test p &lt; 0.05</th>
+<th>Skill score of the fill, median (range): after (before)</th>
+<th>Above the paper's median skilled trader (0.0189): after (before)</th>
+<th>Luck test p &lt; 0.05: after (before)</th>
 <th>After correction</th>
 </tr>
 </thead>
@@ -1275,112 +1183,75 @@ const thebe_selector_output = ".output, .cell_output"
 <tr class="odd">
 <td>Polymarket F1 2026</td>
 <td>106</td>
-<td>136</td>
-<td><strong>+0.016 (+0.006 to +0.030)</strong></td>
-<td>19 of 106</td>
-<td>3 of 106</td>
-<td>0</td>
+<td><strong>+0.028 (+0.015 to +0.045)</strong> (+0.016)</td>
+<td><strong>95 of 106</strong> (19)</td>
+<td>86 of 106 (3)</td>
+<td><strong>0</strong> (0)</td>
 </tr>
 <tr class="even">
 <td>Polymarket F1 2025</td>
-<td>101</td>
-<td>18</td>
-<td>−0.021 (−0.062 to −0.005)</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
+<td>106 (101)</td>
+<td>−0.081 (−0.124 to −0.030) (−0.021)</td>
+<td>0 (0)</td>
+<td>0 (0)</td>
+<td>0 (0)</td>
 </tr>
 <tr class="odd">
-<td>Kalshi F1 2026, the 3.2 setting</td>
+<td>Kalshi F1 2026, the 5.1 setting</td>
 <td>1</td>
-<td>223</td>
-<td><strong>+0.033</strong></td>
-<td>yes</td>
-<td>no (p = 0.06)</td>
+<td>+0.037 (+0.033)</td>
+<td>yes (yes)</td>
+<td>no, p = 0.07 (p = 0.06)</td>
 <td>—</td>
 </tr>
 <tr class="even">
-<td>Kalshi F1 2025, the 3.2 setting</td>
+<td>Kalshi F1 2025, the 5.1 setting</td>
 <td>1</td>
-<td>151</td>
-<td>+0.011</td>
-<td>no</td>
-<td>no (p = 0.14)</td>
+<td>+0.016 (+0.011)</td>
+<td>no (no)</td>
+<td>no, p = 0.10 (p = 0.14)</td>
 <td>—</td>
-</tr>
-<tr class="odd">
-<td><em>First cut (19 Oct): NASCAR paper bets</em></td>
-<td><em>815 bets</em></td>
-<td>—</td>
-<td><em>+0.0090</em></td>
-<td><em>no</em></td>
-<td><em>yes (p &lt; 0.001)</em></td>
-<td><em>—</em></td>
 </tr>
 </tbody>
 </table>
-<p><a class="rl-zoom" href="_images/kalshi-response-2026-10-20/fig1-bss-placement-v3.png"><img alt="Every saved setting on the paper&#39;s skill scale" src="_images/kalshi-response-2026-10-20/fig1-bss-placement-v3.png" /><span class="rl-zoom-hint">Click to expand</span></a></p>
-<p><strong>What it says:</strong> - <strong>In 2026, every one of the 106 Polymarket settings has a positive skill score at real fills,</strong> and about one in five sits above the paper's median skilled trader. The Kalshi setting sits between the paper's two medians. On the paper's Fig 1, F1 2026 would land in the skilled traders' range. - <strong>In 2025 every Polymarket setting is below zero.</strong> The same pattern as section 3: 2026 yes, 2025 no. - <strong>None passes the luck test once every setting is counted,</strong> and the luck test's 95th percentile (about 0.025 on Polymarket 2026, 0.034 on Kalshi) is above most of the scores. With 13 to 15 weekends, a score this size is still within what luck gives. - <strong>On Polymarket the fill scores better than the model's own price.</strong> Scored on our model's price instead, only 7 of the 106 settings are above zero in 2026 (median −0.05). The fill sits between the mid and our price, so it keeps the direction the model got right and drops the part of the size that was too big, which fits the edge curve in 3.1 (about half of the predicted edge is real). This reading is inferred. The Kalshi setting goes the other way: +0.05 on the model's price (3.2) and +0.033 on the fill. - <strong>Against the first cut:</strong> the NASCAR paper bets passed their luck test (p &lt; 0.001), but on a synthetic fill and with no correction for the settings behind them; section 3.2 shows NASCAR's model losing to Kalshi's price once it trades on the real book. The 20 Oct runs replace that pass with real fills, more settings and a stricter test, and nothing passes.</p>
-</div>
-<div class="section" id="table-3-where-the-edge-comes-from">
-<h4>A4.2 Table 3: where the edge comes from</h4>
-<p><strong>Paper method:</strong> sec 4.3, eq. 5 (the Murphy split): Brier = reliability − resolution + uncertainty. Lower reliability means better calibrated; higher resolution means better at telling outcomes apart.</p>
-<p><strong>Updated 20 Oct with F1 2026 trades.</strong> The first pass (19 Oct) used our 815 stored NASCAR paper bets, with a synthetic fill. The simulation now gives F1 trades scored against a real mid, so we add two F1 columns: the Kalshi trades of section 3.2 (one setting, update mode, plain mid, 223 trades over 15 weekends) and the Polymarket pick of section 3.4 in its holdout (size-weighted mid from Probalytics' books, 213 trades over 9 weekends). F1 columns use 10 bins; the split leaves out the within-bin residual, so the parts don't sum exactly to the Brier score.</p>
+<p><a class="rl-zoom" href="_images/kalshi-response-2026-10-20/fig1-bss-placement-v4.png"><img alt="Every saved setting on the paper&#39;s skill scale, before (grey) and after (blue) calibration" src="_images/kalshi-response-2026-10-20/fig1-bss-placement-v4.png" /><span class="rl-zoom-hint">Click to expand</span></a></p>
+<p><strong>Table 3</strong>, the Murphy split on the same trades:</p>
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th>NASCAR paper bets: our fill / stored price</th>
-<th>F1 Kalshi 2026: model / mid</th>
-<th>F1 Polymarket holdout: model / size-weighted mid</th>
+<th>F1 Kalshi 2026: model / mid, after</th>
+<th>before</th>
+<th>F1 Polymarket holdout: model / size-weighted mid, after</th>
+<th>before</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Reliability (lower is better)</td>
-<td>0.0087 / 0.0098</td>
-<td><strong>0.0067 / 0.0189</strong></td>
-<td><strong>0.0088 / 0.0135</strong></td>
+<td>0.0109 / 0.0200</td>
+<td>0.0067 / 0.0189</td>
+<td>0.0170 / 0.0158</td>
+<td>0.0088 / 0.0135</td>
 </tr>
 <tr class="even">
 <td>Resolution (higher is better)</td>
-<td>0.0809 / 0.0816</td>
+<td><strong>0.0289 / 0.0196</strong></td>
 <td>0.0218 / 0.0208</td>
+<td><strong>0.0471 / 0.0358</strong></td>
 <td>0.0333 / 0.0412</td>
-</tr>
-<tr class="odd">
-<td>Uncertainty</td>
-<td>0.2344</td>
-<td>0.2247</td>
-<td>—</td>
-</tr>
-<tr class="even">
-<td>Brier</td>
-<td>0.1615 / 0.1630</td>
-<td>0.2092 / 0.2210</td>
-<td>skill score −0.01</td>
 </tr>
 </tbody>
 </table>
-<p><strong>What it says (corrected in v3c):</strong> on the traded markets the model's gain shows up in the calibration term, but 3.7 shows why: the model prices favourites low, and in 2026 favourites lost more often than priced. Across every market it prices, the model is miscalibrated on favourites in both seasons, so this column is a 2026 outcome, not a well-calibrated model. On Kalshi F1 2026 the model's reliability term is a third of the mid's, which is where its +0.05 skill score comes from; its resolution is about the same. On Polymarket the model is better calibrated too, but the size-weighted mid separates outcomes better, and the two cancel. That is the paper's majority pattern (Table 3B): the skilled trader corrects a miscalibrated price more than they know something the market doesn't. In the NASCAR column "our fill" is the stored price shifted 1¢ toward the sides we chose, so it says less.</p>
-</div>
-<div class="section" id="app.-a.1a.2-a-skill-score-is-not-profit">
-<h4>A4.3 App. A.1–A.2: a skill score is not profit</h4>
-<p>Each trade re-priced at mid + h in its own direction. The paper's App. A.2 explains why the score can rise while profit falls: a fill further from the mid is a more extreme forecast, so it can score better while every contract earns less. <strong>Updated 20 Oct:</strong> the F1 rows use the 223 Kalshi F1 2026 trades of section 3.2, against Kalshi's plain mid.</p>
+<p><strong>App. A.1–A.2</strong>, the Kalshi F1 2026 trades of 5.1, each re-priced at mid + h:</p>
 <table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th>Paid over mid</th>
@@ -1392,28 +1263,28 @@ const thebe_selector_output = ".output, .cell_output"
 </thead>
 <tbody>
 <tr class="odd">
-<td>NASCAR paper bets: skill score</td>
-<td>0.0090</td>
-<td>0.0168</td>
-<td>0.0234</td>
-<td>0.0287</td>
+<td>Skill score of the fill: after</td>
+<td>0.0114</td>
+<td>0.0219</td>
+<td>0.0316</td>
+<td>0.0404</td>
 </tr>
 <tr class="even">
-<td>NASCAR paper bets: profit per contract (¢)</td>
-<td>6.85</td>
-<td>5.86</td>
-<td>4.86</td>
-<td>3.87</td>
-</tr>
-<tr class="odd">
-<td>F1 Kalshi 2026: skill score of the fill</td>
+<td>before</td>
 <td>0.0104</td>
 <td>0.0200</td>
 <td>0.0286</td>
 <td>0.0363</td>
 </tr>
+<tr class="odd">
+<td>Profit per contract (¢): after</td>
+<td>20.56</td>
+<td>19.56</td>
+<td>18.56</td>
+<td>17.56</td>
+</tr>
 <tr class="even">
-<td>F1 Kalshi 2026: profit per contract (¢)</td>
+<td>before</td>
 <td>16.87</td>
 <td>15.87</td>
 <td>14.87</td>
@@ -1421,184 +1292,58 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-<p><em>Profit is contract-weighted and before fees. Per trade, unweighted, F1 makes 11.0¢ at 1¢ over the mid down to 8.0¢ at 4¢.</em></p>
-<p><a class="rl-zoom" href="_images/kalshi-response-2026-10-20/fig2-bss-vs-cost.png"><img alt="Skill score and profit as the fill gets worse" src="_images/kalshi-response-2026-10-20/fig2-bss-vs-cost.png" /><span class="rl-zoom-hint">Click to expand</span></a></p>
-<p>The figure shows the NASCAR rows. The F1 rows follow the same pattern at a higher level: each cent paid over the mid lifts the score and costs a cent of profit. So rule 1 is checked at realistic fills, and always next to profit and CLV.</p>
+<p><em>Contract-weighted, before fees.</em></p>
+<p><strong>What it says:</strong> in 2026 almost every Polymarket setting now sits above the paper's median skilled trader, but none passes the luck test once every setting is counted, and every 2025 setting is below zero.</p>
 </div>
-<div class="section" id="fig-9-price-impact-for-the-whole-motorsport-crowd">
-<h4>A4.4 Fig 9: price impact, for the whole motorsport crowd</h4>
-<p><strong>Paper method:</strong> sec 3.4 "Price Impact of Individual Orders", sec 5.4.</p>
-<p><em>This is the 19 Oct first cut, kept as it was. The overnight runs measured our own trades (3.5), not the crowd's, so this table has not been rebuilt; it is here because it is the comparison 3.5 needs.</em></p>
-<p><strong>What we used:</strong> every Kalshi trade in our tape on markets that have resolved since 9 Oct: 34,327 F1 trades from one race weekend and 30,350 NASCAR trades from one race. m0 is the size-weighted mid of our last order-book snapshot at most 6 minutes before the trade; later mids are the first snapshot in each window.</p>
-<p><strong>The assumptions we break:</strong> - No skill split: Kalshi's public tape has no account ids, so this is the paper's "all takers" in aggregate. - Our books are 5-minute snapshots, so there is no "next order" or 1-minute point. - One event per sport, so the outcome gap is a single draw of luck.</p>
-<table style="width:100%;">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>All takers</th>
-<th>Paid over mid</th>
-<th>Mid move 5–11 min</th>
-<th>Mid move 60–66 min</th>
-<th>Outcome − mid</th>
-<th>YES share</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>F1</td>
-<td>2.45¢</td>
-<td>1.90¢</td>
-<td>1.25¢</td>
-<td>5.04¢</td>
-<td>68.8 %</td>
-</tr>
-<tr class="even">
-<td>NASCAR</td>
-<td>2.08¢</td>
-<td>0.82¢</td>
-<td>0.95¢</td>
-<td>0.88¢</td>
-<td>76.0 %</td>
-</tr>
-<tr class="odd">
-<td>Paper, other takers</td>
-<td>1.2¢</td>
-<td>≤ 0.3¢</td>
-<td>—</td>
-<td>−0.1¢</td>
-<td>67 %</td>
-</tr>
-</tbody>
-</table>
-<p><a class="rl-zoom" href="_images/kalshi-response-2026-10-20/fig3-crowd-markout.png"><img alt="Crowd markouts on Kalshi motorsport" src="_images/kalshi-response-2026-10-20/fig3-crowd-markout.png" /><span class="rl-zoom-hint">Click to expand</span></a></p>
-<p><strong>What it says:</strong> - Motorsport takers on Kalshi pay about twice the paper's average spread (2.1–2.5¢ against 1.2¢). - They lean YES more than the paper's takers (69–76 % against 67 %). - The mid keeps part of the move (1–2¢ at 5 minutes). Some of that is likely a trade clearing a level in a thin book; the paper's sec 5.4 shows how to separate it by order size, which we haven't done yet.</p>
-<p>We left out a "close" point: our last recorded book for a market isn't Kalshi's close.</p>
-<p><strong>Against our own trades (3.5).</strong> The F1 crowd pays 2.45¢ over the mid and keeps 1.25¢ of it after an hour. Our Kalshi backtest trades paid 3.6¢ and the mid moved 4.5¢ our way by the last stage before the race. On these numbers our trades look like the paper's skilled takers and the crowd looks like its other takers, but the horizons differ (an hour against about a day) and ours are backtest trades, so this is a comparison of shapes, not a result.</p>
-</div>
-<div class="section" id="before-eq.-4-how-far-the-last-trade-is-from-the-mid">
-<h4>A4.5 Before eq. 4: how far the last trade is from the mid</h4>
-<p><strong>Paper method:</strong> sec 3.4 "Order Flow and the Last Traded Price". This is the step before the paper's regression. All Kalshi motorsport trades in the 3 days to 19 Oct were matched to our last book at most 6 minutes earlier.</p>
-<p><em>19 Oct first cut, not rebuilt: like 4.4 it needs the crowd's trades matched to books, which the overnight runs didn't do.</em></p>
-<table style="width:100%;">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Taker side</th>
-<th>Trades</th>
-<th>Avg spread</th>
-<th>Trade − plain mid</th>
-<th>Trade − weighted mid</th>
-<th>At or through the touch</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>YES</td>
-<td>23,459</td>
-<td>4.8¢</td>
-<td>+4.2¢</td>
-<td>+4.7¢</td>
-<td>63.7 %</td>
-</tr>
-<tr class="even">
-<td>NO</td>
-<td>8,764</td>
-<td>8.0¢</td>
-<td>−4.2¢</td>
-<td>−3.8¢</td>
-<td>50.5 %</td>
-</tr>
-</tbody>
-</table>
-<p>A last-trade price is the mid plus about 4¢ in the direction of whoever traded last. That is why rule 3 bans "last trade plus a fixed cost" fills. The 20 Oct runs follow it: every F1 backtest in section 3 fills against a recorded book, and Kalshi fills with no book at the stage are counted (5 to 9 % of F1 trades, 3.2) rather than priced off a last trade.</p>
-</div>
-<div class="section" id="what-we-have-rebuilt-and-what-we-cant-yet">
-<h4>A4.6 What we have rebuilt, and what we can't yet</h4>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Paper output</th>
-<th>Status, 20 Oct</th>
-<th>Where</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Fig 1, skill distribution</td>
-<td><strong>Rebuilt</strong> on real fills, every saved setting</td>
-<td>4.1</td>
-</tr>
-<tr class="even">
-<td>Table 1, luck test with false-discovery correction</td>
-<td><strong>Rebuilt</strong> for our settings (not for accounts)</td>
-<td>3.3, 4.1</td>
-</tr>
-<tr class="odd">
-<td>Table 3, Murphy split</td>
-<td><strong>Rebuilt</strong> on F1 2026 trades</td>
-<td>4.2</td>
-</tr>
-<tr class="even">
-<td>App. A.1–A.2, skill vs profit</td>
-<td><strong>Rebuilt</strong> on F1 2026 trades</td>
-<td>4.3</td>
-</tr>
-<tr class="odd">
-<td>Fig 9, markouts</td>
-<td><strong>Rebuilt for our trades</strong>; crowd still the 19 Oct first cut</td>
-<td>3.5, 4.4</td>
-</tr>
-<tr class="even">
-<td>Fig 6, crowd calibration by price</td>
-<td>Partly: the ends hold, the middle needs a per-market weighting</td>
-<td>3.6</td>
-</tr>
-<tr class="odd">
-<td>Fig 7, volume by decile of market life</td>
-<td><strong>Rebuilt</strong>, both venues</td>
-<td>3.6</td>
-</tr>
-<tr class="even">
-<td>Fig 2–4, Table 4 (skilled accounts, their traits, persistence)</td>
-<td>Not possible on Kalshi: its public tape has no account ids</td>
-<td>Polymarket trades carry wallets (1,282 wallets on 7,139 F1 trades in our tape)</td>
-</tr>
-<tr class="odd">
-<td>Table 5 for F1 (is F1 among the 8.2 % of Sports markets with no skilled taker?)</td>
-<td>Not yet: the paper gives no per-sport split</td>
-<td>Skilled-taker coverage from Polymarket wallets</td>
-</tr>
-<tr class="even">
-<td>Table 6 (eq. 4), last price on net order flow</td>
-<td>Not yet</td>
-<td>Needs a last-price series with net order flow per market</td>
-</tr>
-</tbody>
-</table>
+<div class="section" id="calibrated-what-it-adds-up-to">
+<h3>5.6 Where the rules stand</h3>
+<ul>
+<li><strong>Rule 1: not met.</strong> Calibration lifts every 2026 test and lowers every 2025 one; nothing holds in both seasons.</li>
+<li><strong>Rule 3: holds for F1 backtests.</strong> Every Polymarket fill had a real book; 7 to 8 % of Kalshi F1 trades had no book at the fill and are counted, not priced off a last trade.</li>
+<li><strong>Rule 4: partly met.</strong> Yes on Kalshi, break-even on Polymarket, no intervals yet.</li>
+</ul>
 </div>
 </div>
+<div class="section" id="what-we-take-from-this">
+<h2>6. What we take from this</h2>
+<p>Kalshi's paper says a market is made accurate by a small group of traders who are right against the price, can be told apart from the lucky by a strict test, and leave a mark: the price moves their way and stays. We held racinglines to those tests, and the first thing they caught was us.</p>
+<p><strong>The tests worked on us.</strong> v3 passed most of what we could measure in 2026: positive scores against the mid, every saved setting on the right side, the price moving our way afterwards. The check the paper insists on, whether a result survives across samples, is what failed: the same model lost in 2025. Splitting the edge by direction showed why. Most of it was one bet, against favourites, made by a model that priced them far too low.</p>
+<p><strong>Calibration is the fix, and it isn't an edge.</strong> Fitted on earlier races only, it brings the favourite's price after qualifying close to how often favourites won, in both seasons. It doesn't make the model beat the market in both seasons, and before qualifying the model still prices favourites below the market. A better model is necessary; it isn't the same thing as skill.</p>
+<p><strong>Motorsport still looks like room for a model.</strong> Taking a price costs about twice the paper's average, volume arrives late on Kalshi (A3.6 in <a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">v4</a>), and in 2026 the market's favourites were overpriced. Whether that last part is a pattern or one season is exactly what we can't tell from history.</p>
+<p>So rule 1 is not met, rule 3 holds for F1 backtests, rule 4 is partly met (re-measured with calibration on: yes on Kalshi in backtests, break-even on Polymarket), and rules 2 and 5 are where we start.</p>
+<div class="section" id="whats-next">
+<h3>What's next</h3>
+<ul>
+<li><strong>Forward, from Austin (23 to 25 Oct).</strong> Each race's locked strategy scores as bet, and the frozen Polymarket pick scores live. This is the only blind test, and rule 2's record starts here.</li>
+<li><strong>Calibration is on.</strong> It fixes the favourite after qualifying in both seasons, so we made it the default for our hosted F1 model on 21 Oct, logged before Austin, and the Austin lock uses it.</li>
+<li><strong>Why calibration widens the season split.</strong> It helps every 2026 test and hurts every 2025 one (section 5); we haven't checked why.</li>
+<li><strong>The favourite before qualifying.</strong> Even calibrated, the model is below the market there. The next model work is how the model spreads the front of the field before qualifying, judged on both seasons together.</li>
+<li><strong>Intervals and de-duplication for the markouts,</strong> so rule 4 can count. The luck test and markouts are re-measured on the calibrated model (section 5).</li>
+<li><strong>Real fills (rule 5).</strong> Only live trading answers it.</li>
+<li><strong>Skilled takers in F1.</strong> Polymarket trades carry wallets, so the paper's account-level tables (Table 1, Table 5 for F1) can be built there.</li>
+</ul>
+<p>We said we would publish what the tests showed, whatever it was. This is what they showed: our first claim of an edge was mostly a model flaw, the flaw is partly fixed, and the edge isn't proven.</p>
 </div>
-<div class="section" id="appendix-b-revisions">
-<h2>Appendix B: revisions</h2>
+</div>
+<div class="section" id="caveats">
+<h2>7. Caveats</h2>
+<ol type="1">
+<li><strong>Simulated, not executed.</strong> A mid move after a backtest trade is the market coming round to our view, not our impact. Our own impact on thin books is unmeasured.</li>
+<li><strong>The fill model changes the score itself</strong> (sec 2.3). We report touch and book-walk fills side by side.</li>
+<li><strong>The benchmark mid is estimated</strong> wherever we have no recorded book. 2025 Kalshi is estimate-only.</li>
+<li><strong>Horizons.</strong> Our books are 5-minute snapshots, and we trade at stage cutoffs, while the paper's Sports volume sits in the last tenth of a market's life (Fig 7).</li>
+<li><strong>Selection.</strong> The false-discovery correction runs over every combination tried. In-sample profiles are never evidence.</li>
+<li><strong>Joint outcomes.</strong> Our luck test draws each driver independently and ignores "one winner per race", so its p-values are approximate.</li>
+<li><strong>Sample size.</strong> NASCAR has 40 races and MotoGP 11; the paper's bar is 100 events.</li>
+<li><strong>Tape gaps.</strong> Our own Kalshi trade tape has a gap from 29 Sep to 9 Oct.</li>
+<li><strong>Fees.</strong> The skill score ignores fees; profit and CLV include them. We report all three together.</li>
+<li><strong>Scope.</strong> We have no linked cycling markets on either venue, so cycling, which we model, is not tested here.</li>
+<li><strong>Not blind.</strong> Every backtest window here, holdouts included, was seen in some form while the model was built. Only the forward tests (the per-event locks and the live Polymarket holdout from Austin) are blind.</li>
+<li><strong>Calibration was chosen after looking.</strong> Its power is fitted on earlier races only, but we turned it on after seeing both seasons, so the after side of sections 4 and 5 is a re-measurement, not a test. Calibrated runs on our database copy also differ very slightly from the same settings on production (the 2026 favourite after qualifying: 0.668 against 0.670); the cause is not yet checked.</li>
+</ol>
+</div>
+<div class="section" id="appendix-a-revisions">
+<details class="rl-appendix"><summary><h2>Appendix A: revisions</h2><span class="rl-appendix-hint">show</span></summary>
 <ul>
 <li><strong>v1, 20 Oct 00:54:</strong> <a href="https://github.com/lalligagger/lalligagger.github.io/blob/ffbb1e9c8e2512e76fefa816090172304f6cfb1a/_sources/kalshi-response-2026-10-20.md">first draft</a>, from our stored paper bets.</li>
 <li><strong>v2, 20 Oct 02:24:</strong> the first simulation, trade by trade on Kalshi.</li>
@@ -1606,14 +1351,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li><strong>v3c, 20 Oct evening (prepared, folded into v4):</strong> the correction below.</li>
 </ul>
 <blockquote>
-<p><strong>Correction, 20 Oct (evening, v3c).</strong> Most of the F1 2026 "edge" in this report is one bet: against the favourite. Our model prices favourites far too low, in both seasons (markets above 50¢ in 2026: the market says about 65 %, our model about 37 %). In 2026 favourites won less often than their prices said, so fading them paid (they won 40 to 47 % of the time); in 2025 they won about as priced, so it didn't. That explains the 2025/2026 split, and it means the 2026 result is mostly a model bias meeting one season, not skill. Every run here had calibration off unless it says otherwise. We've added <a href="#what-v3-got-wrong-the-favourite">3.7</a> (with 18 new model runs, added the same night) and corrected 3.1, 4.2 and the conclusion; the earlier wording is in <a href="https://github.com/lalligagger/lalligagger.github.io/blob/d215d10/_sources/kalshi-response-2026-10-20.md">v3b</a>.</p>
+<p><strong>Correction, 20 Oct (evening, v3c).</strong> Most of the F1 2026 "edge" in this report is one bet: against the favourite. Our model prices favourites far too low, in both seasons (markets above 50¢ in 2026: the market says about 65 %, our model about 37 %). In 2026 favourites won less often than their prices said, so fading them paid (they won 40 to 47 % of the time); in 2025 they won about as priced, so it didn't. That explains the 2025/2026 split, and it means the 2026 result is mostly a model bias meeting one season, not skill. Every run here had calibration off unless it says otherwise. We've added <a href="#where-the-2026-edge-came-from">3.7</a> (with 18 new model runs, added the same night) and corrected 3.1, 4.2 and the conclusion; the earlier wording is in <a href="https://github.com/lalligagger/lalligagger.github.io/blob/d215d10/_sources/kalshi-response-2026-10-20.md">v3b</a>.</p>
 </blockquote>
 <ul>
-<li><strong>v4, 21 Oct:</strong> rebuilt on the fixed model; v3 moved to Appendix A.</li>
+<li><strong>v4, 21 Oct:</strong> rebuilt on the fixed model; v3's results moved to an Appendix A (<a href="https://github.com/lalligagger/lalligagger.github.io/blob/33aaee3/_sources/kalshi-response-2026-10-20.md">as published</a>).</li>
+<li><strong>v4.1, 21 Oct:</strong> every v3 test re-run with calibration on (section 5); rule 4 re-measured; v3's results appendix removed in favour of the v4 link above (so revisions are now Appendix A and the build log Appendix B); appendices collapsed by default; bullet lists that had run into the paragraph before them now show as lists.</li>
 </ul>
+</details>
 </div>
-<div class="section" id="appendix-c-how-we-built-this">
-<h2>Appendix C: how we built this</h2>
+<div class="section" id="appendix-b-how-we-built-this">
+<details class="rl-appendix"><summary><h2>Appendix B: how we built this</h2><span class="rl-appendix-hint">show</span></summary>
 <p>From the paper's release to this page. The big steps are on their own rows; the editorial passes are grouped into three rounds. <strong>High-touch</strong> steps needed the owner (a decision, an upload, a publish); <strong>streamlined</strong> steps ran in our project threads with no input.</p>
 <table>
 <colgroup>
@@ -1781,13 +1528,63 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 <tr class="odd">
 <td>01:49 onward</td>
-<td><strong>Scored and written:</strong> section 4, then this revision</td>
+<td><strong>Scored and written:</strong> section 4, then v4</td>
+<td>Streamlined</td>
+</tr>
+<tr class="even">
+<td>about 01:58</td>
+<td><strong>v4 published</strong> here</td>
+<td>High-touch</td>
+</tr>
+<tr class="odd">
+<td>02:06</td>
+<td><strong>v4.1 set:</strong> re-run every run behind v3's tables and plots with calibration on, and redo every plot</td>
+<td>High-touch</td>
+</tr>
+<tr class="even">
+<td>02:59 to 08:47</td>
+<td><strong>Calibrated rerun</strong> on the copy of our database, after a backup: 262 runs, 0 failures. <a href="kalshi-response-2026-10-21-as-run-calib-rerun.html">As run</a></td>
+<td>High-touch</td>
+</tr>
+<tr class="odd">
+<td>11:01 onward</td>
+<td><strong>Scored and written:</strong> every v3 script reused unchanged on the new runs; section 5</td>
 <td>Streamlined</td>
 </tr>
 </tbody>
 </table>
 <p><em>Internal book pages behind this report: <a href="https://racinglines.bet/docs/internal/system/trading.html">3.4 Trading (golden rules)</a>, <a href="https://racinglines.bet/docs/internal/system/evaluation.html">3.5 Evaluation and sweeps</a>, <a href="https://racinglines.bet/docs/internal/ops/ditl.html">4.5 DITL reports</a>, <a href="https://racinglines.bet/docs/internal/appendix/reports.html">Appendix A: every report and its sources</a>.</em></p>
+</details>
 </div>
+
+<style>
+details.rl-appendix > summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: .6em; }
+details.rl-appendix > summary::-webkit-details-marker { display: none; }
+details.rl-appendix > summary h2 { display: inline; margin: 0; }
+details.rl-appendix > summary h2::before { content: "\25B8\00A0"; }
+details.rl-appendix[open] > summary h2::before { content: "\25BE\00A0"; }
+details.rl-appendix > summary .rl-appendix-hint { font-size: .8em; opacity: .65; }
+details.rl-appendix[open] > summary .rl-appendix-hint { display: none; }
+div.section > details.rl-appendix { margin: 1.6em 0 1em; }
+</style>
+<script>
+(function () {
+  function reveal(id) {
+    var el = id && document.getElementById(decodeURIComponent(id));
+    if (!el) return;
+    for (var d = el; d; d = d.parentElement) if (d.tagName === 'DETAILS') d.open = true;
+    if (el.tagName === 'DIV' && el.firstElementChild && el.firstElementChild.tagName === 'DETAILS') el.firstElementChild.open = true;
+    el.scrollIntoView();
+  }
+  function fromHash() { reveal(location.hash.slice(1)); }
+  window.addEventListener('hashchange', fromHash);
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (a) setTimeout(function () { reveal(a.getAttribute('href').slice(1)); }, 0);
+  });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fromHash); else fromHash();
+})();
+</script>
 
 </div>
 </div>
